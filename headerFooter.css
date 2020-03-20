@@ -1,25 +1,23 @@
-.header {
-    overflow: hidden;
-    padding: 20px 10px;
+* {
+    box-sizing: border-box;
 }
 
 /* Style the header links */
-a {
+.header-right a {
     float: left;
     color: black;
     text-align: center;
-    padding: 12px;
+    padding: 20px;
     text-decoration: none;
     font-size: 18px;
     font-family: 'Lato', sans-serif;
     line-height: 25px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
-a.logo {
-    font-size: 25px;
-    font-weight: bold;
+img.logo {
+    height: 10%;
+    width: 10%;
 }
 
 /* Change the background color on mouse-over */
@@ -38,9 +36,39 @@ i {
     margin-right: 5px;
 }
 
-/* Float the link section to the right */
 .header-right {
     float: right;
+    padding: 30px 15px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #A8CAE9;
+    /*padding: 20px 0px;*/
+}
+
+.footer a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 8px 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    line-height: 68.2px; /*68.2px*/
+    border-radius: 5px;
+}
+
+.footer a:hover {
+    background-color: #FFFFFF;
+}
+
+.footer {
+    float: right;
+    padding: 30px 15px;
 }
 
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
@@ -52,6 +80,10 @@ i {
     }
 
     .header-right {
+        float: none;
+    }
+
+    .footer {
         float: none;
     }
 }
