@@ -1,15 +1,10 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    background-color: #fff;
 }
 
-html, body, div {
-    margin:0px;
-    padding:0px;
-    height: 100%;
-}
-
-.inner {
-    width: 85%;
-    margin: auto;
+body {
+  width: 100%;
 }
