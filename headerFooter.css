@@ -1,7 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
 .header-right a {
     float: left;
     color: black;
@@ -14,7 +10,7 @@
     border-radius: 5px;
 }
 
-img.logo {
+header img {
     height: 10%;
     width: 10%;
 }
@@ -48,9 +44,7 @@ footer {
     bottom: 0;
     width: 100%;
     background-color: #A8CAE9;
-    /*padding: 20px 0px;*/
 }
-/*
 .footer a {
     float: left;
     color: black;
@@ -80,11 +74,12 @@ footer {
 footer {
     background-color: #A8CAE9;
     padding: 1em 4em 1em;
+    margin: 0;
 }
 
 footer .row {
     margin: 1em 0;
-    font-family: lato;
+    font-family: lato, sans-serif;
     color: #000;
     position: relative;
     border-bottom: 1px solid #000;
@@ -146,7 +141,7 @@ footer .footer-cat, #newsletter span {
 }
 
 footer #subscribe {
-    margin: 20px 0px 30px;
+    margin: 20px 0 30px;
 }
 
 input#subscriber-email {
@@ -155,7 +150,7 @@ input#subscriber-email {
     background: #fff;
     border: 1px solid #cecece;
     color: #cecece;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 5px 0px 0px 4px;
 }
 
 input#subscriber-email::-webkit-input-placeholder {
@@ -179,6 +174,12 @@ input#subscriber-email::placeholder {
     width: 25%;
 }
 
+.col-3 img {
+    height: 50%;
+    width: 50%;
+    padding: 10px 10px;
+}
+
 .col-3#newsletter {
     width: 23%
 }
@@ -186,7 +187,7 @@ input#subscriber-email::placeholder {
 .col-3#newsletter #btn-scribe {
     margin-left: -4px;
     border: 1px solid #cecece;
-    border-radius: 0px 4px 4px 0;
+    border-radius: 0 4px 4px 0;
     padding: 8px 5px;
     background-color: #e2e2e2;
     color: #212121;
@@ -250,14 +251,14 @@ input#subscriber-email::placeholder {
 #copyright {
     text-align: center;
     color: #000;
-    font-family: lato;
+    font-family: lato, sans-serif;
 }
 
 #owner {
     text-align: center;
     padding: 15px 0 0px;
     color: #000;
-    font-family: lato;
+    font-family: lato, sans-serif;
 }
 
 #owner a {
@@ -311,7 +312,7 @@ input#subscriber-email::placeholder {
     }
 
     .footer-cat-links {
-        margin: 0 0em 0px 1.6em;
+        margin: 0 0 0 1.6em;
         font-style: italic;
     }
 
@@ -354,7 +355,7 @@ input#subscriber-email::placeholder {
     #newsletter #address li div {
         font-size: 14px;
         width: auto;
-        text-align: -webkit-auto;
+        text-align: center;
         float: none;
         line-height: 2;
         display: inline-block;
