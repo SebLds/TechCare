@@ -13,6 +13,7 @@
     text-align: center;
 }
 
-.home {
-    image-rendering: auto;
+.flex-container img {
+    height: 60%;
+    width: 50%;
 }
