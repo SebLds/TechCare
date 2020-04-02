@@ -8,7 +8,6 @@
     <link href="headerFooter.css" rel="stylesheet">
     <link href="bodyPierre.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
 </head>
 <body>
 
@@ -26,6 +25,7 @@
     <img alt="Acceuil" class="home" src="images/home center.jpg"/>
 </div>
 
+<!--
 <footer>
     <div class="row">
         <div class="col-3">
@@ -38,19 +38,6 @@
             </div>
         </div>
 
-        <!--
-        <div class="link-cat" onclick="footerToggle(this)">
-             <span class="footer-toggle"></span>
-           <span class="footer-cat">Industries</span>
-                </div>
-                  <ul class="footer-cat-links">
-                    <li><a href=""><span>Healthcare</span></a></li>
-                    <li><a href=""><span>Sports</span></a></li>
-                    <li><a href=""><span>ECommerce</span></a></li>
-                    <li><a href=""><span>Construction</span></a></li>
-                    <li><a href=""><span>Club</span></a></li>
-                 </ul>
-        -->
         <div class="col-3">
             <div class="link-cat" onclick="footerToggle(this)">
                 <span class="footer-toggle"></span>
@@ -116,28 +103,90 @@
     <div id="copyright">
         &copy; TechCare - Tous droits réservés 2019-2020
     </div>
-    <!--
+
     <div id="owner">
            <span>
                Designed by <a href="https://www.pornhub.com">TechCareISEP.com</a>
            </span>
     </div>
-    -->
+
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/Footer.js"></script>
+-->
+
+<!-- footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h1 class="logo-text"><span>Tech</span>Care</h1>
+            <p>
+                TechCare vous accompagne avant, pendant et après vos tests psychotechniques.
+                Nous sommes une entreprise au service de la santé de nos patients.
+            </p>
+            <div class="contact">
+                <span><i class="fas fa-phone"></i> &nbsp; 0765438976</span>
+                <span><i class="fas fa-envelope"></i> &nbsp; contact@techcare.com</span>
+                <span><i class="fas fa-building"></i> &nbsp; ISEP, 10 Rue de Vanves, 92130 Issy-les-Moulineaux</span>
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-section links">
+            <h2>Liens utiles</h2>
+            <br>
+            <ul>
+                <a href="">
+                    <li>Notre histoire</li>
+                </a>
+                <a href="">
+                    <li>Nos tests</li>
+                </a>
+                <a href="">
+                    <li>FAQ</li>
+                </a>
+                <a href="">
+                    <li>CGU</li>
+                </a>
+                <a href="">
+                    <li>Contact</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="footer-section contact-form">
+            <h2>Contactez-nous</h2>
+            <br>
+            <form action="index.html" method="post">
+                <input class="text-input contact-input" name="email" placeholder="Votre adresse mail" type="email"/>
+                <textarea class="text-input contact-input" name="message" placeholder="Votre message"></textarea>
+                <button class="btn btn-big" type="submit">
+                    <i class="fas fa-envelope"></i>
+                    Envoyer
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; TechCare - Tous droits réservés 2019-2020
+    </div>
+</div>
+<!-- // footer -->
 
 <!--
-<footer>
-    <img alt="logo" class="logo" src="images/logo Transparent.png">
-    <nav class="footer">
-        <a href="#FAQ">FAQ</a>
-        <a href="#CGU">CGU</a>
-        <a href="#Contact">Contact</a>
-        <a href="#Langue">FR</a>
-    </nav>
-</footer>
+<img alt="logo" class="logo" src="images/logo Transparent.png">
+<nav class="footer">
+    <a href="#FAQ">FAQ</a>
+    <a href="#CGU">CGU</a>
+    <a href="#Contact">Contact</a>
+    <a href="#Langue">FR</a>
+</nav>
 -->
 
 </body>
