@@ -2,16 +2,21 @@
     box-sizing: border-box;
 }
 
-html, body {
+body {
     height: 100%;
     padding: 0px;
     margin: 0px;
     font-family: 'Lato', sans-serif;
+    flex-direction: column;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+.container {
+    flex: 1;
 }
 
 .header-right a {
@@ -68,8 +73,10 @@ a.active {
     height: 350px;
     display: flex;
     margin: 1em 0;
+    font-family: 'Lato', sans-serif;
 }
 
+/* Ligne délimitation footer et copyrights */
 .footer .footer-bottom::before {
     content: '';
     display: block;
@@ -133,26 +140,24 @@ a.active {
     transition: all .3s;
 }
 
-.footer .footer-content .contact-form .contact-input {
-    background: #272727;
-    color: #beddbd;
-    margin-bottom: 10px;
-    line-height: 1.5rem;
-    padding: .9rem 1.2rem;
-    display: block;
-    border: none;
-    width: 100%;
-    font-size: 1.2rem;
-    border-radius: 5px;
+form {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.btn-big {
-    background: #A8CAE9;
+input[type="email"] {
+    border: 0;
+    padding: 0.6rem;
+    margin-top: 0.7rem;
+}
+
+input[type="submit"] {
+    background-color: #A8CAE9;
     color: white;
-    padding: .7rem 1.3rem;
-    line-height: 1.3rem;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
+    cursor: pointer;
+    border: 0;
+    padding: 0.6rem 0.9rem;
+    margin-top: 0.7rem;
 }
 
 .footer .footer-bottom {
@@ -366,197 +371,22 @@ input#subscriber-email::placeholder {
 }
 
 #owner a {
-    color: #000;
-}
+    color:
 
-
-/* iPads to Smartphone for Common Elements ----------- */
-@media only screen and (max-width: 1024px) {
-    .col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-        position: relative;
-    }
-
-    .col-3#newsletter {
-        width: 100%;
-        position: relative;
-        padding-bottom: 0;
-        padding-top: 1em;
-    }
-
-    footer .footer-cat {
-        margin-left: 25px;
-    }
-
-    .footer-toggle, .footer-toggle::after {
-        background: #fff;
-        height: 2px;
-        width: 15px;
-        position: absolute;
-        display: block;
-        -webkit-transition: all .4s ease-in;
-        transition: all .4s ease-in;
-    }
-
-    .footer-toggle {
-        top: 11px;
-        cursor: pointer;
-    }
-
-    .footer-toggle::after {
-        content: '';
-        -webkit-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-
-    .btnActive .footer-toggle::after {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    .footer-cat-links {
-        margin: 0 0 0 1.6em;
-        font-style: italic;
-    }
-
-    .footer-cat-links a {
-        pointer-events: none;
-    }
-
-    .footer-cat-links li {
-        line-height: 0;
-        opacity: 0;
-    }
-
-    .footer-cat-links.active > li {
-        line-height: 2;
-        opacity: 1;
-    }
-
-    .social-1 {
-        display: none !important;
-    }
-
-    .social-2 {
-        display: block;
-        position: absolute;
-        top: 7.5em;
-        bottom: 0px;
-        height: 20px;
-        padding-bottom: 1.5em;
-        width: 100%;
-    }
-
-    #address {
-        margin-top: 6em;
-    }
-
-    #newsletter #address li i {
-        width: auto;
-    }
-
-    #newsletter #address li div {
-        font-size: 14px;
-        width: auto;
-        text-align: center;
-        float: none;
-        line-height: 2;
-        display: inline-block;
-        padding: 10px 0 15px;
-    }
-
-    #newsletter #address li div:last-child {
-        padding-bottom: 0;
-    }
-
-    #newsletter #address li:not(:first-child) {
-        padding: 20px 0 0;
-    }
-}
-
-/* iPads (portrait)----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-
-    footer {
-        padding-right: 3em;
-        padding-left: 3em;
-    }
-
-    .col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-    }
-}
-
-/* iPads (landscape) ----------- */
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-    section {
-        padding-bottom: 3em;
-    }
-
-    .sec-heading {
-        padding: 1em 0;
-    }
-
-    .col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-    }
-}
-
-/* Mini Tablet ----------- */
-@media only screen and (max-width: 600px) {
-
-    .col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-    }
-
-    .col-6 {
-        width: 100%;
-        display: block;
-    }
-
-    footer {
-        padding: 3em 2em 2em;
-    }
-}
-
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (max-width: 480px) {
-
-    .col-6 {
-        width: 100%;
-        display: block;
-    }
-
-    footer {
-        padding-right: 1em;
-        padding-left: 1em;
-    }
-}
-
-
-/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
-@media screen and (max-width: 500px) {
-    a {
-        float: none;
-        display: block;
-        text-align: left;
-    }
-
-    .header-right {
-        float: none;
-    }
-
+/* MEDIA QUERIES */
+@media only screen and (max-width: 1280px) {
     .footer {
-        float: none;
+        height: auto;
+    }
+
+    .footer .footer-content {
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .footer .footer-content .contact-form {
+        padding-bottom: 90px;
     }
 }

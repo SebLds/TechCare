@@ -5,8 +5,8 @@
     <title>Test TechCare</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="headerFooter.css" rel="stylesheet">
-    <link href="bodyPierre.css" rel="stylesheet">
+    <link href="CSS/headerFooter.css" rel="stylesheet">
+    <link href="CSS/body.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
 </head>
@@ -118,6 +118,7 @@
 -->
 
 <!-- footer -->
+<div class="container-footer"></div>
 <div class="footer">
     <div class="footer-content">
         <div class="footer-section about">
@@ -161,15 +162,11 @@
         </div>
 
         <div class="footer-section contact-form">
-            <h2>Contactez-nous</h2>
-            <br>
-            <form action="index.html" method="post">
-                <input class="text-input contact-input" name="email" placeholder="Votre adresse mail" type="email"/>
-                <textarea class="text-input contact-input" name="message" placeholder="Votre message"></textarea>
-                <button class="btn btn-big" type="submit">
-                    <i class="fas fa-envelope"></i>
-                    Envoyer
-                </button>
+            <h2>Restez connecté</h2>
+            <p>Abonnez-vous à notre newsletter !</p>
+            <form action="test.html" method="post">
+                <input name="email" placeholder="Entrez votre mail" type="email">
+                <input type="submit" value="S'inscrire">
             </form>
         </div>
     </div>
