@@ -22,11 +22,11 @@ img.logo {
     padding: 0px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    size: 40;
+    size: 40px;
     font-family: 'Lato', sans-serif;
     font-size: 150%;
     font-weight: bold;
-    line-height:40px;
+    line-height: 40px;
     vertical-align: middle;
 }
 
