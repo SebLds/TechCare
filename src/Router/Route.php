@@ -19,6 +19,11 @@ class Route
         $this->callable = $callable;
     }
 
+    /**
+     * @param $param
+     * @param $regex
+     * @return $this
+     */
     public function with($param, $regex){
         $this->params[$param]=str_replace('(','(?:', $regex);
         return $this;

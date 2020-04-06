@@ -6,8 +6,15 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
     <!-- Custome Styling -->
-    <link href="CSS/headerFooter.css" rel="stylesheet">
-    <link href="CSS/body.css" rel="stylesheet">
+<!--
+    <style type="text/css">
+        @import url(/Web/css/headerFooter.css);
+        @import url(/Web/css/body.css);
+    </style>
+-->
+
+    <link href="/Web/css/headerFooter.css" rel="headerFootersheet" type="text/css"/>
+    <link href="/Web/css" rel="stylessheet" type="body.css"/>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -18,17 +25,17 @@
 
 <body>
 <header>
-    <img alt="logo Infinite Measures" class="logo" src="images/Logo Transparent.png"/>
+    <img alt="logo Infinite Measures" class="logo" src="/Web/images/Logo Transparent.png"/>
     <div class="header-right">
-        <a class="active" href="#home"><i class="fa fa-fw fa-home"></i>Accueil</a>
-        <a href="#work">Notre travail</a>
-        <a href="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
-        <a href="#login"><i class="fa fa-fw fa-user"></i>Connexion</a>
+        <a class="active" src="#home"><i class="fa fa-fw fa-home"></i>Accueil</a>
+        <a src="#work">Notre travail</a>
+        <a src="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+        <a src="#login"><i class="fa fa-fw fa-user"></i>Connexion</a>
     </div>
 </header>
 
 <div class="flex-container">
-    <img alt="Acceuil" class="home" src="images/home center.jpg"/>
+    <img alt="Acceuil" class="home" src="/Web/images/home center.jpg"/>
 </div>
 
 <!--
@@ -170,7 +177,9 @@
             <h2>Restez connecté</h2>
             <p>Abonnez-vous à notre newsletter !</p>
             <form action="test.html" method="post">
-                <input name="email" placeholder="Entrez votre mail" type="email">
+                <label>
+                    <input name="email" placeholder="Entrez votre mail" type="email">
+                </label>
                 <input type="submit" value="S'inscrire">
             </form>
         </div>
