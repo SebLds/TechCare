@@ -3,9 +3,12 @@
 require 'src/Router/Router.php';
 require 'src/Router/Route.php';
 require 'src/Router/RouterException.php';
+require 'App/Model/Model.php';
+require 'Config/Config.php';
+
 
 $router= new Router($_GET['url']);
-$router->get('/Homepage',function(){echo 'homepage';}); // appel des controllers correspondants
+$router->get('/Homepage', var_dump($model)); // appel des controllers correspondants
 $router->get('/Our-Work',function(){echo 'our work';});
 $router->get('/FAQ',function(){echo 'FAQ';});
 $router->get('/posts',function(){echo 'tous les articles';});
@@ -16,3 +19,5 @@ $router->get('/posts/:slug-:id',function ($slug,$id){
 
 $router->post('/posts/:id',function($id){echo 'Poster l\'article'.$id;});
 $router->run();
+
+
