@@ -5,6 +5,7 @@ class Router
 {
     private $url;
     private $routes=[];
+    private $namedRoutes=[];
 
     /**
      * Router constructor.
@@ -15,23 +16,22 @@ class Router
 
         $this->url = $url;
     }
-
-    /**
-     * @param $path
-     * @param $callable
-     */
-    public function get($path, $callable){
-        $route = new Route($path, $callable);
-        $this->routes['GET'][]= $route;
+    public function get($path, $callable, $name = null){
+        return $this->add($path, $callable, $name, 'GET');
     }
-
-    /**
-     * @param $path
-     * @param $callable
-     */
-    public function post($path, $callable){
+    public function post($path, $callable, $name = null){
+        return $this->add($path, $callable, $name, 'POST');
+    }
+    private function add($path, $callable, $name, $method){
         $route = new Route($path, $callable);
-        $this->routes['POST'][]= $route;
+        $this->routes[$method][]= $route;
+        if(is_string($callable && $name===null)){
+            $name = $callable;
+        }
+        if($name){
+            $this->namedRoutes[$name]=$route;
+        }
+        return $route;
     }
 
     /**
@@ -47,5 +47,11 @@ class Router
             }
         }
         throw new RouterException("No matching routes");
+    }
+    public function url($name, $params){
+        if (!isset($this->namedRoutes[$name])){
+            throw new RouterException('No route matches this name');
+        }
+        return $this->namedRoutes[$name]->getUrl($params);
     }
 }
