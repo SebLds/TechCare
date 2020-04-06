@@ -1,6 +1,5 @@
 <?php
 
-
 class Route
 {
     private $path;

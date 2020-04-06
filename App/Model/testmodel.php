@@ -1,3 +1,12 @@
 <?php
-// Pour que ca reste en mémoire fdp
-?>
+class testmodel{
+    public static $pdo;
+
+    public static function init()
+    {
+        $login = conf::getLogin();
+        $hostname = conf::getHostname();
+        $database_name = conf::getDatabase();
+        $password = conf::getPassword();
+    }
+}
