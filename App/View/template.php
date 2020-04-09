@@ -6,7 +6,7 @@
     <title><?php $title; ?></title>
 </head>
 <header>
-    <?php require 'header.php'?>
+    <?php require 'header.php' ?>
 </header>
 <body>
     <?php $content; ?>

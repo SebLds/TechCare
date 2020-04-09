@@ -6,16 +6,13 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
     <!-- Custome Styling -->
-    <link href="../Web/css/footer.css" rel="stylesheet">
+    <link href="../../Web/css/footer.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
 </head>
-<body>
-
-
-<!-- footer -->
+<footer>
 <div class="container-footer"></div>
 <div class="footer">
     <div class="footer-content">
@@ -62,7 +59,7 @@
         <div class="footer-section contact-form">
             <h2>Restez connecté</h2>
             <p>Abonnez-vous à notre newsletter !</p>
-            <form action="FooterPierre.html" method="post">
+            <form action="../../index.php" method="post">
                 <input name="email" placeholder="Entrez votre mail" type="email">
                 <input type="submit" value="S'inscrire">
             </form>
@@ -73,8 +70,8 @@
         &copy; TechCare - Tous droits réservés 2019-2020
     </div>
 </div>
-<!-- // footer -->
+</footer>
 
 
-</body>
+
 </html>
