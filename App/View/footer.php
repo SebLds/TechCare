@@ -6,7 +6,7 @@
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
     <!-- Custome Styling -->
-    <link href="../../Web/css/footer.css" rel="stylesheet">
+    <link href="/Web/css/footer.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->

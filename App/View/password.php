@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Mot de passe oublié</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="CSS/connexion.css">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link rel="stylesheet" href="/Web/css/connexion.css">
+    <link rel="shortcut icon" type="image/png" href="/Web/images/favicon.png"/>
 </head>
 
   <body>
@@ -13,7 +13,7 @@
     <div class="connexion-page">
 
       <div class="logo">
-        <a href="home.php"><img id="logo" src="images/logo.png" alt="logo"></a>
+        <a href="home.php"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
       </div>
 
       <div class="connexion-body">
