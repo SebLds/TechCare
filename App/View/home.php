@@ -1,26 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Infinite Measures</title>
-    <link rel="stylesheet" href="CSS/rules.css">
-    <link rel="stylesheet" href="CSS/home.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<?php include("header.php"); ?>
-
-<body>
-
+<?php ob_start();?>
+<title>Infinite Measures</title>
+<?php $title=ob_get_clean();?>
+<?php ob_start();?>
+<link rel="stylesheet" href="/Web/css/home.css">
+<?php $head_tags=ob_get_clean();?>
+<?php ob_start();?>
   <div class="home section">
 
     <div class="title">
       <h1>Effectuez vos tests psychotechniques<span>et consultez vos résultats</span></h1>
     </div>
 
-    <div class="team">
-      <img id="img" src="images/team.png">
-    </div>
+<!--    <div class="team">-->
+<!--      <img id="img" src="/Web/images/team.png" alt="">-->
+<!--    </div>-->
 
   </div>
 
@@ -43,10 +36,5 @@
   <div class="jsp section">
 
   </div>
-
-
-
-
-
-</body>
-</html>
+<?php $content=ob_get_clean();?>
+<?php require 'template.php';?>

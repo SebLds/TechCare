@@ -13,21 +13,21 @@
     <div class="connexion-page">
 
       <div class="logo">
-        <a href="home.php"><img id="logo" src="images/logo.png" alt="logo"></a>
+        <a href="home.phpdex.php"><img id="logo" src="images/logo.png" alt="logo"></a>
       </div>
 
       <div class="connexion-body">
 
         <div class="border">
         <h1>Je me connecte à Infinite Measures</h1>
-          <form action="tableau_de_bord.php" method="post">
+          <form action="../../index.php" method="post">
             <h2>Identifiant</h2>
             <input type="text" name="ID" placeholder="infinite@measures.com">
             <h2>Mot de passe</h2>
             <input type="password" name="password" placeholder="●●●●●●●●">
           </form>
           <button>Je me connecte</button>
-          <a href="password.php">J'ai oublié mon mot de passe</a>
+          <a href="password.phpphp">J'ai oublié mon mot de passe</a>
         </div>
 
       </div>
