@@ -4,7 +4,7 @@
     </div>
 
     <div class="navbar">
-        <li><a href="home.php" ><img class="images" src="/Web/images/home.png">Accueil</a><li>
+        <li><a href="/homepage" ><img class="images" src="/Web/images/home.png">Accueil</a><li>
         <li><a href="/index.php" ><img class="images" src="/Web/images/test.png">Nos Tests</a><li>
         <li><a href="/index.php" ><img class="images" src="/Web/images/contact.png">Contact</a><li>
         <a href="connexion.php" ><button id="button-connexion"><img class="images bis" src="/Web/images/account.png">Connexion</button></a>

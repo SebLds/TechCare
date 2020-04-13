@@ -1,12 +1,6 @@
-<?php ob_start();?>
-<title>Infinite Measures</title>
-<?php $title=ob_get_clean();?>
-<?php ob_start();?>
+<?php $this->title='Infinite Measures';?>
 <link rel="stylesheet" href="/Web/css/home.css">
-<?php $head_tags=ob_get_clean();?>
-<?php ob_start();?>
-  <div class="home section">
-
+<div class="home section">
     <div class="title">
       <h1>Effectuez vos tests psychotechniques<span>et consultez vos résultats</span></h1>
     </div>
@@ -36,5 +30,4 @@
   <div class="jsp section">
 
   </div>
-<?php $content=ob_get_clean();?>
-<?php require 'template.php';?>
+

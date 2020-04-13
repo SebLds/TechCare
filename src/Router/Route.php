@@ -1,15 +1,24 @@
 <?php
-namespace App;
+
+namespace APP\Router;
+
 class Route
 {
+    /** @var string Instanced route path */
     private $path;
+
+    /** @var string Action to perform */
     private $callable;
-    private $matches;
-    private $params=[];
+
+    /** @var array Contains the matches, matches[0] full pattern, matches [1] the first captured parenthesized subpattern and so on */
+    private array $matches;
+
+    /** @var array  */
+    private array $params=[];
 
     /**
-     * Router constructor.
-     * @param $path
+     * Route constructor.
+     * @param string $path Path of the route to instantiate
      * @param $callable
      */
     public function __construct($path, $callable)
@@ -27,6 +36,8 @@ class Route
         $this->params[$param]=str_replace('(','(?:', $regex);
         return $this;
     }
+
+
     public function match($url){
         $url=trim($url,'/');
         $path=preg_replace_callback('#:([\w]+)#',[$this,'paramMatch'],$this->path);

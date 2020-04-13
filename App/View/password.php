@@ -13,7 +13,7 @@
     <div class="connexion-page">
 
       <div class="logo">
-        <a href="home.php"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
+        <a href="Home/home.php"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
       </div>
 
       <div class="connexion-body">
