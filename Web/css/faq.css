@@ -1,0 +1,120 @@
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.search {
+    padding: 15px;
+    display: flex;
+}
+
+.search__input {
+    width: 100%;
+    max-width: 550px;
+    padding: 20px 32px 20px 60px;
+    background: lightblue;
+    border: none;
+    outline: none;
+    color: gray;
+    font-size: 16px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px 0 lightgray;
+    box-shadow: 0 2px 2px 0 lightgray;
+    -webkit-transition: background .4s, -webkit-box-shadow .2s;
+    transition: background .4s, -webkit-box-shadow .2s;
+    -o-transition: background .4s, box-shadow .2s;
+    transition: background .4s, box-shadow .2s;
+    transition: background .4s, box-shadow .2s, -webkit-box-shadow .2s;
+}
+.search__input:hover {
+    background: white;
+    -webkit-box-shadow: 0 10px 20px white;
+    box-shadow: 0 10px 20px white;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+    color: #4d5974;
+    width: 50rem;
+    min-height: 100vh;
+}
+h2 {
+    font-size: 22;
+    color: #373d51;
+    margin: 5 0;
+}
+.accordion a {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 3rem 1rem 1rem;
+    color: #7288a2;
+    font-size: 1.15rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+.accordion a:hover,
+.accordion a:hover::after {
+    cursor: pointer;
+    color: #ff5353;
+}
+.accordion a.active {
+    color: #ff5353;
+    border-bottom: 1px solid #ff5353;
+}
+.accordion a::after {
+    content: '\002B';
+    position: absolute;
+    float: right;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #7288a2;
+    font-weight: bold;
+    text-align: center;
+}
+.accordion a.active::after {
+    content: '\2212';
+    color: #ff5353;
+}
+.accordion .content {
+    padding: 0 1rem;
+    max-height: 0;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    clear: both;
+    -webkit-transition: all 0.2s ease 0.15s;
+    -o-transition: all 0.2s ease 0.15s;
+    transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+.accordion .content.active {
+    opacity: 1;
+    padding: 1rem;
+    max-height: 100%;
+    -webkit-transition: all 0.35s ease 0.15s;
+    -o-transition: all 0.35s ease 0.15s;
+    transition: all 0.35s ease 0.15s;
+}

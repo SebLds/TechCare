@@ -1,12 +1,14 @@
+<html>
+<body>
 <header>
     <div class="logo">
-      <img id="logo" src="/Web/images/logo.png" alt="logo">
+      <img id="logo" src="/images/logo.png" alt="logo">
     </div>
 
     <div class="navbar">
-        <li><a href="home.php" ><img class="images" src="/Web/images/home.png">Accueil</a><li>
-        <li><a href="/index.php" ><img class="images" src="/Web/images/test.png">Nos Tests</a><li>
-        <li><a href="/index.php" ><img class="images" src="/Web/images/contact.png">Contact</a><li>
+        <li><a href="home.php" ><img class="images" src="/images/home.png">Accueil</a><li>
+        <li><a href="/index.php" ><img class="images" src="/images/test.png">Nos Tests</a><li>
+        <li><a href="/index.php" ><img class="images" src="/images/contact.png">Contact</a><li>
         <a href="connexion.php" ><button id="button-connexion"><img class="images bis" src="/Web/images/account.png">Connexion</button></a>
     </div>
 
@@ -27,6 +29,8 @@
     </script>
 
 </header>
+</body>
+</html>
 
         <!--<div class="burger-menu">
             <div>
