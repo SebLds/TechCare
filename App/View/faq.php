@@ -1,7 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
-    <link rel="stylesheet" href="/Web/css/faq.css">
+    <link href="../../css/faq.css" >
 </head>
 <body>
 
@@ -46,8 +45,8 @@
     </div>
 </div>
 
-<script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
-<script  src="/Web/js/faq.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="../../js/faq.js"></script>
 
 <?php $content=ob_get_clean();?>
 <?php require 'template.php';?>

@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
-
-    <!-- Custome Styling -->
-    <link href="/Web/css/footer.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
-</head>
-<footer>
 <div class="container-footer"></div>
 <div class="footer">
     <div class="footer-content">
@@ -70,8 +55,3 @@
         &copy; TechCare - Tous droits réservés 2019-2020
     </div>
 </div>
-</footer>
-
-
-
-</html>

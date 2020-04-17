@@ -1,3 +1,4 @@
+
 const items = document.querySelectorAll(".accordion a");
 
 function toggleAccordion(){
