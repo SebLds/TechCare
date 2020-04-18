@@ -64,6 +64,7 @@ class View
      * @param array $data Data required to generate the view
      * @return string Result of view generation
      * @throws ViewException If the view file cannot be found
+     * @throws Exception
      */
     private function generateFile($file, $data)
     {
