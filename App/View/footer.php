@@ -3,75 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Custome Styling -->
     <link href="/Web/css/footer.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
-<footer>
-<div class="container-footer"></div>
-<div class="footer">
-    <div class="footer-content">
-        <div class="footer-section about">
-            <h1 class="logo-text"><span>Tech</span>Care</h1>
-            <p>
-                TechCare vous accompagne avant, pendant et après vos tests psychotechniques.
-                Nous sommes une entreprise au service de la santé de nos patients.
-            </p>
-            <div class="contact">
-                <span><i class="fas fa-phone"></i> &nbsp; 0765438976</span>
-                <span><i class="fas fa-envelope"></i> &nbsp; contact@techcare.com</span>
-                <span><i class="fas fa-building"></i> &nbsp; ISEP, 10 Rue de Vanves, 92130 Issy-les-Moulineaux</span>
-            </div>
-            <div class="socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footer-section links">
-            <h2>Liens utiles</h2>
-            <br>
-            <ul>
-                <a href="">
-                    <li>Notre histoire</li>
-                </a>
-                <a href="">
-                    <li>Nos tests</li>
-                </a>
-                <a href="">
-                    <li>FAQ</li>
-                </a>
-                <a href="">
-                    <li>CGU</li>
-                </a>
-                <a href="">
-                    <li>Contact</li>
-                </a>
-            </ul>
+
+<body>
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+        <h3>Infinite<span>Measures</span></h3>
+
+        <p class="footer-links">
+            <a href="#">Accueil</a>
+            ·
+            <a href="#">Blog</a>
+            ·
+            <a href="#">Test</a>
+            ·
+            <a href="#">A propos</a>
+            ·
+            <a href="#">Faq</a>
+            ·
+            <a href="#">Contact</a>
+            ·
+            <a href="#">CGU</a>
+        </p>
+
+        <p class="footer-company-name">infinitemeasures &copy; 2020</p>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>21 Revolution Street</span> Delhi, India</p>
         </div>
 
-        <div class="footer-section contact-form">
-            <h2>Restez connecté</h2>
-            <p>Abonnez-vous à notre newsletter !</p>
-            <form action="../../Web/index.php" method="post">
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>+1 555 123456</p>
+        </div>
+
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@company.com">contact@infinitemeasures.com</a></p>
+        </div>
+    </div>
+
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About the company</span>
+            Infinite Measures vous accompagne avant, pendant et après vos tests psychotechniques.
+            Nous sommes une entreprise au service de la santé de nos patients.
+        </p>
+
+        <div class="footer-submit">
+            <form action="../../index.php" method="post">
                 <input name="email" placeholder="Entrez votre mail" type="email">
-                <input type="submit" value="S'inscrire">
+                <input type="submit" value="S'inscrire à la newsletter">
             </form>
         </div>
-    </div>
 
-    <div class="footer-bottom">
-        &copy; TechCare - Tous droits réservés 2019-2020
+        <div class="footer-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+
     </div>
-</div>
 </footer>
 
 
-
+</body>
 </html>

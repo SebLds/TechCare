@@ -19,6 +19,5 @@
 <body>
     <?= $content; ?>
 </body>
-<footer>
-    <?php require_once 'footer.php'?>
-</footer>
+
+<?php //require_once 'footer.php'?>
