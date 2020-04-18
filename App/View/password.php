@@ -13,7 +13,7 @@
     <div class="connexion-page">
 
       <div class="logo">
-        <a href="home.php"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
+        <a href="Home/home.php"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
       </div>
 
       <div class="connexion-body">
@@ -23,7 +23,7 @@
         <p><span>Renseignez l'adresse email</span> de votre compte,<br>
         nous vous enverrons un lien pour que vous puissiez<br>
         <span>choisir un nouveau mot de passe.</span></p>
-          <form class="" action="../../index.php" method="post">
+          <form class="" action="../../Web/index.php" method="post">
             <h2>Adresse mail</h2>
             <input type="text" name="" placeholder="infinite@measures.com">
           </form>

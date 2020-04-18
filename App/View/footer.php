@@ -59,7 +59,7 @@
         <div class="footer-section contact-form">
             <h2>Restez connecté</h2>
             <p>Abonnez-vous à notre newsletter !</p>
-            <form action="../../index.php" method="post">
+            <form action="../../Web/index.php" method="post">
                 <input name="email" placeholder="Entrez votre mail" type="email">
                 <input type="submit" value="S'inscrire">
             </form>
