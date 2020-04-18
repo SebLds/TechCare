@@ -3,10 +3,10 @@ var show = img.getAttribute("src");
 
 function changeEye() {
 
-  if(show == "images/hide.png")
-    show = "images/eye.png";
+  if(show == "/Web/images/hide.png")
+    show = "/Web/images/eye.png";
   else
-    show = "images/hide.png";
+    show = "/Web/images/hide.png";
   img.setAttribute("src", show);
 }
 

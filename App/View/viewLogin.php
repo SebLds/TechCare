@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../connexion.css">
-    <link rel="stylesheet" href="../form.css">
+    <link rel="stylesheet" href="/Web/css/connexion.css">
+    <link rel="stylesheet" href="/Web/css/form.css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
 </head>
 
@@ -14,7 +14,7 @@
     <div class="page">
 
       <div class="logo">
-        <a href=""><img id="logo" src="../images/logo.png" alt="logo"></a>
+        <a href=""><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
       </div>
 
       <div class="box">
@@ -41,7 +41,7 @@
 
     </div>
 
-    <script type="text/javascript" src="password.js"></script>
+    <script type="text/javascript" src="/Web/js/password.css"></script>
 
   </body>
 

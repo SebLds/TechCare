@@ -42,10 +42,10 @@ var langage = img.getAttribute("src");
 
 function changeFlag() {
 
-  if(langage == "images/france.png")
-    langage = "images/uk.png";
+  if(langage == "/Web/images/france.png")
+    langage = "/Web/images/uk.png";
   else
-    langage = "images/france.png";
+    langage = "/Web/images/france.png";
   img.setAttribute("src", langage);
 }
 
