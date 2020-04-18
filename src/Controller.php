@@ -14,7 +14,7 @@ require_once 'View.php';
 abstract class Controller
 {
     /** Action to perform */
-    private $action;
+    private string $action;
 
     /** Incoming request */
     protected Request $request;

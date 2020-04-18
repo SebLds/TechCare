@@ -4,7 +4,9 @@
 namespace App\Model\Forum;
 
 
-class Thread
+use APP\Model;
+
+class Thread extends Model
 {
 
 }

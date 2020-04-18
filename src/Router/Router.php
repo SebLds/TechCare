@@ -1,6 +1,6 @@
 <?php
 
-namespace APP\Router;
+//namespace APP\Router;
 
 
 class Router
@@ -49,7 +49,7 @@ class Router
         throw new RouterException("No matching routes");
     }
 
-    public function url($name, $params){
+    public function url($name, $params=[]){
         if (!isset($this->namedRoutes[$name])){
             throw new RouterException('No route matches this name');
         }

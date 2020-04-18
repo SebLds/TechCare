@@ -1,7 +1,8 @@
 <?php
-namespace APP;
+//namespace APP;
 
-require_once 'Config.php';
+use APP\Config;
+
 
 /**
  * Class modeling a view. *
@@ -39,6 +40,7 @@ class View
      * @param array $data Data required to generate the view
      * @throws ConfigException
      * @throws ViewException
+     * @throws \ConfigException
      */
     public function generate($data)
     {

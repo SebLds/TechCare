@@ -1,6 +1,6 @@
 <?php
 
-namespace APP\Router;
+//namespace APP\Router;
 
 class Route
 {
@@ -11,9 +11,9 @@ class Route
     private $callable;
 
     /** @var array Contains the matches, matches[0] full pattern, matches [1] the first captured parenthesized subpattern and so on */
-    private array $matches;
+    private array $matches=[];
 
-    /** @var array  */
+    /** @var array Contains the parameters, */
     private array $params=[];
 
     /**
@@ -28,8 +28,8 @@ class Route
     }
 
     /**
-     * @param $param
-     * @param $regex
+     * @param string $param Parameter name
+     * @param string $regex
      * @return $this
      */
     public function with($param, $regex){
@@ -50,6 +50,11 @@ class Route
         return true;
     }
 
+    /**
+     *
+     * @param array $match
+     * @return string
+     */
     private function paramMatch($match){
         if(isset($this->params[$match[1]])){
             return '('. $this->params[$match[1]] .')';
@@ -59,12 +64,12 @@ class Route
     public function call(){
         if(is_string($this->callable)){
             $params=explode('#',$this->callable);
-            $controller="App\\Controller\\". $params[0]."Controller";
+            $controller= $params[0]."Controller";
+            require dirname(__DIR__, 2) . "\App\Controller\\" .$controller.".php";
             $controller = new $controller();
             return call_user_func_array([$controller, $params[1]],$this->matches);
         }else{
             return call_user_func_array($this->callable,$this->matches);
-
         }
     }
     public function getUrl($params){

@@ -1,7 +1,9 @@
 <?php
 
 
-namespace App\Model\Forum;
+namespace APP;
+
+
 
 
 use APP\Model;
@@ -29,31 +31,19 @@ class Tag extends Model
         return $this->executeRequest($sqlStatement);
     }
 
-    /** Renvoie les informations sur un billet
-     *
-     * @param int $id L'identifiant du billet
-     * @return array Le billet
-     * @throws Exception Si l'identifiant du billet est inconnu
-     * @throws \ConfigException
-     */
+
     public function getTag($idTag)
     {
         $sqlStatement = 'select ID_Tag as id, Creation_Date as date,'
             . ' Tag_Title as titre from Tag'
-            . ' where ID_Tag=?';
+            . "where ID_Tag=?";
         $tag = $this->executeRequest($sqlStatement, array($idTag));
         if ($tag->rowCount() > 0)
             return $tag->fetch();  // Accès à la première ligne de résultat
         else
-            throw new Exception("Aucune catégorie ne correspond à l'identifiant '$idTag'");
+            throw new \Exception("Aucune catégorie ne correspond à l'identifiant '$idTag'");
     }
 
-    /**
-     * Renvoie le nombre total de billets
-     *
-     * @return int Le nombre de billets
-     * @throws \ConfigException
-     */
     public function getCountTags()
     {
         $sqlStatement = 'select'. 'count(*) as nbBillets from Tag';

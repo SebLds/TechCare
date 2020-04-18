@@ -1,8 +1,5 @@
 RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
-
-#AuthName "Page d'administration protégée"
-#AuthType Basic
-#AuthUserFile "/home/site/www/admin/.htpasswd"
-#Require valid-user
+RewriteCond %{HTTP_HOST} ^infinitemeasures.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
+RewriteCond %{REQUEST_URI} !Web/
+RewriteRule (.*) /Web/$1 [L]

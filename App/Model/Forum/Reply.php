@@ -4,7 +4,9 @@
 namespace App\Model\Forum;
 
 
-class Reply
+use APP\Model;
+
+class Reply extends Model
 {
 
 }
