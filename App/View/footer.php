@@ -10,7 +10,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -41,24 +41,24 @@
 
     <div class="footer-center">
         <div>
-            <i class="fa fa-map-marker"></i>
-            <p><span>21 Revolution Street</span> Delhi, India</p>
+            <i class="fas fa-map-marker-alt"></i>
+            <p><span>10 rue de Vanves</span> 92130 Issy-les-Moulineaux</p>
         </div>
 
         <div>
-            <i class="fa fa-phone"></i>
-            <p>+1 555 123456</p>
+            <i class="fas fa-phone-alt"></i>
+            <p>+33765438976</p>
         </div>
 
         <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">contact@infinitemeasures.com</a></p>
+            <i class="fas fa-envelope-open-text"></i>
+            <p><a href="mailto:support@infinitemeasures.com">contact@infinitemeasures.com</a></p>
         </div>
     </div>
 
     <div class="footer-right">
         <p class="footer-company-about">
-            <span>About the company</span>
+            <span>A propos de l'entreprise</span>
             Infinite Measures vous accompagne avant, pendant et après vos tests psychotechniques.
             Nous sommes une entreprise au service de la santé de nos patients.
         </p>
