@@ -20,7 +20,7 @@
 
         <div class="border">
         <h1>Je me connecte à Infinite Measures</h1>
-          <form action="../../index.php" method="post">
+          <form action="../../Web/index.php" method="post">
             <h2>Identifiant</h2>
             <input type="text" name="ID" placeholder="infinite@measures.com">
             <h2>Mot de passe</h2>

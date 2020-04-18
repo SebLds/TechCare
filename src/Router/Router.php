@@ -1,14 +1,17 @@
 <?php
-namespace App;
+
+//namespace APP\Router;
+
+
 class Router
 {
-    private $url;
-    private $routes=[];
-    private $namedRoutes=[];
+    private string $url;
+    private array $routes = [];
+    private array $namedRoutes = [];
 
     /**
      * Router constructor.
-     * @param $url
+     * @param string $url
      */
     public function __construct($url)
     {
@@ -33,9 +36,7 @@ class Router
         return $route;
     }
 
-    /**
-     * @throws Exception
-     */
+
     public function run(){
         if(!isset($this->routes[$_SERVER['REQUEST_METHOD']])){
             throw new RouterException("REQUEST_METHOD does not exist");
@@ -47,7 +48,8 @@ class Router
         }
         throw new RouterException("No matching routes");
     }
-    public function url($name, $params){
+
+    public function url($name, $params=[]){
         if (!isset($this->namedRoutes[$name])){
             throw new RouterException('No route matches this name');
         }
