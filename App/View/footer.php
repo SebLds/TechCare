@@ -9,8 +9,8 @@
     <link href="/Web/css/footer.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- Font Awesome 5 -->
+    <script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 
     <div class="footer-center">
         <div>
-            <i class="fa fa-map-marker"></i>
+            <i class="fas fa-map-marker-alt"></i>
             <p><span>21 Revolution Street</span> Delhi, India</p>
         </div>
 
