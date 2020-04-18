@@ -29,7 +29,7 @@
     <div id="mySidebar" class="sidebar">
 
       <div class="logo">
-        <img id="img-logo" src="images/logo.png" alt="">
+        <img id="img-logo" src="/Web/images/logo.png" alt="">
       </div>
 
       <div class="navbar">
@@ -58,7 +58,7 @@
     crossorigin="anonymous">
        </script>
 
-       <script type="text/javascript" src="/Web/js/dropdown.css"></script>
+       <script type="text/javascript" src="/Web/js/dropdown.js"></script>
 
       </div>
 
@@ -67,7 +67,7 @@
         <div class="content">
 
           <div class="flag">
-            <img id="img-flag" src="images/france.png" alt="">
+            <img id="img-flag" src="/Web/images/france.png" alt="">
           </div>
 
           <div class="link">
