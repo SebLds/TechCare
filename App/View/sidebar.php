@@ -86,7 +86,7 @@
 
     </div>
 
-    <script type="text/javascript" src="/Web/js/sidebar.css"></script>
+    <script type="text/javascript" src="/Web/js/sidebar.js"></script>
 
   </header>
 
