@@ -9,7 +9,7 @@
     <link href="/Web/css/footer.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <!-- Font Awesome 5 -->
     <script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
 </head>
 

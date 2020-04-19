@@ -1,0 +1,30 @@
+.personnal-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
+
+.pro {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  width: 100%;
+}
+
+form {
+  flex-direction: column;
+}
