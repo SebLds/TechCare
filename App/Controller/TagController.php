@@ -1,14 +1,5 @@
 <?php
 
-namespace App;
-
-
-
-//use APP\Tag;
-use APP\Controller;
-use APP\Tag;
-//echo $string=dirname(__DIR__, 2) . "\src\Controller.php";
-//require "$string";
 
 class TagController extends Controller
 {

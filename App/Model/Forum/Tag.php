@@ -1,13 +1,5 @@
 <?php
 
-
-namespace APP;
-
-
-
-
-use APP\Model;
-
 class Tag extends Model
 {
 

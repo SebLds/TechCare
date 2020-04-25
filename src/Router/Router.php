@@ -1,11 +1,10 @@
 <?php
 
-//namespace APP\Router;
-
+namespace src\Router;
 
 class Router
 {
-    private string $url;
+    private $url;
     private array $routes = [];
     private array $namedRoutes = [];
 
@@ -15,8 +14,12 @@ class Router
      */
     public function __construct($url)
     {
+        try{
+            $this->url = $url;
+        }
+        catch (Exception $exception){
 
-        $this->url = $url;
+        }
     }
     public function get($path, $callable, $name = null){
         return $this->add($path, $callable, $name, 'GET');

@@ -1,10 +1,7 @@
 <?php
-namespace APP;
 
 
-use Config;
-use ConfigException;
-use \PDO;
+
 
 /**
  * Model abstract class.
