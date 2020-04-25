@@ -1,5 +1,5 @@
 <?php
-namespace APP;
+
 /**
  * Configuration parameters management class.
  *

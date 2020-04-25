@@ -1,20 +1,38 @@
 <?php
 
-//use Autoloader\Autoloader;
-//require_once "../src/Autoloader.php";
-//Autoloader::register('autoload2');
-require '../src/Router/Router.php';
-require '../src/Router/Route.php';
-require '../src/Router/RouterException.php';
+
+
+use src\Router\Router;
+
+/**
+ * /!\ POUR TOUS LES FICHIERS DEFINIR UN NAMESPACE CORRESPONDANT A SA PLACE DANS L'ARCHITECTURE /!\
+ */
+require_once "../src/Autoloader.php";
+
+Autoloader::addNamespace('src\Router', '../src/Router/');
+Autoloader::addNamespace('src\Router', '../src/Router/');
+Autoloader::addNamespace('src', '../src/');
+Autoloader::addNamespace('App\Controller','../App/Controller/');
+Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
+
+Autoloader::register();
+
+
+
+
+
 $router= new Router($_GET['url']);
 //$router->get('/',function(){require '/View/Home/home.php';} ); // appel des controllers correspondants
 //$router->get('/Homepage',function(){require '/View/Home/home.php';} ); // appel des controllers correspondants
-//$router->get('/Our-Work',function(){echo 'our work';});
+$router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
-$router->get('/article/:slug-:id',"Test#article#slug#id");
-$router->get('/home',"Tag#index");
-$router->get('/',"Test#index");
+$router->get('/article/:slug-:id',"Forum\Test#article#slug#id"); // pour le callable il faut absolument mettre
+                                                                            // le sous-dossier s'il y en a un
+                                                                            // ex: Forum\Test pour le controller TestController
+                                                                            // dans le dossier Forum du dossier Controller
+//$router->get('/home',"Tag#index");
+//$router->get('',"Test#index");
 
 
 //$router->get('/posts/:slug-:id',function ($slug,$id){

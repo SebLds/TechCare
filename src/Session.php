@@ -1,5 +1,5 @@
 <?php
-//namespace APP;
+
 
 /**
  * Class modeling the session.
