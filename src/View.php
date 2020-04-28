@@ -1,6 +1,8 @@
 <?php
 
+namespace src;
 
+use src\Config\Config;
 
 /**
  * Class modeling a view. *
@@ -25,9 +27,12 @@ class View
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
         // La convention de nommage des fichiers vues est : View/<$controller>/<$action>.php
-        $file = "View/";
+        $file = "../App/View/";
         if ($controller != "") {
-            $file = $file . $controller . "/";
+
+            $params=explode("\\",$controller);
+
+            $file = $file . $params[3] . "/";
         }
         $this->file = $file . $action . ".php";
     }
@@ -49,7 +54,7 @@ class View
         // Nécessaire pour les URI de type controller/action/id
         $webRoot = Config::get("webRoot", "/");
         // Génération du template commun utilisant la partie spécifique
-        $vue = $this->generateFile('View/template.php',
+        $vue = $this->generateFile('../App/View/template.php',
             array('titre' => $this->title, 'content' => $content, 'webRoot' => $webRoot));
         // Renvoi de la vue générée au navigateur
         echo $vue;

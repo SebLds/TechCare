@@ -1,4 +1,8 @@
 <?php
+namespace App\Model\Forum;
+
+use PDO;
+use src\Model;
 
 class Tag extends Model
 {
@@ -12,15 +16,15 @@ class Tag extends Model
 
     /** Renvoie la liste des billets du blog
      *
-     * @return bool|false|\PDOStatement
+     * @return array
      * @throws \ConfigException
      */
     public function getTags()
     {
-        $sqlStatement = 'select ID_Tag as id, Creation_Date as date,'
-            . ' Tag_Title as titre from Tag'
+        $sqlStatement = 'select ID_Tag, Creation_Date,'
+            . ' Tag_Title from Tag'
             . ' order by ID_Tag desc';
-        return $this->executeRequest($sqlStatement);
+        return $this->executeRequest($sqlStatement,null,1)->fetchAll(PDO::FETCH_OBJ);
     }
 
 
