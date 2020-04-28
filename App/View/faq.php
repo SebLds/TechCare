@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <link href="../../css/faq.css" >
+    <link href="../../Web/css/faq.css" rel="stylesheet">
 </head>
 <body>
 
@@ -46,7 +46,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="../../js/faq.js"></script>
+<script src="../../Web/js/faq.js"></script>
 
 <?php $content=ob_get_clean();?>
 <?php require 'template.php';?>

@@ -7,6 +7,11 @@
     <title>Infinite Measures</title>
     <link href="../../Web/css/sidebar.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
+    <script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous">
+   </script>
   </head>
 
 
@@ -38,7 +43,6 @@
         <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/forum.png" alt="">Forum</h1></a>
         <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/test.png" alt="">Lancer test</h1></a>
         <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/stat.png" alt="">Statistiques</h1></a>
-        <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/automation.png" alt="">Gestion</h1></a>
       </div>
 
       <div class="account">
@@ -51,12 +55,6 @@
         <div class="btn">
           <button id="button-account" type="button" name="button">Mon compte<img id="arrow" src="../../Web/images/arrow.png" alt=""></button>
         </div>
-
-        <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous">
-       </script>
 
        <script type="text/javascript" src="../../Web/js/dropdown.js"></script>
 
@@ -71,9 +69,11 @@
           </div>
 
           <div class="link">
-            <a href="#">FAQ </a>
+            <a href="#">Contact </a>
             <span>•</span>
-            <a href="#"> CGU</a>
+            <a href="#">CGU</a>
+            <span>•</span>
+            <a href="#">FAQ</a>
           </div>
 
         </div>
