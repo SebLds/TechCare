@@ -13,6 +13,7 @@ class TestController extends Controller
     public function article($slug,$id){
         echo "Je suis l'article $slug, numéro $id";
 
+
     }
 
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace src;
+use src\Config\Config;
+
 /**
  * Controller abstract class.
  * Provides common services to derived controller classes.
@@ -10,7 +12,7 @@ namespace src;
 abstract class Controller
 {
     /** Action to perform */
-    private string $action;
+    private ?string $action = null;
 
     /** Incoming request */
 //    protected Request $request;

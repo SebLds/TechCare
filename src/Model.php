@@ -1,7 +1,11 @@
 <?php
 
 
+namespace src;
 
+
+use PDO;
+use src\Config\Config;
 
 /**
  * Model abstract class.
@@ -14,7 +18,7 @@ abstract class Model
 {
 
     /** PDO object for access to the DB, static therefore shared by all instances of derived classes */
-    private static PDO $bdd;
+    private static ?PDO $bdd = null;
 
     /**
      * Execute an SQL query.
@@ -24,16 +28,21 @@ abstract class Model
      * @return bool|false|\PDOStatement
      * @throws ConfigException
      */
-    protected function executeRequest($sqlStatement, $params = null)
+    protected function executeRequest($sqlStatement, $params = null,$choice=null)
     {
         if ($params == null) {
-            $result = self::getBdd()->query($sqlStatement);   // exécution directe
+            $request = self::getBdd()->query($sqlStatement);   // exécution directe
         }
         else {
-            $result = self::getBdd()->prepare($sqlStatement); // requête préparée
-            $result->execute($params);
+            $request = self::getBdd()->prepare($sqlStatement); // requête préparée
+            $request->execute($params);
         }
-        return $result;
+//        if ($choice===1){
+//            $request=$request->fetchAll();
+//        } else if ($choice==2){
+//            $request=$request->fetch();
+//        }
+        return $request;
     }
 
     /**
@@ -51,8 +60,8 @@ abstract class Model
             $login = Config::get("login");
             $password = Config::get("password");
             // Création de la connexion
-            self::$bdd = new PDO($dsn, $login, $password,
-                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            self::$bdd = new \PDO($dsn, $login, $password,
+                array(\PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return self::$bdd;
     }
