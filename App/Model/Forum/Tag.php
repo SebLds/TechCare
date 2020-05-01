@@ -7,18 +7,10 @@ use src\Model;
 class Tag extends Model
 {
 
-    /**
-     * Fournit les services d'accès aux genres musicaux
-     *
-     * @author Baptiste Pesquet
-     */
 
 
-    /** Renvoie la liste des billets du blog
-     *
-     * @return array
-     * @throws \ConfigException
-     */
+
+
     public function getTags()
     {
         $sqlStatement = 'select ID_Tag, Creation_Date,'

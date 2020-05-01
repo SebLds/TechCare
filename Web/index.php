@@ -34,6 +34,8 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/home',"Forum\Tag#index");
+$router->post('/home',"Forum\Tag#index");
+
 //$router->get('',"Test#index");
 
 

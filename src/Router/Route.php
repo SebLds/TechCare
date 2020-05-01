@@ -5,10 +5,10 @@ namespace src\Router;
 class Route
 {
     /** @var string Instanced route path */
-    private string $path;
+    private $path;
 
-    /** @var string Action to perform */
-    private string $callable;
+    /** @var mixed Action to perform */
+    private $callable;
 
     /** @var array Contains the matches, matches[0] full pattern, matches [1] the first captured parenthesized subpattern and so on */
     private array $matches=[];

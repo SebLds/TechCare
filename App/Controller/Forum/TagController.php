@@ -20,9 +20,10 @@ class TagController extends Controller
     public function index() {
 //        $idTag = $this->request->getParameter("id");
         $tags = $this->tag->getTags();
-//        var_dump($tags);
-//        var_dump($tags[0]->Creation_Date);
-        var_dump(extract($tags));
+        var_dump($tags);
+        var_dump($tags[0]->Creation_Date);
+//        var_dump(extract($tags));
         $this->generateView(array('tag' => $tags),"index");
     }
+
 }
