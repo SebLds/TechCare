@@ -14,6 +14,7 @@ Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
 Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
+Autoloader::addNamespace('App\Controller\Register', '../App/Controller/Register/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
 
 
