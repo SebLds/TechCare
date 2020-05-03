@@ -1,8 +1,6 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'lato';
   margin-left: 275px;
+  font-family: 'lato';
 }
 
 header {
@@ -14,11 +12,10 @@ header {
   width: 275px;
   height: 100%;
   flex-direction: column;
+  justify-content: space-between;
   box-shadow: 9px 0px 4px -3px rgba(168,158,168,1);
   position: fixed;
-  z-index: 1000;
   overflow-x: hidden;
-  top: 0;
   left: 0;
   background-color: #fff;
   transition: width 0.3s ease-in-out;
@@ -28,12 +25,11 @@ header {
   position: relative;
   display: flex;
   justify-content: center;
-  border-bottom: 1px groove grey;
 }
 
 #img-logo {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -44,9 +40,9 @@ header {
   top: 0;
 }
 
-h1 {
+.navbar h1 {
   margin-left: 20px;
-  font-size: 28px;
+  font-size: 25px;
   width: 255px;
   color: black;
   display: flex;
@@ -54,12 +50,8 @@ h1 {
   flex-direction: row;
 }
 
-.navbar a {
-  border-bottom: 1px groove grey;
-}
-
 .navbar a:hover {
-  background-color: #ececec;
+    margin-left: 20px;
 }
 
 #img-nav {
@@ -97,7 +89,7 @@ h1 {
   color: black;
 }
 
-li:hover {
+.dropdown li:hover {
   font-weight: bold;
 }
 
@@ -192,18 +184,11 @@ span {
   margin: 0px 5px 0px 5px;
 }
 
-
-
 .copyright {
-  border-top: 1px groove grey;
-  margin-top: 10px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   font-size: 11px;
-}
-
-.copyright p {
-
 }
 
 .header {
@@ -265,7 +250,6 @@ span {
   justify-content: center;
   margin-right: 20px;
   height: 100%;
-  top: 0;
 }
 
 .account-responsive button {
@@ -307,10 +291,6 @@ span {
 
   .sidebar {
     width: 0;
-  }
-
-  .footer {
-    position: absolute;
   }
 
 }

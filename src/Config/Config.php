@@ -1,5 +1,6 @@
 <?php
-namespace APP;
+namespace src\Config;
+
 /**
  * Configuration parameters management class.
  *
@@ -8,7 +9,7 @@ namespace APP;
 class Config
 {
     /** Configuration parameters table */
-    private static array $parameters;
+    private static ?array $parameters = null;
 
     /**
      * Returns the value of a configuration parameter.
@@ -40,10 +41,10 @@ class Config
     private static function getParameters()
     {
         if (self::$parameters == null) {
-            $filePath = "Config/dev.ini";
-            if (!file_exists($filePath)) {
-                $filePath = "Config/prod.ini";
-            }
+            $filePath = "../src/Config/dev.ini";
+//            if (!file_exists($filePath)) {
+//                $filePath = "prod.ini";
+//            }
             if (!file_exists($filePath)) {
                 throw new ConfigException("Aucun fichier de configuration trouvé");
             }

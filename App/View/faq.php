@@ -1,8 +1,6 @@
-<head>
-    <meta charset="UTF-8">
-    <link href="../../css/faq.css" >
-</head>
-<body>
+<?php //ob_start(); ?>
+<!--    <link href="../../Web/css/faq.css" rel="stylesheet">-->
+<?php //$head_tags = ob_get_clean();?>
 
 <div class="container">
     <h2>Foire Aux Questions</h2>
@@ -46,7 +44,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="../../js/faq.js"></script>
-
-<?php $content=ob_get_clean();?>
-<?php require 'template.php';?>
+<script src="../../Web/js/faq.js"></script>
+<!---->
+<?php //$content=ob_get_clean();?>
+<?php //require 'template.php';?>

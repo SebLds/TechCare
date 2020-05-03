@@ -1,10 +1,8 @@
 <?php
 
-
 namespace App\Model\Forum;
 
-
-use APP\Model;
+use src\Model;
 
 class Reply extends Model
 {

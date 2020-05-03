@@ -1,8 +1,8 @@
 <?php
-//namespace APP;
 
-use APP\Config;
+namespace src;
 
+use src\Config\Config;
 
 /**
  * Class modeling a view. *
@@ -16,6 +16,8 @@ class View
 
     /** View title (defined in the view file) */
     private $title;
+    private $head_tags;
+
 
     /**
      * Constructor.
@@ -27,9 +29,11 @@ class View
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
         // La convention de nommage des fichiers vues est : View/<$controller>/<$action>.php
-        $file = "View/";
+        $file = "../App/View/";
         if ($controller != "") {
-            $file = $file . $controller . "/";
+
+            $params=explode("\\",$controller);
+            $file = $file . $params[2] . "/";
         }
         $this->file = $file . $action . ".php";
     }
@@ -46,13 +50,14 @@ class View
     {
         // Génération de la partie spécifique de la vue
         $content = $this->generateFile($this->file, $data);
+
         // On définit une variable locale accessible par la vue pour la racine Web
         // Il s'agit du chemin vers le site sur le serveur Web
         // Nécessaire pour les URI de type controller/action/id
         $webRoot = Config::get("webRoot", "/");
         // Génération du template commun utilisant la partie spécifique
-        $vue = $this->generateFile('View/template.php',
-            array('titre' => $this->title, 'content' => $content, 'webRoot' => $webRoot));
+        $vue = $this->generateFile('../App/View/template.php',
+            array('title' => $this->title, 'content' => $content, 'webRoot' => $webRoot,'head_tags'=>$this->head_tags));
         // Renvoi de la vue générée au navigateur
         echo $vue;
     }
@@ -71,11 +76,14 @@ class View
         if (file_exists($file)) {
             // Rend les éléments du tableau $donnees accessibles dans la vue
             extract($data);
+
             // Démarrage de la temporisation de sortie
             ob_start();
             // Inclut le fichier vue
             // Son résultat est placé dans le tampon de sortie
             require $file;
+
+
             // Arrêt de la temporisation et renvoi du tampon de sortie
             return ob_get_clean();
         }

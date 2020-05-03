@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+.page {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+.message {
+    display: flex;
+    box-shadow: 0px 0px 14px 0px rgba(168,158,168,1);
+    border-radius: 20px;
+    border: 1px solid rgba(168,158,168,1);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 250px;
+    left: 0;
+    width: 850px;
+    height: 80px;
+    padding: 15px;
+}
+
+.message p {
+    color: black;
+    font-size: 40px;
+    text-align: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+#sendmail {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    position: absolute;
+    margin: auto;
+    top: 250px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+
+}
