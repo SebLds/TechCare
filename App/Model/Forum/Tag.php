@@ -10,21 +10,18 @@ class Tag extends Model
 
 
 
-
     public function getTags()
     {
-        $sqlStatement = 'select ID_Tag, Creation_Date,'
-            . ' Tag_Title from Tag'
-            . ' order by ID_Tag desc';
-        return $this->executeRequest($sqlStatement,null,1)->fetchAll(PDO::FETCH_OBJ);
+        $sqlStatement = 'SELECT * FROM Tag';
+
+        return $this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ);
     }
 
 
     public function getTag($idTag)
     {
-        $sqlStatement = 'select ID_Tag as id, Creation_Date as date,'
-            . ' Tag_Title as titre from Tag'
-            . "where ID_Tag=?";
+        $sqlStatement = 'SELECT * FROM users WHERE id = :id';
+
         $tag = $this->executeRequest($sqlStatement, array($idTag));
         if ($tag->rowCount() > 0)
             return $tag->fetch();  // Accès à la première ligne de résultat

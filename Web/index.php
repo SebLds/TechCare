@@ -1,8 +1,8 @@
 <?php
 
 
-
 use src\Router\Router;
+use src\Session;
 
 /**
  * /!\ POUR TOUS LES FICHIERS DEFINIR UN NAMESPACE CORRESPONDANT A SA PLACE DANS L'ARCHITECTURE /!\
@@ -19,6 +19,7 @@ Autoloader::addNamespace('src\Config', '../src/Config/');
 
 Autoloader::register();
 
+$session = new Session();
 
 /**
  * pour le callable il faut absolument mettre le sous-dossier s'il y en a un
@@ -33,8 +34,10 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
-$router->get('/home',"Forum\Tag#index");
-$router->post('/home',"Forum\Tag#index");
+$router->get('/forum',"Forum\Forum#index");
+$router->get('/cgu',"Cgu#index");
+
+//$router->post('/home',"Forum\Forum#index");
 
 //$router->get('',"Test#index");
 

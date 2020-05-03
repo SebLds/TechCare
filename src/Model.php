@@ -31,10 +31,11 @@ abstract class Model
     protected function executeRequest($sqlStatement, $params = null,$choice=null)
     {
         if ($params == null) {
-            $request = self::getBdd()->query($sqlStatement);   // exécution directe
+            $request = self::getBdd()->prepare($sqlStatement);
+            $request->execute();
         }
         else {
-            $request = self::getBdd()->prepare($sqlStatement); // requête préparée
+            $request = self::getBdd()->prepare($sqlStatement);
             $request->execute($params);
         }
 //        if ($choice===1){
