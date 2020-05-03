@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 namespace App\Model\RegisterModel;
 
 use PDO;
@@ -29,3 +30,12 @@ class User extends Model {
 }
 
 ?>
+=======
+
+use src\Model;
+
+class User extends Model
+{
+
+}
+>>>>>>> master

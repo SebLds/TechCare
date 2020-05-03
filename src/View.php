@@ -16,6 +16,8 @@ class View
 
     /** View title (defined in the view file) */
     private $title;
+    private $head_tags;
+
 
     /**
      * Constructor.
@@ -31,8 +33,7 @@ class View
         if ($controller != "") {
 
             $params=explode("\\",$controller);
-
-            $file = $file . $params[3] . "/";
+            $file = $file . $params[2] . "/";
         }
         $this->file = $file . $action . ".php";
     }
@@ -49,13 +50,14 @@ class View
     {
         // Génération de la partie spécifique de la vue
         $content = $this->generateFile($this->file, $data);
+
         // On définit une variable locale accessible par la vue pour la racine Web
         // Il s'agit du chemin vers le site sur le serveur Web
         // Nécessaire pour les URI de type controller/action/id
         $webRoot = Config::get("webRoot", "/");
         // Génération du template commun utilisant la partie spécifique
         $vue = $this->generateFile('../App/View/template.php',
-            array('titre' => $this->title, 'content' => $content, 'webRoot' => $webRoot));
+            array('title' => $this->title, 'content' => $content, 'webRoot' => $webRoot,'head_tags'=>$this->head_tags));
         // Renvoi de la vue générée au navigateur
         echo $vue;
     }
@@ -74,11 +76,14 @@ class View
         if (file_exists($file)) {
             // Rend les éléments du tableau $donnees accessibles dans la vue
             extract($data);
+
             // Démarrage de la temporisation de sortie
             ob_start();
             // Inclut le fichier vue
             // Son résultat est placé dans le tampon de sortie
             require $file;
+
+
             // Arrêt de la temporisation et renvoi du tampon de sortie
             return ob_get_clean();
         }
