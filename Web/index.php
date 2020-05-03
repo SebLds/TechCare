@@ -37,6 +37,8 @@ $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
 $router->get('/homepage',"Home#index");
+$router->get('/homepage#:slug',"Home#index");
+
 
 //$router->post('/home',"Forum\Forum#index");
 

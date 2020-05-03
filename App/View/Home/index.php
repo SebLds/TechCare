@@ -1,3 +1,5 @@
+
+
 <head>
     <?php $this->title='Infinite Measures';?>
     <meta charset="utf-8" />
@@ -19,10 +21,10 @@
                 <li><a href="#" class="btn primary">S'inscrire</a></li>
             </ul>
         </div>
-        <a href="#one" id="down1" class="more">En savoir plus
+        <a href="/homepage#one" class="more">En savoir plus
             <span class="icon">
-                        <i class="fal fa-arrow-down fa-2x"></i>
-                    </span>
+                <i class="fal fa-arrow-down fa-2x"></i>
+            </span>
         </a>
 
     </section>
