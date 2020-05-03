@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/Web/css/register.css" rel="stylesheet">
-    <link href="/Web/css/form.css" rel="stylesheet">
     <link href="../Web/css/register.css" rel="stylesheet">
     <link href="../Web/css/form.css" rel="stylesheet">
     <link href="../Web/css/rules.css" rel="stylesheet">
