@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php $this->title = "Inscription" ?>
+
+<?php ob_start; ?>
+
     <link href="/Web/css/register.css" rel="stylesheet">
     <link href="/Web/css/form.css" rel="stylesheet">
     <link href="/Web/css/rules.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
-    <title>Inscription</title>
-  </head>
+
   <body>
 
     <div class="page">
@@ -98,4 +96,3 @@
     <script type="text/javascript" src="/Web/js/password.css"></script>
 
   </body>
-</html>
