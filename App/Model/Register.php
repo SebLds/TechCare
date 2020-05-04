@@ -5,7 +5,7 @@ use PDO;
 use src\Config\ConfigException;
 use src\Model;
 
-class Register
+class Register extends Model
 {
     public function checkConnexion($mail, $password)
     {

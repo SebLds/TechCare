@@ -5,7 +5,7 @@ use PDO;
 use src\Config\ConfigException;
 use src\Model;
 
-class Dashboard
+class Dashboard extends Model
 {
     public function getCountTotalTestsUser($idUser)
     {
