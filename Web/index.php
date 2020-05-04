@@ -35,8 +35,8 @@ if (!isset($_GET['url'])){
     $_GET['url']='cgu';
 }
 $router= new Router($_GET['url']);
-//$router->get('/',function(){require '/View/Home/home.php';} ); // appel des controllers correspondants
-//$router->get('/Homepage',function(){require '/View/Home/home.php';} ); // appel des controllers correspondants
+//$router->get('/',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
+//$router->get('/Homepage',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
 $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
@@ -44,6 +44,8 @@ $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
 $router->get('/homepage#slug',"Cgu#index");
+$router->get('/homepage',"Home#index");
+$router->get('/homepage#:slug',"Home#index");
 
 
 //$router->post('/home',"Forum\Forum#index");
