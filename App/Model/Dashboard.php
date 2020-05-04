@@ -7,7 +7,7 @@ use src\Model;
 
 class Dashboard
 {
-    function getCountTotalTestsUser($idUser)
+    public function getCountTotalTestsUser($idUser)
     {
         try {
             return $this -> executeRequest('SELECT count(idPretest) as nbTests FROM test WHERE idUtilisateur = ?', $idUser) -> fetch(PDO::FETCH_OBJ);
@@ -15,7 +15,7 @@ class Dashboard
     } //function getCountTotalTestsUser($id)
 
 
-    function getLastScore($idUser, $value) //Voir avec $value pour faire -1 lorsque l'on veut l'AVANT-dernier test, etc..
+    public function getLastScore($idUser, $value) //Voir avec $value pour faire -1 lorsque l'on veut l'AVANT-dernier test, etc..
     {
         try {
             return $this -> executeRequest("SELECT Score FROM test WHERE (idUtilisateur = ? AND idPretest = MAX(idPretest)-$value", $idUser) -> fetch(PDO::FETCH_OBJ);
@@ -23,7 +23,7 @@ class Dashboard
     } //function getLastScore($idUser, $value)
 
 
-    function getLastTypeTest($idUser, $value) //Récupérer le type du dernier test seulement
+    public function getLastTypeTest($idUser, $value) //Récupérer le type du dernier test seulement
     {
         try {
             return $this -> executeRequest("SELECT Type as typeTest FROM test WHERE (idUtilisateur = ? AND idPretest = MAX(idPretest)-$value", $idUser) -> fetch(PDO::FETCH_OBJ);
@@ -31,7 +31,7 @@ class Dashboard
     } //function getLastTypeTest($idUser, $value)
 
 
-    function getLastCommentaire($idUser, $value) //Récupérer le commentaire du dernier test
+    public function getLastCommentaire($idUser, $value) //Récupérer le commentaire du dernier test
     {
         try {
             return $this -> executeRequest("SELECT commentaire FROM test WHERE (idUtilisateur = ? AND idPretest = MAX(idPretest)-$value", $idUser) -> fetch(PDO::FETCH_OBJ);
