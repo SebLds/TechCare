@@ -51,7 +51,7 @@ header {
 }
 
 .navbar li a {
-    padding: 10px;
+    padding: 30px;
     text-decoration: none;
     color: black;
     transition: all 0.3s ease 0s;
