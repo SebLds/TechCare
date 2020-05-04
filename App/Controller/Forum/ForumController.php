@@ -26,6 +26,11 @@ class ForumController extends Controller
     public function index() {
 //        $idTag = $this->request->getParameter("id");
         $tags = $this->tag->getTags();
+        for ($i=1;$i<=count($tags);$i++){
+            $nbThreads[]= $this->tag->getNbThreadsTagById($i);
+            $nbReplies[]= $this->tag->getNbRepliesTagById($i);
+        }
+
 
 //
 
@@ -41,7 +46,7 @@ class ForumController extends Controller
 //                <p>'.$tags[0]->ID_Tag.'</p>
 //            </article>';
 //        var_dump(extract($tags));
-        $this->generateView(array('tags_info'=>$tags, ),"index");
+        $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
     }
 
 }

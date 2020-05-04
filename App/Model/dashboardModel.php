@@ -12,13 +12,13 @@ function getLastScore($idUser, $value) //Voir avec $value pour faire -1 lorsque 
 } //function getLastScore($idUser, $value)
 
 
-function getLastTypeTest($idUser, $value)
+function getLastTypeTest($idUser, $value) //Récupérer le type du dernier test seulement
 {
     return executeRequest("SELECT Type as typeTest FROM test WHERE (idUtilisateur = ? AND idPretest = MAX(idPretest)-$value", $idUser);
 } //function getLastTypeTest($idUser, $value)
 
 
-function getLastCommentaire($idUser, $value)
+function getLastCommentaire($idUser, $value) //Récupérer le commentaire du dernier test
 {
     return executeRequest("SELECT commentaire FROM test WHERE (idUtilisateur = ? AND idPretest = MAX(idPretest)-$value", $idUser);
 } //function getLastCommentaire($idUser, $value)

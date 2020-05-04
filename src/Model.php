@@ -4,8 +4,9 @@
 namespace src;
 
 
-use PDO;
+use \PDO;
 use src\Config\Config;
+use src\Config\ConfigException;
 
 /**
  * Model abstract class.
@@ -61,8 +62,8 @@ abstract class Model
             $login = Config::get("login");
             $password = Config::get("password");
             // Création de la connexion
-            self::$bdd = new \PDO($dsn, $login, $password,
-                array(\PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            self::$bdd = new PDO($dsn, $login, $password,
+                array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return self::$bdd;
     }
