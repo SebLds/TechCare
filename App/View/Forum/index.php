@@ -10,7 +10,6 @@
         <p class="textTag"><?php echo $data['tags_info'][$i]->Tag_description; ?></p>
         <p class="nbThreads">Il y a <?php echo $data['nbThreads'][$i]?> sujets !</p>
         <p class="nbReplies">Il y a <?php echo $data['nbReplies'][$i]?> réponses !</p>
-
     <?php endfor; ?>
 </article>
 <?php endif; ?>

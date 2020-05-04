@@ -14,6 +14,7 @@ Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
 Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
+Autoloader::addNamespace('App\Model','../App/Model/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
@@ -43,7 +44,6 @@ $router->get('/Our-Work',function(){echo 'our work';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
-$router->get('/homepage#slug',"Cgu#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage#:slug',"Home#index");
 

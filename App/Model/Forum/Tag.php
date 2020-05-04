@@ -5,6 +5,7 @@ use PDO;
 use src\Config\ConfigException;
 use src\Model;
 
+
 class Tag extends Model
 {
 
