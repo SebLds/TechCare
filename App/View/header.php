@@ -1,8 +1,7 @@
-<html>
-<body>
+<link href="/Web/css/header.css" rel="stylesheet">
 <header>
     <div class="logo">
-      <img id="logo" src="../../images/logo.png" alt="logo">
+      <img id="logo" src="/Web/images/logo.png" alt="logo">
     </div>
 
     <div class="navbar">
@@ -25,23 +24,9 @@
 
     <script
         type="text/javascript"
-        src="../../js/burger.js">
+        src="/Web/js/burger.js">
     </script>
 
 </header>
-</body>
-</html>
 
-        <!--<div class="burger-menu">
-            <div>
-              <div>
-                <ul>
-                  <li><a href="#" ><img class="images" src="images/home.png">Accueil</a><li>
-                  <li><a href="#" ><img class="images" src="images/test.png">Nos Tests</a><li>
-                  <li><a href="#" ><img class="images" src="images/contact.png">Contact</a><li>
-                  <a href="#" ><button id="connexion-button"><img class="images bis" src="images/account.png">Connexion</button></a>
-                </ul>
-              </div>
-            </div>
-          </div>-->
 

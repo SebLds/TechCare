@@ -15,8 +15,6 @@ Autoloader::addNamespace('App\Controller','../App/Controller/');
 Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
-
-
 Autoloader::register();
 
 $session = new Session();
@@ -25,8 +23,17 @@ $session = new Session();
  * pour le callable il faut absolument mettre le sous-dossier s'il y en a un
  * ex: Pour le controller TestController dans le dossier Forum du dossier Controller le callable est Forum\Test
  */
-
-
+if (!isset($_GET['url'])){
+//    if ($_SESSION['logged']==true){
+//        switch ($_SESSION['status']){
+//            case $_SESSION['status']===1:
+//                // action
+//                break;
+//                // etc pour chaque user
+//        }
+//    }
+    $_GET['url']='cgu';
+}
 $router= new Router($_GET['url']);
 //$router->get('/',function(){require '/View/Home/home.php';} ); // appel des controllers correspondants
 //$router->get('/Homepage',function(){require '/View/Home/home.php';} ); // appel des controllers correspondants
@@ -36,6 +43,8 @@ $router->get('/Our-Work',function(){echo 'our work';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
+$router->get('/homepage#slug',"Cgu#index");
+
 
 //$router->post('/home',"Forum\Forum#index");
 
