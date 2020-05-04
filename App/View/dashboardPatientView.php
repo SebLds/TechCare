@@ -6,7 +6,8 @@ $Score= [0,0] ;
 <!DOCTYPE html>
 <html lang="fr">
     <head><title>Dashboard</title>
-        <link rel="stylesheet" type="text/css" href="dashboardCSS.css">
+        <link rel="stylesheet" type="text/css" href="../../Web/css/dashboardPatient.css">
+            <link href="../../Web/css/rulesConnected.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
         <meta charset="utf-8" />
     </head>

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
 }
+
 .content {
     max-height: 550px;;
     background-color: #292c2f;
@@ -11,7 +12,7 @@
     line-height: 550px;
 }
 footer{
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }
 .footer-distributed{
@@ -57,6 +58,10 @@ footer{
     line-height: 1.8;
     text-decoration: none;
     color:  inherit;
+}
+
+.footer-distributed .footer-links a:hover {
+  text-decoration: underline;
 }
 
 .footer-distributed .footer-company-name{
@@ -189,7 +194,6 @@ input[type="submit"] {
     }
     .content {
         line-height: normal;
-        font-size: auto;
     }
 
 }

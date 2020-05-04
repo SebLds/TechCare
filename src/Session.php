@@ -1,6 +1,6 @@
 <?php
-//namespace APP;
 
+namespace src;
 /**
  * Class modeling the session.
  * Encapsulates the PHP $_SESSION superglobal.
@@ -9,12 +9,17 @@
  */
 class Session
 {
+    private string $sessionType; // récup le type de user soit visiteur, patient, gestionnaire ou admin
+    // restriction d'accès et de contenu en fonction du statut
+    // mettre en place un système pour éviter le vol de session
 
-    /** Constructor, start or restore the session.
-     */
+//    /** Constructor, start or restore the session.
+//     */
     public function __construct()
     {
         session_start();
+        $this->sessionType='visiteur';
+        self::setAttribute('sessionType',$this->sessionType);
     }
 
     /**
@@ -23,7 +28,20 @@ class Session
     public function __destruct()
     {
         session_destroy();
+        unset( $_SESSION );
+
     }
+//    public static function sessionStart(){
+//        session_start();
+//        $_SESSION = array();
+//        self::$sessionType='visiteur';
+//        self::setAttribute('sessionType',self::$sessionType);
+//    }
+//    public static function sessionStop(){
+//        session_destroy();
+//        unset( $_SESSION );
+//    }
+
 
     /**
      * Add an attribute to the session.

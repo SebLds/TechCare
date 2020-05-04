@@ -1,9 +1,7 @@
 <?php
-namespace APP;
 
-require_once 'Config.php';
-require_once 'Request.php';
-require_once 'View.php';
+namespace src;
+use src\Config\Config;
 
 /**
  * Controller abstract class.
@@ -14,26 +12,26 @@ require_once 'View.php';
 abstract class Controller
 {
     /** Action to perform */
-    private string $action;
+    private ?string $action = null;
 
     /** Incoming request */
-    protected Request $request;
-
-    /**
-     * Defines the incoming request.
-     *
-     * @param Request $request Incoming request
-     */
-    public function setRequest(Request $request)
-    {
-        $this->request = $request;
-    }
+//    protected Request $request;
+//
+//    /**
+//     * Defines the incoming request.
+//     *
+//     * @param Request $request Incoming request
+//     */
+//    public function setRequest(Request $request)
+//    {
+//        $this->request = $request;
+//    }
 
     /**
      * Executes the action to be performed.
      * Calls the method with the same name as the action on the current Controller object.
      *
-     * @throws ControllerException If the action does not exist in the current Controller class
+     * @throws ControllerException|Exception If the action does not exist in the current Controller class
      */
     public function executeAction($action)
     {

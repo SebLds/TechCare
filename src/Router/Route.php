@@ -1,13 +1,13 @@
 <?php
 
-//namespace APP\Router;
+namespace src\Router;
 
 class Route
 {
     /** @var string Instanced route path */
     private $path;
 
-    /** @var string Action to perform */
+    /** @var mixed Action to perform */
     private $callable;
 
     /** @var array Contains the matches, matches[0] full pattern, matches [1] the first captured parenthesized subpattern and so on */
@@ -23,7 +23,11 @@ class Route
      */
     public function __construct($path, $callable)
     {
-        $this->path = trim($path,'/');
+        if($path==='/'){
+            $this->path=$path;
+        }else{
+            $this->path = trim($path,'/');
+        }
         $this->callable = $callable;
     }
 
@@ -65,17 +69,17 @@ class Route
         if(is_string($this->callable)){
             $params=explode('#',$this->callable);
             $controller= $params[0]."Controller";
-            require dirname(__DIR__, 2) . "\App\Controller\\" .$controller.".php";
-            $controller = new $controller();
-            return call_user_func_array([$controller, $params[1]],$this->matches);
+            $reflect = new \ReflectionClass('App\Controller\\'.$controller);
+            $object = $reflect->newInstance();
+            return call_user_func_array([$object, $params[1]],$this->matches);
         }else{
             return call_user_func_array($this->callable,$this->matches);
         }
     }
     public function getUrl($params){
         $path=$this->path;
-        foreach($params as $k => $value){
-            $path = str_replace(":$k",$value,$path);
+        foreach($params as $key => $value){
+            $path = str_replace(":$key",$value,$path);
         }
         return $path;
     }

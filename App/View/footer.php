@@ -29,14 +29,14 @@
             ·
             <a href="#">A propos</a>
             ·
-            <a href="#">Faq</a>
+            <a href="#">FAQ</a>
             ·
             <a href="#">Contact</a>
             ·
             <a href="#">CGU</a>
         </p>
 
-        <p class="footer-company-name">infinitemeasures &copy; 2020</p>
+        <p class="footer-company-name">&copy; Infinite Measures - Tous droits réservés 2019-2020</p>
     </div>
 
     <div class="footer-center">
