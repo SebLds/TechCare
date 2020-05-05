@@ -641,9 +641,8 @@ ul.icons li img {
     display: inline-block;
     font-size: 1.75em;
     color: black;
-    padding: 0.35em 1em;
+    padding: 0.5em 1em;
     position: relative;
-    z-index: 1;
 }
 
 /*Traits au-dessus et en-dessous du titre*/

@@ -24,12 +24,12 @@ header {
         transform: translateY(-100%);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 
 .logo {
-    /*z-index: 100000;*/
+    z-index: 2;
     margin-left: 50px;
     margin-top: 5px;
 }
@@ -39,7 +39,6 @@ header {
     height: 120px;
     cursor: pointer;
 }
-
 
 .navbar {
     list-style: none;
@@ -54,24 +53,25 @@ header {
     padding: 30px;
     text-decoration: none;
     color: black;
-    transition: all 0.3s ease 0s;
+    /*transition: all .3s ease 0s;*/
     font-size: 150%;
     font-weight: bold;
 }
 
 .navbar li a:hover {
     color: grey;
-    transition: all 0.3s ease 0s;
+    /*transition: all .3s ease 0s;*/
     text-decoration: underline;
 }
 
+/* Hamburger Menu */
 .navbar.show {
-    background-color: #fff;
+    background-color: white;
     transform: translateY(0);
     display: flex;
     transition: all .3s ease-in-out;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .images {
@@ -90,22 +90,21 @@ button {
     border-radius: 20px;
     color: #fff;
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    /*transition: all 0.3s ease 0s;*/
     font-weight: bold;
     font-size: 110%;
-    padding: 10px;
+    padding: 10px 12px;
 }
 
-
-
 .burger-button {
+    display: none;
+    padding: 100px 0 0 0;
     width: 42px;
     height: 24px;
     cursor: pointer;
     position: relative;
-    display: none;
     margin-right: 50px;
-    z-index: 100000;
+    z-index: 3;
 }
 
 .burger-button span {
@@ -224,61 +223,47 @@ button {
 }*/
 
 @media only screen and (max-width: 1100px) {
-
     .navbar li a {
         font-size: 110%;
         padding: 18px;
     }
-
     .images {
         width: 20px;
         height: 20px;
         margin: 0px 5px 0px 0px;
     }
-
-    .connexion-page {
-        display: none;
+    #logo {
+        height: 100px;
+        width: 100px;
     }
-
 }
 
 @media only screen and (max-width: 850px) {
-
+    #logo {
+        height: 100px;
+        width: 100px;
+    }
     .burger-button {
         display: flex;
     }
-
     .navbar {
-        transform: translateY(-200%);
+        transform: translateY(-60vh);
         display: flex;
         position: absolute;
         width: 100vw;
-        height: 30vh;
-        top: 140px;
-        left: 0;
+        height: 100vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #fff;
-        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
-
     .navbar li {
         display: inline-block;
         padding: 5px;
-        background-color: #fff;
     }
-
+    .navbar li:first-child {
+        padding: 300px 0 0 0;
+    }
     .navbar li a {
-        font-size: 150%;
-        padding: 30px;
+        font-size: 130%;
     }
-
-    #logo {
-        width: 125px;
-        height: 125px;
-        cursor: pointer;
-        margin: 0;
-    }
-
 }
