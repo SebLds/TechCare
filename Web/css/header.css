@@ -236,12 +236,16 @@ button {
         height: 100px;
         width: 100px;
     }
+
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 980px) {
+    header{
+        height: 90px;
+    }
     #logo {
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 80px;
     }
     .burger-button {
         display: flex;
@@ -251,17 +255,17 @@ button {
         display: flex;
         position: absolute;
         width: 100vw;
-        height: 100vh;
+        height: 80vh;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
     .navbar li {
         display: inline-block;
-        padding: 5px;
+        padding: 7px 0 0 0;
     }
     .navbar li:first-child {
-        padding: 300px 0 0 0;
+        padding: 250px 0 0 0;
     }
     .navbar li a {
         font-size: 130%;
