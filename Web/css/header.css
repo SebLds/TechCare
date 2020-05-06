@@ -9,6 +9,7 @@ header {
     position: absolute;
     height: 120px;
     width: 100%;
+    font-size: 15pt;
     display: flex;
     flex-direction: row;
     align-items: center;

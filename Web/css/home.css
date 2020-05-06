@@ -10,7 +10,7 @@ html {
 }
 
 /* Basic */
-body {
+#body {
     display: block;
     margin: 0;
     padding: 0;
@@ -25,24 +25,21 @@ ul {
     padding-inline-start: 0;
 }
 
-@viewport {
-    width: device-width;
-}
 
-@media screen and (--width: 1680px) {
-    body {
+@media screen and (width: 1680px) {
+    #body {
         font-size: 13pt;
     }
 }
 
 @media screen and (max-width: 1280px) {
-    body {
+    #body {
         font-size: 12pt;
     }
 }
 
 @media screen and (max-width: 736px) {
-    body {
+    #body {
         font-size: 11pt;
         letter-spacing: 0.0375em;
     }
@@ -771,7 +768,7 @@ ul.icons li img {
 }
 
 /* Landing Page*/
-body #page-wrapper {
+#body #page-wrapper {
     background-image: url("/Web/images/banner.jpg");
     background-attachment: fixed;
     background-position: center;

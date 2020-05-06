@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Custom Styling -->
-    <link href="/Web/css/footer.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome 5 -->
-    <script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
+<!-- Custom Styling -->
+<link href="/Web/css/footer.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<!-- Font Awesome 5 -->
+<script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
 
 <footer>
     <div class="footer-left">
@@ -57,7 +48,7 @@
 
     <div class="footer-right">
         <p class="footer-company-about">
-            <span>A propos de l'entreprise</span>
+            <a>A propos de l'entreprise</a>
             Infinite Measures vous accompagne avant, pendant et après vos tests psychotechniques.
             Nous sommes une entreprise au service de la santé de nos patients.
         </p>
@@ -70,14 +61,10 @@
         </div>
 
         <div class="footer-icons">
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
         </div>
 
     </div>
 </footer>
-
-
-</body>
-</html>
