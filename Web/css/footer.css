@@ -52,7 +52,7 @@ footer .footer-links a:hover {
 
 footer .footer-company-name{
     color:  #8f9296;
-    font-size: 14px;
+    font-size: 0.8em;
     font-weight: normal;
 }
 
@@ -63,18 +63,18 @@ footer .footer-center{
 footer .footer-center i{
     background-color: #33383b;
     color: #fff;
-    font-size: 25px;
+    font-size: 1.5em;
     width: 2em;
     height: 2em;
     border-radius: 50%;
     text-align: center;
-    padding-top: 11px;
-    margin: 10px;
+    padding-top: 0.45em;
+    margin: 0.5em;
 }
 
 footer .footer-center p{
     display: inline-block;
-    font-size: 15px;
+    font-size: 0.9em;
     color: #fff;
     font-weight: 700;
 }
@@ -127,7 +127,7 @@ footer .footer-icons a{
     cursor: pointer;
     background-color: #33383b;
     border-radius: 3px;
-    font-size: 20px;
+    font-size: 1em;
     color: #fff;
     text-align: center;
     padding: 6px;
