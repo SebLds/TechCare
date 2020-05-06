@@ -142,7 +142,7 @@ header a {
   transform: rotate(180deg);
 }
 
-.footer {
+.footersidebar {
   display: block;
   flex-direction: column;
   position: relative;
@@ -183,7 +183,7 @@ header a {
   text-decoration: underline;
 }
 
-span {
+.link span {
   margin: 0px 5px 0px 5px;
 }
 

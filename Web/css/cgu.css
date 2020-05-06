@@ -2,13 +2,10 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
     align-items: center;
 }
 
 .page h1 {
-    margin-top: 50px;
     font-weight: revert;
     font-style: italic;
     color: grey;
@@ -41,6 +38,10 @@
 
 .page span {
     font-weight: bold;
+}
+
+.mentionslegales {
+  width: 100%;
 }
 
 @media only screen and (max-width: 850px)  {

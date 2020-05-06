@@ -1,42 +1,36 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Connexion</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="CSS/connexion.css">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
-</head>
+<?php $this->title = "Login" ?>
 
-  <body>
+<link rel="stylesheet" href="/Web/css/connexion.css">
+<link rel="stylesheet" href="/Web/css/form.css">
+<link href="/Web/css/rules.css" rel="stylesheet">
 
-    <div class="connexion-page">
+<div id="body">
 
-      <div class="logo">
-        <a href="home.phpdex.php"><img id="logo" src="images/logo.png" alt="logo"></a>
-      </div>
+  <div class="connexion-page">
 
-      <div class="connexion-body">
+    <div class="logo">
+      <a href="home.phpdex.php"><img id="logo" src="images/logo.png" alt="logo"></a>
+    </div>
 
-        <div class="border">
-        <h1>Je me connecte à Infinite Measures</h1>
-          <form action="../../Web/index.php" method="post">
-            <h2>Identifiant</h2>
-            <input type="text" name="ID" placeholder="infinite@measures.com">
-            <h2>Mot de passe</h2>
-            <input type="password" name="password" placeholder="●●●●●●●●">
-          </form>
-          <button>Je me connecte</button>
-          <a href="password.phpphp">J'ai oublié mon mot de passe</a>
-        </div>
+    <div class="connexion-body">
 
+      <div class="border">
+      <h1>Je me connecte à Infinite Measures</h1>
+        <form action="../../Web/index.php" method="post">
+          <h2>Identifiant</h2>
+          <input type="text" name="ID" placeholder="infinite@measures.com">
+          <h2>Mot de passe</h2>
+          <input type="password" name="password" placeholder="●●●●●●●●">
+        </form>
+        <button>Je me connecte</button>
+        <a href="password.phpphp">J'ai oublié mon mot de passe</a>
       </div>
 
     </div>
 
-  </body>
+  </div>
 
-</html>
+</div>
 
       <!--<div class="connexion-header">
         <div class="text">
