@@ -14,7 +14,6 @@
 <!--   </script>-->
 <!--  </head>-->
 
-
   <header>
 
     <div class="header">
@@ -56,7 +55,7 @@
           <button id="button-account" type="button" name="button">Mon compte<img id="arrow" src="../../Web/images/arrow.png" alt=""></button>
         </div>
 
-       <script type="text/javascript" src="../../Web/js/dropdown.js"></script>
+       <script type="text/javascript" src="../../Web/js/account-dropdown.js"></script>
 
       </div>
 
@@ -89,6 +88,10 @@
     <script type="text/javascript" src="../../Web/js/sidebar.js"></script>
 
   </header>
+
+  <body>
+
+  </body>
 
 <!--  <body id="body">-->
 <!---->

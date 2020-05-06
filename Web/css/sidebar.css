@@ -19,6 +19,8 @@ header {
   left: 0;
   background-color: #fff;
   transition: width 0.3s ease-in-out;
+  z-index: 1000;
+  overflow: hidden;
 }
 
 .logo {
@@ -50,8 +52,12 @@ header {
   flex-direction: row;
 }
 
+.box {
+  padding: 20px;
+}
+
 .navbar a:hover {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #img-nav {
@@ -93,7 +99,7 @@ header {
   font-weight: bold;
 }
 
-a {
+header a {
   text-decoration: none;
 }
 
@@ -107,7 +113,7 @@ a {
   width: 68%;
 }
 
-button {
+.btn button {
   margin-bottom: 20px;
   background-color: rgba(168, 202, 233, 1);
   border: none;
@@ -122,12 +128,8 @@ button {
   transition: all 0.3s ease-in-out;
 }
 
-button:hover {
+.btn button:hover {
   box-shadow: 3px 3px 3px 3px rgba(168, 202, 233, 0.75);
-}
-
-button.on {
-
 }
 
 #arrow {
@@ -146,6 +148,7 @@ button.on {
   position: relative;
   bottom: 0;
   width: 275px;
+  margin-bottom: 10px;
 }
 
 .content {
@@ -195,7 +198,7 @@ span {
   display: none;
   height: 100px;
   width: 100vw;
-  position: fixed;
+  position: absolute;
   left: 0;
   align-items: center;
   justify-content: space-between;
@@ -256,7 +259,13 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
+  background-color: rgba(168, 202, 233, 1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+  width: 35px;
+  height: 35px;
 }
 
 .account-responsive a {
@@ -275,6 +284,7 @@ span {
 
   .header {
     display: flex;
+
   }
 
   .logo {
@@ -291,6 +301,12 @@ span {
 
   .sidebar {
     width: 0;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+    border-style: solid;
   }
 
 }

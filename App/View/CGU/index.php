@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head><title>CGU et Mentions légales</title>
+
+
+<?php $this->title = "CGU & Mentions légales" ?>
     <link rel="stylesheet" type="text/css" href="/Web/css/cgu.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-    <meta charset="utf-8" />
-</head>
+
 
 <body>
 
-<div class="page">
+<div class="body">
     <div class="title">
         <h1>MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION</h1><br><br><br>
     </div>

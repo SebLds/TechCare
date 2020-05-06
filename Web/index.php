@@ -1,4 +1,4 @@
-<?php
+<?php<?php
 
 
 use src\Router\Router;
@@ -16,9 +16,13 @@ Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
 <<<<<<< HEAD
 Autoloader::addNamespace('App\Controller\Register', '../App/Controller/Register/');
+<<<<<<< Updated upstream
 =======
 Autoloader::addNamespace('App\Model','../App/Model/');
 >>>>>>> master
+=======
+Autoloader::addNamespace('App\Controller\Login', '../App/Controller/Login/');
+>>>>>>> Stashed changes
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
@@ -52,9 +56,13 @@ $router->get('/inscription',"Register\Register#index");
 $router->post('/inscription',"Register\Register#validate");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
+<<<<<<< Updated upstream
 $router->get('/homepage',"Home#index");
 $router->get('/homepage#:slug',"Home#index");
 
+=======
+$router->get('/connexion',"Login\Login#index");
+>>>>>>> Stashed changes
 
 
 //$router->post('/home',"Forum\Forum#index");
