@@ -15,7 +15,7 @@
 
 <body>
 
-<footer class="footer-distributed">
+<footer>
     <div class="footer-left">
         <h1>Infinite <span>Measures</span></h1>
 

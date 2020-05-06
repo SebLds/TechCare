@@ -348,7 +348,6 @@ ul.icons li img {
     }
 }
 
-/**Check**/
 /* Features */
 .features {
     display: flex;
@@ -360,9 +359,7 @@ ul.icons li img {
 }
 
 .features li {
-    padding: 4em 4em 2em 6em;
-    display: block;
-    position: relative;
+    padding: 3em 4em 4em 6em;
     text-align: left;
     width: 50%;
 }
@@ -396,24 +393,24 @@ ul.icons li img {
     color: #00ffcc;
     position: absolute;
     left: 1.75em;
-    top: 2.75em;
+    top: 2.7em;
     font-size: 1.5em;
 }
 
 .features li:nth-child(1) {
-    border-top-left-radius: 3px;
+    border-top-left-radius: 5px;
 }
 
 .features li:nth-child(2) {
-    border-top-right-radius: 3px;
+    border-top-right-radius: 5px;
 }
 
 .features li:nth-last-child(1) {
-    border-bottom-right-radius: 3px;
+    border-bottom-right-radius: 5px;
 }
 
 .features li:nth-last-child(2) {
-    border-bottom-left-radius: 3px;
+    border-bottom-left-radius: 5px;
 }
 
 @media screen and (max-width: 980px) {
@@ -597,10 +594,6 @@ ul.icons li img {
     color: #d3d4e4;
 }
 
-.wrapper.style3 .icon.major {
-    border-color: rgba(0, 0, 0, 0.125);
-}
-
 @media screen and (max-width: 736px) {
     .wrapper.style3 .features li {
         border-top-color: rgba(0, 0, 0, 0.125);
@@ -623,7 +616,6 @@ ul.icons li img {
     }
 }
 
-/**Check**/
 /* Banner */
 #banner {
     overflow: hidden;

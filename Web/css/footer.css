@@ -158,11 +158,7 @@ input[type="submit"] {
     border: 0;
 }
 
-@media (max-width: 1246px) {
-
-}
-
-@media (max-width: 980px) {
+@media (max-width: 1120px) {
     footer{
         font: bold 14px sans-serif;
     }
@@ -176,14 +172,18 @@ input[type="submit"] {
     }
 
     footer .footer-center {
-        padding: 2em 0;
+        padding: 5em 0;
+        position: relative;
     }
 
     footer .footer-center::before, footer .footer-center::after  {
         content: "";
         display: block;
+        position: absolute;
         width: 100%;
         background-color: gray;
         height: 1px;
+        top: -1em;
+        bottom: -1em;
     }
 }
