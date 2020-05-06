@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Custom Styling -->
-    <link href="/Web/css/footer.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-    <!-- Font Awesome 5 -->
-    <script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
+<!-- Custom Styling -->
+<link href="/Web/css/footer.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+<!-- Font Awesome 5 -->
+<script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
 
 <footer>
     <div class="footer-left">
@@ -77,7 +68,3 @@
 
     </div>
 </footer>
-
-
-</body>
-</html>
