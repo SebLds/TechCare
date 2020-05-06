@@ -22,7 +22,7 @@
         </div>
         <a href="/homepage#one" class="more">En savoir plus
             <span class="icon">
-                <i class="fal fa-arrow-down fa-2x"></i>
+                <i class="fal fa-arrow-down fa-3x"></i>
             </span>
         </a>
 
@@ -119,7 +119,7 @@
             </div>
             <ul class="actions stacked">
                 <li><a href="#" class="btn fit primary">Activate</a></li>
-                <li><a href="#" class="btn fit">Learn More</a></li>
+                <li><a href="#" class="btn fit">En savoir plus</a></li>
             </ul>
         </div>
     </section>
