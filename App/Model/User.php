@@ -1,41 +1,78 @@
 <?php
 
-<<<<<<< HEAD
-namespace App\Model\RegisterModel;
-
+namespace App\Model;
 use PDO;
-use src\Model;
-
-class User extends Model {
-
-  public function __construct() {
-    $this->user = new User();
-  }
-
-  public function CheckMailExists($mail) {
-      $sqlStatement = "SELECT * FROM users WHERE mail = ?, $mail";
-      return $this->executeRequest($sqlStatement,null,1)->fetchAll(PDO::FETCH_OBJ);
-  }
-
-  public function CheckHealthNumber($healthNumber) {
-      $sqlStatement = "SELECT * FROM users WHERE healthNumber = ?, $healthNumber";
-      return $this->executeRequest($sqlStatement,null,1)->fetchAll(PDO::FETCH_OBJ);
-  }
-
-  public function AddUser() {
-    $sqlStatement = "INSERT INTO users SET firstName = ?, lastName = ?, birthdate = ?, mail = ?, password = ?; doctor = ?; healthNumber = ?";
-    return $this->executeRequest($sqlStatement,null,1)->fetchAll(PDO::FETCH_OBJ);
-  }
-
-}
-
-?>
-=======
-
+use src\Config\ConfigException;
 use src\Model;
 
 class User extends Model
 {
+    public function getIdentity($idUser)
+    {
+        try {
+            return $this -> executeRequest('SELECT Nom, Prenom FROM utilisateur WHERE idUtilisateur = ?', $idUser) -> fetch(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getIdentity($idUser)
 
-}
->>>>>>> master
+
+    public function getCompleteProfil($idUser)
+    {
+        try {
+            return $this -> executeRequest('SELECT * FROM utilisateur WHERE idUtilisateur = ?', $idUser) -> fetch(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getComplete($idUser)
+
+
+    public function getModifyProfil($idUser, $mail, $password, $name, $surname, $address, $type, $tel)
+    {
+        try {
+            return $this -> executeRequest('UPDATE utilisateur SET Email = ?, Motdepasse = ?, Prenom = ?, Nom = ?, Adresse = ?, "Type" = ?, Tel = ? WHERE idUtilisateur = ?'.$idUser, array($mail, $password, $name, $surname, $address, $type, $tel)) -> fetch(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getModifyProfil($idUser, $mail, $password, $name, $surname, $address, $type, $tel)
+
+
+    public function getSpecificTest($idUser)
+    {
+        try {
+            return $this -> executeRequest('SELECT * FROM test WHERE idUtilisateur = ? AND (NumeroSecu = ? OR idProfil = ? OR Examinateur = ? OR "Type" = ? OR Score = ?)', $idUser) -> fetch(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getSpecificTest($idUser)
+
+    public function checkMail($mail)
+    {
+        try {
+            $count = $this -> executeRequest('SELECT * FROM users WHERE mail = ?', $mail) -> fetch(PDO::FETCH_OBJ);
+
+            if ($count > 0) {
+              return true;
+            } else {
+              return false;
+            }
+
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getSpecificTest($idUser)
+
+    public function checkHealthNumber($healthNumber)
+    {
+        try {
+            $count = $this -> executeRequest('SELECT * FROM users WHERE healthNumber = ?', $healthNumber) -> fetch(PDO::FETCH_OBJ);
+
+            if ($count > 0) {
+              return true;
+            } else {
+              return false;
+            }
+
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getSpecificTest($idUser)
+
+    public function addUser($dataRegister)
+    {
+        try {
+            return $this -> executeRequest('INSERT INTO users SET username') -> fetch(PDO::FETCH_OBJ);
+
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+
+    }
+
+} //class User extends Model

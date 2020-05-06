@@ -35,16 +35,17 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
-<<<<<<< HEAD
+
 $router->get('/home',"Forum\Tag#index");
 $router->get('/inscription',"Register\Register#index");
-=======
+$router->post('/inscription',"Register\Register#validate");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
 
+
 //$router->post('/home',"Forum\Forum#index");
 
->>>>>>> master
+
 //$router->get('',"Test#index");
 
 
