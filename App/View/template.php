@@ -15,9 +15,11 @@
     <?= $head_tags; ?>
     <title><?= $title; ?></title>
 </head>
+
 <?php require_once 'header.php' ?>
-<body>
-    <?= $content; ?>
-</body>
+
+<?= $content; ?>
 
 <?php require_once 'footer.php'?>
+
+</html>
