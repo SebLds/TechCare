@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Custome Styling -->
+    <!-- Custom Styling -->
     <link href="/Web/css/footer.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
@@ -16,9 +16,8 @@
 <body>
 
 <footer class="footer-distributed">
-
     <div class="footer-left">
-        <h3>Infinite<span>Measures</span></h3>
+        <h1>Infinite <span>Measures</span></h1>
 
         <p class="footer-links">
             <a href="#">Accueil</a>
@@ -42,7 +41,7 @@
     <div class="footer-center">
         <div>
             <i class="fas fa-map-marker-alt"></i>
-            <p><span>10 rue de Vanves</span> 92130 Issy-les-Moulineaux</p>
+            <p class="footer-address-text"><span>10 rue de Vanves</span> 92130 Issy-les-Moulineaux</p>
         </div>
 
         <div>

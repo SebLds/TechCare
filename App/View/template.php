@@ -23,4 +23,4 @@
 <?php if (isset($content)){echo $content;} ?>
 </body>
 
-<?php //require_once 'footer.php'?>
+<?php require_once 'footer.php'?>

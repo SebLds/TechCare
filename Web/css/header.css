@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap");
+@import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
+
 header {
+    font-family: "Lato", Helvetica, sans-serif;
     background: transparent;
     top: 0;
     left: 0;
@@ -10,7 +14,21 @@ header {
     align-items: center;
     justify-content: space-between;
     z-index: 1;
-    /*box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);*/
+}
+
+.sticky{
+    position: fixed;
+    background: #fff;
+    animation: smoothScroll 0.5s linear ;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .sticky{
@@ -29,7 +47,7 @@ header {
 }
 
 .logo {
-    /*z-index: 100000;*/
+    z-index: 2;
     margin-left: 50px;
     margin-top: 5px;
 }
@@ -39,7 +57,6 @@ header {
     height: 120px;
     cursor: pointer;
 }
-
 
 .navbar {
     list-style: none;
@@ -51,63 +68,65 @@ header {
 }
 
 .navbar li a {
-    padding: 10px;
+    padding: 30px;
     text-decoration: none;
     color: black;
-    transition: all 0.3s ease 0s;
-    font-size: 150%;
-    font-weight: bold;
-    padding: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .navbar li a:hover {
-    text-decoration: none;
     color: grey;
-    transition: all 0.3s ease 0s;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
+/* Hamburger Menu */
 .navbar.show {
-    background-color: #fff;
+    background-color: white;
     transform: translateY(0);
     display: flex;
     transition: all .3s ease-in-out;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
 }
 
-.images {
-    width: 20px;
-    height: 20px;
+.fal {
     margin: 0px 10px 0px 0px;
-}
-
-.login {
-    background-color: #A8CAE9;
 }
 
 button {
     background-color: rgba(168, 202, 233, 1);
     border: none;
-    border-radius: 20px;
+    text-transform: uppercase;
+    border-radius: 5px;
     color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-weight: bold;
-    font-size: 110%;
-    padding: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    max-width: 30em;
+    padding: 0 2em;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-
-
+button:hover {
+    background-color: rgba(168, 202, 233, 0.8);
+}
 .burger-button {
+    display: none;
+    padding: 100px 0 0 0;
     width: 42px;
     height: 24px;
     cursor: pointer;
     position: relative;
-    display: none;
     margin-right: 50px;
-    z-index: 100000;
+    z-index: 3;
 }
 
 .burger-button span {
@@ -149,138 +168,51 @@ button {
     transform: translateY(0px) rotate(-45deg);
 }
 
-
-/*.burger-button {
-  display: none;
-}
-
-.burger-button #burger-button {
-  display: flex;
-  width: 10%;
-  border: none;
-  cursor: pointer;
-  margin: 0%;
-  flex-direction: row-reverse;
-  border-style : solid;
-  border-color: black;
-  box-shadow: none;
-}
-
-#burger-button:hover {
-  opacity: 0.75;
-}
-
-#img-burger {
-  background-color: #A8CAE9;
-  margin: 0%;
-  padding: 0%;
-  width: 100%;
-  height: 100%;
-}
-
-.burger #burger-button:active ~ .burger-menu {
-  visibility: visible;
-}
-
-.burger #burger-button:active ~ .burger-menu > div {
-  transform: scale(1);
-  transition-duration: var(--burger-menu-speed);
-}
-
-.burger #burger-button:active ~ .burger-menu > div > div {
-  opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
-}
-
-.burger-menu {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-    list-style: none;
-}
-
-.burger-menu li {
-  display: inline-block;
-}
-
-.burger-menu li a {
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-  transition: all 0.3s ease 0s;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 30px;
-}
-
-.burger-menu li a:hover {
-  text-decoration: none;
-  color: grey;
-  transition: all 0.3s ease 0s;
-  text-decoration: underline;
-}*/
-
 @media only screen and (max-width: 1100px) {
-
     .navbar li a {
         font-size: 110%;
         padding: 18px;
     }
-
     .images {
         width: 20px;
         height: 20px;
         margin: 0px 5px 0px 0px;
     }
-
-    .connexion-page {
-        display: none;
+    #logo {
+        height: 100px;
+        width: 100px;
     }
-
 }
 
-@media only screen and (max-width: 850px) {
-
+@media only screen and (max-width: 980px) {
+    header{
+        height: 90px;
+    }
+    #logo {
+        height: 80px;
+        width: 80px;
+    }
     .burger-button {
         display: flex;
     }
-
     .navbar {
-        transform: translateY(-200%);
+        transform: translateY(-60vh);
         display: flex;
         position: absolute;
-        width: 100vw;
-        height: 30vh;
-        top: 140px;
-        left: 0;
+        width: 100%;
+        height: 28em;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #fff;
-        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
-
     .navbar li {
         display: inline-block;
-        padding: 5px;
-        background-color: #fff;
+        padding: 7px 0 0 0;
     }
-
+    .navbar li:first-child {
+        padding: 250px 0 0 0;
+    }
     .navbar li a {
-        font-size: 150%;
-        padding: 30px;
+        font-size: 130%;
     }
-
-    #logo {
-        width: 125px;
-        height: 125px;
-        cursor: pointer;
-        margin: 0;
-    }
-
 }
