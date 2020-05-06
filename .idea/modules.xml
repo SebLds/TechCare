@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/PhpstormProjects/Alpha/.idea/Alpha.iml" filepath="$USER_HOME$/PhpstormProjects/Alpha/.idea/Alpha.iml" />
+      <module fileurl="file://$USER_HOME$/PhpstormProjects/HTML-CSS sujet 1/.idea/HTML-CSS sujet 1.iml" filepath="$USER_HOME$/PhpstormProjects/HTML-CSS sujet 1/.idea/HTML-CSS sujet 1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TechCare.iml" filepath="$PROJECT_DIR$/.idea/TechCare.iml" />
     </modules>
   </component>

@@ -2,9 +2,11 @@
 
 namespace src\Router;
 
+use Exception;
+
 class Router
 {
-    private $url;
+    private ?string $url;
     private array $routes = [];
     private array $namedRoutes = [];
 
@@ -12,14 +14,9 @@ class Router
      * Router constructor.
      * @param string $url
      */
-    public function __construct($url)
+    public function __construct($url=null)
     {
-        try{
-            $this->url = $url;
-        }
-        catch (Exception $exception){
-
-        }
+        $this->url = $url;
     }
     public function get($path, $callable, $name = null){
         return $this->add($path, $callable, $name, 'GET');

@@ -1,47 +1,35 @@
 <html>
+<head>
+    <link href="/Web/css/header.css" rel="stylesheet">
+</head>
+
 <body>
-<header>
-    <div class="logo">
-      <img id="logo" src="../../images/logo.png" alt="logo">
-    </div>
 
-    <div class="navbar">
-        <li><a href="/homepage" ><img class="images" src="/Web/images/home.png">Accueil</a><li>
-        <li><a href="/Web/index.php" ><img class="images" src="/Web/images/test.png">Nos Tests</a><li>
-        <li><a href="/Web/index.php" ><img class="images" src="/Web/images/contact.png">Contact</a><li>
-        <a href="connexion.php" ><button id="button-connexion"><img class="images bis" src="/Web/images/account.png">Connexion</button></a>
-    </div>
+    <header id="header">
+        <div class="logo">
+            <a href="/homepage#banner"><img id="logo" src="../../images/logo.png" alt="logo"></a>
+        </div>
 
-    <div class="burger-button">
-      <!--<button id="burger-button"><img id="img-burger"src="images/burger.png"></button>-->
-      <span></span>
-    </div>
+        <ul class="navbar">
+            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i>Accueil</i></a><li>
+            <li><a class="test" href="/homepage#three"><i class="fal fa-file-alt"></i>Nos Tests</a><li>
+            <li><a class="contact" href="/Web/index.php"><i class="fal fa-envelope-open"></i>Contact</a><li>
+            <li><a class="login" href="connexion.php"><button id="button-connexion"><i class="fal fa-user"></i>Connexion</button></a></li>
+        </ul>
 
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous">
-    </script>
 
-    <script
-        type="text/javascript"
-        src="../../js/burger.js">
-    </script>
+        <div class="burger-button">
+          <!--<button id="burger-button"><img id="img-burger"src="images/burger.png"></button>-->
+          <span></span>
+        </div>
 
-</header>
+    </header>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../js/burger.js"></script>
+
 </body>
 </html>
 
-        <!--<div class="burger-menu">
-            <div>
-              <div>
-                <ul>
-                  <li><a href="#" ><img class="images" src="images/home.png">Accueil</a><li>
-                  <li><a href="#" ><img class="images" src="images/test.png">Nos Tests</a><li>
-                  <li><a href="#" ><img class="images" src="images/contact.png">Contact</a><li>
-                  <a href="#" ><button id="connexion-button"><img class="images bis" src="images/account.png">Connexion</button></a>
-                </ul>
-              </div>
-            </div>
-          </div>-->
 

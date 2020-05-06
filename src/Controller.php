@@ -1,7 +1,10 @@
 <?php
 
 namespace src;
+use ControllerException;
+use Exception;
 use src\Config\Config;
+use src\Config\ConfigException;
 
 /**
  * Controller abstract class.
@@ -31,7 +34,7 @@ abstract class Controller
      * Executes the action to be performed.
      * Calls the method with the same name as the action on the current Controller object.
      *
-     * @throws ControllerException|Exception If the action does not exist in the current Controller class
+     * @throws Exception If the action does not exist in the current Controller class
      */
     public function executeAction($action)
     {
@@ -56,7 +59,6 @@ abstract class Controller
      *
      * @param array $viewData Data required for view generation
      * @param string $action Action associated with the view (allows a controller to generate a view for a specific action)
-     * @throws Exception
      */
     protected function generateView($viewData = array(), $action = null)
     {

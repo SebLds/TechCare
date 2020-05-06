@@ -2,10 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif, Helvetica;
   position: relative;
   top: 183px;
   height: 81vh;

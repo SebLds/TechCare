@@ -1,199 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 * {
     margin: 0;
     padding: 0;
 }
-.content {
-    max-height: 550px;;
-    background-color: #292c2f;
-    color: white;
-    font-size: 38pt;
-    text-align: center;
-    line-height: 550px;
-}
-footer{
-    position: fixed;
-    bottom: 0;
-}
-.footer-distributed{
-    background-color: #292c2f;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+
+footer {
     box-sizing: border-box;
     width: 100%;
+    max-height: 900px;
+    background-color: #292c2f;
+    color: white;
     text-align: left;
+    bottom: 0;
     font: bold 16px sans-serif;
-    padding: 55px 50px;
-    margin-top: 80px;
+    padding: 45px;
+    border: 0;
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
+footer .footer-left,
+footer .footer-center,
+footer .footer-right{
     display: inline-block;
     vertical-align: top;
 }
 
-.footer-distributed .footer-left{
+footer .footer-left{
     width: 40%;
 }
 
-.footer-distributed h3{
-    color: #ffffff;
-    font: normal 36px 'Lato', cursive;
+footer h1{
+    color: #fff;
+    font: normal 43px 'Dancing Script', cursive;
+    letter-spacing: 2px;
     margin: 0;
+    font-weight: 500;
 }
 
-.footer-distributed h3 span{
-    color: #5383d3;
+footer h1 span{
+    color: #A8CAE9;
 }
 
-.footer-distributed .footer-links{
-    color:  #ffffff;
-    margin: 20px 0 12px;
+footer .footer-links{
+    color:  #fff;
+    margin: 4em 0 1em 0px;
     padding: 0;
 }
 
-.footer-distributed .footer-links a{
-    display: inline-block;
-    line-height: 1.8;
-    text-decoration: none;
-    color:  inherit;
-}
-
-.footer-distributed .footer-links a:hover {
+footer .footer-links a:hover {
   text-decoration: underline;
 }
 
-.footer-distributed .footer-company-name{
+footer .footer-company-name{
     color:  #8f9296;
     font-size: 14px;
     font-weight: normal;
-    margin: 0;
 }
 
-
-.footer-distributed .footer-center{
+footer .footer-center{
     width: 30%;
 }
 
-.footer-distributed .footer-center i{
+footer .footer-center i{
     background-color: #33383b;
-    color: #ffffff;
+    color: #fff;
     font-size: 25px;
-    width: 45px;
-    height: 45px;
+    width: 2em;
+    height: 2em;
     border-radius: 50%;
     text-align: center;
-    line-height: 44px;
-    margin: 10px 15px;
-    vertical-align: middle;
+    padding-top: 11px;
+    margin: 10px;
 }
 
-.footer-distributed .footer-center i.fa-envelope{
-    font-size: 17px;
-    line-height: 38px;
-}
-
-.footer-distributed .footer-center p{
+footer .footer-center p{
     display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin: 0;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 700;
 }
 
-.footer-distributed .footer-center p span{
+footer .footer-address-text{
+    position: relative;
+    top: 10px;
+}
+
+footer .footer-center p span{
     display: block;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 2;
+    line-height: 2em;
 }
 
-.footer-distributed .footer-center p a{
-    color: #5383d3;
-    text-decoration: none;;
+footer .footer-center p a{
+    color: #A8CAE9;
+    text-decoration: none;
 }
 
-.footer-distributed .footer-right{
+footer .footer-right{
     width: 25%;
 }
 
-.footer-distributed .footer-company-about{
-    line-height: 20px;
-    color:  #92999f;
-    font-size: 13px;
+footer .footer-company-about{
+    line-height: 1.2em;
+    color: #92999f;
+    font-size: 0.85em;
     font-weight: normal;
     margin: 0;
 }
 
-.footer-distributed .footer-company-about span{
+footer .footer-company-about span{
     display: block;
-    color:  #ffffff;
-    font-size: 18px;
+    color:  #fff;
+    line-height: 1em;
+    font-size: 1.85em;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons{
+footer .footer-icons{
     margin-top: 25px;
 }
 
-.footer-distributed .footer-icons a{
+footer .footer-icons a{
     display: inline-block;
     width: 35px;
     height: 35px;
     cursor: pointer;
-    background-color:  #33383b;
-    border-radius: 2px;
-
+    background-color: #33383b;
+    border-radius: 3px;
     font-size: 20px;
-    color: #ffffff;
+    color: #fff;
     text-align: center;
-    line-height: 35px;
-
+    padding: 6px;
     margin-right: 3px;
 }
 
-.footer-distributed .footer-submit{
+footer .footer-icons a:hover{
+    background-color: #92999f;
+}
+
+footer .footer-submit{
     display: inline-block;
     padding-top: 10px;
 }
 
 input[type="email"] {
-    border: 0;
     padding: 0.6rem;
     width: 45%;
+    border: 0;
 }
 
 input[type="submit"] {
-    background-color: #5383d3;
+    background-color: #A8CAE9;
     color: white;
     cursor: pointer;
-    border: 0;
     padding: 0.6rem 0.9rem;
     margin-top: 0.5rem;
+    border: 0;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 1246px) {
 
-    .footer-distributed{
+}
+
+@media (max-width: 980px) {
+    footer{
         font: bold 14px sans-serif;
-
     }
 
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-center,
-    .footer-distributed .footer-right{
+    footer .footer-left,
+    footer .footer-center,
+    footer .footer-right{
         display: block;
         width: 100%;
-        margin-bottom: 40px;
         text-align: center;
     }
 
-    .footer-distributed .footer-center i{
-        margin-left: 0;
-    }
-    .content {
-        line-height: normal;
-        font-size: auto;
+    footer .footer-center {
+        padding: 2em 0;
     }
 
+    footer .footer-center::before, footer .footer-center::after  {
+        content: "";
+        display: block;
+        width: 100%;
+        background-color: gray;
+        height: 1px;
+    }
 }

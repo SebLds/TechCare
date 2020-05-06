@@ -37,6 +37,7 @@ class User extends Model
             return $this -> executeRequest('SELECT * FROM test WHERE idUtilisateur = ? AND (NumeroSecu = ? OR idProfil = ? OR Examinateur = ? OR "Type" = ? OR Score = ?)', $idUser) -> fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
     } //function getSpecificTest($idUser)
+<<<<<<< HEAD
 
     public function checkMail($mail)
     {
@@ -76,3 +77,7 @@ class User extends Model
     }
 
 } //class User extends Model
+=======
+
+} //class User extends Model
+>>>>>>> master
