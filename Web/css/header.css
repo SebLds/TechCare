@@ -31,21 +31,6 @@ header {
     }
 }
 
-.sticky{
-    position: fixed;
-    background: #fff;
-    animation: smoothScroll 0.5s linear ;
-}
-
-@keyframes smoothScroll {
-    0% {
-        transform: translateY(-100%);
-    }
-    100% {
-        transform: translateY(0px);
-    }
-}
-
 .logo {
     z-index: 2;
     margin-left: 50px;
