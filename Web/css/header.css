@@ -7,7 +7,7 @@ header {
     top: 0;
     left: 0;
     position: absolute;
-    height: 120px;
+    height: 6em;
     width: 100%;
     font-size: 15pt;
     display: flex;
@@ -34,19 +34,19 @@ header {
 
 .logo {
     z-index: 2;
-    margin-left: 50px;
-    margin-top: 5px;
+    margin-left: 2.5em;
+    margin-top: 0.25em;
 }
 
 #logo {
-    width: 120px;
-    height: 120px;
+    width: 6em;
+    height: 6em;
     cursor: pointer;
 }
 
 .navbar {
     list-style: none;
-    margin-right: 50px;
+    margin-right: 2.5em;
 }
 
 .navbar li {
@@ -54,7 +54,7 @@ header {
 }
 
 .navbar li a {
-    padding: 30px;
+    padding: 1.5em;
     text-decoration: none;
     color: black;
     font-size: 1em;
@@ -68,7 +68,6 @@ header {
 
 .navbar li a:hover {
     color: grey;
-    /*text-decoration: underline;*/
 }
 
 /* Hamburger Menu */
@@ -82,14 +81,14 @@ header {
 }
 
 .fal {
-    margin: 0px 10px 0px 0px;
+    margin: 0px 0.5em 0px 0px;
 }
 
 button {
     background-color: rgba(168, 202, 233, 1);
     border: none;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 0.25em;
     color: #fff;
     font-size: 1em;
     font-weight: 600;
@@ -106,18 +105,18 @@ button:hover {
 }
 .burger-button {
     display: none;
-    padding: 100px 0 0 0;
-    width: 42px;
-    height: 24px;
+    padding: 5em 0 0 0;
+    width: 2.1em;
+    height: 1.2em;
     cursor: pointer;
     position: relative;
-    margin-right: 50px;
+    margin-right: 2.5em;
     z-index: 3;
 }
 
 .burger-button span {
     width: 100%;
-    height: 4px;
+    height: .2em;
     background-color: #A8CAE9;
     display: block;
     position: absolute;
@@ -129,7 +128,7 @@ button:hover {
     content: '';
     position: absolute;
     width: 100%;
-    height: 4px;
+    height: .2em;
     background-color: #A8CAE9;
     transition: transform 0.5s ease-in-out;
 }
@@ -154,28 +153,21 @@ button:hover {
     transform: translateY(0px) rotate(-45deg);
 }
 
-@media only screen and (max-width: 1100px) {
-    .navbar li a {
-        padding: 18px;
+@media screen and (width: 1680px) {
+    header {
+        font-size: 13pt;
     }
-    .images {
-        width: 20px;
-        height: 20px;
-        margin: 0px 5px 0px 0px;
-    }
-    #logo {
-        height: 100px;
-        width: 100px;
+}
+
+@media screen and (max-width: 1280px) {
+    header {
+        font-size: 12pt;
     }
 }
 
 @media only screen and (max-width: 980px) {
-    header{
-        height: 90px;
-    }
-    #logo {
-        height: 80px;
-        width: 80px;
+    header {
+        font-size: 10pt;
     }
     .burger-button {
         display: flex;
@@ -192,9 +184,9 @@ button:hover {
     }
     .navbar li {
         display: inline-block;
-        padding: 7px 0 0 0;
+        padding: 0.35em 0 0 0;
     }
     .navbar li:first-child {
-        padding: 250px 0 0 0;
+        padding: 12.5em 0 0 0;
     }
 }

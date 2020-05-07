@@ -47,8 +47,8 @@
 
         <div class="footer-submit">
             <form action="#" method="post">
-                <input name="email" placeholder="Entrez votre mail" type="email">
-                <input type="submit" value="S'inscrire à la newsletter">
+                <input class="footer-input" type="email" name="email" placeholder="Entrez votre mail">
+                <input class="footer-input" type="submit" value="S'inscrire à la newsletter">
             </form>
         </div>
 
