@@ -1,4 +1,5 @@
 <link href="/Web/css/footer.css" rel="stylesheet">
+<link href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
 
 <body>
 

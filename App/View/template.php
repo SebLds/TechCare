@@ -15,7 +15,7 @@
    <link href="/Web/css/rules.css" rel="stylesheet">
    <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
 <!--    <link href="/Web/css/footer.css" rel="stylesheet">-->
-
+    <link href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
     <?php if (isset($head_tags)){echo $head_tags;} ?>
     <title><?php if (isset($title)){echo $title;} ?></title>

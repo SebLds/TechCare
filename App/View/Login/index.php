@@ -8,10 +8,6 @@
 
   <div class="connexion-page">
 
-    <div class="logo">
-      <a href="home.phpdex.php"><img id="logo" src="images/logo.png" alt="logo"></a>
-    </div>
-
     <div class="connexion-body">
 
       <div class="border">
