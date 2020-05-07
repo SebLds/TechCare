@@ -80,7 +80,7 @@
             <ul class="features">
                 <li class="icon heartbeat">
                     <h3>Fréquence cardiaque</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>Echelle de fréquence cardiaque.</p>
                 </li>
                 <li class="icon temperature">
                     <h3>Température</h3>
