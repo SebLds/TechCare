@@ -80,19 +80,19 @@
             <ul class="features">
                 <li class="icon heartbeat">
                     <h3>Fréquence cardiaque</h3>
-                    <p>Echelle de fréquence cardiaque.</p>
+                    <p>La fréquence cardiaque est un indicateur du stress éprouvé lors du test. Elle sera prise en continue durant le test pour améliorer la précision de ce test.</p>
                 </li>
                 <li class="icon temperature">
                     <h3>Température</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>La température superficielle de la peau sera également mesurer tout au long du test et permet de prévenir de réactifs dangereuses (crise d'angoisse, malaise, etc.).</p>
                 </li>
                 <li class="icon listen">
                     <h3>Niveau d'audition</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>Le niveau d'audition est un seuil qui nous permet de prévenir de mal entendre un son trop aigu ou trop grave.</p>
                 </li>
                 <li class="icon watch">
                     <h3>Temps de réaction</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>Le temps de réaction est une échelle </p>
                 </li>
                 <li class="icon vision">
                     <h3>Acuité visuelle</h3>
