@@ -5,15 +5,15 @@
         <p class="footer-links">
             <a href="/homepage#banner">Accueil</a>
             ·
-            <a href="/forum">Forum</a>
+            <a href="#">Blog</a>
             ·
-            <a href="/homepage#three">Test</a>
+            <a href="#">Test</a>
             ·
             <a href="#">A propos</a>
             ·
-            <a href="/faq">FAQ</a>
+            <a href="#">FAQ</a>
             ·
-            <a href="/contact">Contact</a>
+            <a href="#">Contact</a>
             ·
             <a href="/cgu">CGU</a>
         </p>
@@ -39,7 +39,7 @@
 
     <div class="footer-right">
         <p class="footer-company-about">
-            <a>A propos de l'entreprise</a>
+            <span>A propos de l'entreprise</span>
             Infinite Measures vous accompagne avant, pendant et après vos tests psychotechniques.
             Nous sommes une entreprise au service de la santé de nos patients.
         </p>
@@ -52,10 +52,14 @@
         </div>
 
         <div class="footer-icons">
-            <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
         </div>
 
     </div>
 </footer>
+
+
+</body>
+</html>

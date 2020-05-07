@@ -14,7 +14,10 @@ Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
 Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
+Autoloader::addNamespace('App\Controller\Register', '../App/Controller/Register/');
 Autoloader::addNamespace('App\Model','../App/Model/');
+Autoloader::addNamespace('App\Controller\Login', '../App/Controller/Login/');
+
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
@@ -42,14 +45,22 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
+
+$router->get('/home',"Forum\Tag#index");
+$router->get('/inscription',"Register\Register#index");
+$router->post('/inscription',"Register\Register#validate");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
+
 $router->get('/homepage',"Home#index");
-$router->get('/homepage#:slug',"Home#index");
+$router->get('/homepage-:slug',"Home#index");
+
+$router->get('/login',"Login\Login#index");
 $router->get('/faq',"Faq#index");
 
 
 //$router->post('/home',"Forum\Forum#index");
+
 
 //$router->get('',"Test#index");
 
@@ -60,4 +71,3 @@ $router->get('/faq',"Faq#index");
 //
 //$router->post('/posts/:id',function($id){echo 'Poster l\'article'.$id;});
 $router->run();
-

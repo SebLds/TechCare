@@ -37,5 +37,47 @@ class User extends Model
             return $this -> executeRequest('SELECT * FROM test WHERE idUtilisateur = ? AND (NumeroSecu = ? OR idProfil = ? OR Examinateur = ? OR "Type" = ? OR Score = ?)', $idUser) -> fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
     } //function getSpecificTest($idUser)
+<<<<<<< HEAD
+
+    public function checkMail($mail)
+    {
+        try {
+            $count = $this -> executeRequest('SELECT * FROM users WHERE mail = ?', $mail) -> fetch(PDO::FETCH_OBJ);
+
+            if ($count > 0) {
+              return true;
+            } else {
+              return false;
+            }
+
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getSpecificTest($idUser)
+
+    public function checkHealthNumber($healthNumber)
+    {
+        try {
+            $count = $this -> executeRequest('SELECT * FROM users WHERE healthNumber = ?', $healthNumber) -> fetch(PDO::FETCH_OBJ);
+
+            if ($count > 0) {
+              return true;
+            } else {
+              return false;
+            }
+
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+    } //function getSpecificTest($idUser)
+
+    public function addUser($dataRegister)
+    {
+        try {
+            return $this -> executeRequest('INSERT INTO users SET username') -> fetch(PDO::FETCH_OBJ);
+
+        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
+
+    }
 
 } //class User extends Model
+=======
+
+} //class User extends Model
+>>>>>>> master

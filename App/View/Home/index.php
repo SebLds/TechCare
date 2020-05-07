@@ -1,8 +1,8 @@
-
 <?php $this->title='Infinite Measures';?>
-<link rel="stylesheet" href="/Web/css/home.css" />
 
-<div id="body">
+<link rel="stylesheet" href="/Web/css/home.css"/>
+
+<body>
     <!-- Page Wrapper -->
     <div id="page-wrapper">
     <!-- Banner -->
