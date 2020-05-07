@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="/Web/css/home.css"/>
 
-<div id="body">
+<body>
     <!-- Page Wrapper -->
     <div id="page-wrapper">
     <!-- Banner -->
