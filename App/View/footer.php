@@ -11,19 +11,19 @@
         <h1>Infinite <span>Measures</span></h1>
 
         <p class="footer-links">
-            <a href="#">Accueil</a>
+            <a href="/homepage#banner">Accueil</a>
             ·
-            <a href="#">Blog</a>
+            <a href="/forum">Forum</a>
             ·
-            <a href="#">Test</a>
+            <a href="/homepage#three">Test</a>
             ·
             <a href="#">A propos</a>
             ·
-            <a href="#">FAQ</a>
+            <a href="/faq">FAQ</a>
             ·
-            <a href="#">Contact</a>
+            <a href="/contact">Contact</a>
             ·
-            <a href="#">CGU</a>
+            <a href="/cgu">CGU</a>
         </p>
 
         <p class="footer-company-name">&copy; Infinite Measures - Tous droits réservés 2019-2020</p>

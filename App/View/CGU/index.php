@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head><title>CGU et Mentions légales</title>
+<head>
+    <title>CGU et Mentions légales</title>
     <link rel="stylesheet" type="text/css" href="/Web/css/cgu.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
