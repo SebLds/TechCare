@@ -2,27 +2,22 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  border-style: solid;
+  justify-content: space-between;
 }
 
-.identity {
+.left {
   display: flex;
   flex-direction: column;
-  border-style: solid;
 }
 
-.pro {
+.right {
   display: flex;
   flex-direction: column;
-  border-style: solid;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  border-style: solid;
-  width: 100%;
 }
 
 form {

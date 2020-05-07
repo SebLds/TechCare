@@ -1,26 +1,31 @@
 <?php $this->title = "Login" ?>
 
-<link rel="stylesheet" href="/Web/css/connexion.css">
+<link rel="stylesheet" href="/Web/css/login.css">
 <link rel="stylesheet" href="/Web/css/form.css">
-<link href="/Web/css/rules.css" rel="stylesheet">
 
 <div id="body">
 
-  <div class="connexion-page">
+  <div class="box">
 
-    <div class="connexion-body">
+    <div class="form-login">
 
-      <div class="border">
-      <h1>Je me connecte à Infinite Measures</h1>
-        <form action="../../Web/index.php" method="post">
-          <h2>Identifiant</h2>
-          <input type="text" name="ID" placeholder="infinite@measures.com">
-          <h2>Mot de passe</h2>
-          <input type="password" name="password" placeholder="●●●●●●●●">
-        </form>
-        <button>Je me connecte</button>
-        <a href="password.phpphp">J'ai oublié mon mot de passe</a>
-      </div>
+    <h1>Je me connecte à Infinite Measures</h1>
+    <h2><a href="/register">Ou je m'inscris</h2></a>
+
+      <form action="../../Web/index.php" method="post">
+
+        <label>Identifiant</label>
+        <input type="text" name="mail" placeholder="infinite@measures.com" value="<?php if(isset($mail)) { echo $mail; }?>">
+        <p><?php if(isset($error_mail)) { echo $error_mail; }?></p>
+
+        <label>Mot de passe</label>
+        <input type="password" name="passwword" id="myInput" name="password" placeholder="●●●●●●●●">
+        <img id="eye" src="images/hide.png">
+        <a href="/set-new-password"><h3>Mot de passe oublié</h3></a>
+
+        <input type="submit" value="Se connecter" name="login">
+
+      </form>
 
     </div>
 

@@ -7,5 +7,9 @@
 
 #body {
   display: flex;
-  margin-top: 120px;
+  width: 100%;
+  font-size: 12pt;
+  display: flex;
+  padding: 200px 150px 100px 150px;
+  justify-content: center;
 }
