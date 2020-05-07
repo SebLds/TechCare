@@ -220,9 +220,9 @@ div.major h2::after {
     content: "\f2a8";
 }
 
-.icon.light::before {
+.icon.sono::before {
 @extends . icon;
-    content: "\f672";
+    content: "\f961";
 }
 
 

@@ -90,17 +90,17 @@
                     <h3>Niveau d'audition</h3>
                     <p>Le niveau d'audition est un seuil qui nous permet de prévenir de mal entendre un son trop aigu ou trop grave.</p>
                 </li>
+                <li class="icon sono">
+                    <h3>Reproduction sonore </h3>
+                    <p>La reproduction sonore d'un son émis à une fréquence défini permet de prévenir du toute faiblesses d'audition nécessaire pour les patients.</p>
+                </li>
                 <li class="icon watch">
-                    <h3>Temps de réaction</h3>
-                    <p>Le temps de réaction est une échelle </p>
+                    <h3>Temps de réaction sonore</h3>
+                    <p>Le temps de réaction sonore est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
                 </li>
                 <li class="icon vision">
-                    <h3>Acuité visuelle</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-                </li>
-                <li class="icon light">
-                    <h3>Niveau </h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <h3>Temps de réaction visuel</h3>
+                    <p>Le temps de réaction visuel est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
                 </li>
             </ul>
         </div>
