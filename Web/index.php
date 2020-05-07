@@ -55,9 +55,8 @@ $router->get('/cgu',"Cgu#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage-:slug',"Home#index");
 
-
 $router->get('/login',"Login\Login#index");
-
+$router->get('/faq',"Faq#index");
 
 
 //$router->post('/home',"Forum\Forum#index");
