@@ -9,7 +9,7 @@
     <section id="banner">
         <div class="inner">
             <h2>Infinite Measures</h2>
-            <p>Test psychotechnique<br />
+            <p>Test psychotechnique<br/>
                 à la pointe de la technologie<br />
                 certifié par les organismes gouvernementales.</p>
             <ul class="actions special">

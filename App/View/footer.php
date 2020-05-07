@@ -1,15 +1,7 @@
 
-<!-- Custom Styling -->
-<link href="/Web/css/footer.css" rel="stylesheet">
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
-<!-- Font Awesome 5 -->
-<script src="https://kit.fontawesome.com/4fe1832888.js" crossorigin="anonymous"></script>
-
 <footer>
     <div class="footer-left">
         <h1>Infinite <span>Measures</span></h1>
-
         <p class="footer-links">
             <a href="/homepage#banner">Accueil</a>
             ·
@@ -25,7 +17,6 @@
             ·
             <a href="/cgu">CGU</a>
         </p>
-
         <p class="footer-company-name">&copy; Infinite Measures - Tous droits réservés 2019-2020</p>
     </div>
 
