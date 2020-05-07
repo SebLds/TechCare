@@ -2,16 +2,14 @@
 <link href="/Web/css/faq.css" rel="stylesheet">
 <?php //$head_tags = ob_get_clean();?>
 
-<div class="container">
+<div id="body">
     <h2>Foire Aux Questions</h2>
 
-    <div class="search">
-        <input type="text" autocomplete="off" class="search__input" placeholder="Rechercher des réponses..." tabindex="1">
-    </div>
+    <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." tabindex="1">
 
     <div class="accordion">
         <div class="accordion-item">
-            <a>Comment ce déroule le test ?</a>
+            <a>Comment se déroule le test ?</a>
             <div class="content">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
             </div>

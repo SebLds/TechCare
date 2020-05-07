@@ -46,7 +46,7 @@
         </p>
 
         <div class="footer-submit">
-            <form action="../../index.php" method="post">
+            <form action="#" method="post">
                 <input name="email" placeholder="Entrez votre mail" type="email">
                 <input type="submit" value="S'inscrire à la newsletter">
             </form>
