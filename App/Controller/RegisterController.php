@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Controller;
 use src\Controller;
 
 class RegisterController extends Controller {
@@ -8,7 +9,7 @@ class RegisterController extends Controller {
   public $errors = [];
 
   public function __construct() {
-        $this->user = new User();
+        //$this->user = new User();
     }
 
   public function index(){
@@ -34,7 +35,7 @@ class RegisterController extends Controller {
       selon le $typefield ca return un message d'erreur ca sera pas un sting ce sera une 'requete' vers le fichier json correspondant
 
     */
-    $array= ["mail"=>"erreur ton mail pue",]
+    /*$array= ["mail"=>"erreur ton mail pue",]
 
     if (!empty($_POST)) {
       extract($_POST);
@@ -125,11 +126,11 @@ class RegisterController extends Controller {
         if (!isset($_POST['check'])) {
           $error_cgu = ("Veuillez accepter les CGU");
         }
+
       }
 
     }
   }
-
 
   public function errorForm() {
     // TODO: la page index avec les msgs d'erreurs
@@ -138,14 +139,8 @@ class RegisterController extends Controller {
       $this->generateView($array,"index");
     }
 
-  }
+  }*/
 
 
-
-
-
-
-
-
-
+}
 }

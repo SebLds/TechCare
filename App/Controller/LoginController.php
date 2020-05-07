@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Login;
+namespace App\Controller;
 use src\Controller;
 
 

@@ -144,11 +144,6 @@ footer .footer-submit{
     padding-top: 10px;
 }
 
-input {
-    padding: 0.6rem;
-    border: 0;
-    margin-top: 0.5em;
-}
 input[type="email"] {
     width: 45%;
 }

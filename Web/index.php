@@ -14,9 +14,7 @@ Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
 Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
-Autoloader::addNamespace('App\Controller\Register', '../App/Controller/Register/');
 Autoloader::addNamespace('App\Model','../App/Model/');
-Autoloader::addNamespace('App\Controller\Login', '../App/Controller/Login/');
 
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
@@ -47,15 +45,17 @@ $router->get('/Our-Work',function(){echo 'our work';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 
 $router->get('/home',"Forum\Tag#index");
-$router->get('/inscription',"Register\Register#index");
-$router->post('/inscription',"Register\Register#validate");
+$router->get('/register',"Register#index");
+$router->post('/register',"Register#validate");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/cgu',"Cgu#index");
 
 $router->get('/homepage',"Home#index");
 $router->get('/homepage-:slug',"Home#index");
 
-$router->get('/login',"Login\Login#index");
+$router->get('/login',"Login#index");
+$router->get('/set-new-password',"ForgetPassword#index");
+$router->get('/contact',"Contact#index");
 $router->get('/faq',"Faq#index");
 
 

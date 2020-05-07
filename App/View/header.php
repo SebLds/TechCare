@@ -13,7 +13,7 @@
         <ul class="navbar">
             <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i>Accueil</i></a><li>
             <li><a class="test" href="/homepage#three"><i class="fal fa-file-alt"></i>Nos Tests</a><li>
-            <li><a class="contact" href="/Web/index.php"><i class="fal fa-envelope-open"></i>Contact</a><li>
+            <li><a class="contact" href="/contact"><i class="fal fa-envelope-open"></i>Contact</a><li>
             <li><a class="login" href="/login"><button id="button-connexion"><i class="fal fa-user"></i>Connexion</button></a></li>
         </ul>
 
