@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
     <!-- CSS Files -->
-    <!--<link href="/Web/css/rules.css" rel="stylesheet">-->
+
     <!-- Image -->
     <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <base href="<?php if (isset($webRoot)){echo $webRoot;} ?>" >
-<!--    <link href="/Web/css/rules.css" rel="stylesheet">-->
+   <link href="/Web/css/rules.css" rel="stylesheet">
    <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
     <link href="/Web/css/footer.css" rel="stylesheet">
     <link href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">

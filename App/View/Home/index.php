@@ -1,6 +1,6 @@
-
 <?php $this->title='Infinite Measures';?>
-<link rel="stylesheet" href="/Web/css/home.css" />
+
+<link rel="stylesheet" href="/Web/css/home.css"/>
 
 <div id="body">
     <!-- Page Wrapper -->
