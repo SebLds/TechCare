@@ -1,17 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap");
 @import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
 /* Basic */
 #body {
+    scroll-behavior: smooth;
     display: block;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: #fff;
