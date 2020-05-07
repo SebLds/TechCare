@@ -1,3 +1,4 @@
+<link href="/Web/css/footer.css" rel="stylesheet">
 
 <footer>
     <div class="footer-left">

@@ -7,7 +7,6 @@
 
 /* Basic */
 #body {
-    scroll-behavior: smooth;
     display: block;
     margin: 0;
     padding: 0;

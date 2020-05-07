@@ -13,8 +13,9 @@ footer {
     color: white;
     text-align: left;
     bottom: 0;
-    font-size: 16pt;
-    font: bold 1em "Lato";
+    font-size: 12pt;
+    font-family: "Lato";
+    font-weigth: bold;
     padding: 45px;
     border: 0;
 }
@@ -42,9 +43,15 @@ footer h1 span{
 
 footer .footer-links{
     color:  #fff;
-    font-size: 1em;
     margin: 4em 0 1em 0;
     padding: 0;
+    text-decoration: none;
+}
+
+footer .footer-links a{
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
 }
 
 footer .footer-links a:hover {
@@ -65,13 +72,13 @@ footer .footer-center{
 footer .footer-center i{
     background-color: #33383b;
     color: #fff;
-    font-size: 1.6em;
-    width: 2em;
+    width: 3em;
     height: 2em;
     border-radius: 50%;
     text-align: center;
-    padding-top: 0.5em;
+    padding-top: 1em;
     margin: 0.5em;
+    font-size: 1.6em;
 }
 
 footer .footer-center p{
