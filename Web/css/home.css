@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap");
 @import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
 
+*{
+    box-sizing: border-box;
+}
+
 /* Basic */
 #body {
     scroll-behavior: smooth;
     display: block;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -217,9 +220,9 @@ div.major h2::after {
     content: "\f2a8";
 }
 
-.icon.light::before {
+.icon.sono::before {
 @extends . icon;
-    content: "\f672";
+    content: "\f961";
 }
 
 
@@ -345,7 +348,6 @@ ul.icons li img {
     flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    padding: 0;
     width: 100%;
 }
 

@@ -6,6 +6,7 @@
 
 footer {
     box-sizing: border-box;
+    display: flex;
     width: 100%;
     max-height: 900px;
     background-color: #292c2f;
@@ -13,7 +14,7 @@ footer {
     text-align: left;
     bottom: 0;
     font-size: 16pt;
-    font: bold 1em sans-serif;
+    font: bold 1em "Lato";
     padding: 45px;
     border: 0;
 }
@@ -22,7 +23,6 @@ footer .footer-left,
 footer .footer-center,
 footer .footer-right{
     display: inline-block;
-    vertical-align: top;
 }
 
 footer .footer-left{
@@ -139,24 +139,24 @@ footer .footer-icons a:hover{
     background-color: #92999f;
 }
 
-footer .footer-submit{
+footer .footer-submit {
     display: inline-block;
-    padding-top: 10px;
+    width: 100%;
 }
 
-input {
-    padding: 0.6rem;
+
+footer input {
+    padding: 0.9em;
     border: 0;
-    margin-top: 0.5em;
-}
-input[type="email"] {
-    width: 45%;
+    margin-top: 1.5em;
+    border-radius: 3px;
 }
 
-input[type="submit"] {
+footer input[type="submit"] {
     background-color: #A8CAE9;
     color: white;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 @media (max-width: 1120px) {
