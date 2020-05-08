@@ -1,6 +1,5 @@
-<?php //ob_start(); ?>
+<?php $this->title='Faq';?>
 <link href="/Web/css/faq.css" rel="stylesheet">
-<?php //$head_tags = ob_get_clean();?>
 
 <div id="body">
     <h2>Foire Aux Questions</h2>
