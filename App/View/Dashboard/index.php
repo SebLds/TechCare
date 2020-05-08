@@ -9,13 +9,6 @@ $Score= [0,0] ;
 <div id="body">
     <h2>Dashboard</h2>
 
-    <ul class="header-dash">
-        <li>Search Bar</li>
-        <li>Status</li>
-        <li>Date</li>
-        <li>Score</li>
-    </ul>
-
     <!--
     <div class="title">
         <p>Mes derniers tests</p>
@@ -26,28 +19,48 @@ $Score= [0,0] ;
     </div>
 -->
     <div class="testResume">
-        <div class="testResumeID">
-            <p>Score : 0</p>
-            <p>Type de score</p>
-            <button>Commentaire médecin</button>
-        </div>
+        <ul class="testResumeID title">
+            <li>Search Bar</li>
+            <li>Status</li>
+            <li>Date</li>
+            <li>Score</li>
+            <li><div class="content"></div></li>
+        </ul>
 
-        <div class="testResumeID">
-            <p>Score : 0</p>
-            <p>Type de score</p>
-            <button>Commentaire médecin</button>
-        </div>
+        <ul class="testResumeID">
+            <li>Cognitif</li>
+            <li class="status">Passé</li>
+            <li>08/05/2020</li>
+            <li>100/100</li>
+            <li><button>Commentaire médecin</button></li>
+        </ul>
 
-        <div class="testResumeID">
-            <p>Score : 0</p>
-            <p>Type de score</p>
-            <button>Commentaire médecin</button>
-        </div>
+        <ul class="testResumeID">
+            <li>Cognitif</li>
+            <li class="status">Passé</li>
+            <li>08/05/2020</li>
+            <li>100/100</li>
+            <li><button>Commentaire médecin</button></li>
+        </ul>
 
-        <div class="testResumeID">
-            <p>Score : 0</p>
-            <p>Type de score</p>
-            <button>Commentaire médecin</button>
-        </div>
+        <ul class="testResumeID">
+            <li>Cognitif</li>
+            <li class="status">Passé</li>
+            <li>08/05/2020</li>
+            <li>100/100</li>
+            <li><button>Commentaire médecin</button></li>
+        </ul>
+
+        <ul class="testResumeID">
+            <li>Cognitif</li>
+            <li class="status">Passé</li>
+            <li>08/05/2020</li>
+            <li>100/100</li>
+            <li><button>Commentaire médecin</button></li>
+        </ul>
     </div>
 </div>
+
+<script>
+    $('button').css('height')
+</script>

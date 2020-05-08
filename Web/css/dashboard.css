@@ -5,8 +5,7 @@
     font-family: "Lato", Helvetica, sans-serif;
     font-size: 15pt;
     font-weight: 400;
-    margin-left: 3em;
-    margin-right: 3em;
+    margin: 4em;
 }
 
 #body h2 {
@@ -14,15 +13,9 @@
     font-size: 2em;
     letter-spacing: 0.225em;;
     color: black;
-    margin-top: 2em;
+    margin: 2em 0 0 0;
 }
 
-.header-dash li{
-    list-style: none;
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-}
 /*
 .title {
     display: inline-flex;
@@ -45,20 +38,52 @@
 }
 */
 
-
-.testResume > .testResumeID {
+.testResume .testResumeID {
+    list-style: none;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2em;
-    background-color: darkgrey;
+    background-color: lightgray;
+    box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
     border-radius: 5px;
     padding: 1em;
     width: 100%;
 }
 
-.testResumeID > button {
+.testResume  .testResumeID:hover {
+    background-color: white;
+}
+
+.testResumeID button:hover {
+    background-color: skyblue;
+}
+
+.title {
+    margin-top: 3em;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: black;
+}
+
+.testResumeID .status {
+    padding: 0.5em;
+    color: #fff;
+    border-radius: 3px;
+    background-color: green !important;
+    /*si pas passé > background-color: red;*/
+}
+
+.testResumeID button {
+    cursor: pointer;
     background-color: #A8CAE9;
     padding: 1em;
+    border: none;
+    outline: none;
     border-radius: 5px;
+    width: 20em;
+}
+
+.content{
+    width: 20em;
 }

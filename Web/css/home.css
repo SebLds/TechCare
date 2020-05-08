@@ -185,9 +185,10 @@ div.major h2::after {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Pro";
     font-weight: 900;
+    font-family: "Font Awesome 5 Pro";
 }
+
 
 .icon::before {
     line-height: inherit;
