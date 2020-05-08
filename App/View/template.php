@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
 
-    <base href="<?php if (isset($webRoot)){echo $webRoot;} ?>">
+    <base href="<?php use src\Session;
+
+    if (isset($webRoot)){echo $webRoot;} ?>">
 
     <!-- CSS Files -->
     <link href="/Web/css/rules.css" rel="stylesheet">
     <!-- Image -->
     <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
-    <link href="/Web/css/sidebar.css" rel="stylesheet">
 
     <!-- Font -->
     <!-- Font & Icon -->
@@ -22,11 +23,13 @@
 
     <?php if (isset($head_tags)){echo $head_tags;} ?>
     <title><?php if (isset($title)){echo $title;} ?></title>
-<?php if (is_file('../App/View/header.php')){require_once 'sidebar.php';} ?>
+
 <body>
-
+<?php if(Session::getAttribute('isLogged')===true):?>
+<?php if (is_file('../App/View/header.php')){require_once 'sidebar.php';} ?>
+<?php else:?>
 <?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
-
+<?php endif; ?>
 <?php if (isset($content)){echo $content;} ?>
 
 <?php require_once 'footer.php'?>

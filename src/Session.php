@@ -18,6 +18,7 @@ class Session
     public function __construct()
     {
         session_start();
+        self::setAttribute('isLogged',false);
         $this->sessionType='visiteur';
         self::setAttribute('sessionType',$this->sessionType);
     }
@@ -49,7 +50,7 @@ class Session
      * @param string $name Attribute name
      * @param string $value Attribute value
      */
-    public function setAttribute($name, $value)
+    public static function setAttribute($name, $value)
     {
         $_SESSION[$name] = $value;
     }
@@ -60,9 +61,12 @@ class Session
      * @param string $name Attribute name
      * @return bool True if the attribute exists and its value is not empty
      */
-    public function isThereAttribute($name)
+    private static function isThereAttribute($name)
     {
-        return (isset($_SESSION[$name]) && $_SESSION[$name] != "");
+        if (isset($_SESSION[$name])){
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -72,9 +76,9 @@ class Session
      * @return string Attribute name
      * @throws SessionException If the attribute does not exist in the session
      */
-    public function getAttribute($name)
+    public static function getAttribute($name)
     {
-        if ($this->isThereAttribute($name)) {
+        if (self::isThereAttribute($name)) {
             return $_SESSION[$name];
         }
         else {
