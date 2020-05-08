@@ -13,7 +13,7 @@
                 à la pointe de la technologie<br />
                 certifié par les organismes gouvernementales.</p>
             <ul class="actions special">
-                <li><a href="#" class="btn primary">S'inscrire</a></li>
+                <li><a href="/register" class="btn primary">S'inscrire</a></li>
             </ul>
         </div>
         <a href="/homepage#one" class="more">En savoir plus

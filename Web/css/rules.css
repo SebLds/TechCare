@@ -10,6 +10,6 @@
   width: 100%;
   font-size: 12pt;
   display: flex;
-  padding: 200px 150px 100px 150px;
+  padding: 200px 0px 100px 0px;
   justify-content: center;
 }

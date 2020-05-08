@@ -13,7 +13,7 @@ class RegisterController extends Controller {
     }
 
   public function index(){
-    $this->generateView();
+    $this->generateView(array(),'index');
 // TODO: la page du formulaire non rempli generateView ('index') ca va aller cherche le fichier de vue App/View/Register/index.php
   }
   public function registrationValidated() {
