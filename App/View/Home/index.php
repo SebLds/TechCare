@@ -16,10 +16,7 @@
                 <li><a href="#" class="btn primary">S'inscrire</a></li>
             </ul>
         </div>
-        <a href="/homepage#one" class="more">En savoir plus
-            <span class="icon">
-                <i class="fal fa-arrow-down fa-3x"></i>
-            </span>
+        <a href="/homepage#one" class="more">En savoir plus<i class="fal fa-arrow-down fa-3x"></i>
         </a>
 
     </section>

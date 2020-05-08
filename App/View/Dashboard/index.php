@@ -7,34 +7,46 @@ $Score= [0,0] ;
 <link href="/Web/css/dashboard.css" rel="stylesheet" type="text/css">
 
 <div id="body">
-    <div class="title">
-        <div><p>Mes derniers tests</p></div>
-        <div><p> x tests disponibles</p></div>
-        <button>Demande de test ?</button> <!-- Renvoyer l'utilisateur vers la page de contact -->
-    </div>
+    <h2>Dashboard</h2>
 
+    <ul class="header-dash">
+        <li>Search Bar</li>
+        <li>Status</li>
+        <li>Date</li>
+        <li>Score</li>
+    </ul>
+
+    <!--
+    <div class="title">
+        <p>Mes derniers tests</p>
+        <p> x tests disponibles</p>
+        <form action="/homepage" method="get">
+            <button type="submit">Demande de test ?</button>
+        </form>
+    </div>
+-->
     <div class="testResume">
         <div class="testResumeID">
-            <div><p>Score : 0</p></div>
-            <div><p>Type de score</p></div>
+            <p>Score : 0</p>
+            <p>Type de score</p>
             <button>Commentaire médecin</button>
         </div>
 
         <div class="testResumeID">
-            <div><p>Score : 0</p></div>
-            <div><p>Type de score</p></div>
+            <p>Score : 0</p>
+            <p>Type de score</p>
             <button>Commentaire médecin</button>
         </div>
 
         <div class="testResumeID">
-            <div><p>Score : 0</p></div>
-            <div><p>Type de score</p></div>
+            <p>Score : 0</p>
+            <p>Type de score</p>
             <button>Commentaire médecin</button>
         </div>
 
         <div class="testResumeID">
-            <div><p>Score : 0</p></div>
-            <div><p>Type de score</p></div>
+            <p>Score : 0</p>
+            <p>Type de score</p>
             <button>Commentaire médecin</button>
         </div>
     </div>
