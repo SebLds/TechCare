@@ -8,15 +8,13 @@ footer {
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    max-height: 900px;
     background-color: #292c2f;
     color: white;
     text-align: left;
     bottom: 0;
     font-size: 12pt;
     font-family: "Lato";
-    font-weigth: bold;
-    padding: 45px;
+    padding: 40px;
     border: 0;
 }
 
@@ -32,13 +30,13 @@ footer .footer-left{
 
 footer h1{
     color: #fff;
-    font: normal 43px 'Dancing Script', cursive;
+    font: bold 43px 'Dancing Script', cursive;
     letter-spacing: 0.1em;
-    font-weight: 500;
 }
 
 footer h1 span{
     color: #A8CAE9;
+    font: bold 43px 'Dancing Script', cursive;
 }
 
 footer .footer-links{
@@ -71,21 +69,27 @@ footer .footer-center{
 
 footer .footer-center i{
     background-color: #33383b;
-    color: #fff;
-    width: 3em;
-    height: 2em;
+    width: 4em;
+    height: 4em;
     border-radius: 50%;
     text-align: center;
-    padding-top: 1em;
-    margin: 0.5em;
-    font-size: 1.6em;
+    margin: 1em;
+}
+
+footer .footer-center i:before {
+    color: #fff;
+    font-size: 1.7em;
+    position: relative;
+    top: 25%;
 }
 
 footer .footer-center p{
     display: inline-block;
+    position: relative;
     font-size: 1.1em;
     color: #fff;
     font-weight: 700;
+    top: 80%;
 }
 
 footer .footer-address-text{
@@ -105,7 +109,7 @@ footer .footer-center p a{
 }
 
 footer .footer-right{
-    width: 25%;
+    width: 30%;
 }
 
 footer .footer-company-about{
@@ -153,6 +157,12 @@ footer .footer-submit {
 
 input[type="email"] {
     width: 45%;
+
+footer .footer-input {
+    padding: 0.9em;
+    border: 0;
+    margin-top: 1.5em;
+    border-radius: 3px;
 }
 
 footer input[type="submit"] {
@@ -162,16 +172,22 @@ footer input[type="submit"] {
     text-transform: uppercase;
 }
 
-@media (max-width: 1120px) {
-    footer{
-        font-size: 12pt;
+@media (max-width: 1280px) {
+    footer {
+        font-size: 10pt;
+    }
+}
+@media (max-width: 1100px) {
+    footer {
+        font-size: 10pt;
+        display: block;
     }
     footer .footer-left,
     footer .footer-center,
     footer .footer-right{
-        display: block;
         width: 100%;
         text-align: center;
+        align-items: center;
     }
 
     footer .footer-center {
