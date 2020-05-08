@@ -76,9 +76,9 @@ footer .footer-center i{
     margin: 1em;
 }
 
-footer .footer-center i:before {
+footer .footer-center i::before {
     color: #fff;
-    font-size: 1.7em;
+    font-size: 1.8em;
     position: relative;
     top: 25%;
 }
@@ -86,15 +86,19 @@ footer .footer-center i:before {
 footer .footer-center p{
     display: inline-block;
     position: relative;
+    top: 0.7em;
     font-size: 1.1em;
     color: #fff;
     font-weight: 700;
-    top: 80%;
+}
+
+footer .footer-center .address{
+    top: 1.6em;
 }
 
 footer .footer-address-text{
     position: relative;
-    top: 10px;
+    bottom: 10em;
 }
 
 footer .footer-center p span{
@@ -145,7 +149,6 @@ footer .footer-icons a{
     margin-right: 3px;
 }
 
-
 footer .footer-icons a:hover{
     background-color: #92999f;
 }
@@ -169,6 +172,12 @@ footer input[type="submit"] {
     text-transform: uppercase;
 }
 
+@media (max-width: 1680px) {
+    footer {
+        font-size: 11pt;
+    }
+}
+
 @media (max-width: 1280px) {
     footer {
         font-size: 10pt;
@@ -176,7 +185,7 @@ footer input[type="submit"] {
 }
 @media (max-width: 1100px) {
     footer {
-        font-size: 10pt;
+        font-size: 9pt;
         display: block;
     }
     footer .footer-left,
