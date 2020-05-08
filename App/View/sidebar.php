@@ -1,19 +1,4 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en" dir="ltr">-->
-<!--  <head>-->
-<!--    <meta charset="utf-8">-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--    <title>Infinite Measures</title>-->
-<!--    <link href="../../Web/css/sidebar.css" rel="stylesheet">-->
-<!--    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">-->
-<!--    <script-->
-<!--src="https://code.jquery.com/jquery-3.4.1.min.js"-->
-<!--integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="-->
-<!--crossorigin="anonymous">-->
-<!--   </script>-->
-<!--  </head>-->
-
+<link href="../../Web/css/sidebar.css" rel="stylesheet">
 
   <header>
 
@@ -56,11 +41,11 @@
           <button id="button-account" type="button" name="button">Mon compte<img id="arrow" src="../../Web/images/arrow.png" alt=""></button>
         </div>
 
-       <script type="text/javascript" src="../../Web/js/dropdown.js"></script>
+       <script type="text/javascript" src="../../Web/js/account-dropdown.js"></script>
 
       </div>
 
-      <div class="footer">
+      <div class="footersidebar">
 
         <div class="content">
 
@@ -86,9 +71,13 @@
 
     </div>
 
-    <script type="text/javascript" src="../../Web/js/sidebar.js"></script>
+    <script type="text/javascript" src="/Web/js/sidebar.js"></script>
 
   </header>
+
+  <body>
+
+  </body>
 
 <!--  <body id="body">-->
 <!---->

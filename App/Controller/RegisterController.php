@@ -1,14 +1,42 @@
 <?php
 
+namespace App\Controller;
 use src\Controller;
 
-class RegisterController extends Controller{
+class RegisterController extends Controller {
+
+  private User $user;
+  public $errors = [];
+
+  public function __construct() {
+        //$this->user = new User();
+    }
+
   public function index(){
-    //include_once('../Model/modelRegister.php');
+    $this->generateView(array(),'index');
+// TODO: la page du formulaire non rempli generateView ('index') ca va aller cherche le fichier de vue App/View/Register/index.php
+  }
+  public function registrationValidated() {
+    // ca correspond à la page de validation
+  }
 
+  public function click() {
+    // TODO : si ya pas d'erreur ca insert dans la bdd via $this->user->create(array());
+    // sinon ca redirige vers le formulaire avec msg d'erreurs via l'appel de la méthode erreur
+  }
 
+  private function checkFields($field, $typeField=null, $length){
+    // TODO: il récupère le champ et vérifie sa validité (vide ou champ correct)
+  /*
+    email text password date numéro
+    si c'est true // c'est good -> ca part dans la bdd
+      return $field
+    sinon
+      selon le $typefield ca return un message d'erreur ca sera pas un sting ce sera une 'requete' vers le fichier json correspondant
 
-// Vérification que la variable $_POST contienne des informations
+    */
+    /*$array= ["mail"=>"erreur ton mail pue",]
+
     if (!empty($_POST)) {
       extract($_POST);
 
@@ -70,7 +98,7 @@ class RegisterController extends Controller{
           if ($password != $passwordConfirm) {
             $error_passwordConfirm = ("Les mots de passe ne correspondent pas");
           } else {
-            $password_hash = hash('sha256', $password);
+            $passwordHash = hash('sha256', $password);
           }
         } else {
           $error_password = ("Veuillez renseigner un mot de passe");
@@ -103,10 +131,16 @@ class RegisterController extends Controller{
 
     }
   }
+
+  public function errorForm() {
+    // TODO: la page index avec les msgs d'erreurs
+    $array=$this->checkFields();
+    if ($array!=true){
+      $this->generateView($array,"index");
+    }
+
+  }*/
+
+
 }
-
-
-
-
-
-
+}

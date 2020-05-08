@@ -1,85 +1,53 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Lato', sans-serif;
-}
-
-body {
-  height: 100vh;
-  background-color: #fff;
-  overflow: visible;
-  bottom: 0;
-}
-
-.logo {
+#body h1 {
+  color: grey;
   display: flex;
   justify-content: center;
 }
 
-#logo {
-  width: 150px;
-  height: 150px;
-  cursor: pointer;
-  margin: 0;
-  padding: 0;
-}
-
-.title a {
-  margin-bottom: 60px;
-}
-
-.page h1 {
+#body h2 {
   color: grey;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   margin-bottom: 50px;
 }
 
-label {
+#body label {
   color: black;
-  margin: 0;
-  padding: 0;
   font-weight: bold;
-  font-size: 130%;
-  margin-top: 20px;
+  font-size: 1.4em;
 }
 
 .box {
   box-shadow: 0px 0px 14px 0px rgba(168,158,168,1);
-  border-radius: 20px;
+  border-radius: 3px;
   background-color: #fff;
-  margin-top: 30px;
   display: flex;
   flex-direction: column;
+  padding: 40px 60px 40px 60px;
 }
 
-.title a {
-  font-size: 110%;
-  margin-top: 40px;
+.box a {
   color: grey;
-  justify-content: center;
-  display: flex;
 }
 
-.title a:hover {
+.box a:hover {
   color: grey;
   text-decoration: none;
 }
 
 form {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 
 input {
-  border-radius: 10px;
+  padding: 0.6rem;
+  margin-top: 0.5em;
   border-style: solid;
   border-color: rgba(168, 202, 233,0.2);
   color: grey;
-  padding: 0.3rem 0.7rem;
-  margin-top: 0.5rem;
+  font-size: 1.2em;
+  border-radius: 2px;
 }
 
 input:focus {
@@ -87,74 +55,62 @@ input:focus {
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
-  font-size: 130%;
-  display: flex;
-  align-items: center;
-}
 
-input[type="checkbox"] {
-    display: none;
-}
-
-input[type="checkbox"] + label {
-    display: inline-block;
-    position: relative;
-    padding: 8px;
-    background-color: #A7D8A7;
-    border: 1px dotted #1E441E;
-    border-radius: 4px;
-}
-
-input[type="checkbox"]:checked + label {
-    background-color: #5CB85C;
-    color: #A4B7C6;
 }
 
 input[type="submit"] {
-  background-color: rgba(168, 202, 233, 1);
-  border: none;
-  border-radius: 20px;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-  font-weight: bold;
-  padding: 10px;
-  font-size: 150%;
-  margin-top: 50px;
-  margin-bottom: 20px;
+  align-self: center;
+  border-radius: 5px;
+  background-color: rgba(168, 202, 233,1);
+  color: white;
+  width: 50%;
+  margin-top: 40px;
 }
 
 input[type="submit"]:hover {
-  box-shadow: 3px 3px 3px 3px rgba(168, 202, 233, 0.75);
-}
-
-input[type="checkbox"] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-}
-
-input[placeholder="text"] {
 
 }
 
-p {
-  color: red;
+
+input[type=checkbox] {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ -ms-appearance: none;
+ border-radius: 4px;
+ height: 15px;
+ width: 15px;
+ background: #fff;
+ border: 1px solid #ccc;
+ margin-bottom: 7px;
+ margin-right: 5px;
+}
+
+input[type="checkbox"]:checked {
+  background: rgba(168, 202, 233,1);
+  position: relative;
+}
+
+.top-text {
+  padding: 40px 0px 40px 0px;
+  font-size: 1.1em;
+}
+
+.box span {
   font-weight: bold;
 }
 
+.error-msg {
+  padding: 5px 0px 40px 0px;
+}
+
 textarea {
-  resize: none;
-  border-radius: 10px;
+  padding: 0.6rem;
+  margin-top: 0.5em;
   border-style: solid;
   border-color: rgba(168, 202, 233,0.2);
   color: grey;
-  padding: 0.3rem 0.7rem;
-  margin-top: 0.5rem;
-  font-size: 130%;
-  display: flex;
-  align-items: center;
+  font-size: 1.2em;
+  border-radius: 2px;
 }
 
 textarea:focus {
@@ -163,29 +119,20 @@ textarea:focus {
 
 @media only screen and (max-width: 850px)  {
 
-  .page {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    height: 100vh;
-    width: 100vw;
-  }
-
-  .box {
+  #body .box {
     box-shadow: none;
     background-color: #fff;
-    margin-top: 30px;
     display: flex;
     align-items: center;
+    padding-top: 0px;
+  }
+
+  .right {
     padding: 0;
-    left: 0;
   }
 
-  .logo {
-    margin-top: 20px;;
-    display: flex;
-    justify-content: center;
+  .left {
+    padding: 0;
   }
 
-  }
+}

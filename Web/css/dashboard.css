@@ -1,0 +1,89 @@
+#body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lato", Helvetica, sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    margin: 4em;
+}
+
+#body h2 {
+    justify-content: center;
+    font-size: 2em;
+    letter-spacing: 0.225em;;
+    color: black;
+    margin: 2em 0 0 0;
+}
+
+/*
+.title {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 3em 0;
+    padding: 1em;
+    width: 60%;
+}
+
+.title button {
+    background-color: #A8CAE9;
+    padding: 1em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+}
+*/
+
+.testResume .testResumeID {
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 2em;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
+    border-radius: 5px;
+    padding: 1em;
+    width: 100%;
+}
+
+.testResume  .testResumeID:hover {
+    background-color: white;
+}
+
+.testResumeID button:hover {
+    background-color: #A4B7C6;
+}
+
+.title {
+    margin-top: 3em;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    color: black;
+}
+
+.testResumeID .status {
+    padding: 0.5em;
+    color: #fff;
+    border-radius: 3px;
+    background-color: green !important;
+    /*si pas passé > background-color: red;*/
+}
+
+.testResumeID button {
+    cursor: pointer;
+    background-color: #A8CAE9;
+    padding: 1em;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    width: 20em;
+}
+
+.content{
+    width: 20em;
+}

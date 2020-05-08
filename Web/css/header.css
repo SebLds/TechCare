@@ -1,16 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap");
+@import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
+
 header {
+    font-family: "Lato", Helvetica, sans-serif;
     background: transparent;
     top: 0;
     left: 0;
     position: absolute;
-    height: 120px;
+    height: 6em;
     width: 100%;
+    font-size: 15pt;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     z-index: 1;
-    /*box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);*/
 }
 
 .sticky{
@@ -24,26 +28,25 @@ header {
         transform: translateY(-100%);
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 
 .logo {
-    /*z-index: 100000;*/
-    margin-left: 50px;
-    margin-top: 5px;
+    z-index: 2;
+    margin-left: 2.5em;
+    margin-top: 0.25em;
 }
 
 #logo {
-    width: 120px;
-    height: 120px;
+    width: 6em;
+    height: 6em;
     cursor: pointer;
 }
 
-
 .navbar {
     list-style: none;
-    margin-right: 50px;
+    margin-right: 2.5em;
 }
 
 .navbar li {
@@ -51,68 +54,69 @@ header {
 }
 
 .navbar li a {
-    padding: 10px;
+    padding: 1.5em;
     text-decoration: none;
     color: black;
-    transition: all 0.3s ease 0s;
-    font-size: 150%;
-    font-weight: bold;
-    padding: 30px;
+    font-size: 1em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
 .navbar li a:hover {
-    text-decoration: none;
     color: grey;
-    transition: all 0.3s ease 0s;
-    text-decoration: underline;
 }
 
+/* Hamburger Menu */
 .navbar.show {
-    background-color: #fff;
+    background-color: white;
     transform: translateY(0);
     display: flex;
     transition: all .3s ease-in-out;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
 }
 
-.images {
-    width: 20px;
-    height: 20px;
-    margin: 0px 10px 0px 0px;
-}
-
-.login {
-    background-color: #A8CAE9;
+.fal {
+    margin: 0px 0.5em 0px 0px;
 }
 
 button {
     background-color: rgba(168, 202, 233, 1);
     border: none;
-    border-radius: 20px;
+    text-transform: uppercase;
+    border-radius: 0.25em;
     color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    font-weight: bold;
-    font-size: 110%;
-    padding: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    height: 3.125em;
+    letter-spacing: 0.225em;
+    max-width: 30em;
+    padding: 0 2em;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-
-
+button:hover {
+    background-color: rgba(168, 202, 233, 0.8);
+}
 .burger-button {
-    width: 42px;
-    height: 24px;
+    display: none;
+    padding: 5em 0 0 0;
+    width: 2.1em;
+    height: 1.2em;
     cursor: pointer;
     position: relative;
-    display: none;
-    margin-right: 50px;
-    z-index: 100000;
+    margin-right: 2.5em;
+    z-index: 3;
 }
 
 .burger-button span {
     width: 100%;
-    height: 4px;
+    height: .2em;
     background-color: #A8CAE9;
     display: block;
     position: absolute;
@@ -124,7 +128,7 @@ button {
     content: '';
     position: absolute;
     width: 100%;
-    height: 4px;
+    height: .2em;
     background-color: #A8CAE9;
     transition: transform 0.5s ease-in-out;
 }
@@ -149,138 +153,40 @@ button {
     transform: translateY(0px) rotate(-45deg);
 }
 
-
-/*.burger-button {
-  display: none;
-}
-
-.burger-button #burger-button {
-  display: flex;
-  width: 10%;
-  border: none;
-  cursor: pointer;
-  margin: 0%;
-  flex-direction: row-reverse;
-  border-style : solid;
-  border-color: black;
-  box-shadow: none;
-}
-
-#burger-button:hover {
-  opacity: 0.75;
-}
-
-#img-burger {
-  background-color: #A8CAE9;
-  margin: 0%;
-  padding: 0%;
-  width: 100%;
-  height: 100%;
-}
-
-.burger #burger-button:active ~ .burger-menu {
-  visibility: visible;
-}
-
-.burger #burger-button:active ~ .burger-menu > div {
-  transform: scale(1);
-  transition-duration: var(--burger-menu-speed);
-}
-
-.burger #burger-button:active ~ .burger-menu > div > div {
-  opacity: 1;
-  transition:  opacity 0.4s ease 0.4s;
-}
-
-.burger-menu {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  align-items: center;
-  justify-content: center;
-    list-style: none;
-}
-
-.burger-menu li {
-  display: inline-block;
-}
-
-.burger-menu li a {
-  padding: 10px;
-  text-decoration: none;
-  color: black;
-  transition: all 0.3s ease 0s;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 30px;
-}
-
-.burger-menu li a:hover {
-  text-decoration: none;
-  color: grey;
-  transition: all 0.3s ease 0s;
-  text-decoration: underline;
-}*/
-
-@media only screen and (max-width: 1100px) {
-
-    .navbar li a {
-        font-size: 110%;
-        padding: 18px;
+@media screen and (width: 1680px) {
+    header {
+        font-size: 13pt;
     }
-
-    .images {
-        width: 20px;
-        height: 20px;
-        margin: 0px 5px 0px 0px;
-    }
-
-    .connexion-page {
-        display: none;
-    }
-
 }
 
-@media only screen and (max-width: 850px) {
+@media screen and (max-width: 1280px) {
+    header {
+        font-size: 12pt;
+    }
+}
 
+@media only screen and (max-width: 980px) {
+    header {
+        font-size: 10pt;
+    }
     .burger-button {
         display: flex;
     }
-
     .navbar {
-        transform: translateY(-200%);
+        transform: translateY(-60vh);
         display: flex;
         position: absolute;
-        width: 100vw;
-        height: 30vh;
-        top: 140px;
-        left: 0;
+        width: 100%;
+        height: 30em;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        color: #fff;
-        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     }
-
     .navbar li {
         display: inline-block;
-        padding: 5px;
-        background-color: #fff;
+        padding: 0.35em 0 0 0;
     }
-
-    .navbar li a {
-        font-size: 150%;
-        padding: 30px;
+    .navbar li:first-child {
+        padding: 12.5em 0 0 0;
     }
-
-    #logo {
-        width: 125px;
-        height: 125px;
-        cursor: pointer;
-        margin: 0;
-    }
-
 }

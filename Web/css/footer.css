@@ -1,199 +1,190 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
-.content {
-    max-height: 550px;;
+footer {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
     background-color: #292c2f;
     color: white;
-    font-size: 38pt;
-    text-align: center;
-    line-height: 550px;
-}
-footer{
-    position: sticky;
-    bottom: 0;
-}
-.footer-distributed{
-    background-color: #292c2f;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    width: 100%;
     text-align: left;
-    font: bold 16px sans-serif;
-    padding: 55px 50px;
-    margin-top: 80px;
+    bottom: 0;
+    font-size: 13pt;
+    font-family: "Lato";
+    padding: 40px;
+    border: 0;
 }
 
-.footer-distributed .footer-left,
-.footer-distributed .footer-center,
-.footer-distributed .footer-right{
+footer .footer-left,
+footer .footer-center,
+footer .footer-right{
     display: inline-block;
-    vertical-align: top;
 }
 
-.footer-distributed .footer-left{
+footer .footer-left{
     width: 40%;
 }
 
-.footer-distributed h3{
+footer h1{
     color: #ffffff;
-    font: normal 36px 'Lato', cursive;
-    margin: 0;
+    font: bold 43px 'Dancing Script', cursive;
+    letter-spacing: 0.2em;
 }
 
-.footer-distributed h3 span{
-    color: #5383d3;
+footer h1 span{
+    color: #A8CAE9;
+    font: bold 43px 'Dancing Script', cursive;
+    letter-spacing: 0.2em;
 }
 
-.footer-distributed .footer-links{
-    color:  #ffffff;
-    margin: 20px 0 12px;
+footer .footer-links{
+    color:  #fff;
+    margin: 5em 0 1em 0;
     padding: 0;
-}
-
-.footer-distributed .footer-links a{
-    display: inline-block;
-    line-height: 1.8;
     text-decoration: none;
-    color:  inherit;
 }
 
-.footer-distributed .footer-links a:hover {
-  text-decoration: underline;
+footer .footer-links a{
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
 }
 
-.footer-distributed .footer-company-name{
+footer .footer-links a:hover {
+    text-decoration: underline;
+    color: #A8CAE9;
+}
+
+footer .footer-company-name{
     color:  #8f9296;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: normal;
-    margin: 0;
 }
 
-
-.footer-distributed .footer-center{
+footer .footer-center{
     width: 30%;
 }
 
-.footer-distributed .footer-center i{
+footer .footer-center i{
+    color: #fff;
     background-color: #33383b;
-    color: #ffffff;
-    font-size: 25px;
-    width: 45px;
-    height: 45px;
+    padding: 0.8em;
+    font-size: 1.8em;
     border-radius: 50%;
     text-align: center;
-    line-height: 44px;
-    margin: 10px 15px;
-    vertical-align: middle;
+    margin: 0.5em;
 }
 
-.footer-distributed .footer-center i.fa-envelope{
-    font-size: 17px;
-    line-height: 38px;
-}
-
-.footer-distributed .footer-center p{
+footer .footer-center p{
     display: inline-block;
-    color: #ffffff;
-    vertical-align: middle;
-    margin: 0;
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 700;
 }
 
-.footer-distributed .footer-center p span{
+footer .footer-center .address{
+    top: 0.8em;
+}
+
+footer .footer-center p span{
     display: block;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 2;
+    line-height: 2em;
 }
 
-.footer-distributed .footer-center p a{
-    color: #5383d3;
-    text-decoration: none;;
+footer .footer-center p a{
+    color: #A8CAE9;
+    text-decoration: none;
 }
 
-.footer-distributed .footer-right{
-    width: 25%;
+footer .footer-right{
+    width: 30%;
 }
 
-.footer-distributed .footer-company-about{
-    line-height: 20px;
-    color:  #92999f;
-    font-size: 13px;
-    font-weight: normal;
+footer .footer-company-about{
+    line-height: 1.2em;
+    color: #92999f;
     margin: 0;
+    font-weight: normal;
 }
 
-.footer-distributed .footer-company-about span{
+footer .footer-company-about a{
     display: block;
-    color:  #ffffff;
-    font-size: 18px;
+    color:  #fff;
+    line-height: 1em;
+    font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.footer-distributed .footer-icons{
-    margin-top: 25px;
-}
-
-.footer-distributed .footer-icons a{
+footer .footer-submit {
     display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color:  #33383b;
-    border-radius: 2px;
-
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 35px;
-
-    margin-right: 3px;
+    width: 100%;
+    margin-top: 2em;
 }
 
-.footer-distributed .footer-submit{
-    display: inline-block;
-    padding-top: 10px;
-}
-
-input[type="email"] {
+footer .footer-input {
+    padding: 0.9em;
     border: 0;
-    padding: 0.6rem;
-    width: 45%;
+    margin-top: 1.5em;
+    border-radius: 3px;
 }
 
-input[type="submit"] {
-    background-color: #5383d3;
+footer input[type="submit"] {
+    background-color: #A8CAE9;
     color: white;
     cursor: pointer;
-    border: 0;
-    padding: 0.6rem 0.9rem;
-    margin-top: 0.5rem;
+    text-transform: uppercase;
 }
 
-@media (max-width: 880px) {
+footer .footer-icons{
+    margin-top: 2em;
+}
 
-    .footer-distributed{
-        font: bold 14px sans-serif;
+footer .footer-icons a{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0.6em;
+    text-align: center;
+    margin-right: 0.5em;
+}
 
+footer .footer-icons a:hover{
+    background-color: #92999f;
+}
+
+@media screen and (max-width: 1680px) {
+    footer {
+        font-size: 12pt;
     }
+}
 
-    .footer-distributed .footer-left,
-    .footer-distributed .footer-center,
-    .footer-distributed .footer-right{
+@media screen and (max-width: 1280px) {
+    footer {
+        font-size: 11pt;
+    }
+}
+@media screen and (max-width: 1100px) {
+    footer {
+        font-size: 10pt;
         display: block;
+    }
+    footer .footer-left,
+    footer .footer-center,
+    footer .footer-right{
         width: 100%;
-        margin-bottom: 40px;
         text-align: center;
+        align-items: center;
     }
 
-    .footer-distributed .footer-center i{
-        margin-left: 0;
+    footer .footer-center {
+        margin: 2.5em 0;
+        padding: 2.5em 0;
+        position: relative;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
     }
-    .content {
-        line-height: normal;
-    }
-
 }

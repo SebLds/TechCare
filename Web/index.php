@@ -15,6 +15,7 @@ Autoloader::addNamespace('App\Controller','../App/Controller/');
 Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
 Autoloader::addNamespace('App\Model','../App/Model/');
+
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
@@ -33,7 +34,7 @@ if (!isset($_GET['url'])){
 //                // etc pour chaque user
 //        }
 //    }
-    $_GET['url']='cgu';
+    $_GET['url']='homepage';
 }
 $router= new Router($_GET['url']);
 //$router->get('/',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
@@ -42,8 +43,11 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
+
+$router->get('/home',"Forum\Tag#index");
+$router->get('/register',"Register#index");
+$router->post('/register',"Register#validate");
 $router->get('/forum',"Forum\Forum#index");
-$router->get('/CGU',"Cgu#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 $router->get('/faq',"Faq#index");
@@ -51,6 +55,13 @@ $router->get('/faq',"Faq#index");
 
 
 
+$router->get('/cgu',"Cgu#index");
+
+
+$router->get('/login',"Login#index");
+$router->get('/set-new-password',"ForgetPassword#index");
+$router->get('/contact',"Contact#index");
+$router->get('/dashboard',"Dashboard#index");
 
 
 //$router->post('/home',"Forum\Forum#index");
@@ -64,4 +75,3 @@ $router->get('/faq',"Faq#index");
 //
 //$router->post('/posts/:id',function($id){echo 'Poster l\'article'.$id;});
 $router->run();
-

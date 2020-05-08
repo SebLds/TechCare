@@ -2,29 +2,43 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  border-style: solid;
+  justify-content: space-between;
 }
 
-.identity {
+.left {
   display: flex;
   flex-direction: column;
-  border-style: solid;
 }
 
-.pro {
+.center {
   display: flex;
   flex-direction: column;
-  border-style: solid;
 }
 
-.content {
+.right {
   display: flex;
   flex-direction: column;
-  border-style: solid;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
 form {
   flex-direction: column;
+}
+
+@media only screen and (max-width: 850px)  {
+
+.personnal-info {
+  flex-direction: column;
+}
+
+.message {
+  width: auto;
+}
+
+
 }

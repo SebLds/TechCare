@@ -1,29 +1,22 @@
+<?php $this->title='Infinite Measures';?>
 
-<head>
-    <?php $this->title='Infinite Measures';?>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/Web/css/home.css" />
-</head>
+<link rel="stylesheet" href="/Web/css/home.css"/>
 
-<body>
+<div id="body">
     <!-- Page Wrapper -->
     <div id="page-wrapper">
     <!-- Banner -->
     <section id="banner">
         <div class="inner">
             <h2>Infinite Measures</h2>
-            <p>Test psychotechnique<br />
+            <p>Test psychotechnique<br/>
                 à la pointe de la technologie<br />
                 certifié par les organismes gouvernementales.</p>
             <ul class="actions special">
-                <li><a href="#" class="btn primary">S'inscrire</a></li>
+                <li><a href="/register" class="btn primary">S'inscrire</a></li>
             </ul>
         </div>
-        <a href="/homepage#one" class="more">En savoir plus
-            <span class="icon">
-                <i class="fal fa-arrow-down fa-2x"></i>
-            </span>
+        <a href="/homepage#one" class="more">En savoir plus<i class="fal fa-arrow-down fa-3x"></i>
         </a>
 
     </section>
@@ -84,27 +77,27 @@
             <ul class="features">
                 <li class="icon heartbeat">
                     <h3>Fréquence cardiaque</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>La fréquence cardiaque est un indicateur du stress éprouvé lors du test. Elle sera prise en continue durant le test pour améliorer la précision de ce test.</p>
                 </li>
                 <li class="icon temperature">
                     <h3>Température</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>La température superficielle de la peau sera également mesurer tout au long du test et permet de prévenir de réactifs dangereuses (crise d'angoisse, malaise, etc.).</p>
                 </li>
                 <li class="icon listen">
                     <h3>Niveau d'audition</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <p>Le niveau d'audition est un seuil qui nous permet de prévenir de mal entendre un son trop aigu ou trop grave.</p>
+                </li>
+                <li class="icon sono">
+                    <h3>Reproduction sonore </h3>
+                    <p>La reproduction sonore d'un son émis à une fréquence défini permet de prévenir du toute faiblesses d'audition nécessaire pour les patients.</p>
                 </li>
                 <li class="icon watch">
-                    <h3>Temps de réaction</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <h3>Temps de réaction sonore</h3>
+                    <p>Le temps de réaction sonore est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
                 </li>
                 <li class="icon vision">
-                    <h3>Acuité visuelle</h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-                </li>
-                <li class="icon light">
-                    <h3>Niveau </h3>
-                    <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                    <h3>Temps de réaction visuel</h3>
+                    <p>Le temps de réaction visuel est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
                 </li>
             </ul>
         </div>
@@ -119,7 +112,7 @@
             </div>
             <ul class="actions stacked">
                 <li><a href="#" class="btn fit primary">Activate</a></li>
-                <li><a href="#" class="btn fit">Learn More</a></li>
+                <li><a href="#" class="btn fit">En savoir plus</a></li>
             </ul>
         </div>
     </section>
@@ -129,4 +122,4 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="/Web/js/header.js"></script>
 
-</body>
+</div>

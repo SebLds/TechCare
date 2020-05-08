@@ -1,10 +1,17 @@
 <?php
 
+namespace App\Controller;
 use src\Controller;
+
 
 class LoginController extends Controller {
 
   public function index()
+  {
+      $this->generateView(array(),'index');
+  }
+
+  public function login()
   {
 
     // Vérification que la variable $_POST contienne des informations
@@ -25,9 +32,8 @@ class LoginController extends Controller {
         } else {
           $error_mail = ("Veuillez renseigner votre mail");
         }
-
-
       }
+    }
   }
-}
 
+}

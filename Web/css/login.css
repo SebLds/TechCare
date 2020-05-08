@@ -1,0 +1,10 @@
+.fa-eye-slash, .fa-eye {
+  position: absolute;
+  margin-left: 460px;
+  margin-top: 180px;
+  cursor: pointer;
+}
+
+#password {
+  margin-bottom: 0;
+}
