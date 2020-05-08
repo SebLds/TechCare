@@ -3,17 +3,10 @@ $NombreTotalTests=0;
 $Score= [0,0] ;
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head><title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="dashboardCSS.css">
-    <meta charset="utf-8" />
-</head>
+<?php $this->title='Dashboard';?>
+<link href="/Web/css/dashboard.css" rel="stylesheet" type="text/css">
 
-
-<body>
-<div class="page">
-
+<div id="body">
     <div class="welcomeMessage">
         <div> <p>Mes derniers tests</p> </div>
         <div> <p> x tests disponibles </p> </div>
@@ -22,9 +15,9 @@ $Score= [0,0] ;
 
     <div class="testResume">
         <div class="testResumeID">
-            <div> <p> <bold>Score : 0 > </bold> </p> </div>
-            <div> <p> Type de score </p> </div>
-            <button> Commentaire médecin</button>
+            <div><p><bold>Score : 0 > </bold> </p> </div>
+            <div><p>Type de score</p></div>
+            <button>Commentaire médecin</button>
         </div>
 
         <div class="testResumeID">
@@ -35,9 +28,4 @@ $Score= [0,0] ;
 
     </div>
 
-
 </div>
-</body>
-
-
-</html>
