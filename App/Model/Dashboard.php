@@ -7,6 +7,7 @@ use src\Model;
 
 class Dashboard extends Model
 {
+
     public function getCountTotalTestsUser($idUser)
     {
         try {

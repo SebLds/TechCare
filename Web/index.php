@@ -43,9 +43,14 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/forum',"Forum\Forum#index");
-$router->get('/cgu',"Cgu#index");
+$router->get('/CGU',"Cgu#index");
 $router->get('/homepage',"Home#index");
-$router->get('/homepage#:slug',"Home#index");
+$router->get('/homepage/:slug',"Home#index");
+$router->get('/faq',"Faq#index");
+
+
+
+
 
 
 //$router->post('/home',"Forum\Forum#index");
