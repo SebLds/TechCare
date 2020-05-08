@@ -36,7 +36,7 @@ if (!isset($_GET['url'])){
 //                // etc pour chaque user
 //        }
 //    }
-    $_GET['url']='cgu';
+    $_GET['url']='homepage';
 }
 $router= new Router($_GET['url']);
 //$router->get('/',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
