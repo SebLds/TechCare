@@ -1,18 +1,20 @@
 #body h1 {
   color: grey;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+}
+
+#body h2 {
+  color: grey;
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
 }
 
 #body label {
   color: black;
-  margin: 0;
-  padding: 0;
   font-weight: bold;
-  font-size: 130%;
-  margin-top: 20px;
+  font-size: 1.4em;
 }
 
 .box {
@@ -21,18 +23,21 @@
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  height: auto;
-  justify-content: center;
+  padding: 40px 60px 40px 60px;
 }
 
 .box a {
   color: grey;
-  display: flex;
 }
 
 .box a:hover {
   color: grey;
   text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
@@ -50,35 +55,62 @@ input:focus {
 }
 
 input[type="text"], input[type="password"], input[type="date"], input[type="email"] {
-  margin-bottom: 30px;
+
 }
 
 input[type="submit"] {
   align-self: center;
-  margin-top: 50px;
   border-radius: 5px;
+  background-color: rgba(168, 202, 233,1);
+  color: white;
+  width: 50%;
+  margin-top: 40px;
 }
 
 input[type="submit"]:hover {
 
 }
 
-p {
-  color: red;
+
+input[type=checkbox] {
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ -ms-appearance: none;
+ border-radius: 4px;
+ height: 15px;
+ width: 15px;
+ background: #fff;
+ border: 1px solid #ccc;
+ margin-bottom: 7px;
+ margin-right: 5px;
+}
+
+input[type="checkbox"]:checked {
+  background: rgba(168, 202, 233,1);
+  position: relative;
+}
+
+.top-text {
+  padding: 40px 0px 40px 0px;
+  font-size: 1.1em;
+}
+
+.box span {
   font-weight: bold;
 }
 
+.error-msg {
+  padding: 5px 0px 40px 0px;
+}
+
 textarea {
-  resize: none;
-  border-radius: 5px;
+  padding: 0.6rem;
+  margin-top: 0.5em;
   border-style: solid;
   border-color: rgba(168, 202, 233,0.2);
   color: grey;
-  padding: 0.3rem 0.7rem;
-  margin-top: 0.5rem;
-  font-size: 130%;
-  display: flex;
-  align-items: center;
+  font-size: 1.2em;
+  border-radius: 2px;
 }
 
 textarea:focus {
@@ -90,11 +122,17 @@ textarea:focus {
   #body .box {
     box-shadow: none;
     background-color: #fff;
-    margin-top: 30px;
     display: flex;
     align-items: center;
+    padding-top: 0px;
+  }
+
+  .right {
     padding: 0;
-    left: 0;
+  }
+
+  .left {
+    padding: 0;
   }
 
 }
