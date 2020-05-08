@@ -1,53 +1,45 @@
 #body {
-    background-color: white;
-    display: flex;
     flex-direction: column;
+    justify-content: center;
+    font-family: "Lato", Helvetica, sans-serif;
+    font-size: 15pt;
+    font-weight: 400;
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
-.welcomeMessage {
+.title {
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
     border: 1px solid black;
-    border-radius: 30px;
-    margin: 20px 15px 50px 15px;
-    padding: 10px;
+    border-radius: 5px;
+    margin: 3em 0;
+    padding: 1em;
     width: 60%;
 }
 
-.welcomeMessage > button {
+.title button {
     background-color: #A8CAE9;
-    height: 50px;
-    margin: 10px;
     padding: 1em;
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 3px;
 }
 
-.testResume {
-    width: 100%;
-}
-
-.testResume > div.testResumeID {
+.testResume > .testResumeID {
     display: inline-flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    align-items: center;
+    margin-bottom: 2em;
     background-color: darkgrey;
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 5px;
+    padding: 1em;
     width: 100%;
-    height: 80px;
 }
 
 .testResumeID > button {
-    background-color: ghostwhite;
-    height: 50px;
-    margin: 10px;
+    background-color: #A8CAE9;
     padding: 1em;
-    border: 1px solid black;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 5px;
 }
-
-/* flex-direction: column;
-box-shadow: 8px 8px 5px #A8CAE9; */
