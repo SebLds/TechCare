@@ -8,7 +8,6 @@ footer {
     box-sizing: border-box;
     display: flex;
     width: 100%;
-    max-height: 900px;
     background-color: #292c2f;
     color: white;
     text-align: left;
@@ -70,21 +69,27 @@ footer .footer-center{
 
 footer .footer-center i{
     background-color: #33383b;
-    color: #fff;
-    width: 2.5em;
-    height: 2.5em;
+    width: 4em;
+    height: 4em;
     border-radius: 50%;
     text-align: center;
-    padding-top: 0.8em;
-    margin: 0.5em;
-    font-size: 1.6em;
+    margin: 1em;
+}
+
+footer .footer-center i:before {
+    color: #fff;
+    font-size: 1.7em;
+    position: relative;
+    top: 25%;
 }
 
 footer .footer-center p{
     display: inline-block;
+    position: relative;
     font-size: 1.1em;
     color: #fff;
     font-weight: 700;
+    top: 80%;
 }
 
 footer .footer-address-text{
