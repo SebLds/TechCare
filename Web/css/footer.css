@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-* {
-    margin: 0;
-    padding: 0;
-}
 
 footer {
     box-sizing: border-box;
@@ -29,19 +25,20 @@ footer .footer-left{
 }
 
 footer h1{
-    color: #fff;
+    color: #ffffff;
     font: bold 43px 'Dancing Script', cursive;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
 }
 
 footer h1 span{
     color: #A8CAE9;
     font: bold 43px 'Dancing Script', cursive;
+    letter-spacing: 0.2em;
 }
 
 footer .footer-links{
     color:  #fff;
-    margin: 4em 0 1em 0;
+    margin: 5em 0 1em 0;
     padding: 0;
     text-decoration: none;
 }
@@ -68,37 +65,25 @@ footer .footer-center{
 }
 
 footer .footer-center i{
+    color: #fff;
     background-color: #33383b;
-    width: 4em;
-    height: 4em;
+    padding: 0.8em;
+    font-size: 1.8em;
     border-radius: 50%;
     text-align: center;
-    margin: 1em;
-}
-
-footer .footer-center i::before {
-    color: #fff;
-    font-size: 1.8em;
-    position: relative;
-    top: 25%;
+    margin: 0.5em;
 }
 
 footer .footer-center p{
     display: inline-block;
     position: relative;
-    top: 0.7em;
     font-size: 1.1em;
     color: #fff;
     font-weight: 700;
 }
 
 footer .footer-center .address{
-    top: 1.6em;
-}
-
-footer .footer-address-text{
-    position: relative;
-    bottom: 10em;
+    top: 0.8em;
 }
 
 footer .footer-center p span{
@@ -132,30 +117,10 @@ footer .footer-company-about a{
     margin-bottom: 20px;
 }
 
-footer .footer-icons{
-    margin-top: 25px;
-}
-
-footer .footer-icons a{
-    display: inline-block;
-    cursor: pointer;
-    width: 3em;
-    height: 3em;
-    background-color: #33383b;
-    border-radius: 3px;
-    color: #fff;
-    padding-top: 0.6em;
-    text-align: center;
-    margin-right: 3px;
-}
-
-footer .footer-icons a:hover{
-    background-color: #92999f;
-}
-
 footer .footer-submit {
     display: inline-block;
     width: 100%;
+    margin-top: 2em;
 }
 
 footer .footer-input {
@@ -172,18 +137,37 @@ footer input[type="submit"] {
     text-transform: uppercase;
 }
 
-@media (max-width: 1680px) {
+footer .footer-icons{
+    margin-top: 2em;
+}
+
+footer .footer-icons a{
+    display: inline-block;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 3px;
+    color: #fff;
+    padding: 0.6em;
+    text-align: center;
+    margin-right: 0.5em;
+}
+
+footer .footer-icons a:hover{
+    background-color: #92999f;
+}
+
+@media screen and (max-width: 1680px) {
     footer {
         font-size: 11pt;
     }
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
     footer {
         font-size: 10pt;
     }
 }
-@media (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
     footer {
         font-size: 9pt;
         display: block;
