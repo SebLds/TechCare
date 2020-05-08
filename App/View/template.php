@@ -11,7 +11,7 @@
     <link href="/Web/css/rules.css" rel="stylesheet">
     <!-- Image -->
     <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
-    <!-- Font -->
+    <!-- Font & Icon -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <!-- FontAwesome/Jquery -->
     <link href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
