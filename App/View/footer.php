@@ -24,7 +24,7 @@
     <div class="footer-center">
         <div>
             <i class="fas fa-map-marker-alt"></i>
-            <p class="footer-address-text"><span>10 rue de Vanves</span> 92130 Issy-les-Moulineaux</p>
+            <p class="address"><span>10 rue de Vanves</span> 92130 Issy-les-Moulineaux</p>
         </div>
 
         <div>
