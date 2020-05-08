@@ -117,6 +117,86 @@ textarea:focus {
   border-color: rgba(168, 202, 233,1);
 }
 
+.select-box {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+}
+
+.select-box .options-container {
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: ;
+  overflow: hidden;
+  border-radius: 2px;
+  order: 1;
+}
+
+.select-box .options-container.active {
+  max-height: 240px;
+  opacity: 1;
+  overflow-y: scroll;
+  border-style: solid;
+  border-color: rgba(168, 202, 233,0.2);
+}
+
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -6px;
+}
+
+.select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 0 2px 2px 0;
+}
+
+.select-box .option, .selected {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.selected {
+  padding: 0.6rem;
+  margin-top: 0.5em;
+  border-style: solid;
+  border-color: rgba(168, 202, 233,0.2);
+  color: grey;
+  font-size: 1.2em;
+  border-radius: 2px;
+  margin-bottom: 8px;
+  position: relative;
+  order: 0;
+}
+
+.selected::after {
+  content: "";
+  background: url(../images/arrow-black.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 10px;
+  top: 5px;
+  transition: all 0.4s;
+
+}
+
+.select-box .option:hover {
+  background:
+}
+
+.select-box label {
+  cursor: pointer;
+}
+
+.select-box .option .radio {
+  display: none;
+}
+
 @media only screen and (max-width: 850px)  {
 
   #body .box {

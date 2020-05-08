@@ -2,10 +2,18 @@
   font-family: 'lato';
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
 body {
-  margin-left: 275px;
-  border-style: solid;
+
+}
+
+#body {
+  left: 275px;
+  display: flex;
+  width: 100%;
+  font-size: 12pt;
+  border: 1px solid black;
+  padding: 50px 50px 50px 50px;
+  justify-content: center;
 }

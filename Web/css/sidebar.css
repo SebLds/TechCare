@@ -21,6 +21,7 @@ header {
   transition: width 0.3s ease-in-out;
   z-index: 1000;
   overflow: hidden;
+
 }
 
 .logo {
@@ -52,12 +53,9 @@ header {
   flex-direction: row;
 }
 
-.box {
-  padding: 20px;
-}
 
 .navbar a:hover {
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 #img-nav {
@@ -93,6 +91,10 @@ header {
   display: flex;
   margin: 10px 50px 10px 25px;
   color: black;
+}
+
+.fal {
+  margin: 0px 0.5em 0px 0px;
 }
 
 .dropdown li:hover {

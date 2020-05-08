@@ -103,6 +103,7 @@ button {
 button:hover {
     background-color: rgba(168, 202, 233, 0.8);
 }
+
 .burger-button {
     display: none;
     padding: 5em 0 0 0;
