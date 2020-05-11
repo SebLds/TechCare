@@ -7,11 +7,11 @@
 
     <header id="header">
         <div class="logo">
-            <a href="/homepage#banner"><img id="logo" src="../../images/logo.png" alt="logo"></a>
+            <a href="/homepage#banner"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
         </div>
 
         <ul class="navbar">
-            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i>Accueil</i></a><li>
+            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i><span data-i18n="header-home"></span></a><li>
             <li><a class="test" href="/homepage#three"><i class="fal fa-file-alt"></i>Nos Tests</a><li>
             <li><a class="contact" href="/contact"><i class="fal fa-envelope-open"></i>Contact</a><li>
             <li><a class="login" href="/login"><button id="button-connexion"><i class="fal fa-user"></i>Connexion</button></a></li>
@@ -26,8 +26,7 @@
     </header>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../../js/burger.js"></script>
+    <script type="text/javascript" src="/Web/js/burger.js"></script>
 
 </body>
 </html>

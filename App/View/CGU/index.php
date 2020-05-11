@@ -3,10 +3,10 @@
 <link rel="stylesheet" type="text/css" href="/Web/css/cgu.css">
 
 <div id="body">
-
-  <div class="page">
+    <div class="page">
       <div class="title">
-          <h1>MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION</h1><br><br><br>
+          <h1 data-i18n="testt"></h1>
+          <br><br><br>
       </div>
 
 

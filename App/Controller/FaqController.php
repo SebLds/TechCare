@@ -9,4 +9,6 @@ class FaqController extends Controller
     {
         $this->generateView(array(),'index');
     }
+
+
 }

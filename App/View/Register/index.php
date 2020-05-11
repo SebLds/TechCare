@@ -80,4 +80,4 @@
 
 </div>
 
-  <script type="text/javascript" src="/Web/js/password.css"></script>
+  <script type="text/javascript" src="/Web/js/password.js"></script>
