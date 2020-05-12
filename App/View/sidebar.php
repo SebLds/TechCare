@@ -1,4 +1,4 @@
-<link href="../../Web/css/sidebar.css" rel="stylesheet">
+<link href="/Web/css/sidebar.css" rel="stylesheet">
 
   <header>
 

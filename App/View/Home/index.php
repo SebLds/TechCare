@@ -16,10 +16,7 @@
                 <li><a href="/register" class="btn primary">S'inscrire</a></li>
             </ul>
         </div>
-        <a href="/homepage#one" class="more">En savoir plus
-            <span class="icon">
-                <i class="fal fa-arrow-down fa-3x"></i>
-            </span>
+        <a href="/homepage#one" class="more">En savoir plus<i class="fal fa-arrow-down fa-3x"></i>
         </a>
 
     </section>
@@ -123,6 +120,6 @@
 
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../../js/header.js"></script>
+    <script type="text/javascript" src="/Web/js/header.js"></script>
 
 </div>

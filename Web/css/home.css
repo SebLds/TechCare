@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Basic */
 #body {
     display: block;
     margin: 0;
@@ -186,9 +185,10 @@ div.major h2::after {
     text-rendering: auto;
     line-height: 1;
     text-transform: none !important;
-    font-family: "Font Awesome 5 Pro";
     font-weight: 900;
+    font-family: "Font Awesome 5 Pro";
 }
+
 
 .icon::before {
     line-height: inherit;
@@ -668,24 +668,24 @@ ul.icons li img {
     font-weight: 700;
     color: black;
     font-size: 0.8em;
-    height: 8.5em;
+    height: 7em;
     width: 16em;
     position: absolute;
     margin: auto;
     left: 0;
     right: 0;
     bottom: 0;
-    text-align: center;
 }
 
 #banner .more:hover {
     transform: scale(1.1);
 }
 
-#banner .icon {
-    top: 2em;
-    color: black;
+#banner i{
     display: block;
+    position: relative;
+    top: 0.5em;
+    width: 100%;
 }
 
 #banner::after {
