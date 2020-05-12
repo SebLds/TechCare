@@ -29,6 +29,8 @@ class ForumController extends Controller
             $nbReplies[]= $this->tag->getNbRepliesTagById($i);
         }
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
+
     }
+
 
 }

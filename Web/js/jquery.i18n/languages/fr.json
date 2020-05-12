@@ -1,0 +1,19 @@
+{
+  "@metadata": {
+    "authors": [
+      "TechCare"
+    ],
+    "last-updated": "2020-05-11",
+    "locale": "en",
+    "other-metadata": "sample json format"
+  },
+  "header":{
+  "home": "accueil"
+},
+  "header-home": "Accueil",
+  "welcome": "wesh la mif",
+  "glad-to-see": "enchanté pd",
+  "test": "je suis un test",
+  "test-maxime": "Je suis le test maxime et sa calvitie naissante",
+  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION"
+}

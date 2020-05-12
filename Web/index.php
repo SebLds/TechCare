@@ -34,7 +34,7 @@ if (!isset($_GET['url'])){
 //                // etc pour chaque user
 //        }
 //    }
-    $_GET['url']='cgu';
+    $_GET['url']='homepage';
 }
 $router= new Router($_GET['url']);
 //$router->get('/',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
@@ -48,20 +48,24 @@ $router->get('/home',"Forum\Tag#index");
 $router->get('/register',"Register#index");
 $router->post('/register',"Register#validate");
 $router->get('/forum',"Forum\Forum#index");
+$router->get('/homepage',"Home#index");
+$router->get('/homepage/:slug',"Home#index");
+$router->get('/faq',"Faq#index");
+
+
+
+
 $router->get('/cgu',"Cgu#index");
 
-$router->get('/homepage',"Home#index");
-$router->get('/homepage-:slug',"Home#index");
 
 $router->get('/login',"Login#index");
 $router->get('/launch-test',"LaunchTest#index");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
-$router->get('/faq',"Faq#index");
+$router->get('/dashboard',"Dashboard#index");
 
 
 //$router->post('/home',"Forum\Forum#index");
-
 
 //$router->get('',"Test#index");
 
