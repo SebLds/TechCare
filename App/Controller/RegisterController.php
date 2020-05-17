@@ -10,57 +10,42 @@ class RegisterController extends Controller {
 
   public function __construct() {
         //$this->user = new User();
-    }
+  }
 
   public function index(){
     $this->generateView(array(),'index');
-// TODO: la page du formulaire non rempli generateView ('index') ca va aller cherche le fichier de vue App/View/Register/index.php
-  }
-  public function registrationValidated() {
-    // ca correspond à la page de validation
   }
 
-  public function click() {
-    // TODO : si ya pas d'erreur ca insert dans la bdd via $this->user->create(array());
-    // sinon ca redirige vers le formulaire avec msg d'erreurs via l'appel de la méthode erreur
-  }
+  private function register() {
 
-  private function checkFields($field, $typeField=null, $length){
-    // TODO: il récupère le champ et vérifie sa validité (vide ou champ correct)
-  /*
-    email text password date numéro
-    si c'est true // c'est good -> ca part dans la bdd
-      return $field
-    sinon
-      selon le $typefield ca return un message d'erreur ca sera pas un sting ce sera une 'requete' vers le fichier json correspondant
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    */
-    /*$array= ["mail"=>"erreur ton mail pue",]
+      $data =[
 
-    if (!empty($_POST)) {
-      extract($_POST);
+        'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
+        'lastName' => (string) htmlspecialchars(strtoupper(trim($lastName))),
+        'mail' => (string) htmlspecialchars(strtolower(trim($mail))),
+        'password' => (string) htmlspecialchars(trim($password)),
+        'passwordConfirm' => (string) htmlspecialchars(trim($passwordConfirm)),
+        'day' => (int) htmlspecialchars(trim($day)),
+        'month' => (int) htmlspecialchars(trim($month)),
+        'year' => (int) htmlspecialchars(trim($year)),
+        'doctor' => htmlspecialchars(trim($doctor)),
+        'birthdate' => 'day' .'/'. 'month' .'/'. 'year',
 
-      // On se place dans le formumaire d'inscription
-      if (isset($_POST['register'])) {
+        'error_firstName' => '',
+        'error_lastName' => '',
+        'error_mail' => '',
 
-        $firstName = (string) htmlspecialchars(ucfirst(trim($firstName)));
-        $lastName = (string) htmlspecialchars(strtoupper(trim($lastName)));
-        $mail = (string) htmlspecialchars(strtolower(trim($mail)));
-        $password = (string) htmlspecialchars(trim($password));
-        $passwordConfirm = (string) htmlspecialchars(trim($passwordConfirm));
-        $day = (int) htmlspecialchars(trim($day));
-        $month = (int) htmlspecialchars(trim($month));
-        $year = (int) htmlspecialchars(trim($year));
-        $doctor = htmlspecialchars(trim($doctor));
-        $birthdate = $day .'/'. $month .'/'. $year;
+      ];
 
         // Vérification du prénom
-        if (!empty($firstName)) {
-          if (!ctype_alpha($firstName)) {
-            $error_firstName = ("Caractères invalides");
+        if (!empty($data['firstName'])) {
+          if (!ctype_alpha($data['firstName'])) {
+            $data['error_firstName'] = "Caractères invalides";
           }
         } else {
-          $error_firstName = ("Veuillez renseigner votre prénom");
+          $data['error_firstName'] = "Veuillez renseigner votre prénom";
         }
 
         // Vérification du nom
@@ -97,9 +82,8 @@ class RegisterController extends Controller {
         if (!empty($password)) {
           if ($password != $passwordConfirm) {
             $error_passwordConfirm = ("Les mots de passe ne correspondent pas");
-          } else {
-            $passwordHash = hash('sha256', $password);
           }
+
         } else {
           $error_password = ("Veuillez renseigner un mot de passe");
         }
@@ -127,20 +111,12 @@ class RegisterController extends Controller {
           $error_cgu = ("Veuillez accepter les CGU");
         }
 
+        if(empty($data['error_firstName'])) {
+        } else {
+          $this->generateView($data,'index')
+        }
+
       }
 
     }
   }
-
-  public function errorForm() {
-    // TODO: la page index avec les msgs d'erreurs
-    $array=$this->checkFields();
-    if ($array!=true){
-      $this->generateView($array,"index");
-    }
-
-  }*/
-
-
-}
-}
