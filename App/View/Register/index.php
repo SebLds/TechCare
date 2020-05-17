@@ -11,7 +11,7 @@
     <h1>Je m'inscris à Infinite Measures</h1>
     <h2><a href="/login">Ou je me connecte</h2></a>
 
-    <form method="post">
+    <form method="post" action="/register">
 
       <div class="fields">
 

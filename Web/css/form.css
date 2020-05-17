@@ -94,7 +94,6 @@ input[type="submit"] {
   width: 85px;
 }
 
-
 input[type=checkbox] {
  -webkit-appearance: none;
  -moz-appearance: none;
@@ -124,6 +123,7 @@ input[type="checkbox"]:checked {
 
 .error-msg {
   padding: 5px 0px 40px 0px;
+  color: red;
 }
 
 textarea {

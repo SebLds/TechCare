@@ -45,7 +45,7 @@ $router->get('/Our-Work',function(){echo 'our work';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/home',"Forum\Tag#index");
 $router->get('/register',"Register#index");
-$router->post('/register',"Register#validate");
+$router->post('/register',"Register#register");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
