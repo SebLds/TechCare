@@ -5,7 +5,7 @@
 }
 
 body {
-
+  overflow-x: hidden;
 }
 
 #body {
@@ -16,4 +16,5 @@ body {
   border: 1px solid black;
   padding: 50px 50px 50px 50px;
   justify-content: center;
+  overflow-x: hidden;
 }

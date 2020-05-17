@@ -7,11 +7,14 @@
   <div class="form-launch-test box">
 
     <h1>Lancer un test</h1>
+    <p class="top-text">Veuillez saisir les informations nécessaires pour lancer un test.</p>
+
 
     <form action="../../index.php" method="post">
 
       <label>Numéro de sécurité sociale</label>
       <input type="text" name="" placeholder="2 94 03 75 120 005 22">
+      <p class="error-msg"><?php if(isset($error_healthNumber)) { echo $error_healthNumber; }?></p>
 
       <label>Choix du test</label>
 
@@ -21,7 +24,7 @@
 
           <div class="option">
             <input type="radio" class="radio" id="stress" name="category">
-            <label for="stress">Gestion du stress</label>
+            <label class="stress" for="stress">Gestion du stress</label>
           </div>
 
           <div class="option">
@@ -46,6 +49,6 @@
 
       <input type="submit" value="Suivant" name="login">
 
-    </div>
-
   </div>
+
+</div>

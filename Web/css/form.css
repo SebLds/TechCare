@@ -17,6 +17,10 @@
   font-size: 1.4em;
 }
 
+.title-form {
+  border-bottom: solid;
+}
+
 .box {
   box-shadow: 0px 0px 14px 0px rgba(168,158,168,1);
   border-radius: 3px;
@@ -67,8 +71,27 @@ input[type="submit"] {
   margin-top: 40px;
 }
 
-input[type="submit"]:hover {
+.birthdate {
+  display: flex;
+  flex-direction: row;
+}
 
+.date {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+#day {
+  width: 50px;
+}
+
+#month {
+  width: 65px;
+}
+
+ #year {
+  width: 85px;
 }
 
 
@@ -175,18 +198,16 @@ textarea:focus {
   background: url(../images/arrow-black.png);
   background-size: contain;
   background-repeat: no-repeat;
-
   position: absolute;
   height: 100%;
   width: 32px;
   right: 10px;
   top: 5px;
   transition: all 0.4s;
-
 }
 
-.select-box .option:hover {
-  background:
+.select-box .option label {
+  font-weight: normal;
 }
 
 .select-box label {
@@ -196,6 +217,17 @@ textarea:focus {
 .select-box .option .radio {
   display: none;
 }
+
+.option label {
+  color: red;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 
 @media only screen and (max-width: 850px)  {
 

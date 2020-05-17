@@ -43,7 +43,6 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/FAQ',function(){echo 'FAQ';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
-
 $router->get('/home',"Forum\Tag#index");
 $router->get('/register',"Register#index");
 $router->post('/register',"Register#validate");
@@ -51,13 +50,8 @@ $router->get('/forum',"Forum\Forum#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 $router->get('/faq',"Faq#index");
-
-
-
-
 $router->get('/cgu',"Cgu#index");
-
-
+$router->get('/profil',"Profil#index");
 $router->get('/login',"Login#index");
 $router->get('/launch-test',"LaunchTest#index");
 $router->get('/set-new-password',"ForgetPassword#index");

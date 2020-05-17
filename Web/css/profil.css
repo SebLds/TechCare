@@ -1,0 +1,23 @@
+.fields {
+  display: flex;
+  flex-direction: row;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.fa-eye-slash, .fa-eye {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 440px;
+  cursor: pointer;
+}

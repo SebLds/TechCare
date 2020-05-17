@@ -21,6 +21,7 @@
     <link href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
     <?php if (isset($head_tags)){echo $head_tags;} ?>
     <title><?php if (isset($title)){echo $title;} ?></title>
     <script
@@ -45,9 +46,9 @@
 </head>
 <body>
 <?php if(Session::getAttribute('isLogged')===true):?>
-<?php if (is_file('../App/View/header.php')){require_once 'sidebar.php';} ?>
+<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
 <?php else:?>
-<?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
+<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
 <?php endif; ?>
 <?php if (isset($content)){echo $content;} ?>
 

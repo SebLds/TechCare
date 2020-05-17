@@ -55,29 +55,6 @@
   width: 100%;
 }
 
-.birthdate {
-  display: flex;
-  flex-direction: row;
-}
-
-.date {
-  display: flex;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-#day {
-  width: 50px;
-}
-
-#month {
-  width: 65px;
-}
-
- #year {
-  width: 85px;
-}
-
 
 input[type="submit"] {
   width: 40%;
