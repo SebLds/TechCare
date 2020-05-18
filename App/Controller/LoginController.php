@@ -2,17 +2,22 @@
 
 namespace App\Controller;
 use src\Controller;
+use App\Model\Register;
 
 
 class LoginController extends Controller {
 
-  public function index()
-  {
+  private User $user;
+
+  public function __construct() {
+        //$this->user = new User();
+  }
+
+  public function index() {
       $this->generateView(array(),'index');
   }
 
-  public function login()
-  {
+  public function login() {
 
     // Vérification que la variable $_POST contienne des informations
     if (!empty($_POST)) {
@@ -21,17 +26,35 @@ class LoginController extends Controller {
       // On se place dans le formumaire de connexion
       if (isset($_POST['login'])) {
 
-        $mail = (string) htmlspecialchars($mail);
-        $password = (string) htmlspecialchars($password);
+        $data = [
+          'mail' => (string) htmlspecialchars($mail),
+          'password' => (string) htmlspecialchars($password),
+        ];
+
+        $errors = [];
 
         // Vérification du mail
-        if (!empty($mail)) {
-          if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $error_mail = ("L'adresse email est invalide");
+        if (!empty($data['mail'])) {
+          if (!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
+            $errors['error_mail'] = "L'adresse email est invalide";
           }
         } else {
-          $error_mail = ("Veuillez renseigner votre mail");
+          $errors['error_mail'] = "Veuillez renseigner votre mail";
         }
+
+        //Vérification combinaison mail et mot de passe
+        if(empty($errors)) {
+          $log = $this->loginModel();
+          if ($log == true) {
+            header("Location: /dashboard");
+          } else {
+            $errors['error_login'] = "Votre mail et/ou votre mot de passe est incorrect";
+            $this->generateView($errors,'index');
+          }
+        } else {
+          $this->generateView($errors,'index');
+        }
+
       }
     }
   }

@@ -6,8 +6,6 @@ use App\Model;
 
 class RegisterController extends Controller {
 
-  private User $user;
-
   public function __construct() {
         //$this->user = new User();
   }
@@ -99,12 +97,12 @@ class RegisterController extends Controller {
           }
 
           // Vérification du numéro de sécurité sociale
-          if (!empty($healthNumber)) {
-            if (!ctype_alpha($doctor)) {
-              $error_doctor = ("Caractères invalides");
+          if (!empty($data['healthNumber'])) {
+            if (!ctype_alpha($data['healthNumber'])) {
+              $errors['error_healthNumber'] = "Caractères invalides";
             }
           } else {
-            $error_healthNumber = ("Veuillez renseigner votre numéro de sécurité sociale");
+            $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
 
           // Vérification de l'acceptation des CGU
@@ -113,6 +111,7 @@ class RegisterController extends Controller {
           }
 
           if(empty($errors)) {
+            $this->addNewUser($data);
             header("Location: /login");
           } else {
             $data = [];
@@ -122,4 +121,5 @@ class RegisterController extends Controller {
         }
       }
     }
+
   }

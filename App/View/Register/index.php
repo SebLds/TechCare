@@ -64,6 +64,12 @@
 
       </div>
 
+      <div class="bottom">
+          <label>Numéro de sécurité sociale</label>
+          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22">
+          <p class="error-msg"><?php if(isset($error_healthNumber)) { echo $error_healthNumber; }?></p>
+      </div>
+
       <div class="CGU">
         <input type="checkbox" name="check">
         <p id="text-CGU">J'accepte et comprends les <span><a id="link-cgu" href="/cgu">conditions générales d'utilisations</a></span></p>

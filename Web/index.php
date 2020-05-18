@@ -53,6 +53,7 @@ $router->get('/faq',"Faq#index");
 $router->get('/cgu',"Cgu#index");
 $router->get('/profil',"Profil#index");
 $router->get('/login',"Login#index");
+$router->post('/login',"Login#login");
 $router->get('/launch-test',"LaunchTest#index");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");

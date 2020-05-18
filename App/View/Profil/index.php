@@ -10,7 +10,7 @@
     <h1>Mon profil</h1>
     <p class="top-text">Modifier vos informations personnelles ainsi que votre mot de passe.</p>
 
-    <form class="" action="index.html" method="post">
+    <form method="post" action="/login">
 
       <div class="fields">
 

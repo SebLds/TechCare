@@ -5,8 +5,8 @@ use PDO;
 use src\Config\ConfigException;
 use src\Model;
 
-class User extends Model
-{
+class User extends Model {
+  
     public function getIdentity($idUser)
     {
         try {
@@ -38,41 +38,28 @@ class User extends Model
         } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
     } //function getSpecificTest($idUser)
 
-    public function checkMail($mail)
-    {
-        try {
-            $count = $this -> executeRequest('SELECT * FROM users WHERE mail = ?', $mail) -> fetch(PDO::FETCH_OBJ);
-
-            if ($count > 0) {
-              return true;
-            } else {
-              return false;
-            }
-
-        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
-    } //function getSpecificTest($idUser)
-
-    public function checkHealthNumber($healthNumber)
-    {
-        try {
-            $count = $this -> executeRequest('SELECT * FROM users WHERE healthNumber = ?', $healthNumber) -> fetch(PDO::FETCH_OBJ);
-
-            if ($count > 0) {
-              return true;
-            } else {
-              return false;
-            }
-
-        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
-    } //function getSpecificTest($idUser)
-
-    public function addUser($dataRegister)
-    {
-        try {
-            return $this -> executeRequest('INSERT INTO users SET username') -> fetch(PDO::FETCH_OBJ);
-
-        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
-
+    public function addNewUser($data) {
+      $sqlStatement = 'INSERT INTO users (firstName, lastName, mail, password, birthdate, doctor, healthNumber) VALUES (:firstName, :lastName, :mail, :password, :birthdate, :doctor, :healthNumber)';
+      try {
+        return $this -> executeRequest($sqlStatement)->fetch(PDO::FETCH_OBJ);
+      } catch (ConfigException $e) {
+      }
     }
 
-} 
+    public function checkMail($mail) {
+      $sqlStatement = 'SELECT * FROM users WHERE mail = :mail';
+      try {
+
+      }
+    }
+
+    public function loginModel($mail, $password) {
+      $sqlStatement = 'SELECT * FROM users WHERE mail = :mail AND password = :password';
+      try {
+        $this -> executeRequest($sqlStatement) -> fetch(PDO::FETCH_OBJ);
+
+      } catch (ConfigException $e) {
+      }
+    }
+
+}
