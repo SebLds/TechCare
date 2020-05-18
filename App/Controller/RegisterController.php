@@ -34,6 +34,7 @@ class RegisterController extends Controller {
           'month' => (int) htmlspecialchars(trim($month)),
           'year' => (int) htmlspecialchars(trim($year)),
           'doctor' => htmlspecialchars(trim($doctor)),
+          'healthNumber' => htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
         ];
 
