@@ -49,6 +49,8 @@
 
       <input type="submit" value="Suivant" name="login">
 
+    </form>
+
   </div>
 
 </div>

@@ -159,6 +159,7 @@ textarea:focus {
   overflow: hidden;
   border-radius: 2px;
   order: 1;
+  z-index: 1000;
 }
 
 .select-box .options-container.active {
@@ -185,14 +186,11 @@ textarea:focus {
 }
 
 .selected {
-  padding: 0.6rem;
-  margin-top: 0.5em;
   border-style: solid;
   border-color: rgba(168, 202, 233,0.2);
   color: grey;
   font-size: 1.2em;
   border-radius: 2px;
-  margin-bottom: 8px;
   position: relative;
   order: 0;
 }

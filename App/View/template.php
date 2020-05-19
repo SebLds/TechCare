@@ -10,7 +10,7 @@
     if (isset($webRoot)){echo $webRoot;} ?>">
 
     <!-- CSS Files -->
-    <link href="/Web/css/rulesConnected.css" rel="stylesheet">
+    <link href="/Web/css/rules.css" rel="stylesheet">
     <!-- Image -->
     <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
 
@@ -46,9 +46,9 @@
 </head>
 <body>
 <?php if(Session::getAttribute('isLogged')===true):?>
-<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
+<?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
 <?php else:?>
-<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
+<?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
 <?php endif; ?>
 <?php if (isset($content)){echo $content;} ?>
 

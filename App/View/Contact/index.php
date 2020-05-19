@@ -41,13 +41,32 @@
               <div class="right">
 
                 <label>Sujet</label>
-                <select class="" name="" name="subject" placeholder="">
-                  <option value="">Commerciale</option>
-                  <option value="">Technique</option>
-                  <option value="">Recrutement</option>
-                  <option value="">Relation presse</option>
-                  <option value="">Autre</option>
-                </select>
+                <div class="select-box">
+
+                  <div class="options-container">
+
+                    <div class="option">
+                      <input type="radio" class="radio" id="stress" name="category">
+                      <label class="stress" for="stress">Commerciale</label>
+                    </div>
+
+                    <div class="option">
+                      <input type="radio" class="radio" id="sight" name="category">
+                      <label for="sight">Technique</label>
+                    </div>
+
+                    <div class="option">
+                      <input type="radio" class="radio" id="hearing" name="category">
+                      <label for="hearing">Recrutement</label>
+                    </div>
+
+                  </div>
+
+                  <div class="selected">
+                    Choisir un sujet
+                  </div>
+
+                </div>
 
                 <label>Pièce jointe</label>
                 <input type="file" name="" value="">
@@ -62,6 +81,8 @@
               <textarea name="message" rows="3" placeholder="Ecrivez votre message ici"></textarea>
 
             </div>
+
+            <script type="text/javascript" src="/Web/js/select.js"></script>
 
             <input type="submit" name="send" value="Envoyer">
 
