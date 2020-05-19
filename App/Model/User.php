@@ -6,7 +6,7 @@ use src\Config\ConfigException;
 use src\Model;
 
 class User extends Model {
-  
+
     public function getIdentity($idUser)
     {
         try {
@@ -41,7 +41,7 @@ class User extends Model {
     public function addNewUser($data) {
       $sqlStatement = 'INSERT INTO users (firstName, lastName, mail, password, birthdate, doctor, healthNumber) VALUES (:firstName, :lastName, :mail, :password, :birthdate, :doctor, :healthNumber)';
       try {
-        return $this -> executeRequest($sqlStatement)->fetch(PDO::FETCH_OBJ);
+        return $this->executeRequest($sqlStatement, array());
       } catch (ConfigException $e) {
       }
     }
@@ -49,17 +49,23 @@ class User extends Model {
     public function checkMail($mail) {
       $sqlStatement = 'SELECT * FROM users WHERE mail = :mail';
       try {
-
+        $isMailExist = $this->executeRequest($sqlStatement, array('mail' => $mail));
+      }  catch (ConfigException $e) {
+      }
+      if ($isMailExist->rowCount()>0) {
+        return true;
       }
     }
 
-    public function loginModel($mail, $password) {
+    public function checkLogin($mail, $password) {
       $sqlStatement = 'SELECT * FROM users WHERE mail = :mail AND password = :password';
-      try {
-        $this -> executeRequest($sqlStatement) -> fetch(PDO::FETCH_OBJ);
-
-      } catch (ConfigException $e) {
-      }
+    try {
+      $log = $this->executeRequest($sqlStatement, array('mail' => $mail, 'password' => $password));
+    } catch (ConfigException $e) {
     }
+    if ($log->rowCount()>0) {
+      return true;
+    }
+  }
 
 }

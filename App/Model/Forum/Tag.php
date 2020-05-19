@@ -28,6 +28,7 @@ class Tag extends Model
         } catch (ConfigException $e) {
         }
     }
+    
     public function getNbRepliesTagById($idTag){
         $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag ';
         try {

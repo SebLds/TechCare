@@ -45,15 +45,3 @@
     </div>
 
 </div>
-
-      <!--<div class="connexion-header">
-        <div class="text">
-          <h2>Vous revoilà !</h2>
-        </div>
-
-        <div class="quit">
-          <button id="button-quit"><img id="img-quit" src="images/quit.png"></button>
-        </div>
-      </div>-->
-
-      <!--<script type="text/javascript" src="JS/connexion.js"></script>-->

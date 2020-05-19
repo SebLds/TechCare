@@ -51,7 +51,7 @@
           <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
 
           <label>Mot de passe</label>
-          <input id="myInput" type="password" name="password" placeholder="●●●●●●●●" value="<?php if(isset($password)) { echo $password; }?>">
+          <input id="myInput" type="password" name="password" placeholder="●●●●●●●●" value="">
           <i class="far fa-eye-slash"></i>
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
            <!--<img id="eye" src="images/hide.png">-->

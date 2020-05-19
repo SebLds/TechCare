@@ -2,12 +2,12 @@
 
 namespace App\Controller;
 use src\Controller;
-use App\Model;
+use App\Model\User;
 
 class RegisterController extends Controller {
 
   public function __construct() {
-        //$this->user = new User();
+        $this->user = new User();
   }
 
   public function index() {
@@ -20,6 +20,8 @@ class RegisterController extends Controller {
       extract($_POST);
 
       if(isset($_POST['register'])) {
+
+        date_default_timezone_set("Europe/Paris");
 
         $data = [
           'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
@@ -34,6 +36,7 @@ class RegisterController extends Controller {
           'doctor' => htmlspecialchars(trim($doctor)),
           'healthNumber' => htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
+          'registrationdate' => date("h:i:sa"),
         ];
 
         $errors = [];
@@ -97,11 +100,7 @@ class RegisterController extends Controller {
           }
 
           // Vérification du numéro de sécurité sociale
-          if (!empty($data['healthNumber'])) {
-            if (!ctype_alpha($data['healthNumber'])) {
-              $errors['error_healthNumber'] = "Caractères invalides";
-            }
-          } else {
+          if (empty($data['healthNumber'])) {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
 
@@ -110,8 +109,14 @@ class RegisterController extends Controller {
             $errors['error_cgu'] = ("Veuillez accepter les CGU");
           }
 
+          $checkmail = $this->user->checkMail($data['mail']);
+          var_dump($checkmail);
+          if (!$checkmail) {
+            $errors['error_mail'] = "Cette adresse email est déjà associé à un compte";
+          }
+
           if(empty($errors)) {
-            $this->addNewUser($data);
+            $this->user->addNewUser($data);
             header("Location: /login");
           } else {
             $data = [];

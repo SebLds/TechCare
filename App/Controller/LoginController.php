@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 use src\Controller;
-use App\Model\Register;
+use App\Model\User;
 
 
 class LoginController extends Controller {
@@ -10,7 +10,7 @@ class LoginController extends Controller {
   private User $user;
 
   public function __construct() {
-        //$this->user = new User();
+        $this->user = new User();
   }
 
   public function index() {
@@ -44,8 +44,8 @@ class LoginController extends Controller {
 
         //Vérification combinaison mail et mot de passe
         if(empty($errors)) {
-          $log = $this->loginModel();
-          if ($log == true) {
+          $log = $this->user->checkLogin($data['mail'], $data['password']);
+          if ($log) {
             header("Location: /dashboard");
           } else {
             $errors['error_login'] = "Votre mail et/ou votre mot de passe est incorrect";

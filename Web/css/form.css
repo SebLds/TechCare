@@ -1,3 +1,7 @@
+#body {
+  justify-content: center;
+}
+
 #body h1 {
   color: grey;
   display: flex;
