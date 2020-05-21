@@ -7,10 +7,7 @@
     "locale": "en",
     "other-metadata": "sample json format"
   },
-  "header":{
-  "home": "accueil"
-},
-  "header-home": "Accueil",
+  "home": "Accueil",
   "welcome": "wesh la mif",
   "glad-to-see": "enchanté pd",
   "test": "je suis un test",

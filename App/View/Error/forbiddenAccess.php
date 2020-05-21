@@ -1,0 +1,2 @@
+<?php
+echo 'Forbidden Access';
