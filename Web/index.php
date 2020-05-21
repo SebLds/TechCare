@@ -19,21 +19,13 @@ Autoloader::addNamespace('App\Model','../App/Model/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
-$session = new Session();
+Session::getInstance();
 
 /**
  * pour le callable il faut absolument mettre le sous-dossier s'il y en a un
  * ex: Pour le controller TestController dans le dossier Forum du dossier Controller le callable est Forum\Test
  */
 if (!isset($_GET['url'])){
-//    if ($_SESSION['logged']==true){
-//        switch ($_SESSION['status']){
-//            case $_SESSION['status']===1:
-//                // action
-//                break;
-//                // etc pour chaque user
-//        }
-//    }
     $_GET['url']='homepage';
 }
 $router= new Router($_GET['url']);
@@ -44,24 +36,29 @@ $router->get('/Our-Work',function(){echo 'our work';});
 //$router->get('/posts',function(){echo 'tous les articles';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 
-$router->get('/home',"Forum\Tag#index");
 $router->get('/register',"Register#index");
 $router->post('/register',"Register#validate");
 $router->get('/forum',"Forum\Forum#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 $router->get('/faq',"Faq#index");
+$router->get('/testtamer',"Forum\Forum#test");
 
 
 
 
 $router->get('/cgu',"Cgu#index");
+$router->get('/error-:id',"Error#generateError#id");
+
+
 
 
 $router->get('/login',"Login#index");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
+$router->get('/admin',function(){echo 'our work';});
+
 
 
 //$router->post('/home',"Forum\Forum#index");
@@ -74,4 +71,6 @@ $router->get('/dashboard',"Dashboard#index");
 //})->with("id",'[0-9]+')->with('slug','0[a-z\0-9]+');
 //
 //$router->post('/posts/:id',function($id){echo 'Poster l\'article'.$id;});
+
 $router->run();
+Session::getInstance()->restrictionAccess($_GET['url']);

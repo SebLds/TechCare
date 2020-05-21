@@ -47,6 +47,8 @@ class Tag extends Model
     }
 
 
+
+
     public function getTag($idTag)
     {
         $sqlStatement = 'SELECT * FROM users WHERE id = :id';

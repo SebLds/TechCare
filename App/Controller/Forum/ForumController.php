@@ -31,6 +31,12 @@ class ForumController extends Controller
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
 
     }
+    public function test(){
+
+        $json = file_get_contents("../Web/js/jquery.i18n/languages/en.json");
+        $parsed_json = json_decode($json);
+        $parsed_json->{'test'};
+    }
 
 
 }
