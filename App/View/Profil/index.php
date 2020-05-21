@@ -62,7 +62,7 @@
       </div>
 
       <div class="submit">
-        <input type="submit" value="Modifier"  name="register">
+        <input type="submit" value="Modifier"  name="change">
       </div>
 
     </form>

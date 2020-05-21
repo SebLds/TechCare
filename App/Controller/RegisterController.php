@@ -23,6 +23,8 @@ class RegisterController extends Controller {
 
         date_default_timezone_set("Europe/Paris");
 
+        $registrationdate = date('d/m/Y') . " " . date('H:i:s');
+
         $data = [
           'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
           'lastName' => (string) htmlspecialchars(strtoupper(trim($lastName))),
@@ -61,16 +63,18 @@ class RegisterController extends Controller {
 
           // Vérification du mail
           if (!empty($data['mail'])) {
+            $checkmail = $this->user->checkMail($data['mail']);
             if (!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
               $errors['error_mail'] = "L'adresse email est invalide";
               if ($data['mail'] != $data['mailConfirm']) {
                 $errors['error_mailConfirm'] = "Les adresses mails ne correspondent pas";
               }
+            } elseif ($checkmail) {
+              $errors['error_mail'] = "Cette adresse email est déjà associée à un compte";
             }
           } else {
             $errors['error_mail'] = "Veuillez renseigner votre mail";
           }
-
 
           // Vérification de la date de naissance
           if (!empty($data['day']) || !empty($data['month']) || !empty($data['year'])) {
@@ -101,6 +105,10 @@ class RegisterController extends Controller {
 
           // Vérification du numéro de sécurité sociale
           if (empty($data['healthNumber'])) {
+            $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
+            if ($checkHealthNumber) {
+              $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+            }
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
 
@@ -109,14 +117,9 @@ class RegisterController extends Controller {
             $errors['error_cgu'] = ("Veuillez accepter les CGU");
           }
 
-          $checkmail = $this->user->checkMail($data['mail']);
-          var_dump($checkmail);
-          if (!$checkmail) {
-            $errors['error_mail'] = "Cette adresse email est déjà associé à un compte";
-          }
-
           if(empty($errors)) {
-            $this->user->addNewUser($data);
+            $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
+            $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['healthNumber'], $registrationdate);
             header("Location: /login");
           } else {
             $data = [];

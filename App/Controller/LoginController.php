@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use src\Controller;
+use src\Session;
 use App\Model\User;
 
 
@@ -46,6 +47,9 @@ class LoginController extends Controller {
         if(empty($errors)) {
           $log = $this->user->checkLogin($data['mail'], $data['password']);
           if ($log) {
+            $ID = $this->user->getID($data['mail']);
+            Session::getInstance()->setAttribute('sessionStatus');
+            var_dump($ID);
             header("Location: /dashboard");
           } else {
             $errors['error_login'] = "Votre mail et/ou votre mot de passe est incorrect";
