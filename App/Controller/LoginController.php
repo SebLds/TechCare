@@ -48,8 +48,7 @@ class LoginController extends Controller {
           $log = $this->user->checkLogin($data['mail'], $data['password']);
           if ($log) {
             $ID = $this->user->getID($data['mail']);
-            Session::getInstance()->setAttribute('sessionStatus');
-            var_dump($ID);
+            Session::getInstance()->setAttribute('ID_User', $ID);
             header("Location: /dashboard");
           } else {
             $errors['error_login'] = "Votre mail et/ou votre mot de passe est incorrect";
