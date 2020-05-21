@@ -49,7 +49,6 @@ $router->get('/launch-test',"LaunchTest#index");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
-$router->get('/admin',function(){echo 'our work';});
 
 
 

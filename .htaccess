@@ -7,8 +7,4 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^infinitemeasures.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
 RewriteCond %{REQUEST_URI} !Web/
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^http:// www.infinitemeasures.com/.*$ [NC] [OR]
-RewriteCond %{HTTP_REFERER} !^http://www.infinitemeasures.com /.*$ [NC] [OR]
-RewriteRule .*\.(gif|GIF|jpg|JPG|bmp|BMP|wav|mp3|wmv|avi|mpeg)$ - [F]
 RewriteRule (.*) /Web/$1 [L]
