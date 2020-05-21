@@ -90,5 +90,12 @@ abstract class Controller
         // Redirection vers l'URL /racine_site/controller/action
         header("Location:" . $webRoot . $controller . "/" . $action);
     }
+    protected function accessLimitation(){
+        if (Session::getInstance()->getAttribute('isLogged')===true){
+            return Session::getInstance()->getAttribute('sessionStatus');
+        }else{
+            return 0;
+        }
+    }
 
 }
