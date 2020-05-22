@@ -8,20 +8,15 @@ class DashboardController extends Controller
 {
     public function index()
     {
-//        public function fn(
-//        switch (Session::getInstance()->getAttribute('sessionStatus')){
-//            case 0:
-//                header( "Location: /homepage");
-//                break;
-//            case 1:
-//                $this->generateView(array(),'index');
-//                break;
-//            case 2:
-//                $this->generateView(array(),'index');
-//                break;
-//            case 3:
-//                $this->generateView(array(),'index');
-//                break;
-//        }
+        Session::getInstance()->setAttribute('lang',"es");
+//        Session::getInstance()->setAttribute('lang','po');
+        switch (Session::getInstance()->getAttribute('sessionStatus')){
+            case 0:
+                header( "Location: /homepage");
+                break;
+            default:
+                $this->generateView(array(),'index');
+                break;
+        }
     }
 }

@@ -40,10 +40,10 @@
     <script src="/Web/js/global.js"></script>
 </head>
 <body>
-<?php if(Session::getInstance()->getAttribute('isLogged')===true):?>
-<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
-<?php else:?>
-<?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
+<?php if(Session::getInstance()->getAttribute('sessionStatus')>0):?>
+<?php //if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
+<?php //else:?>
+<?php //if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
 <?php endif; ?>
 <?php if (isset($content)){echo $content;} ?>
 

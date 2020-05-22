@@ -48,7 +48,7 @@ class LoginController extends Controller {
           $log = $this->user->checkLogin($data['mail'], $data['password']);
           if ($log) {
             $ID = $this->user->getID($data['mail']);
-            Session::getInstance()->setAttribute('sessionStatus');
+            Session::getInstance()->setAttribute('sessionStatus',$ID);
             var_dump($ID);
             header("Location: /dashboard");
           } else {

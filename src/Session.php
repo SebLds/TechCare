@@ -9,15 +9,18 @@ namespace src;
  */
 class Session
 {
-    public static ?self $instance = null;
+    public static ?Session $instance = null;
 
 
     public function __construct()
     {
         session_start();
-        $this->setAttribute('isLogged',false);
-        $this->setAttribute('sessionStatus',0);
-        $this->setAttribute('lang','fr');
+        if (!$this->isThereAttribute('sessionStatus')){
+            $this->setAttribute('sessionStatus',0);
+        }
+        if (!$this->isThereAttribute('lang')){
+            $this->setAttribute('lang','fr');
+        }
     }
 
 //    /**
