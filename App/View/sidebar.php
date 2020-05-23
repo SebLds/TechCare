@@ -34,7 +34,9 @@
 
         <div class="dropdown">
           <a href="/profil"><li><i class="fal fa-user-circle"></i>Profil</li></a>
-          <a href="/homepage"><li><i class="fal fa-power-off"></i></i>Déconnexion</li></a>
+          <form action="/logout" method="post">
+            <li><i class="fal fa-power-off"></i></i> <input id="logout" type="submit" name="logout" value="Déconnexion"></li>
+          </form>
         </div>
 
         <div class="btn">

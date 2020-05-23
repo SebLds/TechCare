@@ -16,6 +16,14 @@ class LoginController extends Controller {
       $this->generateView(array(),'index');
   }
 
+  public function logout() {
+
+    if (isset($_POST['logout'])) {
+      session_unset();
+      header("Location: /homepage");
+    }
+  }
+
   public function login() {
 
     // Vérification que la variable $_POST contienne des informations

@@ -94,6 +94,11 @@ header {
   color: black;
 }
 
+.dropdown > input {
+  display: flex;
+  color: black;
+}
+
 .fal {
   margin: 0px 0.5em 0px 0px;
 }

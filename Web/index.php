@@ -50,6 +50,7 @@ $router->get('/faq',"Faq#index");
 $router->get('/cgu',"Cgu#index");
 $router->get('/profil',"Profil#index");
 $router->post('/profil',"Profil#change");
+$router->post('/logout',"Login#logout");
 $router->get('/testtamer',"Forum\Forum#test");
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/login',"Login#index");
