@@ -28,6 +28,22 @@ class Tag extends Model
         } catch (ConfigException $e) {
         }
     }
+    public function getThreadsTagById($idTag){
+        $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag';
+        $threadList=[];
+        try {
+            for ($i=0;$i<count($this->executeRequest($sqlStatement, array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ));$i++){
+                $idThread = (int) $this->executeRequest($sqlStatement, array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ)[$i]->ID_Thread;
+                $thread = new Thread();
+                $threadTitle=$thread->getThread($idThread)->Thread_Title;
+                $threadList[]=$threadTitle;
+            }
+        } catch (ConfigException $e) {
+        }
+        return $threadList;
+
+    }
+
     
     public function getNbRepliesTagById($idTag){
         $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag ';

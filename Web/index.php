@@ -27,7 +27,7 @@ Session::getInstance();
 
 //$session = new Session();
 //Session::setAttribute('lang','po');
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
 /**
  * pour le callable il faut absolument mettre le sous-dossier s'il y en a un
@@ -43,7 +43,6 @@ $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 $router->get('/home',"Forum\Tag#index");
 $router->get('/register',"Register#index");
 $router->post('/register',"Register#register");
-$router->get('/forum',"Forum\Forum#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 $router->get('/faq',"Faq#index");
@@ -57,6 +56,16 @@ $router->get('/launch-test',"LaunchTest#index");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
+
+/** Forum */
+$router->get('/forum',"Forum\Forum#index");
+$router->post('/forum/result-threads',"Forum\Forum#searchResult");
+$router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
+$router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
+$router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
+
+
+
 
 
 
