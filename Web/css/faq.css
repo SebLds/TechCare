@@ -20,8 +20,8 @@
     padding: 1em 1em 1em 3em;
     background: rgba(168, 202, 233, 1);
     border: none;
-    outline:none;
-    color: gray;
+    outline: none;
+    color: white;
     font-size: 1.2em;
     border-radius: 4px;
     box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
@@ -31,6 +31,12 @@
     background: rgba(168, 202, 233, 0.8);
 }
 
+.search-input:focus {
+    background: rgba(168, 202, 233, 0.8);
+}
+.search-input::placeholder {
+    color: white;
+}
 .accordion{
     width: 60vw;
 }

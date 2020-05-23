@@ -4,7 +4,7 @@
 <div id="body">
     <h2>Foire Aux Questions</h2>
 
-    <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." tabindex="1">
+    <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
 
     <div class="accordion">
         <div class="accordion-item">

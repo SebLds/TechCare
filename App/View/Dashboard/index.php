@@ -8,20 +8,11 @@ $Score= [0,0] ;
 
 <div id="body">
     <h2>Dashboard</h2>
+    <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
 
-    <!--
-    <div class="title">
-        <p>Mes derniers tests</p>
-        <p> x tests disponibles</p>
-        <form action="/homepage" method="get">
-            <button type="submit">Demande de test ?</button>
-        </form>
-    </div>
--->
     <div class="testResume">
         <ul class="testResumeID title">
-            <li>Search Bar</li>
-            <li>Status</li>
+            <li>Type</li>
             <li>Date</li>
             <li>Score</li>
             <li><div class="content"></div></li>
@@ -29,7 +20,14 @@ $Score= [0,0] ;
 
         <ul class="testResumeID">
             <li>Cognitif</li>
-            <li class="status">Passé</li>
+            <li>08/05/2020</li>
+            <li>100/100</li>
+            <li><button onclick="toggle_visibility();">Commentaire médecin</button></li>
+        </ul>
+        <div id="foo">This is foo</div>
+
+        <ul class="testResumeID">
+            <li>Cognitif</li>
             <li>08/05/2020</li>
             <li>100/100</li>
             <li><button>Commentaire médecin</button></li>
@@ -37,7 +35,6 @@ $Score= [0,0] ;
 
         <ul class="testResumeID">
             <li>Cognitif</li>
-            <li class="status">Passé</li>
             <li>08/05/2020</li>
             <li>100/100</li>
             <li><button>Commentaire médecin</button></li>
@@ -45,15 +42,6 @@ $Score= [0,0] ;
 
         <ul class="testResumeID">
             <li>Cognitif</li>
-            <li class="status">Passé</li>
-            <li>08/05/2020</li>
-            <li>100/100</li>
-            <li><button>Commentaire médecin</button></li>
-        </ul>
-
-        <ul class="testResumeID">
-            <li>Cognitif</li>
-            <li class="status">Passé</li>
             <li>08/05/2020</li>
             <li>100/100</li>
             <li><button>Commentaire médecin</button></li>
@@ -61,6 +49,15 @@ $Score= [0,0] ;
     </div>
 </div>
 
-<script>
-    $('button').css('height')
+<script type="text/javascript">
+    function toggle_visibility() {
+        var e = document.getElementById('foo');
+        if(e.style.display === 'none'){
+            e.style.display = 'block';
+        }
+        else{
+            e.style.display = 'none';
+        }
+    }
+    //-->
 </script>
