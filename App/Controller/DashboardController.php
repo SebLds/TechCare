@@ -22,6 +22,16 @@ class DashboardController extends Controller {
     } else {
       $this->generateView($test,"index");
     }
+    //switch (Session::getInstance()->getAttribute('sessionStatus')){
+        //case 0:
+            //header( "Location: /homepage");
+            //break;
+        //default:
+            //$this->generateView(array(),'index');
+            //break;
+    }
+  }
+
 
       //Session::getInstance()->setAttribute('sessionStatus', $sessionStatus);
 //        public function fn(

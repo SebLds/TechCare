@@ -40,10 +40,8 @@ $router= new Router($_GET['url']);
 
 $router->get('/Our-Work',function(){echo 'our work';});
 $router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
-$router->get('/home',"Forum\Tag#index");
 $router->get('/register',"Register#index");
 $router->post('/register',"Register#register");
-$router->get('/forum',"Forum\Forum#index");
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 $router->get('/faq',"Faq#index");
@@ -64,15 +62,12 @@ $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
 
-//$router->post('/home',"Forum\Forum#index");
+/** Forum */
+$router->get('/forum',"Forum\Forum#index");
+$router->post('/forum/result-threads',"Forum\Forum#searchResult");
+$router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
+$router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
+$router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
-//$router->get('',"Test#index");
-
-
-//$router->get('/posts/:slug-:id',function ($slug,$id){
-//    echo "Article $slug : $id";
-//})->with("id",'[0-9]+')->with('slug','0[a-z\0-9]+');
-//
-//$router->post('/posts/:id',function($id){echo 'Poster l\'article'.$id;});
 
 $router->run();

@@ -1,7 +1,6 @@
 <?php
 
 namespace src\Router;
-
 class Route
 {
     /** @var string Instanced route path */
@@ -68,9 +67,10 @@ class Route
     public function call(){
         if(is_string($this->callable)){
             $params=explode('#',$this->callable);
-            $controller= $params[0]."Controller";
-            $reflect = new \ReflectionClass('App\Controller\\'.$controller);
-            $object = $reflect->newInstance();
+            $controller= "App\Controller\\".$params[0]."Controller";
+//            $reflect = new \ReflectionClass('App\Controller\\'.$controller);
+//            $object = $reflect->newInstance();
+            $object= new $controller();
             return call_user_func_array([$object, $params[1]],$this->matches);
         }else{
             return call_user_func_array($this->callable,$this->matches);

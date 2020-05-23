@@ -34,6 +34,7 @@ abstract class Controller
      * Executes the action to be performed.
      * Calls the method with the same name as the action on the current Controller object.
      *
+     * @param $action
      * @throws Exception If the action does not exist in the current Controller class
      */
     public function executeAction($action)
@@ -90,12 +91,13 @@ abstract class Controller
         // Redirection vers l'URL /racine_site/controller/action
         header("Location:" . $webRoot . $controller . "/" . $action);
     }
-    protected function accessLimitation(){
-        if (Session::getInstance()->getAttribute('isLogged')===true){
-            return Session::getInstance()->getAttribute('sessionStatus');
-        }else{
-            return 0;
-        }
+
+    protected static function getText($key){
+        $lang=$_SESSION['lang'];
+        $json = file_get_contents("../Web/js/jquery.i18n/languages/$lang.json");
+        $parsed_json = json_decode($json);
+        $parsed_json->{$key};
     }
+
 
 }
