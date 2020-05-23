@@ -1,9 +1,5 @@
-<?php
-$NombreTotalTests=0;
-$Score= [0,0] ;
-?>
-
 <?php $this->title='Dashboard';?>
+
 <link href="/Web/css/dashboard.css" rel="stylesheet" type="text/css">
 
 <div id="body">
@@ -28,36 +24,13 @@ $Score= [0,0] ;
         </ul>
 
         <ul class="testResumeID">
-            <li>Cognitif</li>
+            <li><?php echo $data['testType']; ?></li>
             <li class="status">Passé</li>
-            <li>08/05/2020</li>
-            <li>100/100</li>
+            <li><?php echo $data['testDate']; ?></li>
+            <li><?php echo $data['testScore']; ?>/100</li>
             <li><button>Commentaire médecin</button></li>
         </ul>
 
-        <ul class="testResumeID">
-            <li>Cognitif</li>
-            <li class="status">Passé</li>
-            <li>08/05/2020</li>
-            <li>100/100</li>
-            <li><button>Commentaire médecin</button></li>
-        </ul>
-
-        <ul class="testResumeID">
-            <li>Cognitif</li>
-            <li class="status">Passé</li>
-            <li>08/05/2020</li>
-            <li>100/100</li>
-            <li><button>Commentaire médecin</button></li>
-        </ul>
-
-        <ul class="testResumeID">
-            <li>Cognitif</li>
-            <li class="status">Passé</li>
-            <li>08/05/2020</li>
-            <li>100/100</li>
-            <li><button>Commentaire médecin</button></li>
-        </ul>
     </div>
 </div>
 

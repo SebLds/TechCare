@@ -12,32 +12,27 @@ class User extends Model {
           $sqlStatement = 'SELECT ID_Users FROM users WHERE mail = :mail';
         } catch (ConfigException $e) {
         }
-        return $this -> executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
+        $user = $this -> executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
+        return $user->ID_Users;
     }
 
-
-    public function getCompleteProfil($idUser)
-    {
+    public function getStatus($ID) {
         try {
-            return $this -> executeRequest('SELECT * FROM utilisateur WHERE idUtilisateur = ?', $idUser) -> fetch(PDO::FETCH_OBJ);
-        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
-    } //function getComplete($idUser)
+          $sqlStatement = 'SELECT status FROM users WHERE ID_Users = :ID_Users';
+        } catch (ConfigException $e) {
+        }
+        $user = $this -> executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
+        return $user->status;
+    }
 
-
-    public function getModifyProfil($idUser, $mail, $password, $name, $surname, $address, $type, $tel)
-    {
+    public function getHealthNumber($ID) {
         try {
-            return $this -> executeRequest('UPDATE utilisateur SET Email = ?, Motdepasse = ?, Prenom = ?, Nom = ?, Adresse = ?, "Type" = ?, Tel = ? WHERE idUtilisateur = ?'.$idUser, array($mail, $password, $name, $surname, $address, $type, $tel)) -> fetch(PDO::FETCH_OBJ);
-        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
-    } //function getModifyProfil($idUser, $mail, $password, $name, $surname, $address, $type, $tel)
-
-
-    public function getSpecificTest($idUser)
-    {
-        try {
-            return $this -> executeRequest('SELECT * FROM test WHERE idUtilisateur = ? AND (NumeroSecu = ? OR idProfil = ? OR Examinateur = ? OR "Type" = ? OR Score = ?)', $idUser) -> fetch(PDO::FETCH_OBJ);
-        } catch (ConfigException $e) { return false; /*Message d'erreur*/ }
-    } //function getSpecificTest($idUser)
+          $sqlStatement = 'SELECT healthNumber FROM users WHERE ID_Users = :ID_Users';
+        } catch (ConfigException $e) {
+        }
+        $user = $this -> executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
+        return $user->healthNumber;
+    }
 
     public function addNewUser($status, $firstName, $lastName, $mail, $password, $birthdate, $doctor, $healthNumber, $registrationdate) {
       $sqlStatement = 'INSERT INTO users (status, firstName, lastName, mail, password, birthdate, doctor, healthNumber, registrationdate) VALUES (:status, :firstName, :lastName, :mail, :password, :birthdate, :doctor, :healthNumber, :registrationdate)';
@@ -82,10 +77,10 @@ class User extends Model {
       }
     }
 
-    public function getProfil($mail) {
-      $sqlStatement = 'SELECT * FROM users WHERE mail = :mail';
+    public function getProfil($ID) {
+      $sqlStatement = 'SELECT * FROM users WHERE ID_Users = :ID_Users';
     try {
-      $user = $this->executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
+      $user = $this->executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
     } catch (ConfigException $e) {
     }
 
@@ -98,19 +93,35 @@ class User extends Model {
       'doctor' => $user->doctor,
     ];
 
-    $firstName = $user->firstName;
-
-    return $firstName;
+    return $data;
   }
 
-  public function getStatus($mail) {
-    $sqlStatement = 'SELECT * FROM users WHERE mail = :mail';
+  public function modifyProfil($firstName, $lastName, $mail, $healthNumber, $doctor, $ID) {
+    $sqlStatement = 'UPDATE users
+                    SET firstName = :firstName, lastName = :lastName; mail = :mail, healthNumber = :healthNumber, doctor = :doctor,
+                    WHERE ID_Users = :ID_Users';
+    try {
+      return $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'healthNumber' => $healthNumber, 'doctor' => $doctor, 'ID_Users' => $ID));
+    } catch (ConfigException $e) {
+    }
+  }
+
+  public function getUserInfo($healthNumber) {
+    $sqlStatement = 'SELECT * FROM users WHERE healthNumber = :healthNumber';
   try {
-    $user = $this->executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
+    $user = $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetch(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {
   }
-}
 
+  $data = [
+    'firstName' => $user->firstName,
+    'lastName' => $user->lastName,
+    'birthdate' => $user->birthdate,
+    'healthNumber' => $user->healthNumber,
+  ];
+
+  return $data;
+}
 
 
 }

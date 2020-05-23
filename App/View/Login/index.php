@@ -15,7 +15,7 @@
       <form method="post">
 
         <label>Identifiant</label>
-        <input type="text" name="mail" placeholder="infinite@measures.com" value="<?php if(isset($mail)) { echo $mail; }?>">
+        <input type="text" name="mail" placeholder="infinite@measures.com">
         <p class="error-msg"><?php if(isset($error_mail)) { echo $error_mail; }?></p>
 
         <label>Mot de passe</label>

@@ -11,23 +11,54 @@ class ProfilController extends Controller {
   }
 
   public function index() {
-    $this->generateView(array(),'index');
+    $data = $this->user->getProfil($_SESSION['ID_User']);
+    $this->generateView($data,'index');
   }
 
-  public function showProfil() {
-    $mail = 'maxime.schuchmann@isep.fr';
-    $data = $this->getProfil($mail);
-    var_dump($data);
-  }
-
-  public function changeProfil() {
+  public function change() {
 
     if (!empty($_POST)) {
       extract($_POST);
 
       if (isset($_POST['change'])) {
 
+        var_dump($_SESSION);
 
+        $data = [
+          'newFirstName' => (string) htmlspecialchars(ucfirst(trim($newFirstName))),
+          'newLastName' => (string) htmlspecialchars(strtoupper(trim($newLastName))),
+          'newMail' => (string) htmlspecialchars(strtolower(trim($newMail))),
+          //'newPassword' => (string) htmlspecialchars(trim($newPassword)),
+          //'newPasswordConfirm' => (string) htmlspecialchars(trim($newPasswordConfirm)),
+          'day' => (int) htmlspecialchars(trim($day)),
+          'month' => (int) htmlspecialchars(trim($month)),
+          'year' => (int) htmlspecialchars(trim($year)),
+          'newDoctor' => htmlspecialchars(trim($newDoctor)),
+          'newHealthNumber' => htmlspecialchars(trim($newHealthNumber)),
+          'birthdate' => $day .'/'. $month .'/'. $year,
+        ];
+
+        $errors = [];
+
+        if (isset($data['newFirstName'])) {
+          if (!ctype_alpha($data['newFirstName'])) {
+            $errors['error_firstName'] = "Caractères invalides";
+          }
+        }
+
+        if (isset($data['newLastName'])) {
+          if (!ctype_alpha($data['newLastName'])) {
+            $errors['error_firstName'] = "Caractères invalides";
+          }
+        }
+
+        if(empty($errors)) {
+          $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $_SESSION['ID_User']);
+          $data = $this->user->getProfil($_SESSION['ID_User']);
+          $this->generateView($data,'index');
+        } else {
+          $this->generateView($errors,'index');
+        }
 
       }
     }

@@ -68,4 +68,10 @@ abstract class Model
         return self::$bdd;
     }
 
+    public static function getDate() {
+      date_default_timezone_set("Europe/Paris");
+      $date = date('d/m/Y') . " " . date('H:i:s');
+      return $date;
+    }
+
 }

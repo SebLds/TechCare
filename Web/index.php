@@ -41,16 +41,19 @@ $router->get('/homepage/:slug',"Home#index");
 $router->get('/faq',"Faq#index");
 $router->get('/cgu',"Cgu#index");
 $router->get('/profil',"Profil#index");
+$router->post('/profil',"Profil#change");
 $router->get('/testtamer',"Forum\Forum#test");
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/login',"Login#index");
 $router->post('/login',"Login#login");
-$router->get('/launch-test',"LaunchTest#index");
+$router->get('/test',"Exam#index");
+$router->post('/test-options',"Exam#setUpTest");
+$router->post('/test-confirm',"Exam#confirmTest");
+$router->get('/test-summary',"Exam#launchTest");
+$router->post('/test-summary',"Exam#submitComment");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
-
-
 
 //$router->post('/home',"Forum\Forum#index");
 

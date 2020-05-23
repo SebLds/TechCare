@@ -3,11 +3,27 @@
 namespace App\Controller;
 use src\Controller;
 use src\Session;
+use App\Model\User;
+use App\Model\Test;
 
-class DashboardController extends Controller
-{
-    public function index()
-    {
+class DashboardController extends Controller {
+
+  public function __construct() {
+        $this->user = new User();
+        $this->test = new Test();
+  }
+
+  public function index()  {
+    $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
+    $test = $this->test->getTest($healthNumber);
+    if (empty($test)) {
+      $data = "Aucun test effectué";
+      $this->generateView($data,"index");
+    } else {
+      $this->generateView($test,"index");
+    }
+
+      //Session::getInstance()->setAttribute('sessionStatus', $sessionStatus);
 //        public function fn(
 //        switch (Session::getInstance()->getAttribute('sessionStatus')){
 //            case 0:
@@ -24,4 +40,5 @@ class DashboardController extends Controller
 //                break;
 //        }
     }
+
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace src;
+use SessionException;
+
 /**
  * Class modeling the session.
  * Encapsulates the PHP $_SESSION superglobal.
@@ -15,9 +17,8 @@ class Session
     public function __construct()
     {
         session_start();
-        $this->setAttribute('isLogged',false);
-        $this->setAttribute('sessionStatus',0);
         $this->setAttribute('lang','fr');
+        $this->setAttribute('sessionStatus',0);
     }
 
 //    /**
@@ -36,20 +37,6 @@ class Session
         return self::$instance;
     }
 
-
-
-    public function restrictionAccess($url){
-        if($this->getAttribute('isLogged')===false){
-                header('Location: /homepage');
-                // redirect vers une page d'erreur type forbidden access avec un lien pour retourner vers la home page
-            }else{
-                if($this->getAttribute('sessionStatus')!=3){
-                    if(!strpos($url,"admin")){
-                        header("Location: /homepage");
-                    }
-            }
-            }
-    }
 
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use src\Controller;
+use src\Model;
 use App\Model\User;
 
 class RegisterController extends Controller {
@@ -21,9 +22,7 @@ class RegisterController extends Controller {
 
       if(isset($_POST['register'])) {
 
-        date_default_timezone_set("Europe/Paris");
-
-        $registrationdate = date('d/m/Y') . " " . date('H:i:s');
+        $registrationdate = Model::getDate();
 
         $data = [
           'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
@@ -38,8 +37,9 @@ class RegisterController extends Controller {
           'doctor' => htmlspecialchars(trim($doctor)),
           'healthNumber' => htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
-          'registrationdate' => date("h:i:sa"),
         ];
+
+        $status = 1;
 
         $errors = [];
 
@@ -104,11 +104,12 @@ class RegisterController extends Controller {
           }
 
           // Vérification du numéro de sécurité sociale
-          if (empty($data['healthNumber'])) {
+          if (!empty($data['healthNumber'])) {
             $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
             if ($checkHealthNumber) {
               $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
             }
+          } else {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
 
@@ -122,8 +123,8 @@ class RegisterController extends Controller {
             $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['healthNumber'], $registrationdate);
             header("Location: /login");
           } else {
-            $data = [];
-            $this->generateView($errors,'index');
+            $data = [$data, $errors];
+            $this->generateView($data,'index');
           }
 
         }
