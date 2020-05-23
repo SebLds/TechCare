@@ -11,14 +11,18 @@ use SessionException;
  */
 class Session
 {
-    public static ?self $instance = null;
+    public static ?Session $instance = null;
 
 
     public function __construct()
     {
         session_start();
-        $this->setAttribute('lang','fr');
-        $this->setAttribute('sessionStatus',0);
+        if (!$this->isThereAttribute('sessionStatus')){
+            $this->setAttribute('sessionStatus',0);
+        }
+        if (!$this->isThereAttribute('lang')){
+            $this->setAttribute('lang','fr');
+        }
     }
 
 //    /**

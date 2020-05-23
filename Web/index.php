@@ -19,7 +19,15 @@ Autoloader::addNamespace('App\Model','../App/Model/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
+//$session= new Session();
 Session::getInstance();
+//Session::getInstance()->setAttribute('isLogged',false);
+//Session::getInstance()->setAttribute('sessionStatus',0);
+//Session::getInstance()->setAttribute('lang','fr');
+
+//$session = new Session();
+//Session::setAttribute('lang','po');
+var_dump($_SESSION);
 
 /**
  * pour le callable il faut absolument mettre le sous-dossier s'il y en a un

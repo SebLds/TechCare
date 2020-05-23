@@ -41,9 +41,11 @@
 </head>
 
 <body>
+<?php if(Session::getInstance()->getAttribute('sessionStatus')>0):?>
 <?php //if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
+<?php //else:?>
 <?php //if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
-
+<?php endif; ?>
 <?php if (isset($content)){echo $content;} ?>
 
 <?php require_once 'footer.php'?>
