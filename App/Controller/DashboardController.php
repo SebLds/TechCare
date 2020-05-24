@@ -8,6 +8,9 @@ use App\Model\Test;
 
 class DashboardController extends Controller {
 
+  private User $user;
+  private Test $test;
+
   public function __construct() {
         $this->user = new User();
         $this->test = new Test();
@@ -49,6 +52,3 @@ class DashboardController extends Controller {
 //                $this->generateView(array(),'index');
 //                break;
 //        }
-    }
-
-}
