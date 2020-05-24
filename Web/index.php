@@ -72,7 +72,6 @@ $router->post('/forum/result-threads',"Forum\Forum#searchResult");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
-$router->get('/testtamer',"Forum\Forum#test"); // test chart
 
 
 
@@ -80,7 +79,7 @@ $router->get('/testtamer',"Forum\Forum#test"); // test chart
 $router->get('/admin/dashboard',"Admin#index");
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
-$router->get('/statistics','Admin#');
+$router->get('/statistics','Admin#stats');
 
 
 
