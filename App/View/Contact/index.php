@@ -1,4 +1,4 @@
-<?php $this->title = "Contact" ?>
+<?php $this->title = "Contact"; ?>
     <link rel="stylesheet" href="/Web/css/form.css">
     <link rel="stylesheet" href="/Web/css/contact.css">
 
@@ -10,14 +10,14 @@
           <p class="top-text">N’hésitez pas à nous <span>solliciter</span> au travers du questionnaire suivant pour toute question ou demande d’information.<br>
           Nous nous engageons à traiter votre demande <span>dans les meilleurs délais.</span></p>
 
-          <form>
+          <form method="post">
 
             <div class="personnal-info">
 
               <div class="left">
 
                 <label>Nom</label>
-                <input type="text" name="lastName" placeholder="Romuald">
+                <input type="text" name="lastName" placeholder="Romuald" value="<?php if(isset($data[0]['firstName'])) { echo $data[0]['firstName']; }?>">
                 <p class="error-msg"><?php if(isset($data[1]['error_firstName'])) { echo $data[1]['error_firstName']; } ?></p>
 
 

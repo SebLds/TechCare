@@ -44,7 +44,6 @@ class ContactController extends Controller {
           }
 
           if (!empty($data['mail'])) {
-            $checkmail = $this->user->checkMail($data['mail']);
             if (!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
               $errors['error_mail'] = "L'adresse email est invalide";
             }
@@ -72,7 +71,7 @@ class ContactController extends Controller {
 
           if (empty($errors)) {
             mail($data[$mail], $subject, $message);
-            $data = ['confirm' => 'Votre message a bien été envoyé']
+            $data = ['confirm' => 'Votre message a bien été envoyé'];
             $this->generateView($data,'index');
           } else {
             $data = [$data, $errors];

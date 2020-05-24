@@ -21,9 +21,6 @@ Autoloader::register();
 
 Session::getInstance();
 
-var_dump($_SESSION);
-
-
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -36,13 +33,10 @@ $router->get('/homepage/:slug',"Home#index");
 
 $router->get('/faq',"Faq#index");
 $router->get('/cgu',"Cgu#index");
-
 $router->get('/error-:id',"Error#generateError#id");
-
-
-
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
+
 /**Register**/
 $router->get('/register',"Register#index");
 $router->post('/register',"Register#register");
@@ -64,9 +58,10 @@ $router->post('/test-confirm',"Exam#confirmTest");
 $router->get('/test-summary',"Exam#launchTest");
 $router->post('/test-summary',"Exam#submitComment");
 $router->get('/set-new-password',"ForgetPassword#index");
+
+/**Contact**/
 $router->get('/contact',"Contact#index");
 $router->post('/contact',"Contact#sendMail");
-$router->get('/dashboard',"Dashboard#index");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");

@@ -10,7 +10,7 @@
     if (isset($webRoot)){echo $webRoot;} ?>">
 
     <!-- CSS Files -->
-    <link href="/Web/css/rules.css" rel="stylesheet">
+
     <!-- Image -->
     <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
 

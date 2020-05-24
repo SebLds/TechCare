@@ -23,6 +23,7 @@ class RegisterController extends Controller {
       if(isset($_POST['register'])) {
 
         $registrationdate = Model::getDate();
+        $status = 1;
 
         $data = [
           'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
@@ -34,12 +35,10 @@ class RegisterController extends Controller {
           'day' => (int) htmlspecialchars(trim($day)),
           'month' => (int) htmlspecialchars(trim($month)),
           'year' => (int) htmlspecialchars(trim($year)),
-          'doctor' => htmlspecialchars(trim($doctor)),
+          'doctor' => (string) htmlspecialchars(trim($doctor)),
           'healthNumber' => htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
         ];
-
-        $status = 1;
 
         $errors = [];
 

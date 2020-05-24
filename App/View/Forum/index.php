@@ -1,5 +1,5 @@
 
-<?php $this->title = "Forum" ?>
+<?php $this->title = "Forum";?>
 <?php ob_start(); ?>
 <link href="/Web/css/forum.css" rel="stylesheet">
 <?php $this->head_tags = ob_get_clean();?>
