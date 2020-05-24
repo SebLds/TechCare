@@ -25,21 +25,13 @@ class Test extends Model {
     }
   }
 
-  public function getTest($healthNumber) {
-    $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber';
+  public function getUserTests($healthNumber) {
+    $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber ORDER BY passDate DESC';
   try {
-    $test = $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetch(PDO::FETCH_OBJ);
+    return $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetchAll(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {
   }
 
-  $data = [
-    'testType' => $test->type,
-    'testScore' => $test->score,
-    'testDate' => $test->passDate,
-    'testComment' => $test->comment,
-  ];
-
-    return $data;
   }
 
 }

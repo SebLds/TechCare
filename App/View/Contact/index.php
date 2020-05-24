@@ -1,4 +1,4 @@
-<?php $this->title = "Contact" ?>
+<?php $this->title = "Contact"; ?>
     <link rel="stylesheet" href="/Web/css/form.css">
     <link rel="stylesheet" href="/Web/css/contact.css">
 
@@ -10,19 +10,21 @@
           <p class="top-text">N’hésitez pas à nous <span>solliciter</span> au travers du questionnaire suivant pour toute question ou demande d’information.<br>
           Nous nous engageons à traiter votre demande <span>dans les meilleurs délais.</span></p>
 
-          <form>
+          <form method="post">
 
             <div class="personnal-info">
 
               <div class="left">
 
                 <label>Nom</label>
-                <input type="text" name="lastName" placeholder="Romuald">
-                <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+                <input type="text" name="lastName" placeholder="Romuald" value="<?php if(isset($data[0]['firstName'])) { echo $data[0]['firstName']; }?>">
+                <p class="error-msg"><?php if(isset($data[1]['error_firstName'])) { echo $data[1]['error_firstName']; } ?></p>
+
 
                 <label>Prénom</label>
                 <input type="text" name="firstName" placeholder="Monteiro">
-                <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+                <p class="error-msg"><?php if(isset($data[1]['error_lastName'])) { echo $data[1]['error_lastName']; } ?></p>
+
 
               </div>
 
@@ -30,46 +32,29 @@
 
                 <label>Société / Institution</label>
                 <input class="inputright" type="text" name="company" placeholder="Hôpital Necker">
-                <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+                <p class="error-msg"><?php if(isset($data[1]['error_company'])) { echo $data[1]['error_company']; } ?></p>
+
 
                 <label>Adresse email</label>
                 <input class="inputright" type="text" name="mail" placeholder="infinite@measures.com">
-                <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+                <p class="error-msg"><?php if(isset($data[1]['error_mail'])) { echo $data[1]['error_mail']; } ?></p>
+
 
               </div>
 
               <div class="right">
 
                 <label>Sujet</label>
-                <div class="select-box">
-
-                  <div class="options-container">
-
-                    <div class="option">
-                      <input type="radio" class="radio" id="stress" name="category">
-                      <label class="stress" for="stress">Commerciale</label>
-                    </div>
-
-                    <div class="option">
-                      <input type="radio" class="radio" id="sight" name="category">
-                      <label for="sight">Technique</label>
-                    </div>
-
-                    <div class="option">
-                      <input type="radio" class="radio" id="hearing" name="category">
-                      <label for="hearing">Recrutement</label>
-                    </div>
-
-                  </div>
-
-                  <div class="selected">
-                    Choisir un sujet
-                  </div>
-
+                <div class="selectbox">
+                  <select name="subject">
+                    <option value="">Choisir un sujet</option>
+                    <option value="commercial">Offre commerciale</option>
+                    <option value="issue">Problème technique</option>
+                    <option value="divers">Divers</option>
+                  </select>
                 </div>
+                  <p class="error-msg"><?php if(isset($data[1]['error_subject'])) { echo $data[1]['error_subject']; } ?></p>
 
-                <label>Pièce jointe</label>
-                <input type="file" name="" value="">
 
               </div>
 
@@ -79,10 +64,9 @@
 
               <label>Message</label>
               <textarea name="message" rows="3" placeholder="Ecrivez votre message ici"></textarea>
+              <p class="error-msg"><?php if(isset($data[1]['error_message'])) { echo $data[1]['error_message']; } ?></p>
 
             </div>
-
-            <script type="text/javascript" src="/Web/js/select.js"></script>
 
             <input type="submit" name="send" value="Envoyer">
 

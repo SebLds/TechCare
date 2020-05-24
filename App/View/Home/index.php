@@ -11,7 +11,7 @@
             <h2>Infinite Measures</h2>
             <p>Test psychotechnique<br/>
                 à la pointe de la technologie<br />
-                certifié par les organismes gouvernementales.</p>
+                certifié par les organismes gouvernementaux.</p>
             <ul class="actions special">
                 <li><a href="/register" class="btn primary">S'inscrire</a></li>
             </ul>

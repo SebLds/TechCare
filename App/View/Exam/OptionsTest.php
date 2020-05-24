@@ -13,7 +13,6 @@
     <form action="/test-confirm" method="post">
 
       <label>Profil du patient</label>
-
       <div class="selectbox">
         <select name="test-profil">
           <option value="">Choisir un profil</option>

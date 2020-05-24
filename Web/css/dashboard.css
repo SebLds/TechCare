@@ -2,10 +2,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Lato", Helvetica, sans-serif;
     font-size: 15pt;
     font-weight: 400;
-    margin: 4em;
 }
 
 #body h2 {
@@ -13,7 +11,6 @@
     font-size: 2em;
     letter-spacing: 0.225em;;
     color: black;
-    margin: 2em 0 0 0;
 }
 
 /*
@@ -64,14 +61,6 @@
     background-color: transparent !important;
     box-shadow: none !important;
     color: black;
-}
-
-.testResumeID .status {
-    padding: 0.5em;
-    color: #fff;
-    border-radius: 3px;
-    background-color: green !important;
-    /*si pas passé > background-color: red;*/
 }
 
 .testResumeID button {

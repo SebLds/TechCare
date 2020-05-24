@@ -1,6 +1,7 @@
 <html>
 <head>
     <link href="/Web/css/header.css" rel="stylesheet">
+    <link href="/Web/css/rules.css" rel="stylesheet">
 </head>
 
 <body>

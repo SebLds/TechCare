@@ -7,8 +7,9 @@ use App\Model\User;
 use App\Model\Test;
 
 class DashboardController extends Controller {
-    private User $user;
-    private Test $test;
+
+  private User $user;
+  private Test $test;
 
   public function __construct() {
         $this->user = new User();
@@ -17,13 +18,9 @@ class DashboardController extends Controller {
 
   public function index()  {
     $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
-    $test = $this->test->getTest($healthNumber);
-    if (empty($test)) {
-      $data = "Aucun test effectué";
-      $this->generateView($data,"index");
-    } else {
-      $this->generateView($test,"index");
-    }
+    $test = $this->test->getUserTests($healthNumber);
+    $this->generateView(array('User_test' => $test),"index");
+
     //switch (Session::getInstance()->getAttribute('sessionStatus')){
         //case 0:
             //header( "Location: /homepage");
@@ -53,4 +50,6 @@ class DashboardController extends Controller {
 //        }
 
 
+
 }
+

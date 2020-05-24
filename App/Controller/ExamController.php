@@ -98,8 +98,7 @@ class ExamController extends Controller {
     }
 
   public function launchTest() {
-    var_dump($_SESSION);
-    $test = $this->test->getTest($_SESSION['Patient_HealthNumber']);
+    $test = $this->test->getUserTests($_SESSION['Patient_HealthNumber']);
     $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
     $this->generateView($user, 'Summarytest');
   }

@@ -1,4 +1,5 @@
 <link href="/Web/css/sidebar.css" rel="stylesheet">
+<link href="/Web/css/rulesConnected.css" rel="stylesheet">
 
   <header>
 
@@ -26,8 +27,12 @@
         <a href="/dashboard"><h1><i class="fal fa-book-heart"></i>Tableau de bord</h1></a>
         <a href="/help"><h1><i class="fal fa-question-circle"></i>Aide</h1></a>
         <a href="/forum"><h1><i class="fal fa-comments-alt"></i>Forum</h1></a>
-        <a href="/launch-test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
+        <?php if($_SESSION['sessionStatus']>1) : ?>
+        <a href="/test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
+        <?php endif; ?>
+        <?php if($_SESSION['sessionStatus']>2) : ?>
         <a href="/statitics"><h1><i class="fal fa-analytics"></i>Statistiques</h1></a>
+        <?php endif; ?>
       </div>
 
       <div class="account">
