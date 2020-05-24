@@ -7,10 +7,10 @@ use src\Model;
 
 class Test extends Model {
 
-  public function newTest($healthNumber, $type, $profil, $score, $passDate) {
-    $sqlStatement = 'INSERT INTO test (healthNumber, type, profil, score, passDate) VALUES (:healthNumber, :type, :profil, :score, :passDate)';
+  public function newTest($healthNumber, $doctor, $type, $profil, $score, $passDate) {
+    $sqlStatement = 'INSERT INTO test (healthNumber, doctor, type, profil, score, passDate) VALUES (:healthNumber, :doctor, :type, :profil, :score, :passDate)';
     try {
-      return $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber, 'type' => $type, 'profil' => $profil, 'score' => $score, 'passDate' => $passDate));
+      return $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber, 'doctor' => $doctor, 'type' => $type, 'profil' => $profil, 'score' => $score, 'passDate' => $passDate));
     } catch (ConfigException $e) {
 
     }
@@ -29,6 +29,15 @@ class Test extends Model {
     $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber ORDER BY passDate DESC';
   try {
     return $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetchAll(PDO::FETCH_OBJ);
+  } catch (ConfigException $e) {
+  }
+
+  }
+
+  public function getDoctorTests($doctor) {
+    $sqlStatement = 'SELECT * FROM test WHERE doctor = :doctor ORDER BY passDate DESC';
+  try {
+    return $this->executeRequest($sqlStatement, array('doctor' => $doctor))->fetchAll(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {
   }
 

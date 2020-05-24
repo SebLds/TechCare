@@ -85,12 +85,13 @@ class ExamController extends Controller {
           if(empty($errors)) {
             $passDate = Model::getDate();
             $score = rand(0, 100);
-            $this->test->newTest($_SESSION['Patient_HealthNumber'], $_SESSION['Select-Category'], $_SESSION['Select-Profil'], $score, $passDate);
+            $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+            $this->test->newTest($_SESSION['Patient_HealthNumber'], $doctor, $_SESSION['Select-Category'], $_SESSION['Select-Profil'], $score, $passDate);
             Session::getInstance()->deleteAttribute('Select-Profil');
             Session::getInstance()->deleteAttribute('Select-Category');
             $this->generateView($data,'ConfirmTest');
           } else {
-            $this->generateView(array(),'OptionsTest');
+            $this->generateView($errors,'OptionsTest');
           }
 
         }
@@ -116,8 +117,9 @@ class ExamController extends Controller {
         header('Location: /dashboard');
       } else {
         $error['error_comment'] = "Veuillez saisir un commentaire";
-        $test = $this->test->getTest($_SESSION['Patient_HealthNumber']);
-        $this->generateView($error, 'Summarytest');
+        $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
+        $data = [$user, $error];
+        $this->generateView($data, 'Summarytest');
       }
 
     }

@@ -53,7 +53,7 @@
                     <option value="divers">Divers</option>
                   </select>
                 </div>
-                  <p class="error-msg"><?php if(isset($data[1]['error_subject'])) { echo $data[1]['error_subject']; } ?></p>
+                <p class="error-msg"><?php if(isset($data[1]['error_subject'])) { echo $data[1]['error_subject']; } ?></p>
 
 
               </div>

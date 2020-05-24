@@ -6,6 +6,8 @@ use App\Model\User;
 
 class ProfilController extends Controller {
 
+  private User $user;
+
   public function __construct() {
         $this->user = new User();
   }
@@ -57,7 +59,8 @@ class ProfilController extends Controller {
           $data = $this->user->getProfil($_SESSION['ID_User']);
           $this->generateView($data,'index');
         } else {
-          $this->generateView($errors,'index');
+          $data = [$data, $errors];
+          $this->generateView($data,'index');
         }
 
       }

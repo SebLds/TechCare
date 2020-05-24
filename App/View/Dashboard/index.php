@@ -1,11 +1,24 @@
-<?php $this->title='Dashboard'; ?>
+<?php $this->title='Dashboard'; var_dump($_POST);?>
 
 <link href="/Web/css/dashboard.css" rel="stylesheet" type="text/css">
-
-
+<link href="/Web/css/searchBar.css" rel="stylesheet" type="text/css">
 
 <div id="body">
+
     <h2>Dashboard</h2>
+
+    <?php if($_SESSION['sessionStatus']==1) : ?>
+    <form method="post">
+      <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un test..." tabindex="1" name="search">
+    </form>
+    <?php endif; ?>
+
+    <?php if($_SESSION['sessionStatus']==2) : ?>
+    <form method="post">
+      <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." tabindex="1">
+      <input type="submit" value="Rechercher" name="search">
+    </form>
+    <?php endif; ?>
 
 <?php if (isset($data)):?>
     <!--

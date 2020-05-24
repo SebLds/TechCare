@@ -36,6 +36,7 @@ $router->get('/cgu',"Cgu#index");
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
+$router->post('/dashboard',"Dashboard#searchPatient");
 
 /**Register**/
 $router->get('/register',"Register#index");
