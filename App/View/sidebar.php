@@ -26,7 +26,7 @@
         <a href="/dashboard"><h1><i class="fal fa-book-heart"></i>Tableau de bord</h1></a>
         <a href="/help"><h1><i class="fal fa-question-circle"></i>Aide</h1></a>
         <a href="/forum"><h1><i class="fal fa-comments-alt"></i>Forum</h1></a>
-        <a href="/launch-test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
+        <a href="/test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
         <a href="/statitics"><h1><i class="fal fa-analytics"></i>Statistiques</h1></a>
       </div>
 

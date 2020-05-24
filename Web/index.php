@@ -19,40 +19,45 @@ Autoloader::addNamespace('App\Model','../App/Model/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
-//$session= new Session();
 Session::getInstance();
-//Session::getInstance()->setAttribute('isLogged',false);
-//Session::getInstance()->setAttribute('sessionStatus',0);
-//Session::getInstance()->setAttribute('lang','fr');
 
-//$session = new Session();
-//Session::setAttribute('lang','po');
 var_dump($_SESSION);
 
-/**
- * pour le callable il faut absolument mettre le sous-dossier s'il y en a un
- * ex: Pour le controller TestController dans le dossier Forum du dossier Controller le callable est Forum\Test
- */
+
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
+
 $router= new Router($_GET['url']);
 
-$router->get('/Our-Work',function(){echo 'our work';});
-$router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
-$router->get('/register',"Register#index");
-$router->post('/register',"Register#register");
+/**Homepage**/
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
+
 $router->get('/faq',"Faq#index");
 $router->get('/cgu',"Cgu#index");
-$router->get('/profil',"Profil#index");
-$router->post('/profil',"Profil#change");
-$router->post('/logout',"Login#logout");
-$router->get('/testtamer',"Forum\Forum#test");
+
 $router->get('/error-:id',"Error#generateError#id");
+
+
+
+$router->get('/contact',"Contact#index");
+$router->get('/dashboard',"Dashboard#index");
+/**Register**/
+$router->get('/register',"Register#index");
+$router->post('/register',"Register#register");
+
+/**Login**/
 $router->get('/login',"Login#index");
 $router->post('/login',"Login#login");
+$router->post('/logout',"Login#logout");
+$router->get('/set-new-password',"ForgetPassword#index");
+
+/**Profil**/
+$router->get('/profil',"Profil#index");
+$router->post('/profil',"Profil#change");
+
+/**Test**/
 $router->get('/test',"Exam#index");
 $router->post('/test-options',"Exam#setUpTest");
 $router->post('/test-confirm',"Exam#confirmTest");
@@ -63,7 +68,7 @@ $router->get('/contact',"Contact#index");
 $router->post('/contact',"Contact#sendMail");
 $router->get('/dashboard',"Dashboard#index");
 
-/** Forum */
+/** Forum **/
 $router->get('/forum',"Forum\Forum#index");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
