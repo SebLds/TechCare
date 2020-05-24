@@ -1,6 +1,6 @@
 
 $(".comment").hide();
 
-$('.btn').click(function(){
-    $(this).next(".comment").slideToggle();
-});
+    $('.btn').click(function(){
+        $('.testResume').next(".comment").slideToggle('slow');
+    });

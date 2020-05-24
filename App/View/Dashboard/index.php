@@ -22,9 +22,9 @@ $Score= [0,0] ;
             <li>Cognitif</li>
             <li>08/05/2020</li>
             <li>100/100</li>
-            <li><button class="btn">Commentaire médecin</button></li>
+            <li class="btn"><button>Commentaire médecin</button></li>
+            <div class="comment">This is foo</div>
         </ul>
-        <div class="comment">This is foo</div>
 
         <ul class="testResumeID">
             <li>Cognitif</li>
