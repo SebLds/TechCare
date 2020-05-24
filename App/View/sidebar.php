@@ -52,7 +52,7 @@
         <div class="content">
 
           <div class="flag">
-            <img id="img-flag" src="../../Web/images/france.png" alt="">
+            <img onclick="changeLang()" id="img-flag" src="../../Web/images/france.png" alt="">
           </div>
 
           <div class="link">

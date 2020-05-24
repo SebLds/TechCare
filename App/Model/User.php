@@ -97,11 +97,9 @@ class User extends Model {
   }
 
   public function modifyProfil($firstName, $lastName, $mail, $healthNumber, $doctor, $ID) {
-    $sqlStatement = 'UPDATE users
-                    SET firstName = :firstName, lastName = :lastName; mail = :mail, healthNumber = :healthNumber, doctor = :doctor,
-                    WHERE ID_Users = :ID_Users';
+    $sqlStatement = "UPDATE users SET firstName = :firstName, lastName = :lastName; mail = :mail, healthNumber = :healthNumber, doctor = :doctor WHERE ID_Users = 9";
     try {
-      return $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'healthNumber' => $healthNumber, 'doctor' => $doctor, 'ID_Users' => $ID));
+      return $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'healthNumber' => $healthNumber, 'doctor' => $doctor));
     } catch (ConfigException $e) {
     }
   }

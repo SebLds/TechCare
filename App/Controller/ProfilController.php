@@ -5,6 +5,7 @@ use src\Controller;
 use App\Model\User;
 
 class ProfilController extends Controller {
+    private User $user;
 
   public function __construct() {
         $this->user = new User();
@@ -22,7 +23,6 @@ class ProfilController extends Controller {
 
       if (isset($_POST['change'])) {
 
-        var_dump($_SESSION);
 
         $data = [
           'newFirstName' => (string) htmlspecialchars(ucfirst(trim($newFirstName))),
@@ -53,7 +53,7 @@ class ProfilController extends Controller {
         }
 
         if(empty($errors)) {
-          $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $_SESSION['ID_User']);
+          $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], 10);
           $data = $this->user->getProfil($_SESSION['ID_User']);
           $this->generateView($data,'index');
         } else {

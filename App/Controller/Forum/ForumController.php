@@ -6,6 +6,7 @@ use App\Model\Forum\Thread;
 use src\Controller;
 use App\Model\Forum\Tag;
 
+
 class ForumController extends Controller
 {
     private Tag $tag;
@@ -22,6 +23,9 @@ class ForumController extends Controller
         $this->reply = new Reply();
     }
 
+    /**
+     * Index method that shows the list of tags with information.
+     */
     public function index(){
         $tags = $this->tag->getTags();
         for ($i=1;$i<=count($tags);$i++){
@@ -32,6 +36,11 @@ class ForumController extends Controller
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
 
     }
+
+    /**
+     * Research in the database either in all the threads or in all the threads for one tag.
+     * @param null $id Tag's id
+     */
     public function searchResult($id=null){
         if($id===null) {
             $searchResult = [];
@@ -49,9 +58,16 @@ class ForumController extends Controller
 
     }
     public function showThreadById($id){
+        $thread=$this->thread->getThread($id);
 
+        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"thread");
 
     }
+
+    /**
+     * Show the list of threads of the tag.
+     * @param $id Tag's id
+     */
     public function showTagById($id){
        $listThreads= $this->tag->getThreadsTagById($id);
        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"listThreadsTag");
@@ -59,6 +75,7 @@ class ForumController extends Controller
     }
 
     public function test(){
+        $this->generateView(array(),'test');
 
     }
 

@@ -31,10 +31,10 @@ class Tag extends Model
     public function getThreadsTagById($idTag){
         $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag';
         $threadList=[];
+        $thread = new Thread();
         try {
             for ($i=0;$i<count($this->executeRequest($sqlStatement, array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ));$i++){
                 $idThread = (int) $this->executeRequest($sqlStatement, array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ)[$i]->ID_Thread;
-                $thread = new Thread();
                 $threadTitle=$thread->getThread($idThread)->Thread_Title;
                 $threadList[]=$threadTitle;
             }

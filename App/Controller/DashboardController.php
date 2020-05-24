@@ -7,6 +7,8 @@ use App\Model\User;
 use App\Model\Test;
 
 class DashboardController extends Controller {
+    private User $user;
+    private Test $test;
 
   public function __construct() {
         $this->user = new User();
@@ -30,7 +32,7 @@ class DashboardController extends Controller {
             //$this->generateView(array(),'index');
             //break;
     }
-  }
+
 
 
       //Session::getInstance()->setAttribute('sessionStatus', $sessionStatus);
@@ -49,6 +51,6 @@ class DashboardController extends Controller {
 //                $this->generateView(array(),'index');
 //                break;
 //        }
-    }
+
 
 }
