@@ -63,6 +63,8 @@ $router->get('/set-new-password',"ForgetPassword#index");
 /**Contact**/
 $router->get('/contact',"Contact#index");
 $router->post('/contact',"Contact#sendMail");
+$router->get('/contact-admin',"Contact#contactAdminIndex");
+$router->get('/contact-admin',"Contact#contactAdmin");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");

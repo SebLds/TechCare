@@ -132,9 +132,9 @@ class User extends Model {
   return $data;
 }
 
-public function findUserByLastName($doctor, $key) {
-  $sqlStatement = 'SELECT * FROM users WHERE lastName = :lastName LIKE '%$key%''->fetchAll(PDO::FETCH_OBJ);
-  return $this->executeRequest($sqlStatement, array('doctor' => $doctor, 'key' => $key));
+public function findUserByLastName($lastName, $search) {
+  $sqlStatement = 'SELECT * FROM users WHERE lastName = :lastName LIKE '%$search%''->fetchAll(PDO::FETCH_OBJ);
+  return $this->executeRequest($sqlStatement, array('lastName' => $lastName));
 }
 
 

@@ -3,7 +3,7 @@
 
   <header>
 
-    <div class="header">
+    <!-- <div class="header">
       <div class="burger-button">
         <span></span>
       </div>
@@ -80,7 +80,48 @@
 
     <script type="text/javascript" src="/Web/js/sidebar.js"></script>
 
+  </header> -->
+
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header>
+    <div id="header">
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3>Coding <span>Snow</span></h3>
+      </div>
+      <div class="right_area">
+        <form action="/logout" method="post">
+          <input class="logout_btn" type="submit" name="logout" value="Déconnexion"></li>
+        </form>
+      </div>
+    </div>
   </header>
+  <!--header area end-->
+  <!--sidebar start-->
+  <div class="sidebar">
+    <center>
+      <h4>Jessica</h4>
+    </center>
+    <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+    <a href="/help"><h1><i class="fal fa-question-circle"></i>Aide</h1></a>
+    <a href="/forum"><h1><i class="fal fa-comments-alt"></i>Forum</h1></a>
+    <?php if($_SESSION['sessionStatus']>1) : ?>
+    <a href="/test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
+    <?php endif; ?>
+    <?php if($_SESSION['sessionStatus']>2) : ?>
+    <a href="/statitics"><h1><i class="fal fa-analytics"></i>Statistiques</h1></a>
+    <?php endif; ?>
+    <!-- <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
+    <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
+    <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
+    <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
+    <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
+    <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a> -->
+  </div>
+  <!--sidebar end-->
 
   <body>
 

@@ -1,9 +1,6 @@
 #body {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    font-size: 15pt;
-    font-weight: 400;
 }
 
 #body h2 {
@@ -11,6 +8,11 @@
     font-size: 2em;
     letter-spacing: 0.225em;;
     color: black;
+}
+
+.searchBar {
+  display: flex;
+  align-self: flex-start;
 }
 
 /*
@@ -43,7 +45,7 @@
     margin-bottom: 2em;
     background-color: whitesmoke;
     box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 1em;
     width: 100%;
 }
@@ -73,6 +75,58 @@
     width: 20em;
 }
 
-.content{
-    width: 20em;
+/* .fa, .fas, .far, .fal {
+  font-size: 2em;
+} */
+
+.fa-heartbeat {
+  color: red;
+}
+
+.fa-eye {
+  color: blue;
+}
+
+.fa-deaf {
+  color: green;
+}
+
+#type {
+  align-content: center;
+}
+
+#date {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1% 1% 1% 1%;
+    width: 100%;
+}
+
+caption {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+td, th {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+.content {
+
 }

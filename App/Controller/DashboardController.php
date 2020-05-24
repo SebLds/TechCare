@@ -43,9 +43,8 @@ class DashboardController extends Controller {
 
       if (isset($_POST['search'])) {
         $doctor = $this->user->getDoctor($_SESSION['ID_User']);
-        echo $doctor;
-        //$result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
-        //echo $result;
+        $result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
+        echo $result;
       }
     }
 
