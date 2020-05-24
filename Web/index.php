@@ -60,6 +60,7 @@ $router->get('/test-summary',"Exam#launchTest");
 $router->post('/test-summary',"Exam#submitComment");
 $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
+$router->post('/contact',"Contact#sendMail");
 $router->get('/dashboard',"Dashboard#index");
 
 /** Forum */
