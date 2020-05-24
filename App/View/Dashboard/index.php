@@ -10,7 +10,7 @@ $Score= [0,0] ;
     <h2>Dashboard</h2>
     <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
 
-    <div class="testResume">
+    <div id="testResume">
         <ul class="testResumeID title">
             <li>Type</li>
             <li>Date</li>
@@ -24,7 +24,7 @@ $Score= [0,0] ;
             <li>100/100</li>
             <li><button onclick="toggle_visibility();">Commentaire médecin</button></li>
         </ul>
-        <div id="foo">This is foo</div>
+        <div class="comment">This is foo</div>
 
         <ul class="testResumeID">
             <li>Cognitif</li>
@@ -51,13 +51,7 @@ $Score= [0,0] ;
 
 <script type="text/javascript">
     function toggle_visibility() {
-        var e = document.getElementById('foo');
-        if(e.style.display === 'none'){
-            e.style.display = 'block';
-        }
-        else{
-            e.style.display = 'none';
-        }
+        var e = document.getElementById('testResume');
+        e.classList.toggle("comment");
     }
-    //-->
 </script>

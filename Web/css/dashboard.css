@@ -39,7 +39,7 @@
     color: white;
 }
 
-.testResume{
+#testResume{
     margin: 0 4em 0 4em;
 }
 
@@ -71,11 +71,9 @@
     color: black;
 }
 
-#foo{
+.comment{
     list-style: none;
     display: none;
-    justify-content: space-evenly;
-    align-items: center;
     margin-bottom: 2em;
     background-color: whitesmoke;
     box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
@@ -83,6 +81,26 @@
     padding: 1em 0;
     width: 100%;
 }
+
+.accordion .content {
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    clear: both;
+    transition: all 0.2s ease 0.15s;
+}
+.accordion .content p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+.accordion .content.active {
+    opacity: 1;
+    padding: 1rem;
+    max-height: 100%;
+    transition: all 0.35s ease 0.15s;
+}
+
+
 /*
 .testResumeID .status {
     padding: 0.5em;
