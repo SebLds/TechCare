@@ -70,5 +70,10 @@ $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
+/**Admin**/
+$router->get('/admin/dashboard',"Admin#index");
+$router->get('/admin/add-user',"Admin#addUserIndex");
+$router->post('/admin/add-user',"Admin#addUser");
+
 
 $router->run();

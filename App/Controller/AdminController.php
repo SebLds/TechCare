@@ -2,27 +2,26 @@
 
 namespace App\Controller;
 use src\Controller;
-use src\Model;
+use src\Session;
 use App\Model\User;
+use App\Model\Test;
 
-class RegisterController extends Controller {
-
-  public function __construct() {
-        $this->user = new User();
-  }
+class AdminController extends Controller {
 
   public function index() {
-    $this->generateView(array(),'index');
+    $this->generateView(array(), 'index');
   }
 
-  public function register() {
+  public function addUserIndex() {
+    $this->generateView(array(), 'AddUser');
+  }
+
+  public function addUser() {
 
     if (!empty($_POST)) {
       extract($_POST);
 
-      if(isset($_POST['register'])) {
-
-        $status = 1;
+      if(isset($_POST['add'])) {
 
         $data = [
           'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
@@ -111,16 +110,12 @@ class RegisterController extends Controller {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
 
-          // Vérification de l'acceptation des CGU
-          if (!isset($_POST['check'])) {
-            $errors['error_cgu'] = ("Veuillez accepter les CGU");
-          }
-
           if(empty($errors)) {
             $registrationdate = Model::getDate();
             $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
             $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['healthNumber'], $registrationdate);
-            header("Location: /login");
+            $data= ['confirm' => "Utilisateur ajouté"];
+            $this->generateView($data,'index');
           } else {
             $data = [$data, $errors];
             $this->generateView($data,'index');
@@ -128,6 +123,7 @@ class RegisterController extends Controller {
 
         }
       }
-    }
-
   }
+
+
+}
