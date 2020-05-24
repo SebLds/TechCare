@@ -1,11 +1,52 @@
 <?php
 
 namespace App\Model;
+use DateTime;
 use PDO;
 use src\Config\ConfigException;
 use src\Model;
 
 class User extends Model {
+
+    public function getUsers(){
+        $sqlStatement = 'SELECT * FROM users';
+
+        try {
+            return $this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) {
+        }
+    }
+    public function getNbUsers(){
+        $sqlStatement='SELECT COUNT(*) as count FROM users';
+        try {
+            return $this->executeRequest($sqlStatement)->fetch(PDO::FETCH_OBJ)->count;
+        } catch (ConfigException $e) {
+        }
+    }
+    public function getNbUsersByStatus($status){
+        $sqlStatement='SELECT COUNT(*) as count FROM users WHERE status= :status';
+        try {
+            return $this->executeRequest($sqlStatement,array('status'=> $status))->fetch(PDO::FETCH_OBJ)->count;
+        } catch (ConfigException $e) {
+        }
+    }
+
+    public function getAgeListPatient(){
+        $sqlStatement='SELECT birthdate FROM users WHERE status=1';
+        try {
+            $ageListPatient=[];
+            for($i=0;$i<count($this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ));$i++){
+                $date=substr(Model::getDate(),0,10);
+                $birthdate=$this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ)[$i]->birthdate;
+                $date = new DateTime(Model::convertDate($date));
+                $birthdate = new DateTime(Model::convertDate($birthdate));
+                $agePatient = $date->diff($birthdate);
+                $ageListPatient[]=$agePatient->format('%y');
+            }
+        } catch (ConfigException $e) {
+        }
+        return $ageListPatient;
+    }
 
     public function getID($mail) {
         try {
@@ -106,11 +147,9 @@ class User extends Model {
   }
 
   public function modifyProfil($firstName, $lastName, $mail, $healthNumber, $doctor, $ID) {
-    $sqlStatement = 'UPDATE users
-                    SET firstName = :firstName, lastName = :lastName; mail = :mail, healthNumber = :healthNumber, doctor = :doctor,
-                    WHERE ID_Users = :ID_Users';
+    $sqlStatement = "UPDATE users SET firstName = :firstName, lastName = :lastName; mail = :mail, healthNumber = :healthNumber, doctor = :doctor WHERE ID_Users = 9";
     try {
-      return $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'healthNumber' => $healthNumber, 'doctor' => $doctor, 'ID_Users' => $ID));
+      return $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'healthNumber' => $healthNumber, 'doctor' => $doctor));
     } catch (ConfigException $e) {
     }
   }

@@ -9,6 +9,7 @@ use src\Session;
  */
 require_once "../src/Autoloader.php";
 
+
 Autoloader::addNamespace('src\Router', '../src/Router/');
 Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
@@ -64,6 +65,8 @@ $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/contact',"Contact#index");
 $router->post('/contact',"Contact#sendMail");
 
+
+
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
@@ -71,10 +74,14 @@ $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
+
+
 /**Admin**/
 $router->get('/admin/dashboard',"Admin#index");
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
+$router->get('/statistics','Admin#stats');
+
 
 
 $router->run();

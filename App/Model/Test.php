@@ -15,6 +15,24 @@ class Test extends Model {
 
     }
   }
+  public function getNbTests(){
+      $sqlStatement='SELECT COUNT(*) as count FROM test';
+      try {
+          return $this->executeRequest($sqlStatement)->fetch(PDO::FETCH_OBJ)->count;
+      } catch (ConfigException $e) {
+      }
+  }
+  public function getListScoreTest($typeScore){
+      $sqlStatement='SELECT score FROM test WHERE type = :typeScore';
+      try {
+          $listScoreTest=[];
+          for ($i=0;$i<count($this->executeRequest($sqlStatement,array('typeScore' => $typeScore))->fetchAll(PDO::FETCH_OBJ));$i++){
+              $listScoreTest[]=$this->executeRequest($sqlStatement,array('typeScore' => $typeScore))->fetchAll(PDO::FETCH_OBJ)[$i]->score;
+          }
+          return $listScoreTest;
+      } catch (ConfigException $e) {
+      }
+  }
 
   public function addComment($comment, $healthNumber) {
     $sqlStatement = 'UPDATE test SET comment = :comment WHERE healthNumber = :healthNumber';

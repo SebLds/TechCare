@@ -81,4 +81,13 @@ abstract class Model
       return $date;
     }
 
+    public static function convertDate($date){
+        $date = explode('/',$date);
+        $date = array_reverse($date);
+        $date = implode('-',$date);
+        return "$date";
+    }
+
+
+
 }

@@ -9,7 +9,7 @@ use App\Model\Test;
 
 class ExamController extends Controller {
 
-  public static $healthNumber = 12;
+  public static $healthNumber;
   private $selectCategory;
   private $selectProfil;
   private User $user;
