@@ -6,6 +6,7 @@
 <div id="body">
 
     <h2>Dashboard</h2>
+    <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des tests...">
 
     <?php if($_SESSION['sessionStatus']==1) : ?>
     <form method="post">
@@ -32,8 +33,7 @@
 -->
     <div class="testResume">
         <ul class="testResumeID title">
-            <li>Search Bar</li>
-            <li>Status</li>
+            <li>Type</li>
             <li>Date</li>
             <li>Score</li>
             <li><div class="content"></div></li>
