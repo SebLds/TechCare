@@ -28,7 +28,7 @@
       <p class="error-msg"><?php if(isset($error_select)) { echo $error_select; } ?></p>
 
 
-      <input type="submit" value="Suivant" name="submit">
+      <input type="submit" value="Lancer" name="submit">
 
     </form>
 

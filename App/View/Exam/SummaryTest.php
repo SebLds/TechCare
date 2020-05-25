@@ -10,47 +10,35 @@
         <h1>Résumé du test</h1>
         <p class="top-text">Voici les informations relatives au test effectué.</p>
 
-          <h1>Informations du patient</h1>
-
           <div class="personnal-info">
 
             <div class="left">
 
-              <label>Prénom</label>
-              <p class="infos"><?php echo $data[0]['firstName']; ?></p>
-
-              <label>Date de naissance</label>
-              <p class="infos"><?php echo $data[0]['birthdate']; ?></p>
-
-            </div>
-
-            <div class="right">
-
-              <label>Nom</label>
-              <p class="infos"><?php echo $data[0]['lastName']; ?></p>
-
-              <label>Numéro de sécu</label>
-              <p class="infos"><?php echo $data[0]['healthNumber']; ?></p>
-
-            </div>
-
-          </div>
-
-          <h1>Informations du test</h1>
-
-          <div class="summary-test">
-
-            <div class="left">
-
               <label>Type de test</label>
-              <p class="infos"></p>
-
-            </div>
-
-            <div class="right">
+              <p class="infos"><?php echo $data[0]['type']; ?></p>
 
               <label>Score</label>
-              <p class="infos"></p>
+              <p class="infos"><?php echo $data[0]['score']; ?></p>
+
+            </div>
+
+            <div class="center">
+
+              <label>Prénom</label>
+              <p class="infos"><?php echo $data[1]['firstName']; ?></p>
+
+              <label>Nom</label>
+              <p class="infos"><?php echo $data[1]['lastName']; ?></p>
+
+            </div>
+
+            <div class="right">
+
+              <label>Date de naissance</label>
+              <p class="infos"><?php echo $data[1]['birthdate']; ?></p>
+
+              <label>Numéro de sécurité sociale</label>
+              <p class="infos"><?php echo $data[1]['healthNumber']; ?></p>
 
             </div>
 
@@ -66,7 +54,7 @@
 
             </div>
 
-            <input type="submit" name="submit-4" value="Validez">
+            <input type="submit" name="submit-4" value="Soumettre">
 
           </form>
 

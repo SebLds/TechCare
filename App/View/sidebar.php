@@ -1,133 +1,70 @@
 <link href="/Web/css/sidebar.css" rel="stylesheet">
 <link href="/Web/css/rulesConnected.css" rel="stylesheet">
 
-  <header>
+<?php use App\Model\User; ?>
 
-    <!-- <div class="header">
-      <div class="burger-button">
-        <span></span>
-      </div>
-
-      <div class="logo-responsive">
-        <img id="img-logor" src="../../Web/images/logo.png" alt="">
-      </div>
-
-      <div class="account-responsive">
-        <button id="button_account" type="button" name="button"> <a href="#"><img id="img" src="../../Web/images/avatar.png" alt=""></a></button>
-      </div>
-    </div>
-
-    <div id="mySidebar" class="sidebar">
-
-      <div class="logo">
-        <img id="img-logo" src="../../Web/images/logo.png" alt="">
-      </div>
-
-      <div class="navbar">
-        <a href="/dashboard"><h1><i class="fal fa-book-heart"></i>Tableau de bord</h1></a>
-        <a href="/help"><h1><i class="fal fa-question-circle"></i>Aide</h1></a>
-        <a href="/forum"><h1><i class="fal fa-comments-alt"></i>Forum</h1></a>
-        <?php if($_SESSION['sessionStatus']>1) : ?>
-        <a href="/test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
-        <?php endif; ?>
-        <?php if($_SESSION['sessionStatus']>2) : ?>
-        <a href="/statitics"><h1><i class="fal fa-analytics"></i>Statistiques</h1></a>
-        <?php endif; ?>
-      </div>
-
-      <div class="account">
-
-        <div class="dropdown">
-          <a href="/profil"><li><i class="fal fa-user-circle"></i>Profil</li></a>
-          <form action="/logout" method="post">
-            <li><i class="fal fa-power-off"></i></i> <input id="logout" type="submit" name="logout" value="Déconnexion"></li>
-          </form>
-        </div>
-
-        <div class="btn">
-          <button id="button-account" type="button" name="button">Mon compte<img id="arrow" src="../../Web/images/arrow.png" alt=""></button>
-        </div>
-
-       <script type="text/javascript" src="../../Web/js/account-dropdown.js"></script>
-
-      </div>
-
-      <div class="footersidebar">
-
-        <div class="content">
-
-          <div class="flag">
-            <img id="img-flag" src="../../Web/images/france.png" alt="">
-          </div>
-
-          <div class="link">
-            <a href="/contact-admin">Contact </a>
-            <span>•</span>
-            <a href="/cgu">CGU</a>
-            <span>•</span>
-            <a href="/faq">FAQ</a>
-          </div>
-
-        </div>
-
-        <div class="copyright">
-          <p>&copy; Infinite Measures - Tous droits réservés 2019-2020</p>
-        </div>
-
-      </div>
-
-    </div>
-
-    <script type="text/javascript" src="/Web/js/sidebar.js"></script>
-
-  </header> -->
-
-  <input type="checkbox" id="check">
   <!--header area start-->
   <header>
     <div id="header">
-      <label for="check">
-        <i class="fas fa-bars" id="sidebar_btn"></i>
-      </label>
       <div class="left_area">
-        <h3>Coding <span>Snow</span></h3>
+        <h3>Infinite <p>Measures</p></h3>
       </div>
       <div class="right_area">
+        <div id="flag">
+          <img id="img-flag" src="../../Web/images/france.png" alt="">
+        </div>
         <form action="/logout" method="post">
-          <input class="logout_btn" type="submit" name="logout" value="Déconnexion"></li>
+          <button class="logout_btn" type="submit" name="logout"><i class="fas fa-power-off"></i></button>
         </form>
       </div>
     </div>
-  </header>
   <!--header area end-->
   <!--sidebar start-->
   <div class="sidebar">
-    <center>
-      <h4>Jessica</h4>
-    </center>
-    <a href="/dashboard"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-    <a href="/help"><h1><i class="fal fa-question-circle"></i>Aide</h1></a>
-    <a href="/forum"><h1><i class="fal fa-comments-alt"></i>Forum</h1></a>
-    <?php if($_SESSION['sessionStatus']>1) : ?>
-    <a href="/test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
-    <?php endif; ?>
-    <?php if($_SESSION['sessionStatus']>2) : ?>
-    <a href="/statitics"><h1><i class="fal fa-analytics"></i>Statistiques</h1></a>
-    <?php endif; ?>
-    <!-- <a href="#"><i class="fas fa-desktop"></i><span>Dashboard</span></a>
-    <a href="#"><i class="fas fa-cogs"></i><span>Components</span></a>
-    <a href="#"><i class="fas fa-table"></i><span>Tables</span></a>
-    <a href="#"><i class="fas fa-th"></i><span>Forms</span></a>
-    <a href="#"><i class="fas fa-info-circle"></i><span>About</span></a>
-    <a href="#"><i class="fas fa-sliders-h"></i><span>Settings</span></a> -->
+    <div id="navbar">
+      <center>
+      <h2 id="name">
+      <?php
+      $this->user = new User();
+      $name = $this->user->getFirstName($_SESSION['ID_User']);
+      echo $name;?>
+      </h2>
+      </center>
+      <a href="/dashboard"><i class="fas fa-desktop"></i><h1 data-i18n="SIDEBAR-dashboard"></h1></a>
+      <a href="/profil"><i class="far fa-user"></i><h1 data-i18n="SIDEBAR-profil"></h1></a>
+      <a href="/help"><i class="far fa-question-circle"></i><h1 data-i18n="SIDEBAR-help"></h1></a>
+      <a href="/forum"><i class="far fa-comments"></i><h1 data-i18n="SIDEBAR-forum"></h1></a>
+      <?php if($_SESSION['sessionStatus']>1): ?>
+      <a href="/test"><i class="fal fa-clipboard-check"></i><h1 data-i18n="SIDEBAR-launchtest">Lancer test</h1></a>
+      <?php endif; ?>
+      <?php if($_SESSION['sessionStatus']==3): ?>
+      <a href="/statitics"><i class="fal fa-analytics"></i><h1 data-i18n="SIDEBAR-statistics">Statistiques</h1></a>
+      <?php endif; ?>
+   </div>
+    <div id="footer">
+      <div id="link">
+        <a href="/contact-admin"><span data-i18n="SIDEBAR-contact"></span></a>
+        <span>•</span>
+        <a href="/cgu"><span data-i18n="SIDEBAR-cgu"></span></a>
+        <span>•</span>
+        <a href="/faq"><span data-i18n="SIDEBAR-faq"></span></a>
+      </div>
+      <!-- <div id="social-network">
+          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
+      </div> -->
+      <div id="copyright">
+        <p>&copy; Infinite Measures</p>
+        <p data-i18n="SIDEBAR-right"></p>
+      </div>
+      <div id="copyright">
+        <p>&copy; Infinite Measures</p>
+        <p>Tous droits réservés 2019-2020</p>
+      </div>
+    </div>
   </div>
-  <!--sidebar end-->
 
-  <body>
+  <script type="text/javascript" src="/Web/js/flag.js"></script>
 
-  </body>
-
-<!--  <body id="body">-->
-<!---->
-<!--  </body>-->
-<!--</html>-->
+  </header>

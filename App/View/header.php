@@ -12,10 +12,10 @@
         </div>
 
         <ul class="navbar">
-            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i><span data-i18n="welcome"></span></a><li>
-            <li><a class="test" href="/homepage#three"><i class="fal fa-file-alt"></i>Nos Tests</a><li>
-            <li><a class="contact" href="/contact"><i class="fal fa-envelope-open"></i>Contact</a><li>
-            <li><a class="login" href="/login"><button id="button-connexion"><i class="fal fa-user"></i>Connexion</button></a></li>
+            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i><span data-i18n="HEADER-home"></span></a><li>
+            <li><a class="test" href="/homepage#three"><i class="fal fa-file-alt"></i><span data-i18n="HEADER-test"></span></a><li>
+            <li><a class="contact" href="/contact"><i class="fal fa-envelope-open"></i><span data-i18n="HEADER-contact"></span></a><li>
+            <li><a class="login" href="/login"><button id="button-connexion"><i class="fal fa-user"></i><span data-i18n="HEADER-login"></span></button></a></li>
         </ul>
 
 

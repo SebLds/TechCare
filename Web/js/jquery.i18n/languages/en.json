@@ -17,7 +17,54 @@
   "welcome": "welcome pello",
   "glad-to-see": "hi glad to see you",
   "test": "I am a test",
-  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION in english"
+  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION in english",
+
+  "HEADER-home":"Home",
+  "HEADER-test":"Our tests",
+  "HEADER-contact":"Contact",
+  "HEADER-login":"Login",
+
+  "FOOTER-home":"Home",
+  "FOOTER-forum":"Forum",
+  "FOOTER-test":"Test",
+  "FOOTER-about":"About",
+  "FOOTER-contact":"Contact",
+  "FOOTER-faq":"FAQ",
+  "FOOTER-cgu":"UGC",
+  "FOOTER-rights":"Infinite Measures - All rights reserved 2019-2020",
+  "FOOTER-aboutcompany":"About the company",
+  "FOOTER-text-info":"Infinite Measures accompanies you before, during and after your psycho-technical tests. We are a company at the service of our patients' health. ",
+
+  "SIDEBAR-dashboard":"Dashboard",
+  "SIDEBAR-help":"Help",
+  "SIDEBAR-profil":"Profil",
+  "SIDEBAR-forum":"Forum",
+  "SIDEBAR-launchtest":"Launch test",
+  "SIDEBAR-statistics":"Statistics",
+  "SIDEBAR-profil":"Profil",
+  "SIDEBAR-contact":"Contact",
+  "SIDEBAR-cgu":"GCU",
+  "SIDEBAR-faq":"FAQ",
+  "SIDEBAR-right":"All rights reserved 2019-2020",
+
+  "REGISTER-title":"Register to Infinite Measures",
+  "REGISTER-titlebis":"Or log in",
+  "REGISTER-firstname":"Name",
+  "REGISTER-lastname":"Last Name",
+  "REGISTER-birthdate":"Birthdate",
+  "REGISTER-doctor":"Doctor",
+  "REGISTER-mail":"Mail",
+  "REGISTER-password":"Password",
+  "REGISTER-confirmmail":"Confirm Mail",
+  "REGISTER-confirmpassword":"Confirm password",
+  "REGISTER-confirmhealthnumber":"Social security number",
+  "REGISTER-cgu1":"Password",
+  "REGISTER-cgu2":"Password",
+
+  "LOGIN-title":"Log in to Infinite Measures",
+  "LOGIN-titlebis":"Or register",
+  "LOGIN-id":"Log In",
+  "LOGIN-password":"Password",
+  "LOGIN-fortgetpassword":"Forget password ?"
 
 }
-

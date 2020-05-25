@@ -38,7 +38,7 @@
         <meter value="sight-value" min="0" max="100"></meter>
         <?php endif;  ?>
 
-      <input type="submit" value="Suivant" name="submit-2">
+      <input type="submit" value="Lancer" name="submit-2">
 
     </form>
 

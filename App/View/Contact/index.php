@@ -16,12 +16,12 @@
 
               <div class="left">
 
-                <label>Nom</label>
+                <label><i class="far fa-user-tag"></i>Nom</label>
                 <input type="text" name="lastName" placeholder="Romuald" value="<?php if(isset($data[0]['firstName'])) { echo $data[0]['firstName']; }?>">
                 <p class="error-msg"><?php if(isset($data[1]['error_firstName'])) { echo $data[1]['error_firstName']; } ?></p>
 
 
-                <label>Prénom</label>
+                <label><i class="far fa-user"></i>Prénom</label>
                 <input type="text" name="firstName" placeholder="Monteiro">
                 <p class="error-msg"><?php if(isset($data[1]['error_lastName'])) { echo $data[1]['error_lastName']; } ?></p>
 
@@ -30,12 +30,12 @@
 
               <div class="center">
 
-                <label>Société / Institution</label>
+                <label><i class="far fa-building"></i>Société / Institution</label>
                 <input class="inputright" type="text" name="company" placeholder="Hôpital Necker">
                 <p class="error-msg"><?php if(isset($data[1]['error_company'])) { echo $data[1]['error_company']; } ?></p>
 
 
-                <label>Adresse email</label>
+                <label><i class="far fa-envelope"></i>Adresse email</label>
                 <input class="inputright" type="text" name="mail" placeholder="infinite@measures.com">
                 <p class="error-msg"><?php if(isset($data[1]['error_mail'])) { echo $data[1]['error_mail']; } ?></p>
 
@@ -44,7 +44,7 @@
 
               <div class="right">
 
-                <label>Sujet</label>
+                <label><i class="far fa-question-circle"></i>Sujet</label>
                 <div class="selectbox">
                   <select name="subject">
                     <option value="">Choisir un sujet</option>
@@ -62,7 +62,7 @@
 
             <div class="message">
 
-              <label>Message</label>
+              <label><i class="far fa-comment-alt"></i>Message</label>
               <textarea name="message" rows="3" placeholder="Ecrivez votre message ici"></textarea>
               <p class="error-msg"><?php if(isset($data[1]['error_message'])) { echo $data[1]['error_message']; } ?></p>
 

@@ -21,6 +21,10 @@
   font-size: 1.4em;
 }
 
+.far, .fal, .far {
+  padding-right: 10px;
+}
+
 .title-form {
   border-bottom: solid;
 }

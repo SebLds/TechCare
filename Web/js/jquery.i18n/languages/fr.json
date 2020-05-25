@@ -12,5 +12,52 @@
   "glad-to-see": "enchanté pd",
   "test": "je suis un test",
   "test-maxime": "Je suis le test maxime et sa calvitie naissante",
-  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION"
+  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION",
+
+  "HEADER-home":"Accueil",
+  "HEADER-test":"Nos tests",
+  "HEADER-contact":"Contact",
+  "HEADER-login":"Connexion",
+
+  "FOOTER-home":"Home",
+  "FOOTER-forum":"Forum",
+  "FOOTER-test":"Test",
+  "FOOTER-about":"À propos",
+  "FOOTER-contact":"Contact",
+  "FOOTER-faq":"FAQ",
+  "FOOTER-cgu":"CGU",
+  "FOOTER-rights":"Infinite Measures - Tous droits réservés 2019-2020",
+  "FOOTER-aboutcompany":"À propos de l'entreprise",
+  "FOOTER-text-info":"Infinite Measures vous accompagne avant, pendant et après vos tests psychotechniques. Nous sommes une entreprise au service de la santé de nos patients.",
+
+  "SIDEBAR-dashboard":"Tableau de bord",
+  "SIDEBAR-help":"Aide",
+  "SIDEBAR-forum":"Forum",
+  "SIDEBAR-launchtest":"Lancer un test",
+  "SIDEBAR-statistics":"Statistiques",
+  "SIDEBAR-profil":"Profil",
+  "SIDEBAR-contact":"Contact",
+  "SIDEBAR-cgu":"CGU",
+  "SIDEBAR-faq":"FAQ",
+  "SIDEBAR-right":"Tous droits réservés 2019-2020",
+
+  "REGISTER-title":"Je m'inscris à Infinite Measures",
+  "REGISTER-titlebis":"Ou je me connecte",
+  "REGISTER-firstname":"Prénom",
+  "REGISTER-birthdate":"Date d'anniversaire",
+  "REGISTER-lastname":"Nom",
+  "REGISTER-mail":"Adresse email",
+  "REGISTER-mail":"Mot de passe",
+  "REGISTER-confirmmail":"Confirmation mail",
+  "REGISTER-confirmpassword":"Confirmation mot de passe",
+  "REGISTER-confirmhealthnumber":"Numéro de sécurité sociale",
+  "REGISTER-cgu1":"Password",
+  "REGISTER-cgu2":"Password",
+
+  "LOGIN-title":"Je me connecte à Infinite Measures",
+  "LOGIN-titlebis":"Ou je m'inscris",
+  "LOGIN-password":"Mot de passe",
+  "LOGIN-id":"Identifiant",
+  "LOGIN-fortgetpassword":"Mot de passe oublié ?"
+
 }

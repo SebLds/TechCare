@@ -34,6 +34,15 @@ class User extends Model {
         return $user->healthNumber;
     }
 
+    public function getFirstName($ID) {
+      try {
+          $sqlStatement = 'SELECT firstName FROM users WHERE ID_Users = :ID_Users';
+        } catch (ConfigException $e) {
+        }
+        $user = $this -> executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
+        return $user->firstName;
+    }
+
     public function getDoctor($ID) {
         try {
           $sqlStatement = 'SELECT lastName FROM users WHERE ID_Users = :ID_Users';
@@ -126,6 +135,7 @@ class User extends Model {
     'firstName' => $user->firstName,
     'lastName' => $user->lastName,
     'birthdate' => $user->birthdate,
+    'mail' => $user->mail,
     'healthNumber' => $user->healthNumber,
   ];
 

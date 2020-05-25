@@ -22,16 +22,8 @@
     </div>
 
 <?php if (isset($data)):?>
-    <!--
-    <div class="title">
-        <p>Mes derniers tests</p>
-        <p> x tests disponibles</p>
-        <form action="/homepage" method="get">
-            <button type="submit">Demande de test ?</button>
-        </form>
-    </div>
--->
-    <div class="testResume">
+
+    <!-- <div class="testResume">
         <ul class="testResumeID title">
             <li><i class="fal fa-notes-medical"></i></li>
             <li><i class="fal fa-calendar-alt"></i></li>
@@ -60,39 +52,43 @@
             <li><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></li>
             <li><button>Commentaire médecin</button></li>
         </ul>
-        <?php endfor; ?>
+        <?php endfor; ?> -->
 
-        <table>
-               <tr>
-                   <th><i class="fal fa-notes-medical"></th>
-                   <th><i class="fal fa-calendar-alt"></i</th>
-                   <th><i class="fal fa-signal"></i></th>
-                   <th><i class="fal fa-id-card"></i></th>
-                   <th><i class="fal fa-user-md"></i></th>
-               </tr>
-               <?php for ($i=0;$i<count($data['User_test']);$i++):?>
-               <tr>
-                   <td>
-                     <?php $type = $data['User_test'][$i]->type; ?>
-                     <?php if ($type == 'stress'): ?>
-                     Gestion du stress</td>
-                     <?php endif; ?>
-                     <?php if ($type == 'sight'): ?>
-                     Acuité visuelle
-                     <?php endif; ?>
-                     <?php if ($type == 'sound'): ?>
-                     Acuité sonore
-                     <?php endif; ?>
-                   </td>
-                   <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10) ;?></td>
-                   <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
-                   <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
-                   <td><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td>
-                   <?php endfor; ?>
-               </tr>
-       </table>
+        <div class="table">
+          <table>
+                 <tr>
+                     <th><i class="fal fa-notes-medical"></th>
+                     <th><i class="fal fa-calendar-alt"></i</th>
+                     <th><i class="fal fa-signal"></i></th>
+                     <th><i class="fal fa-id-card"></i></th>
+                     <th><i class="fal fa-user-md"></i></th>
+                 </tr>
+                 <?php for ($i=0;$i<count($data['User_test']);$i++):?>
+                   <div class="result">
+                     <tr>
+                         <td>
+                           <?php $type = $data['User_test'][$i]->type; ?>
+                           <?php if ($type == 'stress'): ?>
+                           Gestion du stress</td>
+                           <?php endif; ?>
+                           <?php if ($type == 'sight'): ?>
+                           Acuité visuelle
+                           <?php endif; ?>
+                           <?php if ($type == 'sound'): ?>
+                           Acuité sonore
+                           <?php endif; ?>
+                         </td>
+                         <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10) ;?></td>
+                         <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
+                         <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
+                         <td><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td>
+                         <?php endfor; ?>
+                     </tr>
+                   </div>
+         </table>
+        </div>
 
-    </div>
+    <!-- </div> -->
 </div>
 
 <script>
