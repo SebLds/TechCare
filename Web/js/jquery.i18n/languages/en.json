@@ -62,6 +62,12 @@
   "LOGIN-titlebis":"Or register",
   "LOGIN-id":"Log In",
   "LOGIN-password":"Password",
-  "LOGIN-fortgetpassword":"Forget password ?"
+  "LOGIN-fortgetpassword":"Forget password ?",
+
+  "HOME-psychotechnicaltest":"Psychotechnical test",
+  "HOME-psychotechnicaltest2":"at the cutting edge of technology",
+  "HOME-psychotechnicaltest3":"certified by government agencies.",
+  "HOME-register":"Register",
+  "HOME-learnmore":"Learn more"
 
 }

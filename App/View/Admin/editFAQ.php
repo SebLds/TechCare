@@ -6,8 +6,7 @@
 
   <div class="form-register box">
 
-    <h1>Modifier la FAQ</h1>
-    <p class="top-text">Ajouter, modifier ou supprimer des questions de la foire aux questions.</p>
+    <h1 id="faq-title">Modifier la FAQ</h1>
 
     <form id="add-from" method="post">
 
@@ -15,10 +14,10 @@
       <input type="text" name="newQuestion" value="">
 
       <label>Réponse</label>
-      <input type="text" name="newAnswer" value="">
-      <p class="error-msg"><?php if(isset($data['error'])) { echo $data['error']; }?></p>
+      <textarea name="newAnswer" rows="3" cols="80" value=""></textarea>
+      <p id="form-add"><?php if(isset($data['error'])) { echo $data['error']; }?></p>
 
-      <input type="submit" name="add" value="Ajouter">
+      <input id="add-submit" type="submit" name="add" value="Ajouter">
 
     </form>
 
@@ -29,7 +28,7 @@
       <input type="text" name="question" value="<?php $question = $data['faq'][$i]->question; echo $question; ?>">
 
       <label>Réponse</label>
-      <input type="text" name="answer" value="<?php $answer = $data['faq'][$i]->answer; echo $answer; ?>">
+      <textarea name="answer" rows="3" cols="80" value=""><?php $answer = $data['faq'][$i]->answer; echo $answer; ?></textarea>
       <p class="validate-msg"><?php if(isset($data['validate'])) { echo $data['validate']; }?></p>
 
       <div class="faq">

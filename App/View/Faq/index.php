@@ -6,7 +6,9 @@
 <div id="body">
 
     <h2>Foire Aux Questions</h2>
+    <?php if($_SESSION['sessionStatus']==3): ?>
     <a href="/admin/edit-faq"><button>Modifier la FAQ</button></a>
+    <?php endif; ?>
 
     <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." tabindex="1">
 

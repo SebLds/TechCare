@@ -58,6 +58,12 @@
   "LOGIN-titlebis":"Ou je m'inscris",
   "LOGIN-password":"Mot de passe",
   "LOGIN-id":"Identifiant",
-  "LOGIN-fortgetpassword":"Mot de passe oublié ?"
+  "LOGIN-fortgetpassword":"Mot de passe oublié ?",
+
+  "HOME-psychotechnicaltest":"Test psychotechnique",
+  "HOME-psychotechnicaltest2"="à la pointe de la technologie",
+  "HOME-psychotechnicaltest3"="certifié par les organismes gouvernementaux.",
+  "HOME-register"="S'inscrire",
+  "HOME-learnmore":"En savoir plus"
 
 }

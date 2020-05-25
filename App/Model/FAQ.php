@@ -34,7 +34,7 @@ class Faq extends Model {
   }
 
   public function modifyQuestion($question, $answer) {
-    $sqlStatement = 'UPDATE faq SET question = :question, answer = :answer WHERE question = :question OR answer = :question';
+    $sqlStatement = 'UPDATE faq SET question = :question, answer = :answer WHERE question = :question OR answer = :answer';
     try {
       return $this->executeRequest($sqlStatement, array('question' => $question, 'answer' => $answer));
     } catch (ConfigException $e) {
