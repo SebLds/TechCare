@@ -4,7 +4,10 @@ namespace App\Controller;
 use App\Model\Forum\Reply;
 use App\Model\Forum\Tag;
 use App\Model\Forum\Thread;
+use DateInterval;
+use DateTime;
 use src\Controller;
+use src\Model;
 use src\Session;
 use src\Model;
 use App\Model\User;
@@ -184,10 +187,31 @@ class AdminController extends Controller {
       $averageScoreStress = round($this->averageScore('stress'));
       $averageScoreSight = round($this->averageScore('sight'));
       $nbUsersByStatus=[$this->user->getNbUsersByStatus(1),$this->user->getNbUsersByStatus(2),$this->user->getNbUsersByStatus(3)];
-      $data=['nb'=>[$nbUsers,$nbTests,$nbUsersByStatus],'avg'=>[$averageAgePatient,$averageScoreSound,$averageScoreStress,$averageScoreSight]];
+      $listDate=[];
+      $minus=6;
+      for ($i=0;$i<7;$i++){
+          $currentDate = new DateTime(str_replace("/","-",Model::getDate()));
+          $currentDate->sub(new DateInterval('P'.$minus.'D'));
+          $tmpDate=substr($currentDate->format('d-m-Y'),0,5);
+          $listDate[]=$tmpDate;
+          $minus--;
+      }
+      $nbTestsWeek=[];
+      for ($i=0;$i<7;$i++){
+          if($i==0){
+              $nbTestsWeek[]=(int)$this->test->getNbTestsByTime('P'.$i.'D');
+          }else{
+              $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
+          }
+      }
+        var_dump($nbTestsWeek);
+      $data=['doughnut'=> $nbUsersByStatus,
+             'bar'=> ['date'=>$listDate,
+                      'nbTestsWeek'=>$nbTestsWeek],
+             'avg'=>[$averageAgePatient,$averageScoreSound,$averageScoreStress,$averageScoreSight],
+             'nb'=>[$nbUsers,$nbTests]];
 
       $this->generateView($data,'stats');
-
     }
 
     private function averageScore($type){
