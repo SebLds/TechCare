@@ -1,7 +1,13 @@
 <?php
 
 namespace App\Controller;
+use App\Model\Forum\Reply;
+use App\Model\Forum\Tag;
+use App\Model\Forum\Thread;
+use DateInterval;
+use DateTime;
 use src\Controller;
+use src\Model;
 use src\Session;
 use src\Model;
 use App\Model\User;
@@ -9,13 +15,15 @@ use App\Model\Test;
 
 class AdminController extends Controller {
 
-  private User $user;
-  private Test $test;
+    private User $user;
+    private Test $test;
 
-  public function __construct() {
+    public function __construct() {
         $this->user = new User();
         $this->test = new Test();
-  }
+
+    }
+
 
   public function index() {
     $this->generateView(array(), 'index');
@@ -167,6 +175,53 @@ class AdminController extends Controller {
         }
       }
   }
+  public function stats(){
+        $averageAgePatient=0;
+      for($i=0;$i<count($this->user->getAgeListPatient());$i++){
+          $averageAgePatient+=(int)$this->user->getAgeListPatient()[$i];
+        }
+      $averageAgePatient=floor($averageAgePatient/count($this->user->getAgeListPatient()));
+      $nbUsers=(int) $this->user->getNbUsers();
+      $nbTests=$this->test->getNbTests();
+      $averageScoreSound = round($this->averageScore('sound'));
+      $averageScoreStress = round($this->averageScore('stress'));
+      $averageScoreSight = round($this->averageScore('sight'));
+      $nbUsersByStatus=[$this->user->getNbUsersByStatus(1),$this->user->getNbUsersByStatus(2),$this->user->getNbUsersByStatus(3)];
+      $listDate=[];
+      $minus=6;
+      for ($i=0;$i<7;$i++){
+          $currentDate = new DateTime(str_replace("/","-",Model::getDate()));
+          $currentDate->sub(new DateInterval('P'.$minus.'D'));
+          $tmpDate=substr($currentDate->format('d-m-Y'),0,5);
+          $listDate[]=$tmpDate;
+          $minus--;
+      }
+      $nbTestsWeek=[];
+      for ($i=0;$i<7;$i++){
+          if($i==0){
+              $nbTestsWeek[]=(int)$this->test->getNbTestsByTime('P'.$i.'D');
+          }else{
+              $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
+          }
+      }
+        var_dump($nbTestsWeek);
+      $data=['doughnut'=> $nbUsersByStatus,
+             'bar'=> ['date'=>$listDate,
+                      'nbTestsWeek'=>$nbTestsWeek],
+             'avg'=>[$averageAgePatient,$averageScoreSound,$averageScoreStress,$averageScoreSight],
+             'nb'=>[$nbUsers,$nbTests]];
+
+      $this->generateView($data,'stats');
+    }
+
+    private function averageScore($type){
+        $averageScore=0;
+        for ($i=0;$i<count($this->test->getListScoreTest($type));$i++){
+            $averageScore+=$this->test->getListScoreTest($type)[$i];
+        }
+        $averageScore=$averageScore/count($this->test->getListScoreTest($type));
+        return $averageScore;
+    }
 
 
 }

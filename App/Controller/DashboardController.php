@@ -39,6 +39,7 @@ class DashboardController extends Controller {
             //break;
     }
 
+
     public function searchPatient() {
 
       if (isset($_POST['search'])) {
@@ -51,6 +52,7 @@ class DashboardController extends Controller {
 
 
   }
+
 
 
       //Session::getInstance()->setAttribute('sessionStatus', $sessionStatus);
@@ -69,3 +71,8 @@ class DashboardController extends Controller {
 //                $this->generateView(array(),'index');
 //                break;
 //        }
+
+
+
+}
+

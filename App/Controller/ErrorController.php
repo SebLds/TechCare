@@ -11,7 +11,8 @@ class ErrorController extends Controller
     public function index()
     {
     }
-    public function generateError($id){
+
+    public function generateError(int $id){
         switch ($id){
             case 404:
                 $this->generateView(array(),'error404');

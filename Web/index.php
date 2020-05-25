@@ -9,6 +9,7 @@ use src\Session;
  */
 require_once "../src/Autoloader.php";
 
+
 Autoloader::addNamespace('src\Router', '../src/Router/');
 Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
@@ -20,7 +21,7 @@ Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-
+var_dump($_SESSION);
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -66,6 +67,8 @@ $router->post('/contact',"Contact#sendMail");
 $router->get('/contact-admin',"Contact#contactAdminIndex");
 $router->get('/contact-admin',"Contact#contactAdmin");
 
+
+
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
@@ -73,10 +76,14 @@ $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
+
+
 /**Admin**/
 $router->get('/admin/dashboard',"Admin#index");
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
+$router->get('/statistics','Admin#stats');
+
 
 
 $router->run();

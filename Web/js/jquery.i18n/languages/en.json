@@ -8,9 +8,6 @@
     "other-metadata": "sample json format"
   },
 
-  "header":{
-    "home": "Home"
-  },
   "appname-title": "Javascript Localization via jQuery.i18n",
   "appname-sub-title": "A jQuery based Javascript internationalization library.",
   "appname-introduction": "Introduction",
