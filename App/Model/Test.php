@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Model;
+use DateInterval;
+use DateTime;
 use PDO;
 use src\Config\ConfigException;
 use src\Model;
@@ -22,6 +24,17 @@ class Test extends Model {
       } catch (ConfigException $e) {
       }
   }
+  public function getNbTestsByTime($interval){
+      $date = new DateTime(str_replace("/","-",Model::getDate()));
+      $date->sub(new DateInterval($interval));
+      $date=$date->format('d-m-Y H:i:s');
+      try {
+          return $this->executeRequest("SELECT COUNT(*) as count FROM test WHERE passDate>= :date ", array('date' => $date))->fetch(PDO::FETCH_OBJ)->count;
+      } catch (ConfigException $e) {
+      }
+  }
+
+
   public function getListScoreTest($typeScore){
       $sqlStatement='SELECT score FROM test WHERE type = :typeScore';
       try {

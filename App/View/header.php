@@ -12,7 +12,7 @@
         </div>
 
         <ul class="navbar">
-            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i><span data-i18n="welcome"></span></a><li>
+            <li><a class="home" href="/homepage#banner"><i class="fal fa-home"></i><span data-i18n="test"></span></a><li>
             <li><a class="test" href="/homepage#three"><i class="fal fa-file-alt"></i>Nos Tests</a><li>
             <li><a class="contact" href="/contact"><i class="fal fa-envelope-open"></i>Contact</a><li>
             <li><a class="login" href="/login"><button id="button-connexion"><i class="fal fa-user"></i>Connexion</button></a></li>
