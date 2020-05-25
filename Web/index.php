@@ -21,7 +21,7 @@ Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-
+var_dump($_SESSION);
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
