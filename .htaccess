@@ -1,10 +1,10 @@
 # Activez HTTPS
-#RewriteEngine On
-#RewriteCond %{Server_Port} !=443
-#RewriteRule ^(.*)$ https://votre-domaine.fr/$1 [R=301, L]
+RewriteEngine On
+RewriteCond %{Server_Port} !=443
+RewriteRule ^(.*)$ https://infinitemeasures.netlify.app/$1 [R=301, L]
 
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^infinitemeasures.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^infinitemeasures.com$ [NC,OR]
+#RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
 RewriteCond %{REQUEST_URI} !Web/
 RewriteRule (.*) /Web/$1 [L]
