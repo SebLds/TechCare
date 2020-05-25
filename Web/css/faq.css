@@ -1,3 +1,4 @@
+
 #body {
     font-family: "Lato", Helvetica, sans-serif;
     font-size: 15pt;
@@ -13,11 +14,18 @@
     margin-bottom: 2em;
 }
 
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .search-input {
     width: 100%;
-    max-width: 27.5em;
-    margin: 2em;
-    padding: 1em 1em 1em 3em;
+    max-width: 25em;
+    margin: 2em 0;
+    padding: 1em;
     background: rgba(168, 202, 233, 1);
     border: none;
     outline: none;
@@ -27,6 +35,16 @@
     box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
     transition: background .4s, box-shadow .2s;
 }
+
+.icon {
+    cursor: pointer;
+    padding: 1em;
+    border: none;
+    outline: none;
+    color: rgba(168, 202, 233, 1);
+    font-size: 1.3em;
+}
+
 .search-input:hover {
     background: rgba(168, 202, 233, 0.8);
 }
