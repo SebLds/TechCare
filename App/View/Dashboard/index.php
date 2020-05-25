@@ -78,7 +78,7 @@
                            Acuité sonore
                            <?php endif; ?>
                          </td>
-                         <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10) ;?></td>
+                         <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10);?></td>
                          <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
                          <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
                          <td><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td>

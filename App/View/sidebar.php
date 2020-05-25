@@ -38,7 +38,7 @@
       <a href="/test"><i class="fal fa-clipboard-check"></i><h1 data-i18n="SIDEBAR-launchtest">Lancer test</h1></a>
       <?php endif; ?>
       <?php if($_SESSION['sessionStatus']==3): ?>
-      <a href="/statitics"><i class="fal fa-analytics"></i><h1 data-i18n="SIDEBAR-statistics">Statistiques</h1></a>
+      <a href="/statistics"><i class="fal fa-analytics"></i><h1 data-i18n="SIDEBAR-statistics">Statistiques</h1></a>
       <?php endif; ?>
    </div>
     <div id="footer">

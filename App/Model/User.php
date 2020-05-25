@@ -10,7 +10,6 @@ class User extends Model {
 
     public function getUsers(){
         $sqlStatement = 'SELECT * FROM users';
-
         try {
             return $this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ);
         } catch (ConfigException $e) {
@@ -169,35 +168,16 @@ class User extends Model {
             $user = $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) {
         }
-
         $data = [
             'firstName' => $user->firstName,
             'lastName' => $user->lastName,
             'birthdate' => $user->birthdate,
             'healthNumber' => $user->healthNumber,
+            'mail' => $user->mail,
         ];
-
         return $data;
     }
-  }
 
-  public function getUserInfo($healthNumber) {
-    $sqlStatement = 'SELECT * FROM users WHERE healthNumber = :healthNumber';
-  try {
-    $user = $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetch(PDO::FETCH_OBJ);
-  } catch (ConfigException $e) {
-  }
-
-  $data = [
-    'firstName' => $user->firstName,
-    'lastName' => $user->lastName,
-    'birthdate' => $user->birthdate,
-    'mail' => $user->mail,
-    'healthNumber' => $user->healthNumber,
-  ];
-
-  return $data;
-}
 
 public function findUserByLastName($lastName, $search) {
   $sqlStatement = 'SELECT * FROM users WHERE lastName = :lastName LIKE '%$search%''->fetchAll(PDO::FETCH_OBJ);

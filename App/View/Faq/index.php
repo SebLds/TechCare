@@ -1,44 +1,28 @@
 <?php $this->title='Faq';?>
 <link href="/Web/css/faq.css" rel="stylesheet">
 
+<?php if (isset($data)):?>
+
 <div id="body">
+
     <h2>Foire Aux Questions</h2>
+    <a href="/admin/edit-faq"><button>Modifier la FAQ</button></a>
 
     <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." tabindex="1">
 
     <div class="accordion">
+      <?php for ($i=0;$i<count($data['faq']);$i++):?>
         <div class="accordion-item">
-            <a>Comment se déroule le test ?</a>
+            <a><?php $question = $data['faq'][$i]->question; echo $question; ?></a>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
+                <p><?php $answer = $data['faq'][$i]->answer; echo $answer; ?></p>
             </div>
         </div>
-        <div class="accordion-item">
-            <a>A partir de quel âge peut t-on faire le test ?</a>
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <a>Quel est le but du test ?</a>
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <a>Combien de temps est valable le résultat du test ?</a>
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-            </div>
-        </div>
-        <div class="accordion-item">
-            <a>Est-ce que ce test est valable pour une entité de l'armée ?</a>
-            <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse potenti.</p>
-            </div>
-        </div>
+      <?php endfor; ?>
     </div>
 </div>
+
+<?php endif; ?>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="/Web/js/faq.js"></script>

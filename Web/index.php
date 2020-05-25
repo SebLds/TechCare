@@ -21,7 +21,7 @@ Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-var_dump($_SESSION);
+
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -82,6 +82,8 @@ $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 $router->get('/admin/dashboard',"Admin#index");
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
+$router->get('/admin/edit-faq',"Admin#editFAQIndex");
+$router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
 
 
