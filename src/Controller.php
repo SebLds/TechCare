@@ -92,11 +92,11 @@ abstract class Controller
         header("Location:" . $webRoot . $controller . "/" . $action);
     }
 
-    protected static function getText($key){
+    public static function getText($key){
         $lang=$_SESSION['lang'];
         $json = file_get_contents("../Web/js/jquery.i18n/languages/$lang.json");
         $parsed_json = json_decode($json);
-        $parsed_json->{$key};
+        return $parsed_json->{$key};
     }
 
 
