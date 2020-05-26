@@ -6,10 +6,10 @@
 }
 
 #body h2 {
-    justify-content: center;
     font-size: 2em;
     letter-spacing: 0.225em;;
     color: black;
+    margin-bottom: 2em;
 }
 
 .searchBar {
@@ -17,7 +17,46 @@
   align-self: flex-start;
 }
 
-.testResume .testResumeID {
+/*
+.title {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 3em 0;
+    padding: 1em;
+    width: 60%;
+}
+
+.title button {
+    background-color: #A8CAE9;
+    padding: 1em;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
+    transition: background .4s, box-shadow .2s;
+}
+.search-input:hover {
+    background: rgba(168, 202, 233, 0.8);
+}
+
+.search-input:focus {
+    background: rgba(168, 202, 233, 0.8);
+}
+.search-input::placeholder {
+    color: white;
+}
+
+#testResume{
+    margin: 0 4em 0 4em;
+}
+
+#testResume .testResumeID {
     list-style: none;
     display: inline-flex;
     justify-content: space-evenly;
@@ -30,7 +69,8 @@
     width: 100%;
 }
 
-.testResume  .testResumeID:hover {
+
+#testResume .testResumeID:hover {
     background-color: white;
 }
 
@@ -44,7 +84,19 @@
     box-shadow: none !important;
     color: black;
 }
-
+/*
+.comment{
+    margin-bottom: 2em;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
+    border-radius: 5px;
+    padding: 1em 0;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+    transition: all 0.2s ease 0.15s;
+}
+*/
 .testResumeID button {
     cursor: pointer;
     background-color: #A8CAE9;

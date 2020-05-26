@@ -10,7 +10,10 @@
     <a href="/admin/edit-faq"><button>Modifier la FAQ</button></a>
     <?php endif; ?>
 
-    <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." tabindex="1">
+    <form class="search" action="/index.php">
+        <a href="/homepage.php"><i class="fas fa-search fa-2x icon"></i></a>
+        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
+    </form>
 
     <div class="accordion">
       <?php for ($i=0;$i<count($data['faq']);$i++):?>
