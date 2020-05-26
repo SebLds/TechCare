@@ -69,7 +69,7 @@
 
       <div class="CGU">
         <input type="checkbox" name="check">
-        <p id="text-CGU">J'accepte et comprends les <span><a id="link-cgu" href="/cgu">conditions générales d'utilisations</a></span></p>
+        <p id="text-CGU"><test data-i18n="REGISTER-cgu1"></test><span><a id="link-cgu" href="/cgu"><test data-i18n="REGISTER-cgu2"></test></a></span></p>
       </div>
       <p class="CGU" ><?php if(isset($data[1]['error_cgu'])) { echo $data[1]['error_cgu']; }?></p>
 

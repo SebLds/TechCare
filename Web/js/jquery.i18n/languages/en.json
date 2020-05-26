@@ -55,8 +55,8 @@
   "REGISTER-confirmmail":"Confirm Mail",
   "REGISTER-confirmpassword":"Confirm password",
   "REGISTER-confirmhealthnumber":"Social security number",
-  "REGISTER-cgu1":"Password",
-  "REGISTER-cgu2":"Password",
+  "REGISTER-cgu1":"I accept and understand the ",
+  "REGISTER-cgu2":"terms and conditions of use",
 
   "LOGIN-title":"Log in to Infinite Measures",
   "LOGIN-titlebis":"Or register",
