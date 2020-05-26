@@ -69,6 +69,10 @@
     background: rgba(168, 202, 233, 0.8);
 }
 
+input[type="submit"]:hover {
+  background: rgba(168, 202, 233, 0.8);
+}
+
 form {
   display: flex;
   flex-direction: column;
