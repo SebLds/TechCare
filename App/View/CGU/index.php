@@ -47,26 +47,26 @@
           <h3>ARTICLE 2 - PROPRIÉTÉ INTELLECTUELLE</h3><br>
           <p><span>2.1.</span> Le Site et chacun des éléments qui le composent et notamment, mais non exclusivement, textes, marques, logos, sons, musiques, mises en page, supports, icônes, et plus généralement, tous éléments visuels ou sonores (Ci-après les « Éléments de propriété intellectuelle »), sont protégés par des droits de propriété intellectuelle dont la Société est titulaire ou dont un ou plusieurs tiers ont cédé à la Société le droit d’usage.
               Certains des Eléments de propriété intellectuelle peuvent également être la propriété de tiers ayant concédé un droit d’usage à la Société.<br><br>
-              En dehors des cas autorisés par la loi, toute reproduction, représentation, modification, diffusion, adaptation, traduction, et/ou transformation totale ou partielle, intégration à d’autres éléments ou transfert sur un autre site Internet de tout ou partie des Eléments de propriété intellectuelle sans l’autorisation écrite, expresse et préalable de la Société ou des tiers concernés titulaires des droits de propriété intellectuelle est strictement interdite.
-              <span>2.2.</span> Le cas échéant, toute reproduction préalablement et expressément autorisée devra impérativement comporter la mention : "Ce document provient du site officiel de Infinite Measures – www.xxxxxxxxx.com. Les droits de reproduction sont réservés et strictement limités." La rubrique consultée ainsi que la date de consultation devront en outre impérativement figurer dans la référence.
+              En dehors des cas autorisés par la loi, toute reproduction, représentation, modification, diffusion, adaptation, traduction, et/ou transformation totale ou partielle, intégration à d’autres éléments ou transfert sur un autre site Internet de tout ou partie des Eléments de propriété intellectuelle sans l’autorisation écrite, expresse et préalable de la Société ou des tiers concernés titulaires des droits de propriété intellectuelle est strictement interdite.<br><br>
+              <span>2.2.</span> Le cas échéant, toute reproduction préalablement et expressément autorisée devra impérativement comporter la mention : "Ce document provient du site officiel de Infinite Measures – www.xxxxxxxxx.com. Les droits de reproduction sont réservés et strictement limités." La rubrique consultée ainsi que la date de consultation devront en outre impérativement figurer dans la référence.<br><br>
               <span>2.3.</span> Toute violation de ces dispositions constitue une contrefaçon au sens du Code de la propriété intellectuelle et soumet le contrevenant aux peines pénales et civiles prévues par la législation française.<br><br>
               <span>2.4.</span> Toute introduction de données sur le Site, par quelque procédé que ce soit, qui modifierait ou qui serait susceptible de modifier le contenu ou l’apparence des données, la présentation ou de l'organisation du Site ou encore des œuvres figurant sur le Site est strictement interdite.</p><br>
 
           <h3>ARTICLE 3 - LIENS HYPERTEXTES</h3><br>
           <p><span>3.1.</span>  Aucun lien hypertexte ne peut être inséré sur le Site pour quelque cause que ce soit.
-              Les liens vers un Site internet diffusant des informations à caractère illicite, violent, polémique, pornographique, xénophobe et/ou portant atteinte au droit de propriété intellectuelle d’un tiers et/ou portant atteinte à l’image de la Société et/ou à la réputation de la Société sont prohibés.
-              <span>3.2.</span> Tout lien hypertexte pointant vers le présent Site est interdit sans autorisation écrite et préalable de la Société. Elle peut à tout moment retirer cette autorisation et supprimer le lien si ce dernier ne respecte pas la législation applicable ou si le lien n’est pas conforme aux présentes CGU et autres politiques de la Société.
+              Les liens vers un Site internet diffusant des informations à caractère illicite, violent, polémique, pornographique, xénophobe et/ou portant atteinte au droit de propriété intellectuelle d’un tiers et/ou portant atteinte à l’image de la Société et/ou à la réputation de la Société sont prohibés.<br><br>
+              <span>3.2.</span> Tout lien hypertexte pointant vers le présent Site est interdit sans autorisation écrite et préalable de la Société. Elle peut à tout moment retirer cette autorisation et supprimer le lien si ce dernier ne respecte pas la législation applicable ou si le lien n’est pas conforme aux présentes CGU et autres politiques de la Société.<br><br>
               <span>3.3.</span> Le Site peut contenir des liens hypertextes redirigeant l’Utilisateur vers des sites internet tiers qui ne sont pas édités par la Société. Elle n’exerce aucun contrôle sur ces sites et ne pourra en aucun cas voir sa responsabilité engagée pour le contenu publié sur les sites tiers ou pour tout dommage ou préjudice découlant de la navigation sur ces sites.</p><br>
 
           <h3>ARTICLE 4 – PROTECTION DES DONÉES A CARACTÈRE PERSONNEL ET COOKIES</h3><br>
           <p><span>4.1.</span> L’Utilisateur est invité à consulter la page suivante : xxxxxxxxxxcookies.com</p><br>
 
           <h3>ARTICLE 5 - ENGAGEMENTS</h3><br>
-          <p><span>5.1. Engagements de l'Utilisateur</span>
-              5.1.1. L’Utilisateur s’engage à utiliser le Site conformément aux présentes CGU.
+          <p><span>5.1. Engagements de l'Utilisateur</span><br><br>
+              5.1.1. L’Utilisateur s’engage à utiliser le Site conformément aux présentes CGU.<br><br>
               5.1.2. L’Utilisateur reconnaît disposer de la compétence et des moyens nécessaires pour accéder au Site et l’utiliser, et reconnaît avoir vérifié que la configuration informatique utilisée ne contient aucun virus et qu’elle est en parfait état de fonctionnement.
               L’Utilisateur reconnait prendre toutes les mesures nécessaires pour protéger son système informatique contre toute contamination par de potentiels virus et contre toute tentative d’intrusion par des tiers. <br><br>
-              5.1.3. L’Utilisateur est responsable pour toute perte ou dommage, matériel ou immatériel, qui résulte de l’utilisation du Site.
+              5.1.3. L’Utilisateur est responsable pour toute perte ou dommage, matériel ou immatériel, qui résulte de l’utilisation du Site.<br><br>
               5.1.4. L’Utilisateur se sert des informations disponibles sur le Site sous sa responsabilité exclusive. Il doit, le cas échéant, effectuer les vérifications nécessaires.<br><br>
               5.1.5. L’Utilisateur s’engage à ne pas porter atteinte aux droits des tiers ni à l’image de la Société.
               A ce titre, l’Utilisateur s’engage à ne pas partager un contenu ou lien hypertexte comportant, sans que cette liste soit limitative :</p>
@@ -81,7 +81,7 @@
           <p><span>5.2. Engagements de la Société</span><br><br>
               5.2.1. La Société fait ses meilleurs efforts pour que le Site soit accessible.<br><br>
               L’indisponibilité du Site, quelle qu’en soit la cause, n’ouvre pas droit à indemnisation de l’Utilisateur.<br><br>
-              5.2.2. La responsabilité de la Société ne pourra être engagée en cas de force majeure, en cas de dysfonctionnement du réseau et/ou des serveurs, ou de pannes et d’interventions de maintenance nécessaires au bon fonctionnement du site ou de tout autre événement <br> échappant à son contrôle. La Société ne peut être tenue responsable pour tout dommage matériel ou immatériel qui résulterait d’une quelconque façon de la connexion au Site.
+              5.2.2. La responsabilité de la Société ne pourra être engagée en cas de force majeure, en cas de dysfonctionnement du réseau et/ou des serveurs, ou de pannes et d’interventions de maintenance nécessaires au bon fonctionnement du site ou de tout autre événement <br> échappant à son contrôle. La Société ne peut être tenue responsable pour tout dommage matériel ou immatériel qui résulterait d’une quelconque façon de la connexion au Site.<br><br>
               5.2.3. Le contenu du Site peut comprendre des erreurs ou des inexactitudes malgré la vigilance <br>dont la Société fait preuve. La Société s’engage à les corriger au plus vite mais l’Utilisateur du Site doit procéder à toutes les vérifications nécessaires et est seul responsable de l’utilisation qu’il fait des informations disponibles.</p><br>
 
           <h3>ARTICLE 6 - MODIFICATION DU CONTENU DU SITE</h3><br>
@@ -101,7 +101,6 @@
               <li>pour les litiges avec un ou plusieurs particuliers, à la juridiction des tribunaux français compétents ;</li>
               <li>pour les litiges entre professionnels, à la compétence exclusive des tribunaux du ressort dans lequel la Société a son siège social.</li>
           </ul>
-
       </div>
 
   </div>
