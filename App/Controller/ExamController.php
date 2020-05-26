@@ -89,7 +89,8 @@ class ExamController extends Controller {
             $this->test->newTest($_SESSION['Patient_HealthNumber'], $doctor, $_SESSION['Select-Category'], $_SESSION['Select-Profil'], $score, $passDate);
             Session::getInstance()->deleteAttribute('Select-Profil');
             Session::getInstance()->deleteAttribute('Select-Category');
-            $this->generateView($data,'ConfirmTest');
+            $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
+            $this->generateView($user,'ConfirmTest');
           } else {
             $this->generateView($errors,'OptionsTest');
           }
@@ -99,9 +100,10 @@ class ExamController extends Controller {
     }
 
   public function launchTest() {
-    $test = $this->test->getUserTests($_SESSION['Patient_HealthNumber']);
+    $test = $this->test->getRecentTest($_SESSION['Patient_HealthNumber']);
     $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
-    $this->generateView($user, 'Summarytest');
+    $data = [$test, $user];
+    $this->generateView($data, 'Summarytest');
   }
 
   public function submitComment() {

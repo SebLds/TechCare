@@ -4,21 +4,21 @@
     <div class="footer-left">
         <h1>Infinite <span>Measures</span></h1>
         <p class="footer-links">
-            <a href="/homepage#banner">Accueil</a>
+            <a href="/homepage#banner"><span data-i18n="FOOTER-home"></span></a>
             ·
-            <a href="/forum">Forum</a>
+            <a href="/forum"><span data-i18n="FOOTER-forum"></span></a>
             ·
-            <a href="/homepage#three">Test</a>
+            <a href="/homepage#three"><span data-i18n="FOOTER-test"></span></a>
             ·
-            <a href="#">A propos</a>
+            <a href="#"><span data-i18n="FOOTER-about"></span></a>
             ·
-            <a href="/faq">FAQ</a>
+            <a href="/contact"><span data-i18n="FOOTER-contact"></span></a>
             ·
-            <a href="/contact">Contact</a>
+            <a href="/faq"><span data-i18n="FOOTER-faq"></span></a>
             ·
-            <a href="/cgu">CGU</a>
+            <a href="/cgu"><span data-i18n="FOOTER-cgu"></span></a>
         </p>
-        <p class="footer-company-name">&copy; Infinite Measures - Tous droits réservés 2019-2020</p>
+        <p class="footer-company-name">&copy; <span data-i18n="FOOTER-rights"></span></p>
     </div>
 
     <div class="footer-center">
@@ -40,9 +40,8 @@
 
     <div class="footer-right">
         <p class="footer-company-about">
-            <a>A propos de l'entreprise</a>
-            Infinite Measures vous accompagne avant, pendant et après vos tests psychotechniques.
-            Nous sommes une entreprise au service de la santé de nos patients.
+            <a data-i18n="FOOTER-aboutcompany"></a>
+            <span data-i18n="FOOTER-text-info"></span>
         </p>
 
         <div class="footer-submit">
@@ -56,6 +55,7 @@
             <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
             <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
             <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
+            <a href="https://github.com/SebLds/TechCare"><i class="fab fa-github fa-2x"></i></a>
         </div>
 
     </div>

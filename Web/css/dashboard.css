@@ -1,16 +1,18 @@
 #body {
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    font-size: 15pt;
-    font-weight: 400;
 }
 
 #body h2 {
-    justify-content: center;
     font-size: 2em;
     letter-spacing: 0.225em;;
     color: black;
+    margin-bottom: 2em;
+}
+
+.searchBar {
+  display: flex;
+  align-self: flex-start;
 }
 
 /*
@@ -31,11 +33,28 @@
     cursor: pointer;
     border: none;
     outline: none;
-    border-radius: 3px;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
+    transition: background .4s, box-shadow .2s;
 }
-*/
+.search-input:hover {
+    background: rgba(168, 202, 233, 0.8);
+}
 
-.testResume .testResumeID {
+.search-input:focus {
+    background: rgba(168, 202, 233, 0.8);
+}
+.search-input::placeholder {
+    color: white;
+}
+
+#testResume{
+    margin: 0 4em 0 4em;
+}
+
+#testResume .testResumeID {
     list-style: none;
     display: inline-flex;
     justify-content: space-evenly;
@@ -43,12 +62,13 @@
     margin-bottom: 2em;
     background-color: whitesmoke;
     box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 1em;
     width: 100%;
 }
 
-.testResume  .testResumeID:hover {
+
+#testResume .testResumeID:hover {
     background-color: white;
 }
 
@@ -62,7 +82,19 @@
     box-shadow: none !important;
     color: black;
 }
-
+/*
+.comment{
+    margin-bottom: 2em;
+    background-color: whitesmoke;
+    box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
+    border-radius: 5px;
+    padding: 1em 0;
+    width: 100%;
+    overflow: hidden;
+    clear: both;
+    transition: all 0.2s ease 0.15s;
+}
+*/
 .testResumeID button {
     cursor: pointer;
     background-color: #A8CAE9;
@@ -73,6 +105,70 @@
     width: 20em;
 }
 
-.content{
-    width: 20em;
+/* .fa, .fas, .far, .fal {
+  font-size: 2em;
+} */
+
+.fa-heartbeat {
+  color: red;
+}
+
+.fa-eye {
+  color: blue;
+}
+
+.fa-deaf {
+  color: green;
+}
+
+#type {
+  align-content: center;
+}
+
+#date {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.table {
+  width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1% 1% 1% 1%;
+    width: 100%;
+}
+
+caption {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+td, th {
+    padding: 8px;
+    text-align: center;
+}
+
+.result {
+  box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
+  border-style: 5px black solid;
+}
+
+tr {
+
+}
+
+td {
+
+}
+
+th {
+  text-align: center;
+}
+
+.content {
+
 }

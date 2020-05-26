@@ -9,14 +9,14 @@
     <section id="banner">
         <div class="inner">
             <h2>Infinite Measures</h2>
-            <p>Test psychotechnique<br/>
-                à la pointe de la technologie<br />
-                certifié par les organismes gouvernementaux.</p>
+            <p><span data-i18n="HOME-psychotechnicaltest"></span><br/>
+                <span data-i18n="HOME-psychotechnicaltest2"></span><br />
+                <span data-i18n="HOME-psychotechnicaltest3"></span></p>
             <ul class="actions special">
-                <li><a href="/register" class="btn primary">S'inscrire</a></li>
+                <li><a href="/register" class="btn primary"><span data-i18n="HOME-register"></span></a></li>
             </ul>
         </div>
-        <a href="/homepage#one" class="more">En savoir plus<i class="fal fa-arrow-down fa-3x"></i>
+        <a href="/homepage#one" class="more"><span data-i18n="HOME-learnmore"></span><i class="fal fa-arrow-down fa-3x"></i>
         </a>
 
     </section>

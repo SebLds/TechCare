@@ -1,3 +1,4 @@
+
 #body {
     font-family: "Lato", Helvetica, sans-serif;
     font-size: 15pt;
@@ -13,24 +14,47 @@
     margin-bottom: 2em;
 }
 
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .search-input {
     width: 100%;
-    max-width: 27.5em;
-    margin: 2em;
-    padding: 1em 1em 1em 3em;
+    max-width: 25em;
+    margin: 2em 0;
+    padding: 1em;
     background: rgba(168, 202, 233, 1);
     border: none;
-    outline:none;
-    color: gray;
+    outline: none;
+    color: white;
     font-size: 1.2em;
     border-radius: 4px;
     box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
     transition: background .4s, box-shadow .2s;
 }
+
+.icon {
+    cursor: pointer;
+    padding: 1em;
+    border: none;
+    outline: none;
+    color: rgba(168, 202, 233, 1);
+    font-size: 1.3em;
+}
+
 .search-input:hover {
     background: rgba(168, 202, 233, 0.8);
 }
 
+.search-input:focus {
+    background: rgba(168, 202, 233, 0.8);
+}
+.search-input::placeholder {
+    color: white;
+}
 .accordion{
     width: 60vw;
 }
@@ -83,6 +107,22 @@
     padding: 1rem;
     max-height: 100%;
     transition: all 0.35s ease 0.15s;
+}
+
+#edit-button {
+  background-color: red;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0.25em;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 600;
+  height: 3.125em;
+  letter-spacing: 0.225em;
+  max-width: 30em;
+  padding: 0 2em;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 @media screen and (width: 1680px) {

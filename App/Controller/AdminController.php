@@ -9,19 +9,20 @@ use DateTime;
 use src\Controller;
 use src\Model;
 use src\Session;
-use src\Model;
 use App\Model\User;
 use App\Model\Test;
+use App\Model\FAQ;
 
 class AdminController extends Controller {
 
     private User $user;
     private Test $test;
+    private FAQ $faq;
 
     public function __construct() {
         $this->user = new User();
         $this->test = new Test();
-
+        $this->faq = new Faq();
     }
 
 
@@ -170,12 +171,11 @@ class AdminController extends Controller {
           $this->generateView($data,'AddUser');
         }
 
-
-
         }
       }
   }
-  public function stats(){
+
+  public function stats() {
         $averageAgePatient=0;
       for($i=0;$i<count($this->user->getAgeListPatient());$i++){
           $averageAgePatient+=(int)$this->user->getAgeListPatient()[$i];
@@ -214,7 +214,7 @@ class AdminController extends Controller {
       $this->generateView($data,'stats');
     }
 
-    private function averageScore($type){
+    private function averageScore($type) {
         $averageScore=0;
         for ($i=0;$i<count($this->test->getListScoreTest($type));$i++){
             $averageScore+=$this->test->getListScoreTest($type)[$i];
@@ -223,5 +223,64 @@ class AdminController extends Controller {
         return $averageScore;
     }
 
+    public function editFAQIndex() {
+      $FAQ = $this->faq->getFAQ();
+      $this->generateView(array('faq' => $FAQ),'editFAQ');
+    }
 
-}
+    public function editFAQ() {
+
+      if (!empty($_POST)) {
+        extract($_POST);
+
+        if (isset($_POST['add'])) {
+
+          $data = [
+            'newQuestion' => (string) htmlspecialchars($newQuestion),
+            'newAnswer' => htmlspecialchars($newAnswer),
+          ];
+
+          $error = [];
+
+          if (!empty($data['newQuestion']) && !empty($data['newAnswer'])) {
+            $this->faq->addQuestion($data['newQuestion'], $data['newAnswer']);
+            $FAQ = $this->faq->getFAQ();
+            $this->generateView(array('faq' => $FAQ),'editFAQ');
+          } else {
+            $FAQ = $this->faq->getFAQ();
+            $this->generateView(array('faq' => $FAQ, 'error' => "Veuillez ajouter une question avec sa réponse"),'editFAQ');
+          }
+        }
+
+          if (isset($_POST['delete'])) {
+
+            $data = [
+              'question' => (string) htmlspecialchars($question),
+              'answer' => htmlspecialchars($answer),
+            ];
+
+            if (!empty($data['question']) && !empty($data['answer'])) {
+              $this->faq->deleteQuestion($data['question'], $data['answer']);
+              $FAQ = $this->faq->getFAQ();
+              $this->generateView(array('faq' => $FAQ),'editFAQ');
+            }
+          }
+
+          if (isset($_POST['modify'])) {
+
+            $data = [
+              'question' => (string) htmlspecialchars($question),
+              'answer' => htmlspecialchars($answer),
+            ];
+
+            if (!empty($data['question']) && !empty($data['answer'])) {
+
+            $this->faq->modifyQuestion($data['question'], $data['answer']);
+            $FAQ = $this->faq->getFAQ();
+            $this->generateView(array('faq' => $FAQ),'editFAQ');
+           }
+         }
+
+        }
+      }
+    }

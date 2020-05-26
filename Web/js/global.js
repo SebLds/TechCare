@@ -1,6 +1,6 @@
 jQuery(function($) {
     $.i18n( {
-        locale: 'fr'
+        locale: 'en'
     } )
     $.i18n().load({
         'en': '/Web/js/jquery.i18n/languages/en.json',
