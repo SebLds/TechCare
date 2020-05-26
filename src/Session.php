@@ -1,6 +1,8 @@
 <?php
 
 namespace src;
+use SessionException;
+
 /**
  * Class modeling the session.
  * Encapsulates the PHP $_SESSION superglobal.
@@ -9,39 +11,36 @@ namespace src;
  */
 class Session
 {
-    private string $sessionType; // récup le type de user soit visiteur, patient, gestionnaire ou admin
-    // restriction d'accès et de contenu en fonction du statut
-    // mettre en place un système pour éviter le vol de session
+    public static ?Session $instance = null;
 
-//    /** Constructor, start or restore the session.
-//     */
+
     public function __construct()
     {
         session_start();
-        self::setAttribute('isLogged',false);
-        $this->sessionType='visiteur';
-        self::setAttribute('sessionType',$this->sessionType);
+        if (!$this->isThereAttribute('sessionStatus')){
+            $this->setAttribute('sessionStatus',0);
+        }
+        if (!$this->isThereAttribute('lang')){
+            $this->setAttribute('lang','fr');
+        }
     }
 
-    /**
-     * Destructor, destroy the current session.
-     */
-    public function __destruct()
-    {
-        session_destroy();
-        unset( $_SESSION );
-
-    }
-//    public static function sessionStart(){
-//        session_start();
-//        $_SESSION = array();
-//        self::$sessionType='visiteur';
-//        self::setAttribute('sessionType',self::$sessionType);
-//    }
-//    public static function sessionStop(){
+//    /**
+//     * Destructor, destroy the current session.
+//     */
+//    public function __destruct()
+//    {
 //        session_destroy();
 //        unset( $_SESSION );
+//
 //    }
+    public static function getInstance(){
+        if(!self::$instance){
+            self::$instance = new Session();
+        }
+        return self::$instance;
+    }
+
 
 
     /**
@@ -50,7 +49,7 @@ class Session
      * @param string $name Attribute name
      * @param string $value Attribute value
      */
-    public static function setAttribute($name, $value)
+    public function setAttribute($name, $value)
     {
         $_SESSION[$name] = $value;
     }
@@ -61,7 +60,7 @@ class Session
      * @param string $name Attribute name
      * @return bool True if the attribute exists and its value is not empty
      */
-    private static function isThereAttribute($name)
+    private function isThereAttribute($name)
     {
         if (isset($_SESSION[$name])){
             return true;
@@ -76,14 +75,18 @@ class Session
      * @return string Attribute name
      * @throws SessionException If the attribute does not exist in the session
      */
-    public static function getAttribute($name)
+    public function getAttribute($name)
     {
-        if (self::isThereAttribute($name)) {
+        if ($this->isThereAttribute($name)) {
             return $_SESSION[$name];
         }
         else {
             throw new \Exception("Attribut '$name' absent de la session");
         }
+    }
+
+    public function deleteAttribute($name){
+        unset($_SESSION[$name]);
     }
 
 }

@@ -7,17 +7,15 @@
     "locale": "en",
     "other-metadata": "sample json format"
   },
-  "CGU": {
 
-  },
   "appname-title": "Javascript Localization via jQuery.i18n",
   "appname-sub-title": "A jQuery based Javascript internationalization library.",
   "appname-introduction": "Introduction",
-  "header-home": "Home",
   "welcome": "welcome pello",
   "glad-to-see": "hi glad to see you",
   "test": "I am a test",
-  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION in english"
+  "testt": "MENTIONS LÉGALES ET CONDITIONS GÉNÉRALES D’UTILISATION in english",
+
 
 }
 

@@ -18,5 +18,10 @@
     <orderEntry type="library" name="jquery-3.2.1" level="application" />
     <orderEntry type="module" module-name="HTML-CSS sujet 1" />
     <orderEntry type="library" name="jquery-3.5.1" level="application" />
+    <orderEntry type="library" name="Chart.js" level="application" />
+    <orderEntry type="library" name="chart.js" level="application" />
+    <orderEntry type="library" name="javascript.util" level="application" />
+    <orderEntry type="library" name="utils" level="application" />
+    <orderEntry type="library" name="Chart" level="application" />
   </component>
 </module>

@@ -1,6 +1,7 @@
 <?php
 $NombreTotalTests=0;
 $Score= [0,0] ;
+var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>

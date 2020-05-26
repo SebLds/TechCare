@@ -1,3 +1,7 @@
+#body {
+  justify-content: center;
+}
+
 #body h1 {
   color: grey;
   display: flex;
@@ -17,6 +21,10 @@
   font-size: 1.4em;
 }
 
+.title-form {
+  border-bottom: solid;
+}
+
 .box {
   box-shadow: 0px 0px 14px 0px rgba(168,158,168,1);
   border-radius: 3px;
@@ -33,6 +41,24 @@
 .box a:hover {
   color: grey;
   text-decoration: none;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 27.5em;
+    margin: 2em;
+    padding: 1em 1em 1em 3em;
+    background: rgba(168, 202, 233, 1);
+    border: none;
+    outline:none;
+    color: gray;
+    font-size: 1.2em;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
+    transition: background .4s, box-shadow .2s;
+}
+.search-input:hover {
+    background: rgba(168, 202, 233, 0.8);
 }
 
 form {
@@ -67,10 +93,28 @@ input[type="submit"] {
   margin-top: 40px;
 }
 
-input[type="submit"]:hover {
-
+.birthdate {
+  display: flex;
+  flex-direction: row;
 }
 
+.date {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+#day {
+  width: 50px;
+}
+
+#month {
+  width: 65px;
+}
+
+ #year {
+  width: 85px;
+}
 
 input[type=checkbox] {
  -webkit-appearance: none;
@@ -101,6 +145,7 @@ input[type="checkbox"]:checked {
 
 .error-msg {
   padding: 5px 0px 40px 0px;
+  color: red;
 }
 
 textarea {
@@ -115,6 +160,27 @@ textarea {
 
 textarea:focus {
   border-color: rgba(168, 202, 233,1);
+}
+
+.option label {
+  color: red;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.selectbox select {
+  padding: 0.6rem;
+  margin-top: 0.5em;
+  border-style: solid;
+  border-color: rgba(168, 202, 233,0.2);
+  color: grey;
+  font-size: 1.2em;
+  border-radius: 2px;
+  width: 100%;
 }
 
 @media only screen and (max-width: 850px)  {

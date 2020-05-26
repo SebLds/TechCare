@@ -2,145 +2,132 @@
 
 namespace App\Controller;
 use src\Controller;
+use src\Model;
+use App\Model\User;
 
 class RegisterController extends Controller {
 
-  private User $user;
-  public $errors = [];
-
   public function __construct() {
-        //$this->user = new User();
-    }
+        $this->user = new User();
+  }
 
-  public function index(){
+  public function index() {
     $this->generateView(array(),'index');
-// TODO: la page du formulaire non rempli generateView ('index') ca va aller cherche le fichier de vue App/View/Register/index.php
-  }
-  public function registrationValidated() {
-    // ca correspond à la page de validation
   }
 
-  public function click() {
-    // TODO : si ya pas d'erreur ca insert dans la bdd via $this->user->create(array());
-    // sinon ca redirige vers le formulaire avec msg d'erreurs via l'appel de la méthode erreur
-  }
-
-  private function checkFields($field, $typeField=null, $length){
-    // TODO: il récupère le champ et vérifie sa validité (vide ou champ correct)
-  /*
-    email text password date numéro
-    si c'est true // c'est good -> ca part dans la bdd
-      return $field
-    sinon
-      selon le $typefield ca return un message d'erreur ca sera pas un sting ce sera une 'requete' vers le fichier json correspondant
-
-    */
-    /*$array= ["mail"=>"erreur ton mail pue",]
+  public function register() {
 
     if (!empty($_POST)) {
       extract($_POST);
 
-      // On se place dans le formumaire d'inscription
-      if (isset($_POST['register'])) {
+      if(isset($_POST['register'])) {
 
-        $firstName = (string) htmlspecialchars(ucfirst(trim($firstName)));
-        $lastName = (string) htmlspecialchars(strtoupper(trim($lastName)));
-        $mail = (string) htmlspecialchars(strtolower(trim($mail)));
-        $password = (string) htmlspecialchars(trim($password));
-        $passwordConfirm = (string) htmlspecialchars(trim($passwordConfirm));
-        $day = (int) htmlspecialchars(trim($day));
-        $month = (int) htmlspecialchars(trim($month));
-        $year = (int) htmlspecialchars(trim($year));
-        $doctor = htmlspecialchars(trim($doctor));
-        $birthdate = $day .'/'. $month .'/'. $year;
+        $status = 1;
 
-        // Vérification du prénom
-        if (!empty($firstName)) {
-          if (!ctype_alpha($firstName)) {
-            $error_firstName = ("Caractères invalides");
-          }
-        } else {
-          $error_firstName = ("Veuillez renseigner votre prénom");
-        }
+        $data = [
+          'firstName' => (string) htmlspecialchars(ucfirst(trim($firstName))),
+          'lastName' => (string) htmlspecialchars(strtoupper(trim($lastName))),
+          'mail' => (string) htmlspecialchars(strtolower(trim($mail))),
+          'mailConfirm' => (string) htmlspecialchars(strtolower(trim($mailConfirm))),
+          'password' => (string) htmlspecialchars(trim($password)),
+          'passwordConfirm' => (string) htmlspecialchars(trim($passwordConfirm)),
+          'day' => (int) htmlspecialchars(trim($day)),
+          'month' => (int) htmlspecialchars(trim($month)),
+          'year' => (int) htmlspecialchars(trim($year)),
+          'doctor' => (string) htmlspecialchars(trim($doctor)),
+          'healthNumber' => htmlspecialchars(trim($healthNumber)),
+          'birthdate' => $day .'/'. $month .'/'. $year,
+        ];
 
-        // Vérification du nom
-        if (!empty($lastName)) {
-          if (!ctype_alpha($lastName)) {
-            $error_lastName = ("Caractères invalides");
-          }
-        } else {
-          $error_lastName = ("Veuillez renseigner votre nom");
-        }
+        $errors = [];
 
-        // Vérification du mail
-        if (!empty($mail)) {
-          if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-            $error_mail = ("L'adresse email est invalide");
-          }
-          if ($mail != $mailConfirm) {
-            $error_mailConfirm = ("Les adresses mails ne correspondent pas");
-          }
-        } else {
-          $error_mail = ("Veuillez renseigner votre mail");
-        }
-
-        // Vérification de la date de naissance
-        if (!empty($day) || !empty($month) || !empty($year)) {
-          if (!checkdate($month, $day, $year)) {
-            $error_birthdate = ("Veuillez entrer une date valide");
-          }
-        } else {
-          $error_birthdate = ("Veuillez renseigner votre date de naissance");
-        }
-
-        // Vérification et hashage du mot de passe
-        if (!empty($password)) {
-          if ($password != $passwordConfirm) {
-            $error_passwordConfirm = ("Les mots de passe ne correspondent pas");
+          // Vérification du prénom
+          if (!empty($data['firstName'])) {
+            if (!ctype_alpha($data['firstName'])) {
+              $errors['error_firstName'] = "Caractères invalides";
+            }
           } else {
-            $passwordHash = hash('sha256', $password);
+            $errors['error_firstName'] = "Veuillez renseigner votre prénom";
           }
-        } else {
-          $error_password = ("Veuillez renseigner un mot de passe");
-        }
 
-        // Vérification du nom du médecin
-        if (!empty($doctor)) {
-          if (!ctype_alpha($doctor)) {
-            $error_doctor = ("Caractères invalides");
+          // Vérification du nom
+          if (!empty($data['lastName'])) {
+            if (!ctype_alpha($data['lastName'])) {
+              $errors['error_lastName'] = "Caractères invalides";
+            }
+          } else {
+            $errors['error_lastName'] = "Veuillez renseigner votre nom";
           }
-        } else {
-          $error_doctor = ("Veuillez renseigner le nom de votre médecin");
-        }
 
-        // Vérification du numéro de sécurité sociale
-        if (!empty($healthNumber)) {
-          if (!ctype_alpha($doctor)) {
-            $error_doctor = ("Caractères invalides");
+          // Vérification du mail
+          if (!empty($data['mail'])) {
+            $checkmail = $this->user->checkMail($data['mail']);
+            if (!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
+              $errors['error_mail'] = "L'adresse email est invalide";
+              if ($data['mail'] != $data['mailConfirm']) {
+                $errors['error_mailConfirm'] = "Les adresses mails ne correspondent pas";
+              }
+            } elseif ($checkmail) {
+              $errors['error_mail'] = "Cette adresse email est déjà associée à un compte";
+            }
+          } else {
+            $errors['error_mail'] = "Veuillez renseigner votre mail";
           }
-        } else {
-          $error_healthNumber = ("Veuillez renseigner votre numéro de sécurité sociale");
-        }
 
-        // Vérification de l'acceptation des CGU
-        if (!isset($_POST['check'])) {
-          $error_cgu = ("Veuillez accepter les CGU");
-        }
+          // Vérification de la date de naissance
+          if (!empty($data['day']) || !empty($data['month']) || !empty($data['year'])) {
+            if (!checkdate($data['month'], $data['day'], $data['year'])) {
+              $errors['error_birthdate'] = "Veuillez entrer une date valide";
+            }
+          } else {
+            $errors['error_birthdate'] = "Veuillez renseigner votre date de naissance";
+          }
 
+          // Vérification
+          if (!empty($data['password'])) {
+            if ($data['password'] != $data['passwordConfirm']) {
+              $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+            }
+          } else {
+            $errors['error_password'] = "Veuillez renseigner un mot de passe";
+          }
+
+          // Vérification du nom du médecin
+          if (!empty($data['doctor'])) {
+            if (!ctype_alpha($data['doctor'])) {
+              $errors['error_doctor'] = ("Caractères invalides");
+            }
+          } else {
+            $errors['error_doctor'] = ("Veuillez renseigner le nom de votre médecin");
+          }
+
+          // Vérification du numéro de sécurité sociale
+          if (!empty($data['healthNumber'])) {
+            $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
+            if ($checkHealthNumber) {
+              $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+            }
+          } else {
+            $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
+          }
+
+          // Vérification de l'acceptation des CGU
+          if (!isset($_POST['check'])) {
+            $errors['error_cgu'] = ("Veuillez accepter les CGU");
+          }
+
+          if(empty($errors)) {
+            $registrationdate = Model::getDate();
+            $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
+            $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $company, $data['healthNumber'], $registrationdate);
+            header("Location: /login");
+          } else {
+            $data = [$data, $errors];
+            $this->generateView($data,'index');
+          }
+
+        }
       }
-
     }
+
   }
-
-  public function errorForm() {
-    // TODO: la page index avec les msgs d'erreurs
-    $array=$this->checkFields();
-    if ($array!=true){
-      $this->generateView($array,"index");
-    }
-
-  }*/
-
-
-}
-}

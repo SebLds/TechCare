@@ -1,0 +1,44 @@
+.personnal-info, .summary-test {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right, .left {
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+  padding-left: 20px;
+}
+
+.left {
+  padding-right: 20px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.infos {
+  padding: 0.6rem;
+  margin-top: 0.5em;
+  color: grey;
+  font-size: 1.2em;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  padding: 0.6rem;
+  margin-top: 0.5em;
+  border: none;
+  color: #fff;
+  font-size: 1.2em;
+  border-radius: 2px;
+  background-color: rgba(168, 202, 233, 1);
+}

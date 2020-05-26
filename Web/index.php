@@ -9,6 +9,7 @@ use src\Session;
  */
 require_once "../src/Autoloader.php";
 
+
 Autoloader::addNamespace('src\Router', '../src/Router/');
 Autoloader::addNamespace('src', '../src/');
 Autoloader::addNamespace('App\Controller','../App/Controller/');
@@ -19,59 +20,68 @@ Autoloader::addNamespace('App\Model','../App/Model/');
 Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
-$session = new Session();
-
-/**
- * pour le callable il faut absolument mettre le sous-dossier s'il y en a un
- * ex: Pour le controller TestController dans le dossier Forum du dossier Controller le callable est Forum\Test
- */
+Session::getInstance();
+var_dump($_SESSION);
 if (!isset($_GET['url'])){
-//    if ($_SESSION['logged']==true){
-//        switch ($_SESSION['status']){
-//            case $_SESSION['status']===1:
-//                // action
-//                break;
-//                // etc pour chaque user
-//        }
-//    }
     $_GET['url']='homepage';
 }
-$router= new Router($_GET['url']);
-//$router->get('/',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
-//$router->get('/Homepage',function(){require '/View/Home/index.php';} ); // appel des controllers correspondants
-$router->get('/Our-Work',function(){echo 'our work';});
-//$router->get('/FAQ',function(){echo 'FAQ';});
-//$router->get('/posts',function(){echo 'tous les articles';});
-$router->get('/article/:slug-:id',"Forum\Test#article#slug#id");
 
-$router->get('/home',"Forum\Tag#index");
-$router->get('/register',"Register#index");
-$router->post('/register',"Register#validate");
-$router->get('/forum',"Forum\Forum#index");
+$router= new Router($_GET['url']);
+
+/**Homepage**/
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
+
 $router->get('/faq',"Faq#index");
-
-
-
-
 $router->get('/cgu',"Cgu#index");
-
-
-$router->get('/login',"Login#index");
-$router->get('/set-new-password',"ForgetPassword#index");
+$router->get('/error-:id',"Error#generateError#id");
 $router->get('/contact',"Contact#index");
 $router->get('/dashboard',"Dashboard#index");
+$router->post('/dashboard',"Dashboard#searchPatient");
+
+/**Register**/
+$router->get('/register',"Register#index");
+$router->post('/register',"Register#register");
+
+/**Login**/
+$router->get('/login',"Login#index");
+$router->post('/login',"Login#login");
+$router->post('/logout',"Login#logout");
+$router->get('/set-new-password',"ForgetPassword#index");
+
+/**Profil**/
+$router->get('/profil',"Profil#index");
+$router->post('/profil',"Profil#change");
+
+/**Test**/
+$router->get('/test',"Exam#index");
+$router->post('/test-options',"Exam#setUpTest");
+$router->post('/test-confirm',"Exam#confirmTest");
+$router->get('/test-summary',"Exam#launchTest");
+$router->post('/test-summary',"Exam#submitComment");
+$router->get('/set-new-password',"ForgetPassword#index");
+
+/**Contact**/
+$router->get('/contact',"Contact#index");
+$router->post('/contact',"Contact#sendMail");
 
 
-//$router->post('/home',"Forum\Forum#index");
 
-//$router->get('',"Test#index");
+/** Forum **/
+$router->get('/forum',"Forum\Forum#index");
+$router->post('/forum/result-threads',"Forum\Forum#searchResult");
+$router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
+$router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
+$router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
 
-//$router->get('/posts/:slug-:id',function ($slug,$id){
-//    echo "Article $slug : $id";
-//})->with("id",'[0-9]+')->with('slug','0[a-z\0-9]+');
-//
-//$router->post('/posts/:id',function($id){echo 'Poster l\'article'.$id;});
+
+/**Admin**/
+$router->get('/admin/dashboard',"Admin#index");
+$router->get('/admin/add-user',"Admin#addUserIndex");
+$router->post('/admin/add-user',"Admin#addUser");
+$router->get('/statistics','Admin#stats');
+
+
+
 $router->run();

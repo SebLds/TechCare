@@ -10,14 +10,16 @@
     <h1>Je me connecte à Infinite Measures</h1>
     <h2><a href="/register">Ou je m'inscris</h2></a>
 
-      <form action="../../Web/index.php" method="post">
+    <p class="error-msg"><?php if(isset($error_login)) { echo $error_login; }?></p>
+
+      <form method="post">
 
         <label>Identifiant</label>
-        <input type="text" name="mail" placeholder="infinite@measures.com" value="<?php if(isset($mail)) { echo $mail; }?>">
+        <input type="text" name="mail" placeholder="infinite@measures.com">
         <p class="error-msg"><?php if(isset($error_mail)) { echo $error_mail; }?></p>
 
         <label>Mot de passe</label>
-        <input id="password" type="password" name="passwword" name="password" placeholder="●●●●●●●●">
+        <input id="password" type="password" name="password" name="password" placeholder="●●●●●●●●">
         <i id="eye" class="far fa-eye-slash" onclick="showHidePassword();"></i>
 
         <script>
@@ -43,15 +45,3 @@
     </div>
 
 </div>
-
-      <!--<div class="connexion-header">
-        <div class="text">
-          <h2>Vous revoilà !</h2>
-        </div>
-
-        <div class="quit">
-          <button id="button-quit"><img id="img-quit" src="images/quit.png"></button>
-        </div>
-      </div>-->
-
-      <!--<script type="text/javascript" src="JS/connexion.js"></script>-->

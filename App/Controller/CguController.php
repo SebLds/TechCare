@@ -7,6 +7,7 @@ class CguController extends Controller
 {
     public function index()
     {
+
         $this->generateView(array(),'index');
     }
 }

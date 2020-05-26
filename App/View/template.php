@@ -10,7 +10,7 @@
     if (isset($webRoot)){echo $webRoot;} ?>">
 
     <!-- CSS Files -->
-    <link href="/Web/css/rules.css" rel="stylesheet">
+
     <!-- Image -->
     <link href="/Web/images/favicon.png" rel="shortcut icon" type="image/png"/>
 
@@ -19,7 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
     <!-- FontAwesome/Jquery -->
     <link href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" rel="stylesheet">
+
     <?php if (isset($head_tags)){echo $head_tags;} ?>
     <title><?php if (isset($title)){echo $title;} ?></title>
     <script
@@ -35,22 +37,19 @@
     <script src="/Web/js/jquery.i18n/jquery.i18n.parser.js"></script>
     <script src="/Web/js/jquery.i18n/jquery.i18n.emitter.js"></script>
     <script src="/Web/js/jquery.i18n/jquery.i18n.emitter.bidi.js"></script>
-    <script>
-        $.i18n( {
-            locale: 'en'
-        } );
-    </script>
     <script src="/Web/js/global.js"></script>
 </head>
+
 <body>
-<?php if(Session::getAttribute('isLogged')===true):?>
-<?php if (is_file('../App/View/header.php')){require_once 'sidebar.php';} ?>
+<?php if(Session::getInstance()->getAttribute('sessionStatus')>0):?>
+<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
+<?php if (isset($content)){echo $content;} ?>
 <?php else:?>
 <?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
-<?php endif; ?>
 <?php if (isset($content)){echo $content;} ?>
+<?php if (is_file('../App/View/footer.php')){require_once 'footer.php';} ?>
+<?php endif; ?>
 
-<?php require_once 'footer.php'?>
 
 </body>
 </html>

@@ -46,6 +46,13 @@ abstract class Model
 //        }
         return $request;
     }
+    public function research($table,$section,$key,$bool=false,$idTag=null){
+        if(!$bool){
+            return $this->executeRequest("SELECT * FROM $table WHERE $section LIKE '%$key%'")->fetchAll(PDO::FETCH_OBJ);
+        }else{
+            return $this->executeRequest("SELECT * FROM post p INNER JOIN thread t ON t.ID_Thread = p.ID_Thread WHERE Thread_Title LIKE '%$key%' AND ID_Tag= :idTag",array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ);
+        }
+    }
 
     /**
      * Returns a connection object to the database, initializing the connection if necessary.
@@ -67,5 +74,20 @@ abstract class Model
         }
         return self::$bdd;
     }
+
+    public static function getDate() {
+      date_default_timezone_set("Europe/Paris");
+      $date = date('d/m/Y') . " " . date('H:i:s');
+      return $date;
+    }
+
+    public static function convertDate($date){
+        $date = explode('/',$date);
+        $date = array_reverse($date);
+        $date = implode('-',$date);
+        return "$date";
+    }
+
+
 
 }

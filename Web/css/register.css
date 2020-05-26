@@ -24,6 +24,20 @@
   cursor: pointer;
 }
 
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .CGU {
   display: flex;
   flex-direction: row;
@@ -31,6 +45,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  color: red;
 }
 
 #text-CGU {
@@ -53,29 +68,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-}
-
-.birthdate {
-  display: flex;
-  flex-direction: row;
-}
-
-.date {
-  display: flex;
-  justify-content: center;
-  margin-right: 10px;
-}
-
-#day {
-  width: 50px;
-}
-
-#month {
-  width: 65px;
-}
-
- #year {
-  width: 85px;
 }
 
 

@@ -1,4 +1,5 @@
 <link href="/Web/css/sidebar.css" rel="stylesheet">
+<link href="/Web/css/rulesConnected.css" rel="stylesheet">
 
   <header>
 
@@ -23,18 +24,24 @@
       </div>
 
       <div class="navbar">
-        <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/home.png" alt="">Tableau de bord</h1></a>
-        <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/information.png" alt="">Aide</h1></a>
-        <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/forum.png" alt="">Forum</h1></a>
-        <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/test.png" alt="">Lancer test</h1></a>
-        <a class="box" href="#"><h1><img id="img-nav" src="../../Web/images/stat.png" alt="">Statistiques</h1></a>
+        <a href="/dashboard"><h1><i class="fal fa-book-heart"></i>Tableau de bord</h1></a>
+        <a href="/help"><h1><i class="fal fa-question-circle"></i>Aide</h1></a>
+        <a href="/forum"><h1><i class="fal fa-comments-alt"></i>Forum</h1></a>
+        <?php if($_SESSION['sessionStatus']>1) : ?>
+        <a href="/test"><h1><i class="fal fa-clipboard-check"></i>Lancer test</h1></a>
+        <?php endif; ?>
+        <?php if($_SESSION['sessionStatus']>2) : ?>
+        <a href="/statitics"><h1><i class="fal fa-analytics"></i>Statistiques</h1></a>
+        <?php endif; ?>
       </div>
 
       <div class="account">
 
         <div class="dropdown">
-          <a href="#"><li><img id="img-drop" src="../../Web/images/account.png" alt="">Profil</li></a>
-          <a href="#"><li><img id="img-drop" src="../../Web/images/off.png" alt="">Déconnexion</li></a>
+          <a href="/profil"><li><i class="fal fa-user-circle"></i>Profil</li></a>
+          <form action="/logout" method="post">
+            <li><i class="fal fa-power-off"></i></i> <input id="logout" type="submit" name="logout" value="Déconnexion"></li>
+          </form>
         </div>
 
         <div class="btn">
@@ -50,15 +57,15 @@
         <div class="content">
 
           <div class="flag">
-            <img id="img-flag" src="../../Web/images/france.png" alt="">
+            <img onclick="changeLang()" id="img-flag" src="../../Web/images/france.png" alt="">
           </div>
 
           <div class="link">
-            <a href="#">Contact </a>
+            <a href="/contact-admin">Contact </a>
             <span>•</span>
-            <a href="#">CGU</a>
+            <a href="/cgu">CGU</a>
             <span>•</span>
-            <a href="#">FAQ</a>
+            <a href="/faq">FAQ</a>
           </div>
 
         </div>
