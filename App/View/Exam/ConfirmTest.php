@@ -14,20 +14,20 @@
 
         <div class="left">
 
-          <label>Prénom</label>
+          <label><i class="far fa-user"></i>Prénom</label>
           <p class="infos"><?php echo $data['firstName']; ?></p>
 
-          <label>Date de naissance</label>
+          <label><i class="far fa-calendar-alt"></i>Date de naissance</label>
           <p class="infos"><?php echo $data['birthdate']; ?></p>
 
         </div>
 
         <div class="right">
 
-          <label>Nom</label>
+          <label><i class="far fa-user-tag"></i>Nom</label>
           <p class="infos"><?php echo $data['lastName']; ?></p>
 
-          <label>Adresse email</label>
+          <label><i class="far fa-envelope"></i>Adresse email</label>
           <p class="infos"><?php echo $data['mail']; ?></p>
 
         </div>

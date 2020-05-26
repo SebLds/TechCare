@@ -49,8 +49,8 @@
           <p class="error-msg"><?php if(isset($data[1]['error_doctor'])) { echo $data[1]['error_doctor']; }?></p>
 
           <label><i class="far fa-lock"></i><span data-i18n="REGISTER-password"></span></label>
-          <input id="myInput" type="password" name="password" placeholder="●●●●●●●●" value="">
-          <i class="far fa-eye-slash"></i>
+          <input id="password" type="password" name="password" placeholder="●●●●●●●●" value="">
+          <i id="eye" class="far fa-eye-slash"></i>
           <p class="error-msg"><?php if(isset($data[1]['error_password'])) { echo $data[1]['error_password']; }?></p>
 
           <label><i class="far fa-unlock"></i><span data-i18n="REGISTER-confirmpassword"></span></label>
@@ -62,7 +62,7 @@
       </div>
 
       <div class="bottom">
-          <label><i class="far fa-file-medical-alt"></i><span data-i18n="REGISTER-confirmhealthnumber"></label>
+          <label><i class="far fa-file-medical-alt"></i><span data-i18n="REGISTER-healthnumber"></label>
           <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
           <p class="error-msg"><?php if(isset($data[1]['error_healthNumber'])) { echo $data[1]['error_healthNumber']; }?></p>
       </div>
@@ -73,6 +73,14 @@
       </div>
       <p class="CGU" ><?php if(isset($data[1]['error_cgu'])) { echo $data[1]['error_cgu']; }?></p>
 
+      <div id="test">
+  <input id="box1" type="checkbox" />
+  <label for="box1">Checkbox 1</label>
+  <input id="box2" type="checkbox" />
+  <label for="box2">Checkbox 2</label>
+  <input id="box3" type="checkbox" />
+  <label for="box3">Checkbox 3</label>
+      </div>
       <div class="submit">
         <input type="submit" value="S'inscrire"  name="register">
       </div>
@@ -83,4 +91,4 @@
 
 </div>
 
-  <script type="text/javascript" src="/Web/js/password.js"></script>
+<script type="text/javascript" src="/Web/js/password.js"></script>

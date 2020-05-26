@@ -42,11 +42,27 @@ class DashboardController extends Controller {
 
     public function searchPatient() {
 
-      if (isset($_POST['search'])) {
-        $doctor = $this->user->getDoctor($_SESSION['ID_User']);
-        $result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
-        echo $result;
+      // if ($_SESSION['sessionStatus'] == 1) {
+      //   if (isset($_POST['search'])) {
+      //     $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+      //     $result = $this->user->findTestByName($doctor, htmlspecialchars($_POST['search']));
+      //     echo $result;
+      //   }
+      // }
+
+      if ($_SESSION['sessionStatus'] == 2) {
+        if (isset($_POST['search'])) {
+          $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+          $result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
+          $this->generateView($result, 'index');
+        } else {
+          $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+          $test = $this->test->getDoctorTests($doctor);
+          $this->generateView(array('User_test' => $test),"index");
+        }
       }
+
+
     }
 
 

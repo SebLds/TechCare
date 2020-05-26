@@ -52,9 +52,9 @@
   "REGISTER-doctor":"Doctor",
   "REGISTER-mail":"Mail",
   "REGISTER-password":"Password",
-  "REGISTER-confirmmail":"Confirm Mail",
+  "REGISTER-confirmmail":"Confirm mail",
   "REGISTER-confirmpassword":"Confirm password",
-  "REGISTER-confirmhealthnumber":"Social security number",
+  "REGISTER-healthnumber":"Social security number",
   "REGISTER-cgu1":"I accept and understand the ",
   "REGISTER-cgu2":"terms and conditions of use",
 

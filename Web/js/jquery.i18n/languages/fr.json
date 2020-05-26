@@ -50,7 +50,7 @@
   "REGISTER-mail":"Mot de passe",
   "REGISTER-confirmmail":"Confirmation mail",
   "REGISTER-confirmpassword":"Confirmation mot de passe",
-  "REGISTER-confirmhealthnumber":"Numéro de sécurité sociale",
+  "REGISTER-healthnumber":"Numéro de sécurité sociale",
   "REGISTER-cgu1":"J'accepte et comprends les ",
   "REGISTER-cgu2":"conditions générales d'utilisations",
 

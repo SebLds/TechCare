@@ -6,6 +6,7 @@
 <div id="body">
 
     <h2>Dashboard</h2>
+    <?php var_dump($data); ?>
 
     <div class="searchBar">
       <?php if($_SESSION['sessionStatus']==1) : ?>
@@ -16,7 +17,7 @@
 
       <?php if($_SESSION['sessionStatus']==2) : ?>
       <form method="post">
-        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." tabindex="1">
+        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." tabindex="1" name="search">
       </form>
       <?php endif; ?>
     </div>

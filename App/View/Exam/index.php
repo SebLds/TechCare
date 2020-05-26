@@ -12,11 +12,11 @@
 
     <form action="/test-options" method="post">
 
-      <label>Numéro de sécurité sociale</label>
+      <label><i class="far fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
       <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="">
       <p class="error-msg"><?php if(isset($error_healthNumber)) { echo $error_healthNumber; } ?></p>
 
-      <label>Choix du test</label>
+      <label><i class="far fa-ballot-check"></i>Choix du test</label>
       <div class="selectbox">
         <select name="test-category">
           <option value="">Choisir une catégorie</option>

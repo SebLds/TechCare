@@ -12,7 +12,7 @@
 
     <form action="/test-confirm" method="post">
 
-      <label>Profil du patient</label>
+      <label><i class="far fa-id-badge"></i>Profil du patient</label>
       <div class="selectbox">
         <select name="test-profil">
           <option value="">Choisir un profil</option>
