@@ -1,0 +1,71 @@
+#body {
+  flex-direction: column;
+  top: 0;
+  padding: 0;
+  margin-top: 0;
+  top: 0;
+  position: relative;
+}
+
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.informations {
+  display: flex;
+  flex-direction: column;
+}
+
+.top, .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.charts {
+  display: flex;
+  flex-direction: row;
+}
+
+.graph {
+  width: 50%;
+}
+
+.container {
+  border: 0.1em solid black;
+  width: 400px;
+  margin: 10px 20px 10px 20px;
+  font-size: 0.8em;
+  display: flex;
+}
+
+.text, .score {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 0.1em solid black;
+  justify-content: center;
+}
+
+.text {
+  flex-direction: column;
+}
+
+.container i {
+  padding-right: 5px;
+  font-size: 3em;
+}
+
+.container span {
+  font-size: 1.5em;
+}
+
+.fa-heartbeat {
+  color: red;
+}
+
+.fa-eye {
+  color: blue;
+}

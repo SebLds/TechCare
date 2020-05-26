@@ -10,47 +10,35 @@
         <h1>Résumé du test</h1>
         <p class="top-text">Voici les informations relatives au test effectué.</p>
 
-          <h1>Informations du patient</h1>
-
           <div class="personnal-info">
 
             <div class="left">
 
-              <label>Prénom</label>
-              <p class="infos"><?php echo $data[0]['firstName']; ?></p>
+              <label><i class="far fa-ballot-check"></i>Type de test</label>
+              <p class="infos"><?php echo $data[0]['type']; ?></p>
 
-              <label>Date de naissance</label>
-              <p class="infos"><?php echo $data[0]['birthdate']; ?></p>
+              <label><i class="far fa-notes-medical"></i>Score</label>
+              <p class="infos"><?php echo $data[0]['score']; ?></p>
+
+            </div>
+
+            <div class="center">
+
+              <label><i class="far fa-user"></i>Prénom</label>
+              <p class="infos"><?php echo $data[1]['firstName']; ?></p>
+
+              <label><i class="far fa-user-tag"></i>Nom</label>
+              <p class="infos"><?php echo $data[1]['lastName']; ?></p>
 
             </div>
 
             <div class="right">
 
-              <label>Nom</label>
-              <p class="infos"><?php echo $data[0]['lastName']; ?></p>
+              <label><i class="far fa-calendar-alt"></i>Date de naissance</label>
+              <p class="infos"><?php echo $data[1]['birthdate']; ?></p>
 
-              <label>Numéro de sécu</label>
-              <p class="infos"><?php echo $data[0]['healthNumber']; ?></p>
-
-            </div>
-
-          </div>
-
-          <h1>Informations du test</h1>
-
-          <div class="summary-test">
-
-            <div class="left">
-
-              <label>Type de test</label>
-              <p class="infos"></p>
-
-            </div>
-
-            <div class="right">
-
-              <label>Score</label>
-              <p class="infos"></p>
+              <label><i class="far fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
+              <p class="infos"><?php echo $data[1]['healthNumber']; ?></p>
 
             </div>
 
@@ -60,13 +48,13 @@
 
             <div class="message">
 
-              <label>Commentaire</label>
+              <label><i class="far fa-comment"></i>Commentaire</label>
               <textarea name="comment" rows="3" placeholder="Ecrivez votre commentaire ici"></textarea>
               <p class="error-msg"><?php if(isset($data[1]['error_comment'])) { echo $data[1]['error_comment']; }?></p>
 
             </div>
 
-            <input type="submit" name="submit-4" value="Validez">
+            <input type="submit" name="submit-4" value="Soumettre">
 
           </form>
 

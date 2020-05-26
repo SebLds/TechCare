@@ -5,9 +5,16 @@
   align-items: center;
 }
 
-.right, .left {
+.right, .left, .bottom {
     display: flex;
     flex-direction: column;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .right {
@@ -25,10 +32,18 @@
 }
 
 .infos {
-  padding: 0.6rem;
-  margin-top: 0.5em;
+  padding: 0.3em 0 2em 0;
   color: grey;
   font-size: 1.2em;
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+}
+
+.personnal-info .infos {
+  margin-left: 0.3em;
 }
 
 button {

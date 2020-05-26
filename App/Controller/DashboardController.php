@@ -21,7 +21,7 @@ class DashboardController extends Controller {
     if ($_SESSION['sessionStatus'] == 1) {
       $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
       $test = $this->test->getUserTests($healthNumber);
-      $this->generateView(array('User_test' => $test),"index");
+      $this->generateView(array('User_test' => $test),'index');
     }
 
     if ($_SESSION['sessionStatus'] == 2) {
@@ -42,12 +42,27 @@ class DashboardController extends Controller {
 
     public function searchPatient() {
 
-      if (isset($_POST['search'])) {
-        $doctor = $this->user->getDoctor($_SESSION['ID_User']);
-        echo $doctor;
-        //$result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
-        //echo $result;
+      // if ($_SESSION['sessionStatus'] == 1) {
+      //   if (isset($_POST['search'])) {
+      //     $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+      //     $result = $this->user->findTestByName($doctor, htmlspecialchars($_POST['search']));
+      //     echo $result;
+      //   }
+      // }
+
+      if ($_SESSION['sessionStatus'] == 2) {
+        if (isset($_POST['search'])) {
+          $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+          $result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
+          $this->generateView($result, 'index');
+        } else {
+          $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+          $test = $this->test->getDoctorTests($doctor);
+          $this->generateView(array('User_test' => $test),"index");
+        }
       }
+
+
     }
 
 
@@ -72,8 +87,3 @@ class DashboardController extends Controller {
 //                $this->generateView(array(),'index');
 //                break;
 //        }
-
-
-
-}
-

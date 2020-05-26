@@ -9,6 +9,10 @@ class ContactController extends Controller {
         $this->generateView(array(),'index');
     }
 
+    public function contactAdminIndex() {
+        $this->generateView(array(),'contactAdmin');
+    }
+
     public function sendMail() {
 
       if(!empty($_POST)) {
