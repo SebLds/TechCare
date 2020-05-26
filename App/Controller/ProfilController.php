@@ -5,7 +5,6 @@ use src\Controller;
 use App\Model\User;
 
 class ProfilController extends Controller {
-    private User $user;
 
   private User $user;
 

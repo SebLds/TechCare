@@ -3,48 +3,85 @@
 
 $this->title = "Forum";?>
 <?php ob_start(); ?>
-<style>
-    canvas {
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-    }
-</style>
-<link href="/Web/css/forum.css" rel="stylesheet">
+
+<link href="/Web/css/stats.css" rel="stylesheet">
 <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
 <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
 <?php $this->head_tags = ob_get_clean();?>
+
 <?php if (isset($data)):?>
 
-<div>
-    <h1>L'age moyen d'un patient est de <?php echo $data['avg'][0] ?> ans.</h1>
-</div>
-    <div>
-        <h1>Le score moyen du test de son est <?php echo $data['avg'][1] ?>.</h1>
-    </div>
-    <div>
-        <h1>Le score moyen du test de stress est <?php echo $data['avg'][2] ?>.</h1>
-    </div>
-    <div>
-        <h1>Le score moyen du test de vue est <?php echo $data['avg'][3] ?>.</h1>
-    </div>
-    <div>
-        <h1>Il y a  <?php echo $data['nb'][0] ?> utilisateurs enregistrés.</h1>
-    </div>
-    <div>
-        <h1>Il y a eu un total de <?php echo $data['nb'][1] ?> tests.</h1>
+  <div id="body">
+
+    <div class="informations">
+
+      <div class="top">
+
+        <div class="container">
+          <h1>L'age moyen d'un patient est de <?php echo $data['avg'][0] ?> ans.</h1>
+        </div>
+
+        <div class="container">
+          <h1>Il y a  <?php echo $data['nb'][0] ?> utilisateurs enregistrés.</h1>
+        </div>
+
+        <div class="container">
+          <h1>Il y a eu un total de <?php echo $data['nb'][1] ?> tests.</h1>
+        </div>
+
+      </div>
+
+      <div class="bottom">
+
+        <div class="container">
+          <h1>Le score moyen du test de son est <?php echo $data['avg'][1] ?>.</h1>
+        </div>
+
+        <div class="container">
+          <div class="text">
+            <div class="top-text">
+              <span>Score moyen</span>
+            </div>
+            <div class="bottom-text">
+              <span>Test stress</span>
+            </div>
+          </div>
+          <div class="score">
+            <i class="fas fa-heartbeat"><?php echo $data['avg'][2]?></i>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="text">
+            <div class="top-text">
+              <span>Score moyen</span>
+            </div>
+            <div class="bottom-text">
+              <span>Test stress</span>
+            </div>
+          </div>
+          <div class="score">
+            <i class="fas fa-eye"><?php echo $data['avg'][3]?></i>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
-<div id="canvas-holder" style="width:50%">
-    <canvas id="chart-area-doughnut"></canvas>
-</div>
-<button id="changeCircleSize">Semi/Full Circle</button>
-    <br>
-    <br>
-    <div style="width:50%;">
-        <canvas id="chart-area-bar"></canvas>
+    <div class="charts">
+      <div class="graph" id="canvas-holder">
+          <canvas id="chart-area-doughnut"></canvas>
+          <button id="changeCircleSize">Semi/Full Circle</button>
+      </div>
+          <br>
+          <br>
+      <div class="graph">
+          <canvas id="chart-area-bar"></canvas>
+          <button id="changeMonth">change</button>
+      </div>
     </div>
-    <button id="changeMonth">change</button>
+
     <script>
 
         let randomScalingFactor = function() {
@@ -128,7 +165,7 @@ $this->title = "Forum";?>
                         <?php echo $data['bar']['nbTestsWeek'][0]?>,
                     ]
                 }, {
-                    label: 'Nombre de connexions sur le site',
+                    label: 'Nombre de connexions',
                     backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
                     borderColor: window.chartColors.blue,
                     borderWidth: 1,
@@ -176,6 +213,12 @@ $this->title = "Forum";?>
 
 
     </script>
+
+  </div>
+
+
+
+
 
 
 

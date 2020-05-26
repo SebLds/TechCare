@@ -12,7 +12,7 @@
 
     <form action="/test-confirm" method="post">
 
-      <label>Profil du patient</label>
+      <label><i class="far fa-id-badge"></i>Profil du patient</label>
       <div class="selectbox">
         <select name="test-profil">
           <option value="">Choisir un profil</option>
@@ -38,7 +38,7 @@
         <meter value="sight-value" min="0" max="100"></meter>
         <?php endif;  ?>
 
-      <input type="submit" value="Suivant" name="submit-2">
+      <input type="submit" value="Lancer" name="submit-2">
 
     </form>
 

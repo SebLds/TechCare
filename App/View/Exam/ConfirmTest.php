@@ -7,68 +7,42 @@
 
   <div class="form-confirm-test box">
 
-    <h1>Confirmation des informations</h1>
+    <h1>Confirmation des informations du patient</h1>
     <p class="top-text">Veuillez vérifier les informations avant de lancer le test.</p>
-
-
-    <h1>Informations du patient</h1>
-
-    <form action="/test-summary" method="post">
 
       <div class="personnal-info">
 
         <div class="left">
 
-          <label>Prénom</label>
-          <input type="text" name="lastName" placeholder="Romuald">
-          <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+          <label><i class="far fa-user"></i>Prénom</label>
+          <p class="infos"><?php echo $data['firstName']; ?></p>
 
-          <label>Date de naissance</label>
-          <input type="text" name="firstName" placeholder="Monteiro">
-          <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+          <label><i class="far fa-calendar-alt"></i>Date de naissance</label>
+          <p class="infos"><?php echo $data['birthdate']; ?></p>
 
         </div>
 
         <div class="right">
 
-          <label>Nom</label>
-          <input type="text" name="lastName" placeholder="Romuald">
-          <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+          <label><i class="far fa-user-tag"></i>Nom</label>
+          <p class="infos"><?php echo $data['lastName']; ?></p>
 
-          <label>Numéro de sécu</label>
-          <input type="text" name="lastName" placeholder="Romuald">
-          <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
+          <label><i class="far fa-envelope"></i>Adresse email</label>
+          <p class="infos"><?php echo $data['mail']; ?></p>
 
         </div>
 
       </div>
 
-      <h1>Informations du test</h1>
+      <div class="bottom">
 
-      <div class="summary-test">
-
-        <div class="left">
-
-          <label>Type de test</label>
-          <input type="text" name="lastName" placeholder="Romuald">
-          <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
-
-        </div>
-
-        <div class="right">
-
-          <label>Score</label>
-          <input type="text" name="lastName" placeholder="Romuald">
-          <p class="error-msg"><?php if(isset($error_passwordConfirm)) { echo $error_passwordConfirm; }?></p>
-
-        </div>
+        <label><i class="far fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
+        <p class="infos"><?php echo $data['healthNumber']; ?></p>
 
       </div>
-
-      <a href="/test-summary"><button type="button" name="button">Suivant</button></a>
-
-
-    </form>
+      <div class="btn-submit">
+          <a href="/test-summary"><button>Lancer</button></a>
+      </div>
 
   </div>
 
