@@ -119,7 +119,7 @@ class RegisterController extends Controller {
           if(empty($errors)) {
             $registrationdate = Model::getDate();
             $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
-            $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['healthNumber'], $registrationdate);
+            $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $company, $data['healthNumber'], $registrationdate);
             header("Location: /login");
           } else {
             $data = [$data, $errors];

@@ -17,9 +17,18 @@ class DashboardController extends Controller {
   }
 
   public function index()  {
-    $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
-    $test = $this->test->getUserTests($healthNumber);
-    $this->generateView(array('User_test' => $test),"index");
+
+    if ($_SESSION['sessionStatus'] == 1) {
+      $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
+      $test = $this->test->getUserTests($healthNumber);
+      $this->generateView(array('User_test' => $test),"index");
+    }
+
+    if ($_SESSION['sessionStatus'] == 2) {
+      $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+      $test = $this->test->getDoctorTests($doctor);
+      $this->generateView(array('User_test' => $test),"index");
+    }
 
     //switch (Session::getInstance()->getAttribute('sessionStatus')){
         //case 0:
@@ -29,6 +38,21 @@ class DashboardController extends Controller {
             //$this->generateView(array(),'index');
             //break;
     }
+
+
+    public function searchPatient() {
+
+      if (isset($_POST['search'])) {
+        $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+        echo $doctor;
+        //$result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
+        //echo $result;
+      }
+    }
+
+
+
+  }
 
 
 

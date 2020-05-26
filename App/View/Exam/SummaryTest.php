@@ -17,20 +17,20 @@
             <div class="left">
 
               <label>Prénom</label>
-              <p class="infos"><?php echo $data['firstName']; ?></p>
+              <p class="infos"><?php echo $data[0]['firstName']; ?></p>
 
               <label>Date de naissance</label>
-              <p class="infos"><?php echo $data['birthdate']; ?></p>
+              <p class="infos"><?php echo $data[0]['birthdate']; ?></p>
 
             </div>
 
             <div class="right">
 
               <label>Nom</label>
-              <p class="infos"><?php echo $data['lastName']; ?></p>
+              <p class="infos"><?php echo $data[0]['lastName']; ?></p>
 
               <label>Numéro de sécu</label>
-              <p class="infos"><?php echo $data['healthNumber']; ?></p>
+              <p class="infos"><?php echo $data[0]['healthNumber']; ?></p>
 
             </div>
 
@@ -62,7 +62,7 @@
 
               <label>Commentaire</label>
               <textarea name="comment" rows="3" placeholder="Ecrivez votre commentaire ici"></textarea>
-              <p class="error-msg"><?php if(isset($error_comment)) { echo $error_comment; }?></p>
+              <p class="error-msg"><?php if(isset($data[1]['error_comment'])) { echo $data[1]['error_comment']; }?></p>
 
             </div>
 
