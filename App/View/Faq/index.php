@@ -11,8 +11,8 @@
     <?php endif; ?>
 
     <form class="search" action="/index.php">
-        <a href="/homepage.php"><i class="fas fa-search fa-2x icon"></i></a>
         <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
+        <a href="/homepage.php"><i class="fas fa-search fa-2x icon"></i></a>
     </form>
 
     <div class="accordion">

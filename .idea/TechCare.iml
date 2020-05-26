@@ -16,7 +16,6 @@
     <orderEntry type="library" name="jquery-3.4.1" level="application" />
     <orderEntry type="library" name="all" level="application" />
     <orderEntry type="library" name="jquery-3.2.1" level="application" />
-    <orderEntry type="module" module-name="Alpha" />
     <orderEntry type="module" module-name="HTML-CSS sujet 1" />
     <orderEntry type="library" name="jquery-3.5.1" level="application" />
     <orderEntry type="library" name="Chart.js" level="application" />

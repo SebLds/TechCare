@@ -10,6 +10,7 @@ class ErrorController extends Controller
 {
     public function index()
     {
+        $this->generateView(array(),'index');
     }
 
     public function generateError(int $id){

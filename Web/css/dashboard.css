@@ -154,7 +154,7 @@ td, th {
 
 .result {
   box-shadow: 0 0 0.3em 0 rgba(168,158,168,1);
-  border-style: 5px black solid;
+  border: solid 5px black;
 }
 
 tr {

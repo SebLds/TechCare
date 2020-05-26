@@ -119,13 +119,18 @@ footer .footer-company-about a{
 
 footer .footer-submit {
     display: inline-block;
-    width: 100%;
     margin-top: 2em;
+    width: 100%;
+}
+
+.footer-submit form{
+    flex-direction: row !important;
 }
 
 footer .footer-input {
-    padding: 0.9em;
+    padding: 0.8em;
     border: 0;
+    font-size: 0.8em !important;
     margin-top: 1.5em;
     border-radius: 3px;
 }
@@ -134,6 +139,7 @@ footer input[type="submit"] {
     background-color: #A8CAE9;
     color: white;
     cursor: pointer;
+    margin-left: 1em;
     text-transform: uppercase;
 }
 
