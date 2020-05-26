@@ -60,9 +60,10 @@
 
   "LOGIN-title":"Log in to Infinite Measures",
   "LOGIN-titlebis":"Or register",
-  "LOGIN-id":"Log In",
+  "LOGIN-login":"Log In",
   "LOGIN-password":"Password",
   "LOGIN-fortgetpassword":"Forget password ?",
+  "LOGIN-submit":"Log In",
 
   "HOME-psychotechnicaltest":"Psychotechnical test",
   "HOME-psychotechnicaltest2":"at the cutting edge of technology",

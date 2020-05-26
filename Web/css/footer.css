@@ -156,6 +156,13 @@ footer .footer-icons a:hover{
     background-color: #92999f;
 }
 
+#img-flag  {
+  width: 25px;
+  height: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1680px) {
     footer {
         font-size: 12pt;
