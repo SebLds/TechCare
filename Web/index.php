@@ -21,7 +21,7 @@ Autoloader::addNamespace('src\Config', '../src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-var_dump($_SESSION);
+//var_dump($_SESSION);
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -82,6 +82,6 @@ $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
 $router->get('/statistics','Admin#stats');
 
-
+$router->get('/error','Error#index');
 
 $router->run();
