@@ -125,6 +125,7 @@ footer .footer-submit {
 
 .footer-submit form{
     display: inline-block !important;
+    white-space:nowrap;
 }
 
 footer .footer-input {
@@ -146,7 +147,7 @@ footer input[type="submit"] {
 }
 
 footer input[type="email"] {
-    width: 35% !important;
+    width: 40% !important;
 }
 
 footer .footer-icons{

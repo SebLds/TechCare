@@ -107,12 +107,12 @@
     <section id="cta" class="wrapper style4">
         <div class="inner">
             <div>
-                <h2>Notre équipe d'ingénieurs</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+                <h2>Tester vos aptitudes psychomotrices</h2>
+                <p>Nous sommes agrégés par le gourvenment pour vous faire passer notre test.</p>
             </div>
             <ul class="actions stacked">
-                <li><a href="#" class="btn fit primary">Activate</a></li>
-                <li><a href="#" class="btn fit">En savoir plus</a></li>
+                <li><a href="/register" class="btn fit primary"><span data-i18n="HOME-register"></span></a></li>
+                <li><a href="/about" class="btn fit">À propos</a></li>
             </ul>
         </div>
     </section>

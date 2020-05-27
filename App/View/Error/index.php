@@ -3,6 +3,8 @@
 <link href="/Web/css/error.css" rel="stylesheet">
 
 <div id="body">
-    <div><img class="logo-error" src="/Web/images/logo.png"></div>
-    <div class="message"><?php echo 'Erreur 404';?></div>
+    <a href="/homepage#banner"><img class="logo-error" src="/Web/images/logo.png"></a>
+    <p class="message"><?php echo 'Erreur 404';?><br/>
+        <span>Vous avez sûrement fait fausse route !</span>
+    </p>
 </div>
