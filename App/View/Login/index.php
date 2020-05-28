@@ -11,7 +11,6 @@
     <h2><a href="/register"><span data-i18n="LOGIN-titlebis"></span></h2></a>
 
     <p class="error-msg"><?php if(isset($error_login)) { echo $error_login; }?></p>
-    <?php echo getText('REGISTER-title'); ?>
 
       <form method="post">
 

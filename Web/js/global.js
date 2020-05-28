@@ -1,6 +1,6 @@
 jQuery(function($) {
     $.i18n( {
-        locale: 'en'
+        locale: 'fr'
     } )
     $.i18n().load({
         'en': '/Web/js/jquery.i18n/languages/en.json',
@@ -48,8 +48,3 @@ jQuery(function($) {
 //     }
 //     xmlhttp.open("GET", "getuser.php?id=" + str, true);
 //     xmlhttp.send();
-
-
-
-
-
