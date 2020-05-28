@@ -6,7 +6,6 @@
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^infinitemeasures.herokuapp.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^infinitemeasures.herokuapp.com$
-RewriteCond %{HTTPS} =on
 #RewriteCond %{REQUEST_URI} !Web/
 #RewriteRule (.*) /Web/$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f

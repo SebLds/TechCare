@@ -27,7 +27,7 @@ $this->title = "Login" ?>
         <a href="/set-new-password"><h3 data-i18n="LOGIN-fortgetpassword">Mot de passe oublié</h3></a>
         <p class="error"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
-        <input type="submit" value="<?php use src\Controller; echo Controller::getText('LOGIN-submit'); ?>" name="login">
+        <input type="submit" value="Se connecter" name="login">
 
       </form>
 
