@@ -42,12 +42,12 @@
 
 <body>
 <?php if(Session::getInstance()->getAttribute('sessionStatus')>0):?>
-<?php if (is_file('../App/View/sidebar.php')){require_once 'sidebar.php';} ?>
+<?php if (is_file('App/View/sidebar.php')){require_once 'sidebar.php';} ?>
 <?php if (isset($content)){echo $content;} ?>
 <?php else:?>
-<?php if (is_file('../App/View/header.php')){require_once 'header.php';} ?>
+<?php if (is_file('App/View/header.php')){require_once 'header.php';} ?>
 <?php if (isset($content)){echo $content;} ?>
-<?php if (is_file('../App/View/footer.php')){require_once 'footer.php';} ?>
+<?php if (is_file('App/View/footer.php')){require_once 'footer.php';} ?>
 <?php endif; ?>
 
 

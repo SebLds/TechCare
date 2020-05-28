@@ -1,4 +1,6 @@
-<?php $this->title = "Login" ?>
+<?php use src\Controller;
+
+$this->title = "Login" ?>
 
 <link rel="stylesheet" href="/Web/css/login.css">
 <link rel="stylesheet" href="/Web/css/form.css">

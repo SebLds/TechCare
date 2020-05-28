@@ -7,11 +7,15 @@ jQuery(function($) {
         'fr': '/Web/js/jquery.i18n/languages/fr.json',
     }).done(function() {
         $('html').i18n();
-        $('.locale-switcher').on('click', 'a', function changeLang(e) {
-            e.preventDefault();
-            console.log($(this).data('locale'));
-            $.i18n().locale = $(this).data('locale');
-        })
+        $('.img-flag').on('click', function(event) {
+            event.preventDefault();
+            $.i18n( {
+                locale: 'fr'
+            } )
+            // $.i18n().locale = $(this).data('locale');
+            alert('ca marche !')
+        });
+
         }
     );
 });
