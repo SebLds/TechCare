@@ -49,7 +49,7 @@ class User extends Model {
 
     public function getID($mail) {
         try {
-            $sqlStatement = 'SELECT ID_Users FROM r4bgjpcm5dhsnnye.users WHERE mail = :mail';
+            $sqlStatement = 'SELECT ID_Users FROM users WHERE mail = :mail';
         } catch (ConfigException $e) {
         }
         $user = $this -> executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
@@ -58,7 +58,7 @@ class User extends Model {
 
     public function getStatus($ID) {
         try {
-            $sqlStatement = 'SELECT status FROM r4bgjpcm5dhsnnye.users WHERE ID_Users = :ID_Users';
+            $sqlStatement = 'SELECT status FROM users WHERE ID_Users = :ID_Users';
         } catch (ConfigException $e) {
         }
         $user = $this -> executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
@@ -123,7 +123,7 @@ class User extends Model {
     }
 
     public function checkLogin($mail, $password) {
-        $sqlStatement = 'SELECT * FROM r4bgjpcm5dhsnnye.users WHERE mail = :mail';
+        $sqlStatement = 'SELECT * FROM users WHERE mail = :mail';
         try {
             $user = $this->executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) {
