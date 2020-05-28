@@ -10,6 +10,7 @@
         <div class="inner">
             <h2>Infinite Measures</h2>
             <p><span data-i18n="HOME-psychotechnicaltest"></span><br/>
+              <?php echo "ok"; ?>
                 <span data-i18n="HOME-psychotechnicaltest2"></span><br />
                 <span data-i18n="HOME-psychotechnicaltest3"></span></p>
             <ul class="actions special">
