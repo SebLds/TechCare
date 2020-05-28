@@ -4,8 +4,8 @@
 #RewriteRule ^(.*)$ https://votre-domaine.fr/$1 [R=301, L]
 
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^infinitemeasures.com$ [NC,OR]
-RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
+RewriteCond %{HTTP_HOST} ^infinitesmeasures.herokuapp.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^infinitesmeasures.herokuapp.com$
 #RewriteCond %{REQUEST_URI} !Web/
 #RewriteRule (.*) /Web/$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
