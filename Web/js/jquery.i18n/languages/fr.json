@@ -4,7 +4,7 @@
       "TechCare"
     ],
     "last-updated": "2020-05-11",
-    "locale": "en",
+    "locale": "fr",
     "other-metadata": "sample json format"
   },
   "home": "Accueil",
@@ -61,9 +61,9 @@
   "LOGIN-fortgetpassword":"Mot de passe oublié ?",
 
   "HOME-psychotechnicaltest":"Test psychotechnique",
-  "HOME-psychotechnicaltest2"="à la pointe de la technologie",
-  "HOME-psychotechnicaltest3"="certifié par les organismes gouvernementaux.",
-  "HOME-register"="S'inscrire",
+  "HOME-psychotechnicaltest2":"à la pointe de la technologie",
+  "HOME-psychotechnicaltest3":"certifié par les organismes gouvernementaux.",
+  "HOME-register":"S'inscrire",
   "HOME-learnmore":"En savoir plus"
 
 }

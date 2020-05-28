@@ -509,7 +509,7 @@ label #sidebar_btn:hover{
   justify-content: center;
 }
 
-#img-flag {
+.img-flag {
   width: 30px;
   height: 30px;
   cursor: pointer;

@@ -94,7 +94,7 @@ abstract class Controller
 
     public static function getText($key){
         $lang=$_SESSION['lang'];
-        $json = file_get_contents("../Web/js/jquery.i18n/languages/$lang.json");
+        $json = file_get_contents("Web/js/jquery.i18n/languages/$lang.json");
         $parsed_json = json_decode($json);
         return $parsed_json->{$key};
     }

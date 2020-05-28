@@ -41,7 +41,7 @@ class Config
     private static function getParameters()
     {
         if (self::$parameters == null) {
-            $filePath = "../src/Config/dev.ini";
+            $filePath = "src/Config/dev.ini";
 //            if (!file_exists($filePath)) {
 //                $filePath = "prod.ini";
 //            }
