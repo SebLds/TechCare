@@ -12,9 +12,9 @@ require_once "src/Autoloader.php";
 $dsn = Config::get("dsn");
 $login = Config::get("login");
 $password = Config::get("password");
-var_dump($dsn);
-var_dump($login);
-var_dump($password);
+echo $dsn;
+echo $login;
+echo $password;
 
 Autoloader::addNamespace('src\Router', 'src/Router/');
 Autoloader::addNamespace('src', 'src/');
