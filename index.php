@@ -1,8 +1,7 @@
 <?php
 
 
-
-
+use src\Config\Config;
 use src\Router\Router;
 use src\Session;
 
@@ -10,7 +9,12 @@ use src\Session;
  * /!\ POUR TOUS LES FICHIERS DEFINIR UN NAMESPACE CORRESPONDANT A SA PLACE DANS L'ARCHITECTURE /!\
  */
 require_once "src/Autoloader.php";
-
+$dsn = Config::get("dsn");
+$login = Config::get("login");
+$password = Config::get("password");
+var_dump($dsn);
+var_dump($login);
+var_dump($password);
 
 Autoloader::addNamespace('src\Router', 'src/Router/');
 Autoloader::addNamespace('src', 'src/');
