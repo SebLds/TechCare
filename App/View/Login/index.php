@@ -1,4 +1,6 @@
-<?php $this->title = "Login" ?>
+<?php use src\Controller;
+
+$this->title = "Login" ?>
 
 <link rel="stylesheet" href="/Web/css/login.css">
 <link rel="stylesheet" href="/Web/css/form.css">
@@ -11,7 +13,7 @@
     <h2><a href="/register"><span data-i18n="LOGIN-titlebis"></span></h2></a>
 
     <p class="error-msg"><?php if(isset($error_login)) { echo $error_login; }?></p>
-    <?php echo getText('REGISTER-title'); ?>
+    <?php echo Controller::getText('REGISTER-title'); ?>
 
       <form method="post">
 

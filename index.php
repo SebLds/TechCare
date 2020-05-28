@@ -9,17 +9,17 @@ use src\Session;
 /**
  * /!\ POUR TOUS LES FICHIERS DEFINIR UN NAMESPACE CORRESPONDANT A SA PLACE DANS L'ARCHITECTURE /!\
  */
-require_once "../src/Autoloader.php";
+require_once "src/Autoloader.php";
 
 
-Autoloader::addNamespace('src\Router', '../src/Router/');
-Autoloader::addNamespace('src', '../src/');
-Autoloader::addNamespace('App\Controller','../App/Controller/');
-Autoloader::addNamespace('App\Controller\Forum','../App/Controller/Forum/');
-Autoloader::addNamespace('App\Model\Forum','../App/Model/Forum/');
-Autoloader::addNamespace('App\Model','../App/Model/');
+Autoloader::addNamespace('src\Router', 'src/Router/');
+Autoloader::addNamespace('src', 'src/');
+Autoloader::addNamespace('App\Controller','App/Controller/');
+Autoloader::addNamespace('App\Controller\Forum','App/Controller/Forum/');
+Autoloader::addNamespace('App\Model\Forum','App/Model/Forum/');
+Autoloader::addNamespace('App\Model','App/Model/');
 
-Autoloader::addNamespace('src\Config', '../src/Config/');
+Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
 
 Session::getInstance();
