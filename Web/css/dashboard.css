@@ -14,7 +14,8 @@
 
 .search-bar {
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
 }
 
 .search-input {
@@ -37,8 +38,14 @@
     left: 2em;
     border: none;
     outline: none;
-    color: red;
+    color: white;
     font-size: 1.3em;
+}
+
+.sub-none{
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .search-input:hover {
@@ -157,7 +164,7 @@
   width: 100%;
 }
 
-#body i {
+table i {
   color: white;
   font-size: 2em;
 }

@@ -1,7 +1,8 @@
+@import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
 * {
   padding: 0;
   margin: 0;
-  font-family: "Lato", Helvetica, sans-serif;
+  font-family: "Lato", FontAwesome, Helvetica, sans-serif;
 }
 
 #body {

@@ -1,11 +1,11 @@
 #body {
+    font-family: FontAwesome;
     flex-direction: column;
     align-items: center;
 }
 
 #body h2 {
     font-size: 2em;
-    letter-spacing: 0.225em;;
     color: black;
     margin-bottom: 2em;
 }
@@ -20,7 +20,7 @@
 .search-input {
     width: 50%;
     margin: 2em 0;
-    padding: 1em 1em 1em 3em;
+    padding: 0.8em 0.8em 0.8em 3em;
     background: rgba(168, 202, 233, 1);
     border: none;
     outline: none;
@@ -41,6 +41,12 @@
     font-size: 1.3em;
 }
 
+.sub-none{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
 .search-input:hover {
     background: rgba(168, 202, 233, 0.8);
 }
@@ -51,10 +57,11 @@
 .search-input::placeholder {
     color: white;
 }
+
+
 .accordion {
     width: 60vw;
 }
-
 .accordion a {
     font-size: 1.4em;
     position: relative;
