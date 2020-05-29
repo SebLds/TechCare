@@ -92,11 +92,11 @@
                     <p>La reproduction sonore d'un son émis à une fréquence défini permet de prévenir du toute faiblesses d'audition nécessaire pour les patients.</p>
                 </li>
                 <li class="icon watch">
-                    <h3>Temps de réaction sonore</h3>
+                    <h3>Temps de réaction à un stimulus sonore</h3>
                     <p>Le temps de réaction sonore est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
                 </li>
                 <li class="icon vision">
-                    <h3>Temps de réaction visuel</h3>
+                    <h3>Temps de réaction à un stimulus visuel</h3>
                     <p>Le temps de réaction visuel est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
                 </li>
             </ul>
