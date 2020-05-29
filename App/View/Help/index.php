@@ -49,14 +49,14 @@
                             Selon la similarité des deux sons (ou fréquences), nous serons alors capable de déterminer quelles sont vos faiblesses auditives.</p>
                     </li>
                     <li class="icon watch">
-                        <h3>Temps de réaction sonore</h3>
+                        <h3>Temps de réaction à un stimulus sonore</h3>
                         <p>L'objectif de ce test est de tester votre réactivité auditive, en complément du "niveau d'audition".<br><br>
                             Grâce à un casque auditif qui sera posé sur vos oreilles, des sons vous seront transmis.
                             Lorsque vous en entendrez un, il faudra appuyer le plus rapidement possible sur le bouton que le médecin vous indiquera préalablement.
                             Selon votre rapidité, nous serons alors capable de déterminer quels sons vous percevez bien, ou mal, dans les aigus et les graves.</p>
                     </li>
                     <li class="icon vision">
-                        <h3>Temps de réaction visuel</h3>
+                        <h3>Temps de réaction à un stimulus visuel</h3>
                         <p>L'objectif de ce test est de tester votre réactivité visuelle.<br><br>
                             Grâce une lampe LED, vous pourrez voir différentes couleurs apparaîtrent (rouge, vert, bleu). Un bouton sera disponible, préalablement mis en place par le médecin.
                             Lorsque vous verrez une couleur, quelle qu'elle soit, vous appuirez le plus rapidement possible sur le bouton.
