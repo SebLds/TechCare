@@ -1,19 +1,16 @@
 #body {
-    font-family: "Lato", Helvetica, sans-serif;
-    font-size: 15pt;
+    font-family: FontAwesome;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
 #body h2 {
     font-size: 2em;
-    letter-spacing: 0.225em;;
     color: black;
     margin-bottom: 2em;
 }
 
-.search{
+.search-bar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,10 +18,9 @@
 }
 
 .search-input {
-    width: 100%;
-    max-width: 25em;
+    width: 50%;
     margin: 2em 0;
-    padding: 1em;
+    padding: 0.8em 0.8em 0.8em 3em;
     background: rgba(168, 202, 233, 1);
     border: none;
     outline: none;
@@ -37,11 +33,18 @@
 
 .icon {
     cursor: pointer;
-    padding: 1em;
+    position: relative;
+    left: 2em;
     border: none;
     outline: none;
-    color: rgba(168, 202, 233, 1);
+    color: white;
     font-size: 1.3em;
+}
+
+.sub-none{
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .search-input:hover {
@@ -54,17 +57,18 @@
 .search-input::placeholder {
     color: white;
 }
-.accordion{
+
+
+.accordion {
     width: 60vw;
 }
-
 .accordion a {
     font-size: 1.4em;
     position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 1em 3em 1em 1em;
+    padding: 1em 2em 1em 1em;
     color: #7288a2;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -123,6 +127,7 @@
   text-decoration: none;
 }
 
+
 @media screen and (width: 1680px) {
     #body {
         font-size: 13pt;
@@ -146,5 +151,11 @@
     #body {
         font-size: 10pt;
         letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #body {
+        font-size: 9pt;
     }
 }

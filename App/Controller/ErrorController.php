@@ -10,7 +10,12 @@ class ErrorController extends Controller {
         $this->generateView(array(),'index');
     }
 
-/*    public function generateError(int $id){
+    public function forbiddenAccess()
+    {
+        $this->generateView(array(),'forbiddenAccess');
+    }
+
+    public function generateError(int $id){
         switch ($id){
             case 404:
                 $this->generateView(array(),'error404');

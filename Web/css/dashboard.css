@@ -12,9 +12,51 @@
     margin-bottom: 2em;
 }
 
-.searchBar {
-  display: flex;
-  align-self: flex-start;
+.search-bar {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.search-input {
+    width: 50%;
+    margin: 2em 0;
+    padding: 1em 1em 1em 3em;
+    background: rgba(168, 202, 233, 1);
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
+    transition: background .4s, box-shadow .2s;
+}
+
+.icon {
+    cursor: pointer;
+    position: relative;
+    left: 2em;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1.3em;
+}
+
+.sub-none{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.search-input:hover {
+    background: rgba(168, 202, 233, 0.8);
+}
+
+.search-input:focus {
+    background: rgba(168, 202, 233, 0.8);
+}
+.search-input::placeholder {
+    color: white;
 }
 
 /*
@@ -40,16 +82,6 @@
     border-radius: 4px;
     box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
     transition: background .4s, box-shadow .2s;
-}
-.search-input:hover {
-    background: rgba(168, 202, 233, 0.8);
-}
-
-.search-input:focus {
-    background: rgba(168, 202, 233, 0.8);
-}
-.search-input::placeholder {
-    color: white;
 }
 
 #testResume{
@@ -84,7 +116,7 @@
     box-shadow: none !important;
     color: black;
 }
-/*
+
 .comment{
     margin-bottom: 2em;
     background-color: whitesmoke;
@@ -132,13 +164,13 @@
   width: 100%;
 }
 
-#body i {
+table i {
   color: white;
   font-size: 2em;
 }
 
 table {
-  border-spacing: 1;
+  border-spacing: 1px;
   border-collapse: collapse;
   background: white;
   border-radius: 10px;
@@ -217,7 +249,4 @@ tbody tr:hover {
   color: #555555;
   background-color: #f5f5f5;
   cursor: pointer;
-}
-.content {
-
 }

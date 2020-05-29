@@ -8,8 +8,7 @@ footer {
     color: white;
     text-align: left;
     bottom: 0;
-    font-size: 13pt;
-    font-family: "Lato";
+    font-size: 12pt;
     padding: 40px;
     border: 0;
 }
@@ -38,7 +37,7 @@ footer h1 span{
 
 footer .footer-links{
     color:  #fff;
-    margin: 5em 0 1em 0;
+    margin: 8em 0 1em 0;
     padding: 0;
     text-decoration: none;
 }
@@ -125,6 +124,7 @@ footer .footer-submit {
 
 .footer-submit form{
     display: inline-block !important;
+    white-space: nowrap;
 }
 
 footer .footer-input {
@@ -146,7 +146,7 @@ footer input[type="submit"] {
 }
 
 footer input[type="email"] {
-    width: 35% !important;
+    width: 40% !important;
 }
 
 footer .footer-icons{
@@ -182,14 +182,13 @@ footer .footer-icons a:hover{
 }
 
 @media screen and (max-width: 1280px) {
+    .footer-submit form {
+        display: block !important;
+    }
+
     footer {
         font-size: 11pt;
-    }
-}
-@media screen and (max-width: 1100px) {
-    footer {
-        font-size: 10pt;
-        display: block;
+        display: block !important;
     }
     footer .footer-left,
     footer .footer-center,
@@ -199,11 +198,20 @@ footer .footer-icons a:hover{
         align-items: center;
     }
 
+    footer .footer-links{
+        margin: 4em 0 1em 0;
+    }
+
     footer .footer-center {
         margin: 2.5em 0;
         padding: 2.5em 0;
         position: relative;
         border-top: 1px solid gray;
         border-bottom: 1px solid gray;
+    }
+}
+@media screen and (max-width: 1100px) {
+    footer {
+        font-size: 10pt;
     }
 }
