@@ -7,7 +7,7 @@
     <div id="page-wrapper">
         <!-- Banner -->
         <section id="banner">
-            <div class="inner">
+            <div>
                 <h2>Besoin d'aide ?</h2>
             </div>
         </section>

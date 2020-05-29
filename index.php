@@ -54,7 +54,7 @@ $router->get('/profil',"Profil#index");
 $router->post('/profil',"Profil#change");
 
 /**Aides**/
-$router->get('/aides', "Aides#index");
+$router->get('/help', "Aides#index");
 
 /**Test**/
 $router->get('/test',"Exam#index");
