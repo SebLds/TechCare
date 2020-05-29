@@ -38,13 +38,15 @@ class Test extends Model {
   public function getListScoreTest($typeScore){
       $sqlStatement='SELECT score FROM test WHERE type = :typeScore';
       try {
-          $listScoreTest=[];
-          for ($i=0;$i<count($this->executeRequest($sqlStatement,array('typeScore' => $typeScore))->fetchAll(PDO::FETCH_OBJ));$i++){
-              $listScoreTest[]=$this->executeRequest($sqlStatement,array('typeScore' => $typeScore))->fetchAll(PDO::FETCH_OBJ)[$i]->score;
-          }
-          return $listScoreTest;
+          $scores = $this->executeRequest($sqlStatement, array('typeScore' => $typeScore))->fetchAll(PDO::FETCH_OBJ);
       } catch (ConfigException $e) {
       }
+      $size=count($scores);
+      $listScoreTest=[];
+      for ($i=0;$i<$size;$i++){
+          $listScoreTest[]=$scores[$i]->score;
+      }
+      return $listScoreTest;
   }
 
   public function addComment($comment, $healthNumber) {

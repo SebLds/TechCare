@@ -177,12 +177,16 @@ class AdminController extends Controller {
 
   public function stats() {
         $averageAgePatient=0;
-      for($i=0;$i<count($this->user->getAgeListPatient());$i++){
-          $averageAgePatient+=(int)$this->user->getAgeListPatient()[$i];
+        $ageListPatient =$this->user->getAgeListPatient();
+      $size=count($ageListPatient);
+      for($i=0;$i<$size;$i++){
+          $averageAgePatient+=(int)$ageListPatient[$i];
         }
-      $averageAgePatient=floor($averageAgePatient/count($this->user->getAgeListPatient()));
+      $averageAgePatient=floor($averageAgePatient/$size);
+
       $nbUsers=(int) $this->user->getNbUsers();
-      $nbTests=$this->test->getNbTests();
+      $nbTests=(int) $this->test->getNbTests();
+
       $averageScoreSound = round($this->averageScore('sound'));
       $averageScoreStress = round($this->averageScore('stress'));
       $averageScoreSight = round($this->averageScore('sight'));
@@ -204,7 +208,6 @@ class AdminController extends Controller {
               $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
           }
       }
-        var_dump($nbTestsWeek);
       $data=['doughnut'=> $nbUsersByStatus,
              'bar'=> ['date'=>$listDate,
                       'nbTestsWeek'=>$nbTestsWeek],
@@ -216,10 +219,12 @@ class AdminController extends Controller {
 
     private function averageScore($type) {
         $averageScore=0;
-        for ($i=0;$i<count($this->test->getListScoreTest($type));$i++){
-            $averageScore+=$this->test->getListScoreTest($type)[$i];
+        $listScore=$this->test->getListScoreTest($type);
+        $size=count($listScore);
+        for ($i=0;$i<$size;$i++){
+            $averageScore+=$listScore[$i];
         }
-        $averageScore=$averageScore/count($this->test->getListScoreTest($type));
+        $averageScore=$averageScore/$size;
         return $averageScore;
     }
 

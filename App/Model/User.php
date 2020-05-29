@@ -34,9 +34,11 @@ class User extends Model {
         $sqlStatement='SELECT birthdate FROM users WHERE status=1';
         try {
             $ageListPatient=[];
-            for($i=0;$i<count($this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ));$i++){
+            $birthdates=$this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ);
+            $length=count($birthdates);
+            for($i=0;$i<$length;$i++){
                 $date=substr(Model::getDate(),0,10);
-                $birthdate=$this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ)[$i]->birthdate;
+                $birthdate = $birthdates[$i]->birthdate;
                 $date = new DateTime(Model::convertDate($date));
                 $birthdate = new DateTime(Model::convertDate($birthdate));
                 $agePatient = $date->diff($birthdate);
