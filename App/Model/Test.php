@@ -87,7 +87,6 @@ class Test extends Model {
     return $this->executeRequest($sqlStatement, array('doctor' => $doctor))->fetchAll(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {
   }
-
   }
 
 }

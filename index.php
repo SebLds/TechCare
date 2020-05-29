@@ -1,8 +1,7 @@
 <?php
 
 
-
-
+use src\Config\Config;
 use src\Router\Router;
 use src\Session;
 
@@ -23,7 +22,6 @@ Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -88,6 +86,6 @@ $router->get('/admin/edit-faq',"Admin#editFAQIndex");
 $router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
 
-
+$router->get('/error','Error#index');
 
 $router->run();

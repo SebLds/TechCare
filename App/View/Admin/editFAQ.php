@@ -1,9 +1,7 @@
 <?php $this->title = "Add User"; ?>
-
 <link href="/Web/css/form.css" rel="stylesheet">
 
 <div id="body">
-
   <div class="form-register box">
 
     <h1 id="faq-title">Modifier la FAQ</h1>

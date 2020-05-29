@@ -119,22 +119,34 @@ footer .footer-company-about a{
 
 footer .footer-submit {
     display: inline-block;
-    width: 100%;
     margin-top: 2em;
+    width: 100%;
+}
+
+.footer-submit form{
+    display: inline-block !important;
 }
 
 footer .footer-input {
-    padding: 0.9em;
+    padding: 0.8em !important;
     border: 0;
-    margin-top: 1.5em;
+    font-size: 0.8em !important;
+    margin-top: 1.5em !important;
     border-radius: 3px;
+    max-width: 20em;
 }
 
 footer input[type="submit"] {
+    width: 55% !important;
     background-color: #A8CAE9;
     color: white;
     cursor: pointer;
+    margin-left: 1em !important;
     text-transform: uppercase;
+}
+
+footer input[type="email"] {
+    width: 35% !important;
 }
 
 footer .footer-icons{
@@ -154,6 +166,13 @@ footer .footer-icons a{
 
 footer .footer-icons a:hover{
     background-color: #92999f;
+}
+
+#img-flag  {
+  width: 25px;
+  height: 25px;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1680px) {

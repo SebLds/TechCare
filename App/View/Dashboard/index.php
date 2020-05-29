@@ -6,7 +6,6 @@
 <div id="body">
 
     <h2>Dashboard</h2>
-    <?php var_dump($data); ?>
 
     <div class="searchBar">
       <?php if($_SESSION['sessionStatus']==1) : ?>
@@ -57,36 +56,38 @@
 
         <div class="table">
           <table>
-                 <tr>
-                     <th><i class="fal fa-notes-medical"></th>
-                     <th><i class="fal fa-calendar-alt"></i</th>
-                     <th><i class="fal fa-signal"></i></th>
-                     <th><i class="fal fa-id-card"></i></th>
-                     <th><i class="fal fa-user-md"></i></th>
-                 </tr>
+            <thead>
+              <th><i class="fal fa-notes-medical"></th>
+              <th><i class="fal fa-calendar-alt"></i</th>
+              <th><i class="fal fa-signal"></i></th>
+              <th><i class="fal fa-id-card"></i></th>
+              </tr>
+            </thead>
+
                  <?php for ($i=0;$i<count($data['User_test']);$i++):?>
                    <div class="result">
                      <tr>
                          <td>
                            <?php $type = $data['User_test'][$i]->type; ?>
                            <?php if ($type == 'stress'): ?>
-                           Gestion du stress</td>
+                           <i class="far fa-heartbeat"></i>Gestion du stress</td>
                            <?php endif; ?>
                            <?php if ($type == 'sight'): ?>
-                           Acuité visuelle
+                           <i class="far fa-eye"></i>Acuité visuelle
                            <?php endif; ?>
                            <?php if ($type == 'sound'): ?>
-                           Acuité sonore
+                           <i class="far fa-volume"></i>Acuité sonore
                            <?php endif; ?>
                          </td>
-                         <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10);?></td>
-                         <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
                          <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
-                         <td><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td>
+                         <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
+                         <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10);?></td>
+                         <!-- <td><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td> -->
                          <?php endfor; ?>
                      </tr>
                    </div>
          </table>
+
         </div>
 
     <!-- </div> -->

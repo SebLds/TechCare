@@ -378,7 +378,8 @@ header {
 }
 
 .logout_btn {
-  font-size: 1.4em;
+  cursor: pointer;
+  font-size: 1.5em;
   padding: 0.3em;
   text-decoration: none;
   background-color: #A8CAE9;
@@ -443,11 +444,11 @@ header {
 }
 
 #navbar a:hover, #social-network a:hover{
-  background: #19B3D3;
+  background: #A8CAE9;
 }
 
 label #sidebar_btn:hover{
-  color: #19B3D3;
+  color: #A8CAE9;
 }
 
 #link {
@@ -514,34 +515,31 @@ label #sidebar_btn:hover{
   cursor: pointer;
 }
 
-@media only screen and (max-width: 850px)  {
+@media only screen and (max-width: 936px)  {
+    .sidebar{
+      left: -190px;
+      justify-content: space-around;
+    }
 
-.sidebar{
-  left: -190px;
-  justify-content: space-around;
-}
+    .sidebar h1{
+      display: none;
+    }
 
-.sidebar h1{
-  display: none;
-}
+    .sidebar i {
+      font-size: 20px;
+      margin-left: 170px;
+      width: 80px;
+    }
 
-.sidebar i {
-  font-size: 20px;
-  margin-left: 170px;
-  width: 80px;
-}
+    #social-network {
+      flex-direction: column;
+    }
 
-#social-network {
-  flex-direction: column;
-}
+    #copyright, #link {
+      display: none;
+    }
 
-#copyright, #link {
-  display: none;
-}
-
-.left_area h3 {
-  font-size: 1.2em;
-}
-
-
+    .left_area h3 {
+      font-size: 1.2em;
+    }
 }
