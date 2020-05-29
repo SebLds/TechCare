@@ -1,4 +1,4 @@
-<?php  ?> //$this->title = "Aides"
+<?php $this->title = "Aides" ?>
 
 <link rel="stylesheet" type="text/css" href="aides.css"<!--href="/Web/css/cgu.css"-->>
 

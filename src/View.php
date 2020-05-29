@@ -3,6 +3,8 @@
 namespace src;
 
 use src\Config\Config;
+use src\Config\ConfigException;
+use ViewException;
 
 /**
  * Class modeling a view. *
@@ -29,7 +31,7 @@ class View
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
         // La convention de nommage des fichiers vues est : View/<$controller>/<$action>.php
-        $file = "../App/View/";
+        $file = "App/View/";
         if ($controller != "") {
 
             $params=explode("\\",$controller);
@@ -56,7 +58,7 @@ class View
         // Nécessaire pour les URI de type controller/action/id
         $webRoot = Config::get("webRoot", "/");
         // Génération du template commun utilisant la partie spécifique
-        $vue = $this->generateFile('../App/View/template.php',
+        $vue = $this->generateFile('App/View/template.php',
             array('title' => $this->title, 'content' => $content, 'webRoot' => $webRoot,'head_tags'=>$this->head_tags));
         // Renvoi de la vue générée au navigateur
         echo $vue;

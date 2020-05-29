@@ -8,7 +8,12 @@ use App\Model\User;
 
 class LoginController extends Controller {
 
-  public function __construct() {
+    /**
+     * @var User
+     */
+    private User $user;
+
+    public function __construct() {
         $this->user = new User();
   }
 
@@ -57,6 +62,7 @@ class LoginController extends Controller {
             $Status = $this->user->getStatus($ID);
             Session::getInstance()->setAttribute('ID_User', $ID);
             Session::getInstance()->setAttribute('sessionStatus', $Status);
+
             header("Location: /dashboard");
           } else {
             $errors['error_login'] = "Votre mail et/ou votre mot de passe est incorrect";

@@ -4,7 +4,21 @@
 #RewriteRule ^(.*)$ https://votre-domaine.fr/$1 [R=301, L]
 
 RewriteEngine on
-RewriteCond %{HTTP_HOST} ^infinitemeasures.com$ [NC,OR]
+# Prod version
+#RewriteCond %{HTTP_HOST} ^infinitemeasures.herokuapp.com$ [NC,OR]
+#RewriteCond %{HTTP_HOST} ^infinitemeasures.herokuapp.com$
+# Dev Version
+RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
-RewriteCond %{REQUEST_URI} !Web/
-RewriteRule (.*) /Web/$1 [L]
+
+#RewriteCond %{REQUEST_URI} !Web/
+#RewriteRule (.*) /Web/$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+#AuthName "Page d'administration protégée"
+#AuthType Basic
+#AuthUserFile "/home/site/www/admin/.htpasswd"
+#Require valid-user

@@ -10,9 +10,10 @@
     <a href="/admin/edit-faq"><button>Modifier la FAQ</button></a>
     <?php endif; ?>
 
-    <form class="search" action="/index.php">
-        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
+
+    <form class="search">
         <a href="/homepage.php"><i class="fas fa-search fa-2x icon"></i></a>
+        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
     </form>
 
     <div class="accordion">

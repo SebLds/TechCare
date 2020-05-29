@@ -11,7 +11,8 @@
       </div>
       <div class="right_area">
         <div id="flag">
-          <img id="img-flag" onclick="changeLang()" src="../../Web/images/france.png" alt="">
+          <img class="img-flag" data-locale="fr" src="../../Web/images/france.png" alt="">
+            <img class="img-flag" data-locale="en" src="../../Web/images/uk.png" alt="">
         </div>
         <form action="/logout" method="post">
           <button class="logout_btn" type="submit" name="logout"><i class="fas fa-power-off"></i></button>
