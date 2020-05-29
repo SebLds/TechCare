@@ -1,22 +1,22 @@
-<?php $this->title='Aides';?>
+<?php $this->title='Help';?>
 
-<link rel="stylesheet" href="/Web/css/home.css"/>
+<link rel="stylesheet" href="/Web/css/help.css"/>
 
 <div id="body">
     <!-- Page Wrapper -->
     <div id="page-wrapper">
         <!-- Banner -->
-        <section id="banner">
-            <div class="inner">
-                <h2>Besoin d'aide ?</h2>
-            </div>
-        </section>
+
 
 
         <section id="three" class="wrapper style3 special">
             <div class="inner">
                 <div class="major">
-                    <h2>Comment réaliser nos tests ?</h2>
+                    <section id="banner">
+                        <div>
+                            <h2>Comment réaliser nos tests ?</h2>
+                        </div>
+                    </section>
                     <p>Nos tests, conçus pour mesurer vos aptitudes cognitives, auditives et visuelles sont pris en charge par votre médecin.<br>
                         Dans les rubriques ci-dessous, vous aurez une idée de la façon dont ils ont lieu.</p>
                 </div>

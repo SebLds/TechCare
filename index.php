@@ -53,8 +53,8 @@ $router->get('/set-new-password',"ForgetPassword#index");
 $router->get('/profil',"Profil#index");
 $router->post('/profil',"Profil#change");
 
-/**Aides**/
-$router->get('/aides', "Aides#index");
+/**Help**/
+$router->get('/help', "Help#index");
 
 /**Test**/
 $router->get('/test',"Exam#index");
