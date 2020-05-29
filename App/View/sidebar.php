@@ -50,11 +50,6 @@
         <span>•</span>
         <a href="/faq"><span data-i18n="SIDEBAR-faq"></span></a>
       </div>
-      <!-- <div id="social-network">
-          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
-          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
-      </div> -->
       <div id="copyright">
         <p>&copy; Infinite Measures</p>
         <p data-i18n="SIDEBAR-right"></p>
