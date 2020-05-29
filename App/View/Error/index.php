@@ -1,4 +1,4 @@
-<?php $this->title='Erreur 404';?>
+<?php $this->title='Erreur';?>
 
 <link href="/Web/css/error.css" rel="stylesheet">
 
@@ -10,8 +10,8 @@
     <?php if ($_SESSION['sessionsStatus']>0): ?>
     <div> <a href="/dashboard"><img class="logo-error" src="/Web/images/logo.png"></a></div>
     <?php endif: ?>
-    <div>
-    	<div class="message"><?php echo 'Erreur 404';?></div>
+<div>
+    	<div class="message">Erreur 404</div>
         <div>Oups, cette page n'existe pas</div>
     </div>
 </div>

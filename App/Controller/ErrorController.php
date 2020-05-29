@@ -1,15 +1,12 @@
 <?php
 
-
 namespace App\Controller;
-
-
 use src\Controller;
 
 class ErrorController extends Controller {
 
     public function index() {
-        
+
         $this->generateView(array(),'index');
     }
 
