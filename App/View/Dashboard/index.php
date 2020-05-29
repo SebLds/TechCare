@@ -7,19 +7,19 @@
 
     <h2>Dashboard</h2>
 
-    <div class="searchBar">
-      <?php if($_SESSION['sessionStatus']==1) : ?>
-      <form method="post">
-        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un test..." tabindex="1" name="search">
-      </form>
-      <?php endif; ?>
+    <?php if($_SESSION['sessionStatus']==1) : ?>
+        <form method="post" class="search-bar">
+            <a href="#"><i class="fas fa-search fa-2x icon"></i></a>
+            <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un test..." name="search">
+        </form>
+    <?php endif; ?>
 
-      <?php if($_SESSION['sessionStatus']==2) : ?>
-      <form method="post">
-        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." tabindex="1" name="search">
-      </form>
-      <?php endif; ?>
-    </div>
+    <?php if($_SESSION['sessionStatus']==2) : ?>
+        <form method="post" class="search-bar">
+            <a href="#"><i class="fas fa-search fa-2x icon"></i></a>
+            <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." name="search">
+        </form>
+    <?php endif; ?>
 
 <?php if (isset($data)):?>
 

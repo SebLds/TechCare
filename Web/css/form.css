@@ -262,7 +262,7 @@ textarea:focus {
     background-color: #fff;
     display: flex;
     align-items: center;
-    padding-top: 0px;
+    padding-top: 0;
   }
 
   .right {
@@ -272,5 +272,4 @@ textarea:focus {
   .left {
     padding: 0;
   }
-
 }
