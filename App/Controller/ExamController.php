@@ -21,10 +21,23 @@ class ExamController extends Controller {
   }
 
   public function index() {
-      $this->generateView(array(),'index');
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus'] ==1) {
+      header("Location: /dashboard");
+    }
+    $this->generateView(array(),'index');
   }
 
   public function setUpTest() {
+
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus'] ==1) {
+      header("Location: /dashboard");
+    }
 
     if (!empty($_POST)) {
       extract($_POST);
@@ -64,6 +77,13 @@ class ExamController extends Controller {
 
   public function confirmTest() {
 
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus'] ==1) {
+      header("Location: /dashboard");
+    }
+
       $data = [
         'select-profil' => $_POST['test-profil'],
       ];
@@ -100,6 +120,13 @@ class ExamController extends Controller {
     }
 
   public function launchTest() {
+
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus'] ==1) {
+      header("Location: /dashboard");
+    }
     $test = $this->test->getRecentTest($_SESSION['Patient_HealthNumber']);
     $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
     $data = [$test, $user];
@@ -107,6 +134,13 @@ class ExamController extends Controller {
   }
 
   public function submitComment() {
+
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus'] ==1) {
+      header("Location: /dashboard");
+    }
 
     if (isset($_POST['comment'])) {
 

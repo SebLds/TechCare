@@ -46,7 +46,8 @@ class Router
                 return $route->call();
             }
         }
-        throw new RouterException("No matching routes");
+        /*throw new RouterException("No matching routes");*/
+        header("Location: /error");
     }
 
     public function url($name, $params=[]){

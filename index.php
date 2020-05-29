@@ -22,6 +22,7 @@ Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
 
 Session::getInstance();
+
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -36,8 +37,6 @@ $router->get('/faq',"Faq#index");
 $router->get('/cgu',"Cgu#index");
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/contact',"Contact#index");
-$router->get('/dashboard',"Dashboard#index");
-$router->post('/dashboard',"Dashboard#searchPatient");
 
 /**Register**/
 $router->get('/register',"Register#index");
@@ -49,6 +48,10 @@ $router->post('/login',"Login#login");
 $router->post('/logout',"Login#logout");
 $router->get('/set-new-password',"ForgetPassword#index");
 
+/**Dashboard**/
+$router->get('/dashboard',"Dashboard#index");
+$router->post('/dashboard',"Dashboard#searchPatient");
+
 /**Profil**/
 $router->get('/profil',"Profil#index");
 $router->post('/profil',"Profil#change");
@@ -58,11 +61,12 @@ $router->get('/help', "Help#index");
 
 /**Test**/
 $router->get('/test',"Exam#index");
+$router->get('/test-options',"Exam#setUpTest");
 $router->post('/test-options',"Exam#setUpTest");
+$router->get('/test-confirm',"Exam#confirmTest");
 $router->post('/test-confirm',"Exam#confirmTest");
 $router->get('/test-summary',"Exam#launchTest");
 $router->post('/test-summary',"Exam#submitComment");
-$router->get('/set-new-password',"ForgetPassword#index");
 
 /**Contact**/
 $router->get('/contact',"Contact#index");
@@ -70,16 +74,12 @@ $router->post('/contact',"Contact#sendMail");
 $router->get('/contact-admin',"Contact#contactAdminIndex");
 $router->get('/contact-admin',"Contact#contactAdmin");
 
-
-
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
-
-
 
 /**Admin**/
 $router->get('/admin/dashboard',"Admin#index");

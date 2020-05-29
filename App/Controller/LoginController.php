@@ -18,7 +18,12 @@ class LoginController extends Controller {
   }
 
   public function index() {
+    
+    if ($_SESSION['sessionStatus'] != 0) {
+      header("Location: /dashboard");
+    } else {
       $this->generateView(array(),'index');
+    }
   }
 
   public function logout() {

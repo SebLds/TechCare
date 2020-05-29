@@ -6,14 +6,14 @@ namespace App\Controller;
 
 use src\Controller;
 
-class ErrorController extends Controller
-{
-    public function index()
-    {
+class ErrorController extends Controller {
+
+    public function index() {
+        
         $this->generateView(array(),'index');
     }
 
-    public function generateError(int $id){
+/*    public function generateError(int $id){
         switch ($id){
             case 404:
                 $this->generateView(array(),'error404');
@@ -22,7 +22,7 @@ class ErrorController extends Controller
 
         }
 
-    }
+    }*/
 
 
 }

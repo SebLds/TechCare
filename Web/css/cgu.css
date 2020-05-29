@@ -7,14 +7,12 @@
 
 .page h1 {
     font-weight: revert;
-    font-style: italic;
     color: grey;
     text-align: center;
 }
 
 .page h2 {
     font-weight: revert;
-    font-style: italic;
     color: rgb(168, 202, 233);
     text-align: center;
 }

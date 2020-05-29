@@ -27,10 +27,22 @@ class AdminController extends Controller {
 
 
   public function index() {
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus']>0 && $_SESSION['sessionStatus']<2) {
+      header("Location: /dashboard");
+    }
     $this->generateView(array(), 'index');
   }
 
   public function addUserIndex() {
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus']>0 && $_SESSION['sessionStatus']<2) {
+      header("Location: /dashboard");
+    }
     $this->generateView(array(), 'AddUser');
   }
 
@@ -176,6 +188,12 @@ class AdminController extends Controller {
   }
 
   public function stats() {
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+    if ($_SESSION['sessionStatus']>0 && $_SESSION['sessionStatus']<2) {
+      header("Location: /dashboard");
+    }
         $averageAgePatient=0;
         $ageListPatient =$this->user->getAgeListPatient();
       $size=count($ageListPatient);

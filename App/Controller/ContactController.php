@@ -6,8 +6,13 @@ use src\Controller;
 class ContactController extends Controller {
 
     public function index() {
-        $this->generateView(array(),'index');
+      
+      if ($_SESSION['sessionStatus'] != 0) {
+      header("Location: /dashboard");
+    } else {
+      $this->generateView(array(),'index');
     }
+  }
 
     public function contactAdminIndex() {
         $this->generateView(array(),'contactAdmin');

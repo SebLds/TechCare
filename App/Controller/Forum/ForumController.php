@@ -26,8 +26,13 @@ class ForumController extends Controller
     /**
      * Index method that shows the list of tags with information.
      */
-    public function index(){
-        $tags = $this->tag->getTags();
+    public function index() {
+
+        if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+
+    $tags = $this->tag->getTags();
         for ($i=1;$i<=count($tags);$i++){
             $nbThreads[]= $this->tag->getNbThreadsTagById($i);
             $nbReplies[]= $this->tag->getNbRepliesTagById($i);
@@ -36,6 +41,7 @@ class ForumController extends Controller
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
 
     }
+        
 
     /**
      * Research in the database either in all the threads or in all the threads for one tag.

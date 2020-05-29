@@ -6,11 +6,9 @@
         <p class="footer-links">
             <a href="/homepage#banner"><span data-i18n="FOOTER-home"></span></a>
             ·
-            <a href="/forum"><span data-i18n="FOOTER-forum"></span></a>
+            <a href="#"><span data-i18n="FOOTER-about"></span></a>
             ·
             <a href="/homepage#three"><span data-i18n="FOOTER-test"></span></a>
-            ·
-            <a href="#"><span data-i18n="FOOTER-about"></span></a>
             ·
             <a href="/contact"><span data-i18n="FOOTER-contact"></span></a>
             ·
@@ -54,9 +52,9 @@
         </div>
 
         <div class="footer-icons">
-            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.facebook.com/InfiniteMeasuresFr/"><i class="fab fa-facebook fa-2x"></i></a>
             <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/infinite-measures-8454771a5/"><i class="fab fa-linkedin-in fa-2x"></i></a>
             <a href="https://github.com/SebLds/TechCare"><i class="fab fa-github fa-2x"></i></a>
         </div>
 

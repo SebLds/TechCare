@@ -18,6 +18,10 @@ class DashboardController extends Controller {
 
   public function index()  {
 
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
+
     if ($_SESSION['sessionStatus'] == 1) {
       $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
       $test = $this->test->getUserTests($healthNumber);

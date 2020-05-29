@@ -4,6 +4,7 @@
     align-items: center;
     font-size: 15pt;
     font-weight: 400;
+    height: 80vh;
 }
 
 .logo-error {
@@ -23,4 +24,17 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+@media only screen and (max-width: 936px)  {
+
+    body {
+      overflow: hidden;
+    }
+
+  #body {
+    font-size: 0.5em;
+    flex-direction: column;
+  }
+    
 }

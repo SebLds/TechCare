@@ -13,6 +13,10 @@ class ProfilController extends Controller {
   }
 
   public function index() {
+    
+    if ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    }
     $data = $this->user->getProfil($_SESSION['ID_User']);
     $this->generateView($data,'index');
   }
