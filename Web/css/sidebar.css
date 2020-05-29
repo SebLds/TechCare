@@ -348,6 +348,7 @@ header {
   justify-content: space-between;
   flex-direction: row;
   padding: 0 15px 0 15px;
+  z-index: 10000000;
 }
 
 .left_area {
