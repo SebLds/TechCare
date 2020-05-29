@@ -16,6 +16,7 @@ class Config
      *
      * @param string $name Parameter name
      * @param string $defaultValue Default return value
+     * @param $type
      * @return string Parameter value
      * @throws ConfigException
      */
@@ -34,14 +35,17 @@ class Config
     /**
      * Returns the parameter table, loading it if necessary from a configuration file.
      *
+     * @param $type
      * @return array Parameter table
      * @throws ConfigException If no configuration file is found
-     * @throws Exception
      */
     private static function getParameters()
     {
         if (self::$parameters == null) {
-            $filePath = "src/Config/prod.ini";
+            // Prod version
+//            $filePath = "src/Config/prod.ini";
+            // Dev version
+            $filePath = "src/Config/dev.ini";
 //            if (!file_exists($filePath)) {
 //                $filePath = "prod.ini";
 //            }
