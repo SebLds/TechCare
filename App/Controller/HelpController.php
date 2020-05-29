@@ -5,7 +5,7 @@ namespace App\Controller;
 use src\Controller;
 
 
-class AidesController extends Controller
+class HelpController extends Controller
 {
     public function index()
     {

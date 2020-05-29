@@ -7,8 +7,6 @@
 
 #body {
     display: block;
-    margin: 0;
-    padding: 0;
     color: #fff;
     font-family: "Lato", Helvetica, sans-serif;
     font-size: 15pt;
@@ -306,7 +304,7 @@ ul.icons li img {
 
 .features li {
     padding: 3em 4em 4em 6em;
-    text-align: left;
+    text-align: justify;
     width: 50%;
 }
 
@@ -499,20 +497,11 @@ ul.icons li img {
     flex-direction: column;
     justify-content: center;
     cursor: default;
-    height: 100vh; /*vh : viewport height pour avoir la tailel entière du device*/
-    min-height: 35em;
+    height: 50px; /*vh : viewport height pour avoir la tailel entière du device*/
     text-align: center;
     letter-spacing: 0.225em;
 }
 
-#banner h2 {
-    animation: showText ease 1.5s;
-    display: inline-block;
-    font-size: 1.75em;
-    color: black;
-    padding: 0.5em 1em;
-    position: relative;
-}
 
 /*Traits au-dessus et en-dessous du titre*/
 #banner h2::before, #banner h2::after {
