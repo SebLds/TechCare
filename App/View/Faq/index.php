@@ -11,8 +11,8 @@
     <?php endif; ?>
 
 
-    <form class="search">
-        <a href="/homepage.php"><i class="fas fa-search fa-2x icon"></i></a>
+    <form class="search-bar" method="post">
+        <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
         <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
     </form>
 

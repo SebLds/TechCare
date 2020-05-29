@@ -68,19 +68,11 @@
       </div>
 
       <div class="CGU">
-        <input type="checkbox" name="check">
-        <p id="text-CGU"><test data-i18n="REGISTER-cgu1"></test><span><a id="link-cgu" href="/cgu"><test data-i18n="REGISTER-cgu2"></test></a></span></p>
+          <input id="box1" type="checkbox" />
+          <label for="box1" id="text-CGU"><test data-i18n="REGISTER-cgu1"></test><span><a id="link-cgu" href="/cgu"><test data-i18n="REGISTER-cgu2"></test></a></span></label>
       </div>
       <p class="CGU" ><?php if(isset($data[1]['error_cgu'])) { echo $data[1]['error_cgu']; }?></p>
 
-      <div id="test">
-  <input id="box1" type="checkbox" />
-  <label for="box1">Checkbox 1</label>
-  <input id="box2" type="checkbox" />
-  <label for="box2">Checkbox 2</label>
-  <input id="box3" type="checkbox" />
-  <label for="box3">Checkbox 3</label>
-      </div>
       <div class="submit">
         <input type="submit" value="S'inscrire"  name="register">
       </div>

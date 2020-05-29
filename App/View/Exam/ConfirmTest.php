@@ -35,14 +35,12 @@
       </div>
 
       <div class="bottom">
-
         <label><i class="far fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
         <p class="infos"><?php echo $data['healthNumber']; ?></p>
+      </div>
 
-      </div>
-      <div class="btn-submit">
-          <a href="/test-summary"><button>Lancer</button></a>
-      </div>
+
+      <input type="submit" value="Lancer" name="submit-3" onclick="location.href='/test-summary';">
 
   </div>
 
