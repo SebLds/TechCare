@@ -23,37 +23,6 @@
 
 <?php if (isset($data)):?>
 
-    <!-- <div class="testResume">
-        <ul class="testResumeID title">
-            <li><i class="fal fa-notes-medical"></i></li>
-            <li><i class="fal fa-calendar-alt"></i></li>
-            <li><i class="fal fa-signal"></i></li>
-            <li><i class="fal fa-id-card"></i></li>
-            <li><i class="fal fa-user-md"></i></li>
-            <li><div class="content"></div></li>
-        </ul>
-
-        <?php for ($i=0;$i<count($data['User_test']);$i++):?>
-        <ul class="testResumeID">
-            <li id="type">
-              <?php $type = $data['User_test'][$i]->type; ?>
-              <?php if ($type == 'stress'): ?>
-               Gestion du stress
-              <?php endif; ?>
-              <?php if ($type == 'sight'): ?>
-               Acuité visuelle
-              <?php endif; ?>
-              <?php if ($type == 'sound'): ?>
-                Acuité sonore
-              <?php endif; ?>
-            </li>
-            <li id="date"><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10) ;?></li>
-            <li ><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</li>
-            <li><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></li>
-            <li><button>Commentaire médecin</button></li>
-        </ul>
-        <?php endfor; ?> -->
-
         <div class="table">
           <table>
             <thead>
@@ -61,6 +30,7 @@
               <th><i class="fal fa-calendar-alt"></i</th>
               <th><i class="fal fa-signal"></i></th>
               <th><i class="fal fa-id-card"></i></th>
+              <th><i class="far fa-comment-dots"></i></th>
               </tr>
             </thead>
 
@@ -82,7 +52,7 @@
                          <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
                          <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
                          <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10);?></td>
-                         <!-- <td><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td> -->
+                         <td class="content"><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td>
                          <?php endfor; ?>
                      </tr>
                    </div>
