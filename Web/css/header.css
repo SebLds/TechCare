@@ -85,9 +85,10 @@ header {
 }
 
 button {
+    cursor: pointer;
     background-color: rgba(168, 202, 233, 1);
     border: none;
-    text-transform: uppercase;
+    outline: none;
     border-radius: 0.25em;
     color: #fff;
     font-size: 1em;
@@ -96,7 +97,6 @@ button {
     letter-spacing: 0.225em;
     max-width: 30em;
     padding: 0 2em;
-    text-decoration: none;
     text-transform: uppercase;
 }
 
