@@ -25,14 +25,14 @@ class DashboardController extends Controller {
     if ($_SESSION['sessionStatus'] == 1) {
       $healthNumber = $this->user->getHealthNumber($_SESSION['ID_User']);
       $test = $this->test->getUserTests($healthNumber);
-      $this->generateView(array('User_test' => $test),'index');
-    }
 
-    if ($_SESSION['sessionStatus'] == 2) {
+      $this->generateView(array('User_test' => $test),'index');
+    }elseif ($_SESSION['sessionStatus'] == 2) {
       $doctor = $this->user->getDoctor($_SESSION['ID_User']);
       $test = $this->test->getDoctorTests($doctor);
       $this->generateView(array('User_test' => $test),"index");
     }
+
 
     //switch (Session::getInstance()->getAttribute('sessionStatus')){
         //case 0:
@@ -42,6 +42,7 @@ class DashboardController extends Controller {
             //$this->generateView(array(),'index');
             //break;
     }
+
 
 
     public function searchPatient() {

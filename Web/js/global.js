@@ -15,10 +15,29 @@ jQuery(function($) {
             // $.i18n().locale = $(this).data('locale');
             alert('ca marche !')
         });
-
         }
     );
+    // $('a').on('click',function(event){
+    //     event.preventDefault();
+    //     let $a = $(this);
+    //     let url =$a.attr('href');
+    //     $.ajax(url)
+    //         .done(function(){
+    //             $("#content").load(url);
+    //             })
+    //         .fail(function(){
+    //             alert('fail !');
+    //         })
+    // })
 });
+// $.get(
+//     '/', // Le fichier cible côté serveur.
+//     'false', // Nous utilisons false, pour dire que nous n'envoyons pas de données.
+//     nom_fonction_retour, // Nous renseignons uniquement le nom de la fonction de retour.
+//     'text' // Format des données reçues.
+// );
+
+
 
 
 // function showUser(str)
