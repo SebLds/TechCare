@@ -13,7 +13,14 @@ jQuery(function($) {
                 locale: 'fr'
             } )
             // $.i18n().locale = $(this).data('locale');
-            alert('ca marche !')
+            // alert('ca marche !')
+            $.ajax()
+                .done(function(){
+                    $("*[data-18n]").load();
+                })
+                .fail(function(){
+                    alert('fail !');
+                })
         });
         }
     );
