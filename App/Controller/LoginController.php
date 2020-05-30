@@ -18,7 +18,14 @@ class LoginController extends Controller {
   }
 
   public function index() {
-      $this->generateView(array(),'index');
+      $currentUrl=$_GET['url'];
+        if($_SESSION['sessionStatus']>0){
+            var_dump($_SERVER['HTTP_REFERER']);
+//            header("Location: $currentUrl");
+        }else{
+            $this->generateView(array(),'index');
+
+        }
   }
 
   public function logout() {

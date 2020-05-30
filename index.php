@@ -87,5 +87,9 @@ $router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
 
 $router->get('/error','Error#index');
+$router->get('/testtamer',function(){
+    require 'App/View/Dashboard/index.php';
+});
+
 
 $router->run();

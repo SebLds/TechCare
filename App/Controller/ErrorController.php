@@ -25,4 +25,5 @@ class ErrorController extends Controller
     }
 
 
+
 }
