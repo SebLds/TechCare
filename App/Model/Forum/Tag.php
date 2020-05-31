@@ -89,4 +89,28 @@ class Tag extends Model
         return $ligne['nbBillets'];
     }
 
+    public function addTag($Tag_Title, $Tag_description) {
+        $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description) VALUES (:Tag_Title, :Tag_description');
+        try {
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description));
+        } catch (ConfigException $e) {
+        }
+    }
+
+    public function deleteTag($Tag_Title) {
+        $sqlStatement = 'DELETE FROM tag WHERE Tag_Title = :Tag_Title';
+        try {
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title));
+        } catch (ConfigException $e) {
+        }
+    }
+
+    public function modifyTag($Tag_Title) {
+        $sqlStatement = 'UPDATE tag SET Tag_Title = :Tag_Title, Tag_description WHERE Tag_Title = :Tag_Title';
+        try {
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description));
+        } catch (ConfigException $e) {
+        }
+    }
+
 }

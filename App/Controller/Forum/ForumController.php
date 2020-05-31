@@ -85,5 +85,36 @@ class ForumController extends Controller
 
     }
 
+    public function addTag() {
+
+        if (!empty($_POST)) {
+        extract($_POST);
+
+          if (isset($_POST['add'])) {
+
+          $data = [
+            'newTag' => (string) htmlspecialchars($newTag),
+            'description' => htmlspecialchars($description),
+          ];
+
+          $error = [];
+
+          if (!empty($data['newTag']) && !empty($data['description'])) {
+            $this->tag->addTag($data['newTag'], $data['description']);
+            $this->generateView(array('faq' => $FAQ),'editFAQ');
+          } else {
+            $this->generateView(array('faq' => $FAQ, 'error' => "Veuillez ajouter une catégorie avec sa description"),'addTag');
+          }
+        }
+      }
+    }
+
+    public function deleteTag() {
+
+      if (isset($_POST['delete'])) {
+        $this->tag->deleteTag();
+        header("Location: /forum");
+      }
+    }
 
 }
