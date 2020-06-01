@@ -3,7 +3,6 @@ jQuery(function($) {
     //     locale: 'en'
     // } )
     // $.i18n().locale = 'fr';
-    $.i18n().locale = 'fr';
     $.i18n().load({
         'en': '/Web/js/jquery.i18n/languages/en.json',
         'fr': '/Web/js/jquery.i18n/languages/fr.json',
@@ -11,8 +10,10 @@ jQuery(function($) {
         $('html').i18n();
        });
     $('.img-flag').on('click', function(event) {
-        event.preventDefault();
+        // event.preventDefault();
         alert('ca marche wesh la mif bordel !')
+        $.i18n().locale = 'fr';
+
         // $.i18n( {
         //     locale: 'fr'
         // } )
