@@ -11,7 +11,7 @@ jQuery(function($) {
        });
     $('.img-flag').on('click', function(event) {
         event.preventDefault();
-        // $.i18n().locale = 'en';
+        $.i18n().locale = 'fr';
         alert('ca marche wesh la mif !')
         // $.i18n( {
         //     locale: 'fr'
