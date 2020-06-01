@@ -1,26 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 
 * {
-  font-family: "Lato", FontAwesome, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  overflow: visible;
+  /*overflow: visible;*/
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", FontAwesome, Helvetica, sans-serif;
 }
 
 #body {
-  padding: 50px 40px 50px 40px;
+  padding: 4em;
   display: flex;
-  font-size: 12pt;
-  margin-left: 250px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 20em;
   margin-top: 4em;
 }
 
+
 header {
+  font-size: 13pt;
   position: fixed;
   background: #22242A;
   width: 100%;
-  height: 4em;
   top: 0;
 }
 
@@ -34,11 +36,12 @@ header {
   justify-content: space-between;
   flex-direction: row;
   padding: 0 1em;
+  z-index: 3;
 }
 
 #header h3 {
   color: #ffffff;
-  font: bold 2em 'Dancing Script', cursive;
+  font: bold 2em 'Dancing Script';
   letter-spacing: 0.2em;
   display: flex;
   align-items: center;
@@ -46,10 +49,8 @@ header {
 
 #header p {
   color: #A8CAE9;
-  font: bold 1.2em 'Dancing Script', cursive;
+  font: bold 1.2em 'Dancing Script';
   letter-spacing: 0.2em;
-  display: flex;
-  align-items: center;
 }
 
 .right_area {
@@ -65,12 +66,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 2em;
 }
 
 .img-flag {
-  width: 30px;
-  height: 30px;
+  width: 2em;
+  height: 2em;
   cursor: pointer;
 }
 
@@ -102,12 +103,12 @@ header {
 }
 
 .sidebar h2 {
+  justify-items: center !important;
   display: block;
   color: white;
   font-size: 2.5em;
-  padding-top: 1em;
-  margin-bottom: 1em;
-  /*recentrer*/
+  text-align: center;
+  margin: 1em 0;
 }
 
 .sidebar a {
@@ -127,6 +128,7 @@ header {
 }
 
 #navbar a {
+  outline: none;
   display: flex;
   align-items: center;
   font-size: 0.8em;
@@ -176,16 +178,32 @@ header {
   justify-content: center;
 }
 
-@media only screen and (max-width: 936px)  {
+@media screen and (width: 1680px) {
+  #header {
+    font-size: 12pt;
+  }
+}
 
+@media screen and (max-width: 1280px) {
+  #header {
+    font-size: 11pt;
+  }
+}
+
+@media only screen and (max-width: 936px)  {
+  #header{
+    font-size: 10pt;
+  }
   #body {
-    margin-left: 60px;
+    margin-left: 4em;
   }
 
   .sidebar{
-      left: -190px;
-      justify-content: center;
-    }
+    margin: 0;
+    height: 100vh;
+    width: 4em;
+    justify-content: center;
+  }
 
     .sidebar h1{
       display: none;
@@ -193,20 +211,14 @@ header {
     }
 
     .sidebar i {
-      font-size: 20px;
-      margin-left: 170px;
-      width: 80px;
+      max-width: 4em;
     }
 
     #copyright, #link {
       display: none;
     }
 
-    .left_area h3 {
-      font-size: 1.2em;
-    }
-
-    .footer {
+    #footer {
       display: none;
     }
 
@@ -214,10 +226,29 @@ header {
       font-size: 1.5em;
       display: flex;
       justify-content: center;
-      margin-left: 7px;
     }
 
     .sidebar h2 {
       display: none;
     }
+}
+
+@media screen and (max-width: 736px) {
+  #header {
+    font-size: 9pt;
+    letter-spacing: 0.0375em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #header {
+    font-size: 8pt;
+    letter-spacing: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #header {
+    font-size: 7pt;
+  }
 }
