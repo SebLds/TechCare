@@ -12,13 +12,13 @@ jQuery(function($) {
         event.preventDefault();
 
         // $.i18n().locale = $(this).data('locale');
-        // alert('ca marche !')
+        alert('ca marche !')
+        $.i18n( {
+            locale: 'fr'
+        } )
         $.ajax()
             .done(function(){
-                $.i18n( {
-                    locale: 'fr'
-                } )
-                $("*[data-18n]").load();
+                $("*[data-18n]").fadeOut();
             })
             .fail(function(){
                 alert('fail !');
