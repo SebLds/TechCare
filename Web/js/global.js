@@ -2,6 +2,7 @@ jQuery(function($) {
     // $.i18n( {
     //     locale: 'en'
     // } )
+    $.i18n().locale = 'fr';
     $.i18n().load({
         'en': '/Web/js/jquery.i18n/languages/en.json',
         'fr': '/Web/js/jquery.i18n/languages/fr.json',
@@ -10,8 +11,8 @@ jQuery(function($) {
         $('.img-flag').on('click', function(event) {
             event.preventDefault();
 
-            $.i18n().locale = $(this).data('locale');
-            alert('ca marche !')
+            // $.i18n().locale = 'fr';
+            alert('ca marche wesh !')
             // $.i18n( {
             //     locale: 'fr'
             // } )
