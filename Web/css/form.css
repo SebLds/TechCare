@@ -1,5 +1,4 @@
 @import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 #body {
   justify-content: center;
 }
@@ -51,24 +50,6 @@
   text-decoration: none;
 }
 
-.search-input {
-    width: 100%;
-    max-width: 27.5em;
-    margin: 2em;
-    padding: 1em 1em 1em 3em;
-    background: rgba(168, 202, 233, 1);
-    border: none;
-    outline:none;
-    color: gray;
-    font-size: 1.2em;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
-    transition: background .4s, box-shadow .2s;
-}
-.search-input:hover {
-    background: rgba(168, 202, 233, 0.8);
-}
-
 input[type="submit"]:hover {
   background: rgba(168, 202, 233, 0.8);
 }
@@ -76,6 +57,30 @@ input[type="submit"]:hover {
 form {
   display: flex;
   flex-direction: column;
+}
+
+.btn {
+  cursor: pointer;
+  align-self: center;
+  border-radius: 2px;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  font-size: 1.2em;
+  outline: none;
+  width: 100%;
+}
+
+.add {
+  background-color: #009933;
+}
+
+.delete {
+  background-color:  #ff0c0c;
+}
+
+.edit {
+  background-color: #c2a0a0;
 }
 
 input {
@@ -257,19 +262,14 @@ textarea:focus {
 }
 
 @media only screen and (max-width: 850px)  {
+
   #body .box {
     box-shadow: none;
     background-color: #fff;
     display: flex;
     align-items: center;
     padding-top: 0;
+    flex-direction: column;
   }
 
-  .right {
-    padding: 0;
-  }
-
-  .left {
-    padding: 0;
-  }
 }

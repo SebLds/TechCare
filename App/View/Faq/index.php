@@ -1,20 +1,21 @@
 <?php $this->title='Faq';?>
 <link href="/Web/css/faq.css" rel="stylesheet">
+<link href="/Web/css/button.css" rel="stylesheet">
 
 <?php if (isset($data)):?>
 
 <div id="body">
 
-    <h2>Foire Aux Questions</h2>
-    <?php if($_SESSION['sessionStatus']==3): ?>
-    <a href="/admin/edit-faq"><button>Modifier la FAQ</button></a>
-    <?php endif; ?>
+    <div class="top">
+      <form class="search-bar" method="post">
+          <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
+          <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
+          <?php if($_SESSION['sessionStatus']==3): ?>
+          <a href="/admin/edit-faq"><button class="btn edit" style="width:50%">Modifier la FAQ</button></a>
+          <?php endif; ?>
+      </form>
+    </div>
 
-
-    <form class="search-bar" method="post">
-        <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
-        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
-    </form>
 
     <div class="accordion">
       <?php for ($i=0;$i<count($data['faq']);$i++):?>

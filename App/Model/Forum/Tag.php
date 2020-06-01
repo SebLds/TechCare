@@ -44,7 +44,7 @@ class Tag extends Model
 
     }
 
-    
+
     public function getNbRepliesTagById($idTag){
         $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag ';
         try {
@@ -90,7 +90,7 @@ class Tag extends Model
     }
 
     public function addTag($Tag_Title, $Tag_description) {
-        $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description) VALUES (:Tag_Title, :Tag_description');
+        $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description) VALUES (:Tag_Title, :Tag_description)';
         try {
             return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description));
         } catch (ConfigException $e) {

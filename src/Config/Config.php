@@ -43,7 +43,7 @@ class Config
     {
         if (self::$parameters == null) {
             // Prod version
-            $filePath = "src/Config/mac.ini";
+            $filePath = "src/Config/dev.ini";
             // Dev version
 //            $filePath = "src/Config/dev.ini";
 //            if (!file_exists($filePath)) {

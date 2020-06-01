@@ -292,7 +292,7 @@ class AdminController extends Controller {
           if (isset($_POST['modify'])) {
 
             $data = [
-              'question' => (string) htmlspecialchars($question),
+              'question' => (string) htmlspecialchars($_POST['question']),
               'answer' => htmlspecialchars($answer),
             ];
 
