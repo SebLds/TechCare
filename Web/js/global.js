@@ -8,22 +8,23 @@ jQuery(function($) {
         'fr': '/Web/js/jquery.i18n/languages/fr.json',
     }).done(function() {
         $('html').i18n();
-        $('.img-flag').on('click', function(event) {
-            event.preventDefault();
-            $.i18n().locale = 'fr';
-            alert('ca marche wesh la mif !')
-            // $.i18n( {
-            //     locale: 'fr'
-            // } )
-            $.ajax()
-                .done(function(){
-                    $("*[data-18n]").fadeOut();
-                })
-                .fail(function(){
-                    alert('fail !');
-                })
-        });
        });
+    $('.img-flag').on('click', function(event) {
+        // event.preventDefault();
+        alert('ca marche wesh la mif bordel !')
+        $.i18n().locale = 'fr';
+
+        // $.i18n( {
+        //     locale: 'fr'
+        // } )
+        // $.ajax()
+        //     .done(function(){
+        //         $("*[data-18n]").fadeOut();
+        //     })
+        //     .fail(function(){
+        //         alert('fail !');
+        //     })
+    });
 
     // $('a').on('click',function(event){
     //     event.preventDefault();

@@ -16,7 +16,7 @@
             ·
             <a href="/cgu"><span data-i18n="FOOTER-cgu"></span></a>
             ·
-            <a><img id="img-flag" onclick="changeLang()" src="../../Web/images/france.png" alt=""></a>
+            <img id="img-flag" onclick="changeLang()" src="../../Web/images/france.png" alt="">
         </p>
         <p class="footer-company-name">&copy; <span data-i18n="FOOTER-rights"></span></p>
     </div>
