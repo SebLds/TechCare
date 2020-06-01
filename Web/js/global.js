@@ -1,29 +1,29 @@
 jQuery(function($) {
-    $.i18n( {
-        locale: 'en'
-    } )
+    // $.i18n( {
+    //     locale: 'en'
+    // } )
     $.i18n().load({
         'en': '/Web/js/jquery.i18n/languages/en.json',
         'fr': '/Web/js/jquery.i18n/languages/fr.json',
     }).done(function() {
         $('html').i18n();
-        $('.img-flag').on('click', function(event) {
-            event.preventDefault();
-            $.i18n( {
-                locale: 'fr'
-            } )
-            // $.i18n().locale = $(this).data('locale');
-            // alert('ca marche !')
-            $.ajax()
-                .done(function(){
-                    $("*[data-18n]").load();
-                })
-                .fail(function(){
-                    alert('fail !');
-                })
-        });
-        }
-    );
+       });
+    $('.img-flag').on('click', function(event) {
+        event.preventDefault();
+
+        // $.i18n().locale = $(this).data('locale');
+        // alert('ca marche !')
+        $.ajax()
+            .done(function(){
+                $.i18n( {
+                    locale: 'fr'
+                } )
+                $("*[data-18n]").load();
+            })
+            .fail(function(){
+                alert('fail !');
+            })
+    });
     // $('a').on('click',function(event){
     //     event.preventDefault();
     //     let $a = $(this);
