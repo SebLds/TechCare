@@ -18,10 +18,10 @@
 
 header {
   position: fixed;
-  background: #22242A;
   width: 100%;
   height: 60px;
   top: 0;
+  opacity: 1;
 }
 
 #header {
@@ -254,5 +254,5 @@ label #sidebar_btn:hover{
       display: none;
     }
 
-    
+
 }
