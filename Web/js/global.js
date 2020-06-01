@@ -10,11 +10,11 @@ jQuery(function($) {
         $('.img-flag').on('click', function(event) {
             event.preventDefault();
 
-            // $.i18n().locale = $(this).data('locale');
+            $.i18n().locale = $(this).data('locale');
             alert('ca marche !')
-            $.i18n( {
-                locale: 'fr'
-            } )
+            // $.i18n( {
+            //     locale: 'fr'
+            // } )
             $.ajax()
                 .done(function(){
                     $("*[data-18n]").fadeOut();
