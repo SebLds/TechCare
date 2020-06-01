@@ -24,6 +24,7 @@ class LoginController extends Controller {
     } else {
       $this->generateView(array(),'index');
     }
+
   }
 
   public function logout() {

@@ -1,6 +1,6 @@
 jQuery(function($) {
     $.i18n( {
-        locale: 'fr'
+        locale: 'en'
     } )
     $.i18n().load({
         'en': '/Web/js/jquery.i18n/languages/en.json',
@@ -13,12 +13,38 @@ jQuery(function($) {
                 locale: 'fr'
             } )
             // $.i18n().locale = $(this).data('locale');
-            alert('ca marche !')
+            // alert('ca marche !')
+            $.ajax()
+                .done(function(){
+                    $("*[data-18n]").load();
+                })
+                .fail(function(){
+                    alert('fail !');
+                })
         });
-
         }
     );
+    // $('a').on('click',function(event){
+    //     event.preventDefault();
+    //     let $a = $(this);
+    //     let url =$a.attr('href');
+    //     $.ajax(url)
+    //         .done(function(){
+    //             $("#content").load(url);
+    //             })
+    //         .fail(function(){
+    //             alert('fail !');
+    //         })
+    // })
 });
+// $.get(
+//     '/', // Le fichier cible côté serveur.
+//     'false', // Nous utilisons false, pour dire que nous n'envoyons pas de données.
+//     nom_fonction_retour, // Nous renseignons uniquement le nom de la fonction de retour.
+//     'text' // Format des données reçues.
+// );
+
+
 
 
 // function showUser(str)
