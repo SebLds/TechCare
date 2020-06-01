@@ -5,7 +5,6 @@
 </head>
 
 <body>
-
     <header id="header">
         <div class="logo">
             <a href="/homepage#banner"><img id="logo" src="/Web/images/logo.png" alt="logo"></a>
