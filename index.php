@@ -34,7 +34,7 @@ $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 
 $router->get('/faq',"Faq#index");
-$router->get('/cgu',"Cgu#index");
+$router->get('/cgu',"CGU#index");
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/contact',"Contact#index");
 
