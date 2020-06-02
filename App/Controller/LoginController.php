@@ -18,7 +18,7 @@ class LoginController extends Controller {
   }
 
   public function index() {
-    
+
     if ($_SESSION['sessionStatus'] != 0) {
       header("Location: /dashboard");
     } else {
@@ -68,8 +68,12 @@ class LoginController extends Controller {
             $Status = $this->user->getStatus($ID);
             Session::getInstance()->setAttribute('ID_User', $ID);
             Session::getInstance()->setAttribute('sessionStatus', $Status);
-
-            header("Location: /dashboard");
+            if ($_SESSION['sessionStatus'] == 1 || $_SESSION['sessionStatus'] == 2) {
+               header("Location: /dashboard");
+            }
+            if ($_SESSION['sessionStatus'] == 3) {
+               header("Location: /admin/dashboard");
+            }
           } else {
             $errors['error_login'] = "Votre mail et/ou votre mot de passe est incorrect";
             $this->generateView($errors,'index');

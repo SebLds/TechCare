@@ -34,11 +34,12 @@ canvas {
 }
 
 .container {
-  border: 0.1em solid black;
+  border: 0.001em solid black;
   width: 400px;
   margin: 10px 20px 10px 20px;
   font-size: 0.8em;
   display: flex;
+  flex-direction: column;
 }
 
 .text, .score {

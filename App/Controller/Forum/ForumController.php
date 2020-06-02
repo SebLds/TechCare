@@ -27,21 +27,17 @@ class ForumController extends Controller
      * Index method that shows the list of tags with information.
      */
     public function index() {
-
         if ($_SESSION['sessionStatus'] == 0) {
       header("Location: /homepage");
     }
-
     $tags = $this->tag->getTags();
         for ($i=1;$i<=count($tags);$i++){
             $nbThreads[]= $this->tag->getNbThreadsTagById($i);
             $nbReplies[]= $this->tag->getNbRepliesTagById($i);
         }
-
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
-
     }
-        
+
 
     /**
      * Research in the database either in all the threads or in all the threads for one tag.
@@ -85,5 +81,36 @@ class ForumController extends Controller
 
     }
 
+    public function addTag() {
+
+        if (!empty($_POST)) {
+        extract($_POST);
+
+          if (isset($_POST['add'])) {
+
+          $data = [
+            'newTag' => (string) htmlspecialchars($newTag),
+            'description' => htmlspecialchars($description),
+          ];
+
+          $error = [];
+
+          if (!empty($data['newTag']) && !empty($data['description'])) {
+            $this->tag->addTag($data['newTag'], $data['description']);
+            $this->generateView(array('faq' => $FAQ),'editFAQ');
+          } else {
+            $this->generateView(array('faq' => $FAQ, 'error' => "Veuillez ajouter une catégorie avec sa description"),'addTag');
+          }
+        }
+      }
+    }
+
+    public function deleteTag() {
+      if (!empty($_POST)) {
+        if (isset($_POST['delete'])) {
+          $this->tag->deleteTag($Tag_title);
+        }
+      }
+    }
 
 }

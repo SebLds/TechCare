@@ -76,6 +76,7 @@ $router->get('/contact-admin',"Contact#contactAdmin");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
+$router->post('/forum',"Forum\Forum#index");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
@@ -90,8 +91,8 @@ $router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
 
 /**Error**/
-$router->get('/error404','Error#index');
-$router->get('/forbidden-access','Error#forbiddenAccess');
+$router->get('/error','Error#index');
+// $router->get('/forbidden-access','Error#forbiddenAccess');
 
 
 

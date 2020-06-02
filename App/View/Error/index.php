@@ -4,14 +4,16 @@
 
 <div id="body">
 
-	<?php if ($_SESSION['sessionsStatus'] == 0): ?>
+	<?php if ($_SESSION['sessionStatus'] == 0): ?>
     <div> <a href="/homepage"><img class="logo-error" src="/Web/images/logo.png"></a></div>
-    <?php endif: ?>
-    <?php if ($_SESSION['sessionsStatus']>0): ?>
+	<?php endif; ?>
+  <?php if ($_SESSION['sessionStatus']>0): ?>
     <div> <a href="/dashboard"><img class="logo-error" src="/Web/images/logo.png"></a></div>
-    <?php endif: ?>
-<div>
+	<?php endif; ?>
+
+   <div>
     	<div class="message">Erreur 404</div>
-        <div>Oups, cette page n'existe pas</div>
-    </div>
+      <div>Oups, cette page n'existe pas</div>
+   </div>
+
 </div>
