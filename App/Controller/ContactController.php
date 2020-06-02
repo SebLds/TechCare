@@ -2,11 +2,12 @@
 
 namespace App\Controller;
 use src\Controller;
+use Web\PHPMailer;
+require 'Web/PHPMailer/PHPMailerAutoload.php';
 
 class ContactController extends Controller {
 
     public function index() {
-      
       if ($_SESSION['sessionStatus'] != 0) {
       header("Location: /dashboard");
     } else {
@@ -79,9 +80,22 @@ class ContactController extends Controller {
           }
 
           if (empty($errors)) {
-            mail($data[$mail], $subject, $message);
-            $data = ['confirm' => 'Votre message a bien été envoyé'];
-            $this->generateView($data,'index');
+
+            $mail = new PHPMailer();
+            $mail->Host='smtp.gmail.com';
+            $mail->Port=587;
+            $mail->SMTPAuth=true;
+            $mail->SMTPSecure='tls';
+            $mail->Username='techcare.infinitemeasures@gmail.com';
+            $mail->Password='[APP-G9D]';
+            $mail->setFrom($data['mail'], $data['lastName']);
+            $mail->addAdress('techcare.infinitemeasures@gmail.com');
+            $mail->addReplyTo($data['mail'], $data['lastName']);
+            $mail->isHTML(true);
+            $mail->Subject=$data['subject'];
+            $mail->Body=$data['message'];
+
+          $this->generateView(array(),'index');
           } else {
             $data = [$data, $errors];
             $this->generateView($data,'index');

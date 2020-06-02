@@ -90,10 +90,10 @@ class Tag extends Model
         return $ligne['nbBillets'];
     }
 
-    public function addTag($Tag_Title, $Tag_description) {
-        $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description) VALUES (:Tag_Title, :Tag_description)';
+    public function addTag($Tag_Title, $Tag_description, $Creation_Date, $Edit_Date=null) {
+        $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description, Creation_Date, Edit_Date) VALUES (:Tag_Title, :Tag_description, :Creation_Date, :Edit_Date)';
         try {
-            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description));
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description, 'Creation_Date' => $Creation_Date, 'Edit_Date' => $Edit_Date));
         } catch (ConfigException $e) {
         }
     }

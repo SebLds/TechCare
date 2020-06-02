@@ -150,7 +150,11 @@ class ExamController extends Controller {
       if (!empty($comment)) {
         $this->test->addComment($comment, $_SESSION['Patient_HealthNumber']);
         Session::getInstance()->deleteAttribute('Patient_HealthNumber');
-        header('Location: /dashboard');
+        if ($_SESSION['sessionStatus'] == 3) {
+          header('Location: /admin/dashboard');
+        } else {
+          header('Location: /dashboard');
+        }
       } else {
         $error['error_comment'] = "Veuillez saisir un commentaire";
         $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);

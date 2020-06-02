@@ -76,10 +76,15 @@ $router->get('/contact-admin',"Contact#contactAdmin");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
-$router->post('/forum',"Forum\Forum#index");
+$router->post('/forum',"Forum\Forum#deleteTag");
+$router->get('/forum-add-tag',"Forum\Forum#addTagIndex");
+$router->post('/forum-add-tag',"Forum\Forum#addTag");
+$router->get('/forum-add-thread',"Forum\Forum#addThreadIndex");
+$router->post('/forum-add-thread',"Forum\Forum#addThread");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
+$router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
 /**Admin**/
