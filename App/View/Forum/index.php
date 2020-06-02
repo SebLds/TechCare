@@ -25,7 +25,7 @@
 
       <button type="submit" class="btn add" style="margin-left: 20px" name="add"><i class="far fa-plus-square"></i>Ajouter</button>
 
-      <form class="" method="post">
+      <form method="post">
         <div class="tag">
           <?php for ($i=0;$i<count($data['tags_info']);$i++):?>
             <?php $idTag=$data['tags_info'][$i]->ID_Tag?>

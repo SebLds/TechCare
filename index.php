@@ -91,8 +91,8 @@ $router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
 
 /**Error**/
-$router->get('/error404','Error#index');
-$router->get('/forbidden-access','Error#forbiddenAccess');
+$router->get('/error','Error#index');
+// $router->get('/forbidden-access','Error#forbiddenAccess');
 
 
 

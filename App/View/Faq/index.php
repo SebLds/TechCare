@@ -11,7 +11,7 @@
           <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
           <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
           <?php if($_SESSION['sessionStatus']==3): ?>
-          <a href="/admin/edit-faq"><button class="btn edit" style="width:50%">Modifier la FAQ</button></a>
+          <a href="/admin/edit-faq"><button type="button" class="btn edit"><i class="far fa-edit"></i>Modifier</button></a>
           <?php endif; ?>
       </form>
     </div>
