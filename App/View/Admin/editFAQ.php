@@ -12,11 +12,11 @@
       <label><i class="far fa-question-circle"></i>Question</label>
       <input type="text" name="newQuestion" value="">
 
-      <label><i class="far fa-info-circle"></i>Réponse</label>
+      <label><i class="far fa-info-circle" style="margin-top: 1em"></i>Réponse</label>
       <textarea name="newAnswer" rows="3" cols="80" value=""></textarea>
-      <p id="form-add"><?php if(isset($data['error'])) { echo $data['error']; }?></p>
+      <p id="form-add" class="error-msg"><?php if(isset($data['error'])) { echo $data['error']; }?></p>
 
-      <button id="add-submit" type="submit" name="modify" class="btn add"><i class="far fa-plus-square"></i>Ajouter</button>
+      <button id="add-submit" type="submit" name="add" style="margin-top: 0" class="btn add"><i class="far fa-plus-square"></i>Ajouter</button>
 
     </form>
 
@@ -26,7 +26,7 @@
       <label><i class="far fa-question-circle"></i>Question</label>
       <input type="text" name="question" value="<?php $question = $data['faq'][$i]->question; echo $question; ?>">
 
-      <label><i class="far fa-info-circle"></i>Réponse</label>
+      <label style="margin-top: 1em"><i class="far fa-info-circle"></i>Réponse</label>
       <textarea name="answer" rows="3" cols="80" value=""><?php $answer = $data['faq'][$i]->answer; echo $answer; ?></textarea>
       <p class="validate-msg"><?php if(isset($data['validate'])) { echo $data['validate']; }?></p>
 
