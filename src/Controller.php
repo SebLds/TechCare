@@ -45,7 +45,7 @@ abstract class Controller
         }
         else {
             $controllerClass = get_class($this);
-            throw new \Exception("Action '$action' non définie dans la classe $controllerClass");
+            throw new Exception("Action '$action' non définie dans la classe $controllerClass");
         }
     }
 

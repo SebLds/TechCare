@@ -58,12 +58,6 @@
                 <p>&copy; Infinite Measures</p>
                 <p data-i18n="SIDEBAR-right"></p>
             </div>
-            <!--
-            <div id="copyright">
-                <p>&copy; Infinite Measures</p>
-                <p>Tous droits réservés 2019-2020</p>
-            </div>
-            -->
         </div>
     </div>
 

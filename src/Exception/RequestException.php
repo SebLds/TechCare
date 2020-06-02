@@ -1,7 +1,7 @@
 <?php
 
 
-class RequestException extends \Exception
+class RequestException extends Exception
 {
 
 }

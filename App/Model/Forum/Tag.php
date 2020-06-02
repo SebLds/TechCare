@@ -1,6 +1,7 @@
 <?php
 namespace App\Model\Forum;
 
+use Exception;
 use PDO;
 use src\Config\ConfigException;
 use src\Model;
@@ -78,7 +79,7 @@ class Tag extends Model
         if ($tag->rowCount() > 0)
             return $tag->fetch();  // Accès à la première ligne de résultat
         else
-            throw new \Exception("Aucune catégorie ne correspond à l'identifiant '$idTag'");
+            throw new Exception("Aucune catégorie ne correspond à l'identifiant '$idTag'");
     }
 
     public function getCountTags()

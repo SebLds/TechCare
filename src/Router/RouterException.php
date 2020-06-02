@@ -1,6 +1,8 @@
 <?php
 namespace src\Router;
-class RouterException extends \Exception
+use Exception;
+
+class RouterException extends Exception
 {
 
 }

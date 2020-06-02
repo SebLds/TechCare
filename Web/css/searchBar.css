@@ -1,6 +1,6 @@
 .search-bar {
     display: flex;
-    align-items: flex-start;
+    justify-content: flex-start;
     width: 100%;
 }
 
@@ -24,7 +24,7 @@
     left: 2em;
     border: none;
     outline: none;
-    color: red;
+    color: white;
     font-size: 1.3em;
 }
 
