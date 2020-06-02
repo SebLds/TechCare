@@ -24,17 +24,18 @@
         <p class="error-msg"><?php if(isset($error_selectProfil)) { echo $error_selectProfil; } ?></p>
 
       <?php if ($data['select-category'] == 'sight'): ?>
-      <label>Acuité visuelle</label>
+      <label><i class="far fa-eye"></i>Acuité visuelle</label>
+      tamere
       <meter value="sight-value" min="0" max="100"></meter>
       <?php endif;  ?>
 
       <?php if ($data['select-category'] == 'stress'):  ?>
-      <label>Gestion du stress</label>
+      <label><i class="far fa-heartbeat"></i>Gestion du stress</label>
       <meter value="sight-value" min="0" max="100"></meter>
       <?php endif;  ?>
 
       <?php if ($data['select-category'] == 'sound'):  ?>
-        <label>Acuité sonore</label>
+        <label><i class="far fa-volume-up"></i>Acuité sonore</label>
         <meter value="sight-value" min="0" max="100"></meter>
         <?php endif;  ?>
 
