@@ -128,7 +128,7 @@
     clear: both;
     transition: all 0.2s ease 0.15s;
 }
-*/
+
 .testResumeID button {
     cursor: pointer;
     background-color: #A8CAE9;
@@ -138,6 +138,7 @@
     border-radius: 5px;
     width: 20em;
 }
+*/
 
 .fa-heartbeat {
   color: red;
@@ -150,10 +151,11 @@
 .fa-deaf {
   color: green;
 }
-
+/*
 #type {
   align-content: center;
 }
+*/
 
 #date {
   font-weight: bold;
@@ -165,12 +167,12 @@
 }
 
 table i {
-  color: white;
-  font-size: 2em;
+    color: white;
+    font-size: 2em;
 }
 
 table {
-  border-spacing: 1px;
+  border-spacing: 3px;
   border-collapse: collapse;
   background: white;
   border-radius: 10px;
@@ -184,13 +186,14 @@ table * {
 }
 table td, table th {
   padding-left: 8px;
+    align-items: center;
 }
 table thead tr {
-  height: 60px;
+  height: 4em;
   background: #2f323a;
 }
 table tbody tr {
-  height: 50px;
+  height: 4em;
 }
 table tbody tr:last-child {
   border: 0;
@@ -209,10 +212,9 @@ table td.r, table th.r {
 }
 
 th {
-  font-family: OpenSans-Regular;
-  font-size: 18px;
+  font-size: 1em;
   color: #fff;
-  line-height: 1.2;
+  line-height: 1.2em;
   font-weight: unset;
 }
 
@@ -226,7 +228,6 @@ tbody tr:nth-child(even) {
 }
 
 tbody tr {
-  font-family: OpenSans-Regular;
   font-size: 15px;
   color: #808080;
   line-height: 1.2;
