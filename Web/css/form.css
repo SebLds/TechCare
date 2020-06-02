@@ -68,7 +68,8 @@ form {
   padding: 0.6rem;
   font-size: 1.2em;
   outline: none;
-  width: 100%;
+  width: 35%;
+  margin: 2em 0 2em 0;
 }
 
 .add {

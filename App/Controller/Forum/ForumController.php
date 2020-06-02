@@ -106,9 +106,10 @@ class ForumController extends Controller
     }
 
     public function deleteTag() {
-
-      if (isset($_POST['delete'])) {
-        $this->tag->deleteTag($Tag_title);
+      if (!empty($_POST)) {
+        if (isset($_POST['delete'])) {
+          $this->tag->deleteTag($Tag_title);
+        }
       }
     }
 
