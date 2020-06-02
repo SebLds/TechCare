@@ -5,6 +5,7 @@ namespace src;
 
 
 use \PDO;
+use PDOStatement;
 use src\Config\Config;
 use src\Config\ConfigException;
 
@@ -26,7 +27,7 @@ abstract class Model
      *
      * @param string $sqlStatement SQL query
      * @param array $params Request parameters
-     * @return bool|false|\PDOStatement
+     * @return bool|false|PDOStatement
      * @throws ConfigException
      */
     protected function executeRequest($sqlStatement, $params = null,$choice=null)

@@ -2,6 +2,7 @@
 
 namespace src;
 
+use Exception;
 use src\Config\Config;
 use src\Config\ConfigException;
 use ViewException;
@@ -90,7 +91,7 @@ class View
             return ob_get_clean();
         }
         else {
-            throw new \Exception("Fichier '$file' introuvable");
+            throw new Exception("Fichier '$file' introuvable");
         }
     }
 

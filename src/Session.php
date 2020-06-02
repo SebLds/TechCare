@@ -1,6 +1,7 @@
 <?php
 
 namespace src;
+use Exception;
 use SessionException;
 
 /**
@@ -81,7 +82,7 @@ class Session
             return $_SESSION[$name];
         }
         else {
-            throw new \Exception("Attribut '$name' absent de la session");
+            throw new Exception("Attribut '$name' absent de la session");
         }
     }
 
