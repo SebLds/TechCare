@@ -35,6 +35,20 @@ class AdminController extends Controller {
     }
     $this->generateView(array(), 'index');
   }
+  public function searchUser(){
+      if ($_SESSION['sessionStatus'] == 3) {
+          if (isset($_POST['search'])) {
+              $result = $this->user->findUserByLastName(null, htmlspecialchars($_POST['search']));
+              $this->generateView(array('searchResult'=> $result), 'searchResult');
+          } else {
+              $this->executeAction('index');
+          }
+      }
+  }
+  public function showProfil($id){
+        $profil=$this->user->getProfil($id);
+        $this->generateView(array('profil'=> $profil), 'profilUser');
+  }
 
   public function addUserIndex() {
     if ($_SESSION['sessionStatus'] == 0) {

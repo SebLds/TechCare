@@ -87,11 +87,11 @@ class User extends Model {
 
     public function getDoctor($ID) {
         try {
-            $sqlStatement = 'SELECT lastName FROM users WHERE ID_Users = :ID_Users';
+            $sqlStatement = 'SELECT firstName,lastName FROM users WHERE ID_Users = :ID_Users';
         } catch (ConfigException $e) {
         }
         $user = $this -> executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
-        return $user->lastName;
+        return $user;
     }
 
     public function addNewUser($status, $firstName, $lastName, $mail, $password, $birthdate, $doctor=null, $company=null, $healthNumber=null, $registrationdate) {
@@ -130,9 +130,10 @@ class User extends Model {
             $user = $this->executeRequest($sqlStatement, array('mail' => $mail))->fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) {
         }
-
-        $password_hash = $user->password;
-        if (password_verify($password, $password_hash)) {
+        if (isset($user->password)){
+            $password_hash = $user->password;
+        }
+        if (isset($password_hash) AND password_verify($password, $password_hash)) {
             return true;
         }
     }
@@ -151,6 +152,8 @@ class User extends Model {
             'mail' => $user->mail,
             'healthNumber' => $user->healthNumber,
             'doctor' => $user->doctor,
+            'company' => $user->company,
+            'status' => $user->status
         ];
 
         return $data;
@@ -181,10 +184,16 @@ class User extends Model {
     }
 
 
-public function findUserByLastName($doctor, $search) {
-  $sqlStatement = "SELECT * FROM users WHERE lastName = :lastName LIKE '%$search%'";
-  return $this->executeRequest($sqlStatement, array('doctor' => $doctor))->fetchAll(PDO::FETCH_OBJ);
-}
+    public function findUserByLastName($doctor, $key) {
+        if($doctor===null){
+            $sqlStatement = "SELECT * FROM users WHERE lastName LIKE '%$key%'";
+            return $this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ);
+        }else{
+            $doctorName="$doctor->firstName $doctor->lastName";
+            $sqlStatement = "SELECT * FROM users WHERE lastName LIKE '%$key%' AND doctor= :doctorName";
+            return $this->executeRequest($sqlStatement, array('doctorName' => $doctorName))->fetchAll(PDO::FETCH_OBJ);
+        }
+    }
 
 
 }
