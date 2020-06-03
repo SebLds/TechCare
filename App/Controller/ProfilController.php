@@ -24,10 +24,18 @@ class ProfilController extends Controller {
   public function change() {
 
     if (!empty($_POST)) {
+        $newFirstName='';
+        $newLastName='';
+        $newMail='';
+        $day=0;
+        $month=0;
+        $year=0;
+        $newDoctor='';
+        $newHealthNumber='';
+        $newCompany='';
       extract($_POST);
 
       if (isset($_POST['change'])) {
-
 
         $data = [
           'newFirstName' => (string) htmlspecialchars(ucfirst(trim($newFirstName))),
@@ -41,6 +49,7 @@ class ProfilController extends Controller {
           'newDoctor' => htmlspecialchars(trim($newDoctor)),
           'newHealthNumber' => htmlspecialchars(trim($newHealthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
+          'newCompany' => (string) htmlspecialchars(ucfirst(trim($newFirstName)))
         ];
 
         $errors = [];
@@ -58,7 +67,7 @@ class ProfilController extends Controller {
         }
 
         if(empty($errors)) {
-          $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], 10);
+          $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $data['newCompany'],$data["birthdate"], $_SESSION['ID_User']);
           $data = $this->user->getProfil($_SESSION['ID_User']);
           $this->generateView($data,'index');
         } else {

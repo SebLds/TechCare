@@ -61,6 +61,11 @@
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
+          <?php if($_SESSION['sessionStatus']==2): ?>
+              <label><i class="far fa-user-md"></i>Institution référente</label>
+              <input type="text" name="newCompany" placeholder="Hôpital Necker" value="<?php echo $data['company']; ?>">
+              <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
+          <?php endif; ?>
 
       </div>
 

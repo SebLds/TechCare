@@ -159,11 +159,16 @@ class User extends Model {
         return $data;
     }
 
-    public function modifyProfil($firstName, $lastName, $mail, $healthNumber, $doctor, $ID_Users) {
-        $sqlStatement = 'UPDATE users SET firstName = :firstName, lastName = :lastName; mail = :mail, healthNumber = :healthNumber, doctor = :doctor WHERE ID_Users = :ID_Users';
-        try {
-            return $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'healthNumber' => $healthNumber, 'doctor' => $doctor, 'ID_Users' => $ID_Users));
-        } catch (ConfigException $e) {
+    public function modifyProfil($firstName, $lastName, $mail,$doctor,$healthNumber,$company,$birthdate, $ID_Users) {
+        if($_SESSION["sessionStatus"]==1) {
+            $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, doctor = :doctor, healthNumber = :healthNumber, birthdate= :birthdate WHERE ID_Users = :ID_Users';
+            $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail,'doctor' => $doctor,'healthNumber' => $healthNumber, 'birthdate' => $birthdate, 'ID_Users' => $ID_Users));
+        }elseif($_SESSION["sessionStatus"]==2){
+            $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, birthdate= :birthdate, company=:company WHERE ID_Users = :ID_Users';
+            $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail,'birthdate' => $birthdate,'company' => $company, 'ID_Users' => $ID_Users));
+        }elseif($_SESSION["sessionStatus"]==3){
+            $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, birthdate= :birthdate WHERE ID_Users = :ID_Users';
+            $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail,'birthdate' => $birthdate, 'ID_Users' => $ID_Users));
         }
     }
 
