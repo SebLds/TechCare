@@ -13,7 +13,6 @@
     <article>
         <?php for ($i=0;$i<count($data['listThreads']);$i++):?>
             <a href=""><h1 class="titleTag"><?php echo $data['listThreads'][$i]; ?></h1></a>
-
         <?php endfor; ?>
     </article>
     <?php endif; ?>

@@ -7,6 +7,7 @@
 <header>
     <div id="header">
         <h3>Infinite <p>Measures</p></h3>
+        <h1 id="page-title"><?php echo $this->title; ?></h1>
         <div class="right_area">
             <div id="flag">
                 <img class="img-flag" data-locale="fr" src="../../Web/images/france.png" alt="flag">
@@ -29,8 +30,14 @@
                 echo $name; ?>
             </h2>
 
-            <a href="/dashboard"><i class="fad fa-desktop"></i>
-                <h1 data-i18n="SIDEBAR-dashboard"></h1></a>
+            <?php if ($_SESSION['sessionStatus'] == 3): ?>
+              <a href="/admin/dashboard"><i class="fad fa-desktop"></i>
+                  <h1 data-i18n="SIDEBAR-dashboard"></h1></a>
+            <?php endif; ?>
+            <?php if ($_SESSION['sessionStatus'] == 1 || $_SESSION['sessionStatus'] == 2): ?>
+              <a href="/dashboard"><i class="fad fa-desktop"></i>
+                  <h1 data-i18n="SIDEBAR-dashboard"></h1></a>
+            <?php endif; ?>
             <a href="/profil"><i class="fad fa-user"></i>
                 <h1 data-i18n="SIDEBAR-profil"></h1></a>
             <a href="/help"><i class="fad fa-question-circle"></i>

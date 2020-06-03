@@ -12,6 +12,11 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$ [NC,OR]
 RewriteCond %{HTTP_HOST} ^www.infinitemeasures.com$
 
+# Mac Version
+#RewriteCond %{HTTP_HOST} ^localhost:8888$ [NC,OR]
+#RewriteCond %{HTTP_HOST} ^localhost:8888$
+
+
 
 #RewriteCond %{REQUEST_URI} !Web/
 #RewriteRule (.*) /Web/$1 [L]é ,!

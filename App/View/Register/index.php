@@ -62,13 +62,13 @@
       </div>
 
       <div class="bottom">
-          <label><i class="far fa-file-medical-alt"></i><span data-i18n="REGISTER-healthnumber"></label>
+          <label><i class="far fa-file-medical-alt"></i><span data-i18n="REGISTER-healthnumber"></span></label>
           <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
           <p class="error-msg"><?php if(isset($data[1]['error_healthNumber'])) { echo $data[1]['error_healthNumber']; }?></p>
       </div>
 
       <div class="CGU">
-          <input id="box1" type="checkbox" />
+          <input id="box1" type="checkbox" name="check"/>
           <label for="box1" id="text-CGU"><test data-i18n="REGISTER-cgu1"></test><span><a id="link-cgu" href="/cgu"><test data-i18n="REGISTER-cgu2"></test></a></span></label>
       </div>
       <p class="CGU" ><?php if(isset($data[1]['error_cgu'])) { echo $data[1]['error_cgu']; }?></p>

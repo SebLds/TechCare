@@ -1,0 +1,28 @@
+@import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
+
+.btn {
+  cursor: pointer;
+  align-self: center;
+  border-radius: 2px;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  font-size: 1.2em;
+  outline: none;
+}
+
+.add {
+  background-color: #009933;
+}
+
+.delete {
+  background-color:  #ff0c0c;
+}
+
+.edit {
+  background-color: #c2a0a0;
+}
+
+.far, .fal, .far {
+  padding-right: 10px;
+}

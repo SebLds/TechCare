@@ -4,6 +4,7 @@ namespace App\Controller\Forum;
 use App\Model\Forum\Reply;
 use App\Model\Forum\Thread;
 use src\Controller;
+use src\Model;
 use App\Model\Forum\Tag;
 
 
@@ -27,21 +28,17 @@ class ForumController extends Controller
      * Index method that shows the list of tags with information.
      */
     public function index() {
-
         if ($_SESSION['sessionStatus'] == 0) {
       header("Location: /homepage");
     }
-
     $tags = $this->tag->getTags();
         for ($i=1;$i<=count($tags);$i++){
             $nbThreads[]= $this->tag->getNbThreadsTagById($i);
             $nbReplies[]= $this->tag->getNbRepliesTagById($i);
         }
-
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
-
     }
-        
+
 
     /**
      * Research in the database either in all the threads or in all the threads for one tag.
@@ -63,11 +60,15 @@ class ForumController extends Controller
         $this->generateView(array('searchResult' => $searchResult), "searchResult");
 
     }
+
     public function showThreadById($id){
         $thread=$this->thread->getThread($id);
-
         $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"thread");
+    }
 
+    public function showReplyById($id){
+        $reply=$this->reply->getReply($id);
+        $this->generateView(array('listReplies'=>$listReplies,'id'=>$id),"reply");
     }
 
     /**
@@ -77,7 +78,6 @@ class ForumController extends Controller
     public function showTagById($id){
        $listThreads= $this->tag->getThreadsTagById($id);
        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"listThreadsTag");
-
     }
 
     public function test(){
@@ -85,5 +85,72 @@ class ForumController extends Controller
 
     }
 
+    public function addTagIndex() {
+      if ($_SESSION['sessionStatus'] == 3) {
+      $this->generateView(array(), 'addTag');
+    } elseif ($_SESSION['sessionStatus'] == 0) {
+      header("Location: /homepage");
+    } else {
+      header("Location: /dashboard");
+    }
+  }
+
+    public function addTag() {
+
+        if (!empty($_POST)) {
+        extract($_POST);
+
+          if (isset($_POST['add'])) {
+
+          $data = [
+            'newTag' => (string) htmlspecialchars($newTag),
+            'description' => htmlspecialchars($description),
+          ];
+
+          $error = [];
+
+          if (!empty($data['newTag']) && !empty($data['description'])) {
+            $creationDate = Model::getDate();
+            $this->tag->addTag($data['newTag'], $data['description'], $creationDate);
+            header("Location: /forum");
+          } else {
+            $this->generateView(array('faq' => $FAQ, 'error' => "Veuillez ajouter une catégorie avec sa description"),'addTag');
+          }
+        }
+      }
+    }
+
+    public function deleteThread() {
+
+      if (!empty($_POST)) {
+        extract($_POST);
+
+        if (isset($_POST['delete-thread'])) {
+          $this->thread->deleteThread($threadName);
+          $tags = $this->tag->getTags();
+              for ($i=1;$i<=count($tags);$i++){
+                  $nbThreads[]= $this->tag->getNbThreadsTagById($i);
+                  $nbReplies[]= $this->tag->getNbRepliesTagById($i);
+              }
+              $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
+        }
+      }
+    }
+
+    public function deleteTag() {
+      if (!empty($_POST)) {
+        extract($_POST);
+
+        if (isset($_POST['delete'])) {
+          $this->tag->deleteTag($tagName);
+          $tags = $this->tag->getTags();
+              for ($i=1;$i<=count($tags);$i++){
+                  $nbThreads[]= $this->tag->getNbThreadsTagById($i);
+                  $nbReplies[]= $this->tag->getNbRepliesTagById($i);
+              }
+          $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
+        }
+      }
+    }
 
 }

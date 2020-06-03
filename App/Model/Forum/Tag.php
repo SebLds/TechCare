@@ -45,7 +45,7 @@ class Tag extends Model
 
     }
 
-    
+
     public function getNbRepliesTagById($idTag){
         $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag ';
         try {
@@ -88,6 +88,30 @@ class Tag extends Model
         $result = $this->executeRequest($sqlStatement);
         $ligne = $result->fetch();  // Le résultat comporte toujours 1 ligne
         return $ligne['nbBillets'];
+    }
+
+    public function addTag($Tag_Title, $Tag_description, $Creation_Date, $Edit_Date=null) {
+        $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description, Creation_Date, Edit_Date) VALUES (:Tag_Title, :Tag_description, :Creation_Date, :Edit_Date)';
+        try {
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description, 'Creation_Date' => $Creation_Date, 'Edit_Date' => $Edit_Date));
+        } catch (ConfigException $e) {
+        }
+    }
+
+    public function deleteTag($Tag_Title) {
+        $sqlStatement = 'DELETE FROM tag WHERE Tag_Title = :Tag_Title';
+        try {
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title));
+        } catch (ConfigException $e) {
+        }
+    }
+
+    public function modifyTag($Tag_Title) {
+        $sqlStatement = 'UPDATE tag SET Tag_Title = :Tag_Title, Tag_description WHERE Tag_Title = :Tag_Title';
+        try {
+            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description));
+        } catch (ConfigException $e) {
+        }
     }
 
 }

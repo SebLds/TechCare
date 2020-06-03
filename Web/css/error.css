@@ -6,7 +6,6 @@
     align-items: center;
     font-size: 15pt;
     font-weight: 400;
-    height: 80vh;
 }
 
 .logo-error {
@@ -43,5 +42,5 @@
     font-size: 0.5em;
     flex-direction: column;
   }
-    
+
 }

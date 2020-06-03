@@ -23,4 +23,20 @@ class Thread extends Model
         }
     }
 
+    public function addThread($Thread_Title, $Creation_Date, $Edit_Date=null) {
+        $sqlStatement = 'INSERT INTO thread (Thread_Title, Creation_Date, Edit_Date) VALUES (:Thread_Title, :Creation_Date, :Edit_Date)';
+        try {
+            return $this->executeRequest($sqlStatement, array('Thread_Title' => $Thread_Title, 'Creation_Date' => $Creation_Date, 'Edit_Date' => $Edit_Date));
+        } catch (ConfigException $e) {
+        }
+    }
+
+    public function deleteThread($Thread_Title) {
+        $sqlStatement = 'DELETE FROM thread WHERE Thread_Title = :Thread_Title';
+        try {
+            return $this->executeRequest($sqlStatement, array('Thread_Title' => $Thread_Title));
+        } catch (ConfigException $e) {
+        }
+    }
+
 }

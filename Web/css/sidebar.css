@@ -16,13 +16,12 @@
   margin-top: 4em;
 }
 
-
 header {
   font-size: 13pt;
   position: fixed;
-  background: #22242A;
   width: 100%;
   top: 0;
+  opacity: 1;
 }
 
 #header {
@@ -51,6 +50,14 @@ header {
   color: #A8CAE9;
   font: bold 1.2em 'Dancing Script';
   letter-spacing: 0.2em;
+}
+
+#page-title {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .right_area {
@@ -239,6 +246,10 @@ header {
   #header {
     font-size: 9pt;
     letter-spacing: 0.0375em;
+  }
+
+  #page-title {
+    display: none;
   }
 }
 

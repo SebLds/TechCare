@@ -4,7 +4,7 @@
 <!--<link href="/Web/css/searchBar.css" rel="stylesheet" type="text/css">-->
 
 <div id="body">
-    <h2>Dashboard</h2>
+
     <?php if($_SESSION['sessionStatus']==1) : ?>
         <form method="post" class="search-bar">
             <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
@@ -13,7 +13,7 @@
     <?php endif; ?>
 
     <?php if($_SESSION['sessionStatus']==2) : ?>
-        <form method="post" class="search-bar">
+        <form method="post" class="search-bar" action="/dashboard/result">
             <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
             <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." name="search">
         </form>

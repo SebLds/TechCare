@@ -22,7 +22,6 @@ Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -50,7 +49,7 @@ $router->get('/set-new-password',"ForgetPassword#index");
 
 /**Dashboard**/
 $router->get('/dashboard',"Dashboard#index");
-$router->post('/dashboard',"Dashboard#searchPatient");
+$router->post('/dashboard/result',"Dashboard#searchPatient");
 
 /**Profil**/
 $router->get('/profil',"Profil#index");
@@ -76,13 +75,22 @@ $router->get('/contact-admin',"Contact#contactAdmin");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
+$router->post('/forum',"Forum\Forum#deleteTag");
+$router->get('/forum/add-tag',"Forum\Forum#addTagIndex");
+$router->post('/forum/add-tag',"Forum\Forum#addTag");
+$router->get('/forum/add-thread',"Forum\Forum#addThreadIndex");
+$router->post('/forum/add-thread',"Forum\Forum#addThread");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
+$router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
 /**Admin**/
 $router->get('/admin/dashboard',"Admin#index");
+$router->post('/admin/dashboard/result',"Admin#searchUser");
+$router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
+
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
 $router->get('/admin/edit-faq',"Admin#editFAQIndex");
@@ -90,8 +98,8 @@ $router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
 
 /**Error**/
-$router->get('/error404','Error#index');
-$router->get('/forbidden-access','Error#forbiddenAccess');
+$router->get('/error','Error#index');
+// $router->get('/forbidden-access','Error#forbiddenAccess');
 
 
 

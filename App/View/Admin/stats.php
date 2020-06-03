@@ -1,7 +1,7 @@
 
 <?php use src\Model;
 
-$this->title = "Forum";?>
+$this->title = "Statistics";?>
 <?php ob_start(); ?>
 
 <link href="/Web/css/stats.css" rel="stylesheet">
