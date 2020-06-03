@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 use src\Controller;
-use Web\PHPMailer;
-require 'Web/PHPMailer/PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
 
 class ContactController extends Controller {
 
@@ -81,7 +85,8 @@ class ContactController extends Controller {
 
           if (empty($errors)) {
 
-            $mail = new PHPMailer();
+            $mail = new PHPMailer(true);
+            $mail->isSMTP();
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
@@ -89,11 +94,12 @@ class ContactController extends Controller {
             $mail->Username='techcare.infinitemeasures@gmail.com';
             $mail->Password='[APP-G9D]';
             $mail->setFrom($data['mail'], $data['lastName']);
-            $mail->addAdress('techcare.infinitemeasures@gmail.com');
+            $mail->addAddress('techcare.infinitemeasures@gmail.com');
             $mail->addReplyTo($data['mail'], $data['lastName']);
             $mail->isHTML(true);
             $mail->Subject=$data['subject'];
             $mail->Body=$data['message'];
+            $mail->send();
 
           $this->generateView(array(),'index');
           } else {
