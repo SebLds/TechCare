@@ -1,7 +1,7 @@
 
 <?php use src\Model;
 
-$this->title = "Statistics";?>
+$this->title = "Statistiques";?>
 <?php ob_start(); ?>
 
 <link href="/Web/css/stats.css" rel="stylesheet">
@@ -12,59 +12,87 @@ $this->title = "Statistics";?>
 <?php if (isset($data)):?>
 
   <div id="body">
-
     <div class="informations">
-
+        <div class="title1">
+            <h1>Données utilisateurs</h1>
+        </div>
       <div class="top">
-
         <div class="container">
-          <h1>L'age moyen d'un patient est de <?php echo $data['avg'][0] ?> ans.</h1>
+            <span class="icon"><i class="fal fa-user"></i></span>
+            <div class="text">
+                <div class="top-text">
+                    <span><?php echo $data['avg'][0] ?> ans</span>
+                </div>
+                <div class="bottom-text">
+                    <span>Age moyen</span>
+                </div>
+            </div>
         </div>
 
         <div class="container">
-          <h1>Il y a  <?php echo $data['nb'][0] ?> utilisateurs enregistrés.</h1>
+            <span class="icon"><i class="fal fa-users"></i></span>
+            <div class="text">
+                <div class="top-text">
+                    <span><?php echo $data['nb'][0] ?></span>
+                </div>
+                <div class="bottom-text">
+                    <span>Utilisateurs enregistrés</span>
+                </div>
+            </div>
         </div>
 
         <div class="container">
-          <h1>Il y a eu un total de <?php echo $data['nb'][1] ?> tests.</h1>
+            <span class="icon"><i class="fal fa-tachometer-alt-fastest"></i></span>
+            <div class="text">
+                <div class="top-text">
+                    <span><?php echo $data['nb'][1] ?></span>
+                </div>
+                <div class="bottom-text">
+                    <span>Tests effectués</span>
+                </div>
+            </div>
         </div>
-
       </div>
 
+        <div class="title1">
+            <h1>Scores moyen</h1>
+        </div>
+
       <div class="bottom">
-
+          <div class="container">
+              <span class="icon"><i class="fas fa-heartbeat"></i></span>
+              <div class="text">
+                  <div class="top-text">
+                      <span>Test sonore</span>
+                  </div>
+                  <div class="bottom-text">
+                      <span><?php echo $data['avg'][2]?>/100</span>
+                  </div>
+              </div>
+          </div>
         <div class="container">
-          <h1>Le score moyen du test de son est <?php echo $data['avg'][1] ?>.</h1>
+            <span class="icon"><i class="fal fa-heart-rate"></i></span>
+            <div class="text">
+                <div class="top-text">
+                    <span>Test de stress</span>
+                </div>
+                <div class="bottom-text">
+                    <span><?php echo $data['avg'][2]?>/100</span>
+                </div>
+            </div>
         </div>
 
         <div class="container">
+            <span class="icon"><i class="fal fa-low-vision"></i></span>
           <div class="text">
             <div class="top-text">
-              <span>Score moyen</span>
+              <span>Test visuel</span>
             </div>
             <div class="bottom-text">
-              <span>Test stress</span>
+              <span><?php echo $data['avg'][3]?>/100</span>
             </div>
-          </div>
-          <div class="score">
-            <i class="fas fa-heartbeat"><?php echo $data['avg'][2]?></i>
           </div>
         </div>
-
-        <div class="container">
-          <div class="text">
-            <div class="top-text">
-              <span>Score moyen</span>
-            </div>
-            <div class="bottom-text">
-              <span>Test stress</span>
-            </div>
-          </div>
-          <div class="score">
-            <i class="fas fa-eye"><?php echo $data['avg'][3]?></i>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -72,18 +100,17 @@ $this->title = "Statistics";?>
     <div class="charts">
       <div class="graph" id="canvas-holder">
           <canvas id="chart-area-doughnut"></canvas>
-          <button id="changeCircleSize">Semi/Full Circle</button>
+          <button id="changeCircleSize">Complet/demi cercle</button>
       </div>
           <br>
           <br>
       <div class="graph">
           <canvas id="chart-area-bar"></canvas>
-          <button id="changeMonth">change</button>
+          <button id="changeMonth">Modifier</button>
       </div>
     </div>
 
     <script>
-
         let randomScalingFactor = function() {
             return Math.round(Math.random() * 100);
         };
@@ -215,11 +242,5 @@ $this->title = "Statistics";?>
     </script>
 
   </div>
-
-
-
-
-
-
 
 <?php endif?>

@@ -7,6 +7,7 @@
   color: grey;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 #body h2 {
@@ -23,7 +24,7 @@
 }
 
 .far, .fal, .far {
-  padding-right: 10px;
+  padding-right: 1em;
 }
 
 .title-form {
@@ -37,7 +38,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 40px 60px 40px 60px;
+  padding: 4em 5em;
   height: 100%;
 }
 
@@ -69,7 +70,7 @@ form {
   font-size: 1.2em;
   outline: none;
   width: 35%;
-  margin: 2em 0 2em 0;
+  margin: 2em 0;
 }
 
 .add {
@@ -96,7 +97,7 @@ input {
   border-color: rgba(168, 202, 233,0.2);
   color: black;
   font-size: 1.2em;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 input:focus {
@@ -171,10 +172,11 @@ input[type="checkbox"]:checked + .CGU p:before{
   margin-left: 20px;
 }
 */
-/*** custom checkboxes ***/
 
+
+/*** custom checkboxes ***/
 input[type=checkbox] {
-  display:none; /* to hide the checkbox itself */
+  display:none;
 }
 input[type=checkbox] + label:before {
   font-family: FontAwesome;
@@ -182,11 +184,11 @@ input[type=checkbox] + label:before {
 }
 
 input[type=checkbox] + label:before {
-  content: "\f096"; /* unchecked icon */
+  content: "\f096";
 }
 
 input[type=checkbox] + label:before {
-  letter-spacing: 10px; /* space between checkbox and label */
+  letter-spacing: 10px;
 }
 
 input[type=checkbox]:checked + label:before {
@@ -267,12 +269,6 @@ textarea:focus {
 }
 
 @media only screen and (max-width: 850px)  {
-  /*TODO Colonne form responsive
-  #body{
-    display: flex;
-    flex-direction: column;
-  }
-  */
   #body .box {
     box-shadow: none;
     background-color: #fff;
@@ -281,5 +277,43 @@ textarea:focus {
     padding-top: 0;
     flex-direction: column;
   }
-
 }
+
+@media screen and (width: 1680px) {
+  #body {
+    font-size: 11pt;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #body {
+    font-size: 10pt;
+  }
+}
+
+@media only screen and (max-width: 936px) {
+  #body {
+    font-size: 9pt;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #body {
+    /*font-size: 7pt;*/
+    letter-spacing: 0.0375em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #body {
+    /*font-size: 7pt;*/
+    letter-spacing: 0;
+  }
+}
+/*
+@media screen and (max-width: 480px) {
+  #body {
+    font-size: 10pt;
+  }
+}
+*/
