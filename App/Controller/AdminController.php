@@ -12,17 +12,20 @@ use src\Session;
 use App\Model\User;
 use App\Model\Test;
 use App\Model\FAQ;
+use App\Model\Profil;
 
 class AdminController extends Controller {
 
     private User $user;
     private Test $test;
     private FAQ $faq;
+    private Profil $profil;
 
     public function __construct() {
         $this->user = new User();
         $this->test = new Test();
         $this->faq = new Faq();
+        $this->profil = new Profil();
     }
 
 
@@ -390,4 +393,9 @@ class AdminController extends Controller {
 
         }
       }
+
+      public function addTest() {
+
+      }
+
     }

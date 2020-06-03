@@ -17,7 +17,7 @@ class RegisterController extends Controller {
   }
 
   public function index() {
-    
+
    if ($_SESSION['sessionStatus'] != 0) {
       header("Location: /dashboard");
     } else {
@@ -72,6 +72,7 @@ class RegisterController extends Controller {
           // Vérification du mail
           if (!empty($data['mail'])) {
             $checkmail = $this->user->checkMail($data['mail']);
+            $checkbanmail = $this->user->isMailBan($data['mail']);
             if (!filter_var($data['mail'], FILTER_VALIDATE_EMAIL)) {
               $errors['error_mail'] = "L'adresse email est invalide";
               if ($data['mail'] != $data['mailConfirm']) {
@@ -79,6 +80,8 @@ class RegisterController extends Controller {
               }
             } elseif ($checkmail) {
               $errors['error_mail'] = "Cette adresse email est déjà associée à un compte";
+            } elseif ($checkbanmail) {
+              $errors['error_mail'] = "Le compte associé à ce mail est banni";
             }
           } else {
             $errors['error_mail'] = "Veuillez renseigner votre mail";
@@ -95,8 +98,12 @@ class RegisterController extends Controller {
 
           // Vérification
           if (!empty($data['password'])) {
-            if ($data['password'] != $data['passwordConfirm']) {
-              $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+            if (strlen($data['password']) > 6) {
+              if ($data['password'] != $data['passwordConfirm']) {
+                $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+              }
+            } else {
+              $errors['error_password'] = "Minimum 6 caractères et 1 chiffre";
             }
           } else {
             $errors['error_password'] = "Veuillez renseigner un mot de passe";

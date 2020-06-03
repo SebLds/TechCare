@@ -108,11 +108,11 @@
         <div class="inner">
             <div>
                 <h2>Tester vos aptitudes psychomotrices</h2>
-                <p>Nous sommes agrégés par le gourvenment pour vous faire passer notre test.</p>
+                <p>Nous sommes agrégés par le gouvernement pour vous faire passer notre test.</p>
             </div>
             <ul class="actions stacked">
                 <li><a href="/register" class="btn fit primary"><span data-i18n="HOME-register"></span></a></li>
-                <li><a href="/about" class="btn fit">À propos</a></li>
+                <li><a href="/contact" class="btn fit">Contact</a></li>
             </ul>
         </div>
     </section>
