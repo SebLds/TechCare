@@ -153,7 +153,9 @@ class User extends Model {
             'healthNumber' => $user->healthNumber,
             'doctor' => $user->doctor,
             'company' => $user->company,
-            'status' => $user->status
+            'status' => $user->status,
+            'password' => $user->password,
+            'registrationdate' => $user->registrationdate,
         ];
 
         return $data;
@@ -197,6 +199,19 @@ class User extends Model {
             $doctorName="$doctor->firstName $doctor->lastName";
             $sqlStatement = "SELECT * FROM users WHERE lastName LIKE '%$key%' AND doctor= :doctorName";
             return $this->executeRequest($sqlStatement, array('doctorName' => $doctorName))->fetchAll(PDO::FETCH_OBJ);
+        }
+    }
+
+    public function deleteUser($ID_Users) {
+      $sqlStatement = 'DELETE FROM users WHERE ID_Users = :ID_Users';
+      return $this->executeRequest($sqlStatement, array('ID_Users' => $ID_Users));
+    }
+
+    public function banUser($status, $firstName, $lastName, $mail, $password, $birthdate, $doctor=null, $company=null, $healthNumber=null, $registrationdate, $banDate) {
+        $sqlStatement = 'INSERT INTO user_ban (status, firstName, lastName, mail, password, birthdate, doctor, company, healthNumber, registrationdate, banDate) VALUES (:status, :firstName, :lastName, :mail, :password, :birthdate, :doctor, :company, :healthNumber, :registrationdate, :banDate)';
+        try {
+            return $this->executeRequest($sqlStatement, array('status' => $status, 'firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'password' => $password, 'birthdate' => $birthdate, 'doctor' => $doctor, 'company' => $company, 'healthNumber' => $healthNumber, 'registrationdate' => $registrationdate, 'banDate' => $banDate));
+        } catch (ConfigException $e) {
         }
     }
 
