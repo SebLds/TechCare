@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 use src\Controller;
+use App\Model\User;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -10,6 +11,12 @@ require 'Web/PHPMailer/src/PHPMailer.php';
 require 'Web/PHPMailer/src/SMTP.php';
 
 class ContactController extends Controller {
+
+  private User $user;
+
+  public function __construct() {
+        $this->user = new User();
+  }
 
     public function index() {
       if ($_SESSION['sessionStatus'] != 0) {
@@ -21,6 +28,76 @@ class ContactController extends Controller {
 
     public function contactAdminIndex() {
         $this->generateView(array(),'contactAdmin');
+    }
+
+    public function contactAdmin() {
+
+      if(!empty($_POST)) {
+        extract ($_POST);
+
+        if (isset($_POST['send'])) {
+
+          $data = [
+            'subject' => $_POST['subject'],
+            'message' => (string) htmlspecialchars($message),
+          ];
+
+          $errors = [];
+
+          if (!empty($data['subject'])) {
+            if ($data['subject']=='issue') {
+              $subject='Probleme technique';
+            }
+            if ($data['subject']=='commercial') {
+              $subject='Offre commerciale';
+            }
+            if ($data['subject']=='divers') {
+              $subject='Divers';
+            }
+          } else {
+            $errors['error_subject'] = "Veuillez choisir un sujet";
+          }
+
+          if (!empty($data['message'])) {
+          } else {
+            $errors['error_message'] = "Veuillez saisir un message";
+          }
+
+          if (empty($errors)) {
+
+            $profil = $this->user->getProfil($_SESSION['ID_User']);
+
+            $mail = new PHPMailer(true);
+            $mail->isSMTP();
+            $mail->SMTPOptions = array('ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+            ));
+            $mail->Host='smtp.gmail.com';
+            $mail->Port=587;
+            $mail->SMTPAuth=true;
+            $mail->SMTPSecure='tls';
+            $mail->Username='techcare.infinitemeasures@gmail.com';
+            $mail->Password='[APP-G9D]';
+            $mail->setFrom($profil['mail'], $profil['lastName']);
+            $mail->addAddress('techcare.infinitemeasures@gmail.com');
+            $mail->isHTML(true);
+            $mail->Subject= $subject;
+            $mail->Body= "Status :" . " " . $profil['status'] . " " .
+                         "Prénom :" . " " . $profil['firstName'] . " " .
+                         "Nom :" . " " . $profil['lastName'] . " " .
+                         "Mail :" . " " . $profil['mail'] . " " .
+                          $data['message'];
+            $mail->send();
+
+            $this->generateView(array('msg-validate' => 'Merci pour votre message, nous vous répondrons au plus vite'),'contactAdmin');
+          } else {
+            $data = [$data, $errors];
+            $this->generateView($data,'contactAdmin');
+          }
+        }
+      }
     }
 
     public function sendMail() {
@@ -74,6 +151,15 @@ class ContactController extends Controller {
           }
 
           if (!empty($data['subject'])) {
+            if ($data['subject']=='issue') {
+              $subject='Probleme technique';
+            }
+            if ($data['subject']=='commercial') {
+              $subject='Offre commerciale';
+            }
+            if ($data['subject']=='divers') {
+              $subject='Divers';
+            }
           } else {
             $errors['error_subject'] = "Veuillez choisir un sujet";
           }
@@ -87,6 +173,11 @@ class ContactController extends Controller {
 
             $mail = new PHPMailer(true);
             $mail->isSMTP();
+            $mail->SMTPOptions = array('ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+            ));
             $mail->Host='smtp.gmail.com';
             $mail->Port=587;
             $mail->SMTPAuth=true;
@@ -95,13 +186,15 @@ class ContactController extends Controller {
             $mail->Password='[APP-G9D]';
             $mail->setFrom($data['mail'], $data['lastName']);
             $mail->addAddress('techcare.infinitemeasures@gmail.com');
-            $mail->addReplyTo($data['mail'], $data['lastName']);
             $mail->isHTML(true);
-            $mail->Subject=$data['subject'];
-            $mail->Body=$data['message'];
+            $mail->Subject=$subject;
+            $mail->Body= "Prénom :" . " " . $data['firstName'] . " " .
+            "Nom :" . " " . $data['lastName'] . " " .
+            "Mail :" . " " . $data['mail'] . " " .
+            "Message :" . " " . $data['message'];
             $mail->send();
 
-            $this->generateView(array(),'index');
+            $this->generateView(array('msg-validate' => 'Merci pour votre message, nous vous répondrons au plus vite'),'index');
           } else {
             $data = [$data, $errors];
             $this->generateView($data,'index');

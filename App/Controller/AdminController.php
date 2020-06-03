@@ -153,30 +153,25 @@ class AdminController extends Controller {
         }
 
         // Vérification du nom du médecin
-        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['doctor'])) {
             if (!ctype_alpha($data['doctor'])) {
-              $errors['error_doctor'] = ("Caractères invalides");
+              $errors['error_doctor'] = "Caractères invalides";
             }
           } else {
-            $errors['error_doctor'] = ("Veuillez renseigner le nom de votre médecin");
+            $errors['error_doctor'] = "Veuillez renseigner le nom de votre médecin";
           }
-        }
 
         // Vérification du nom du médecin
-        if ($data['select-user-type'] == 'manager') {
           if (!empty($data['company'])) {
             if (!ctype_alpha($data['company'])) {
-              $errors['error_company'] = ("Caractères invalides");
+              $errors['error_company'] = "Caractères invalides";
             }
           } else {
-            $errors['error_company'] = ("Veuillez renseigner un nom d'entreprise");
+            $errors['error_company'] = "Veuillez renseigner un nom d'entreprise";
           }
-        }
 
 
         // Vérification du numéro de sécurité sociale
-        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['healthNumber'])) {
             $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
             if ($checkHealthNumber) {
@@ -185,7 +180,6 @@ class AdminController extends Controller {
           } else {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
-        }
 
         if(empty($errors)) {
           $registrationdate = Model::getDate();
@@ -325,6 +319,15 @@ class AdminController extends Controller {
       public function editUserProfil() {
 
         if (!empty($_POST)) {
+          $newFirstName='';
+          $newLastName='';
+          $newMail='';
+          $day=0;
+          $month=0;
+          $year=0;
+          $newDoctor='';
+          $newHealthNumber='';
+          $newCompany='';
           extract($_POST);
 
           if (isset($_POST['change'])) {
@@ -358,9 +361,11 @@ class AdminController extends Controller {
             }
 
             if(empty($errors)) {
-              $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], );
+              $ID = $this->user->getID($newMail);
+              $status = $this->user->getStatus($ID);
+              $this->user->modifyProfil($status, $data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $data['newCompany'],$data["birthdate"], $ID);
               $data = $this->user->getProfil($_SESSION['ID_User']);
-              $this->generateView($data,'index');
+              header("Location: /admin/dashboard");
             } else {
               $data = [$data, $errors];
               $this->generateView($data,'index');
