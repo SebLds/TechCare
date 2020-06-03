@@ -55,8 +55,10 @@
         </div>
         <div id="footer">
             <div id="link">
+              <?php if ($_SESSION['sessionStatus'] == 1 || $_SESSION['sessionStatus'] == 2): ?>
                 <a href="/contact-admin"><span data-i18n="SIDEBAR-contact"></span></a>
                 <span>•</span>
+              <?php endif; ?>
                 <a href="/cgu"><span data-i18n="SIDEBAR-cgu"></span></a>
                 <span>•</span>
                 <a href="/faq"><span data-i18n="SIDEBAR-faq"></span></a>

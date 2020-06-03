@@ -52,7 +52,7 @@
 
           <label><i class="far fa-check-square"></i>Confirmation adresse email</label>
           <input type="text" name="mailConfirm" placeholder="infinite@measures.com">
-          <p class="error-msg"><?php if(isset($data[1]['error_mailmailConfirm'])) { echo $data[1]['error_mailmailConfirm']; }?></p>
+          <p class="error-msg"><?php if(isset($data[1]['error_mailConfirm'])) { echo $data[1]['error_mailConfirm']; }?></p>
 
         </div>
 

@@ -71,7 +71,7 @@ $router->post('/test-summary',"Exam#submitComment");
 $router->get('/contact',"Contact#index");
 $router->post('/contact',"Contact#sendMail");
 $router->get('/contact-admin',"Contact#contactAdminIndex");
-$router->get('/contact-admin',"Contact#contactAdmin");
+$router->post('/contact-admin',"Contact#contactAdmin");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");

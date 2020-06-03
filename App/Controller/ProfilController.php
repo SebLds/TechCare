@@ -13,7 +13,7 @@ class ProfilController extends Controller {
   }
 
   public function index() {
-    
+
     if ($_SESSION['sessionStatus'] == 0) {
       header("Location: /homepage");
     }
@@ -67,7 +67,7 @@ class ProfilController extends Controller {
         }
 
         if(empty($errors)) {
-          $this->user->modifyProfil($data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $data['newCompany'],$data["birthdate"], $_SESSION['ID_User']);
+          $this->user->modifyProfil($_SESSION['sessionStatus'], $data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $data['newCompany'],$data["birthdate"], $_SESSION['ID_User']);
           $data = $this->user->getProfil($_SESSION['ID_User']);
           $this->generateView($data,'index');
         } else {

@@ -31,7 +31,7 @@
           <?php endif; ?>
 
           <label><i class="far fa-lock"></i>Nouveau mot de passe</label>
-          <input id="myInput" type="newPassword" name="password" placeholder="●●●●●●●●" value="<?php if(isset($password)) { echo $password; }?>">
+          <input id="myInput" type="newPassword" name="password" placeholder="●●●●●●●●" value="">
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
@@ -57,7 +57,7 @@
           <?php endif; ?>
 
           <label><i class="far fa-unlock"></i>Confirmation mot de passe</label>
-          <input id="myInput" type="newPasswordConfirm" name="password" placeholder="●●●●●●●●" value="<?php if(isset($password)) { echo $password; }?>">
+          <input id="myInput" type="newPasswordConfirm" name="password" placeholder="●●●●●●●●" value="">
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
