@@ -10,7 +10,7 @@
     <h1>Ajouter un utilisateur</h1>
     <p class="top-text">Veuillez fournir les informations nécessaires à l'ajout d'un nouvel utilisateur.</p>
 
-    <form method="post">
+    <form method="post" action="/admin/add-user">
 
       <div class="">
         <label><i class="far fa-users"></i>Type d'utilisateur</label>

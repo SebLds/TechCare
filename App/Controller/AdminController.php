@@ -60,10 +60,26 @@ class AdminController extends Controller {
     $this->generateView(array(), 'AddUser');
   }
 
+  public function formAddUser(){
+      $this->generateView(array(),'AddUser');
+  }
+
   public function addUser() {
 
     if (!empty($_POST)) {
-      extract($_POST);
+        $firstName='';
+        $lastName='';
+        $mail='';
+        $mailConfirm='';
+        $password='';
+        $passwordConfirm='';
+        $day=0;
+        $month=0;
+        $year=0;
+        $doctor='';
+        $company='';
+        $healthNumber='';
+        extract($_POST);
 
       if(isset($_POST['add'])) {
 
@@ -191,7 +207,7 @@ class AdminController extends Controller {
           $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
           $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['company'], $data['healthNumber'], $registrationdate);
           $data= ['confirm' => "Utilisateur ajouté"];
-          $this->generateView($data,'AddUser');
+          $this->generateView($data,'index');
         } else {
           $data = [$data, $errors];
           $this->generateView($data,'AddUser');
@@ -268,6 +284,10 @@ class AdminController extends Controller {
     public function editFAQ() {
 
       if (!empty($_POST)) {
+          $question='';
+          $answer='';
+          $newAnswer='';
+          $newQuestion='';
         extract($_POST);
 
         if (isset($_POST['add'])) {

@@ -30,7 +30,7 @@ abstract class Model
      * @return bool|false|PDOStatement
      * @throws ConfigException
      */
-    protected function executeRequest($sqlStatement, $params = null,$choice=null)
+    protected function executeRequest($sqlStatement, $params = null)
     {
         if ($params == null) {
             $request = self::getBdd()->prepare($sqlStatement);
@@ -40,11 +40,6 @@ abstract class Model
             $request = self::getBdd()->prepare($sqlStatement);
             $request->execute($params);
         }
-//        if ($choice===1){
-//            $request=$request->fetchAll();
-//        } else if ($choice==2){
-//            $request=$request->fetch();
-//        }
         return $request;
     }
     public function research($table,$section,$key,$bool=false,$idTag=null){

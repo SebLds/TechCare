@@ -3,7 +3,7 @@
 
 <div id="body">
 
-	<form method="post">
+	<form method="post" action="/forum/add-tag">
 
 		<div class="form-add-category box">
 

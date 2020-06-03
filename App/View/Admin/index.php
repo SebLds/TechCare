@@ -8,7 +8,9 @@
 	<div class="users">
 			<h1 class="title">Utilisateurs</h1>
 		<div class="action">
-			<a href="/admin/add-user"><button class="btn add" type="submit" name="button"><i class="far fa-user-plus"></i>Ajouter</button></a>
+                <form method="post" action="/admin/add-user-form">
+                    <button type="submit" class="btn add" name="button"><i class="far fa-user-plus"></i>Ajouter</button>
+                </form>
 			<form class="search-bar" method="post" action="/admin/dashboard/result">
           <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
           <input type="text" autocomplete="off" class="search-input" name='search' placeholder="Rechercher des utilisateurs...">
