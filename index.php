@@ -90,6 +90,7 @@ $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 $router->get('/admin/dashboard',"Admin#index");
 $router->post('/admin/dashboard/result',"Admin#searchUser");
 $router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
+$router->post('/admin/dashboard/profil-:id',"Admin#editUserProfil");
 
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
