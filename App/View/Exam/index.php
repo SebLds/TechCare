@@ -27,6 +27,17 @@
       </div>
       <p class="error-msg"><?php if(isset($error_select)) { echo $error_select; } ?></p>
 
+      <label><i class="far fa-id-badge"></i>Profil du patient</label>
+      <div class="selectbox">
+        <select name="test-profil">
+          <option value="">Choisir un profil</option>
+          <option value="Sportsman">Sportif</option>
+          <option value="Sedentary">Sédentaire</option>
+          <option value="Active">Actif</option>
+        </select>
+      </div>
+        <p class="error-msg"><?php if(isset($error_selectProfil)) { echo $error_selectProfil; } ?></p>
+
 
       <input type="submit" value="Lancer" name="submit">
 

@@ -5,9 +5,9 @@ use src\Controller;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require 'Web/PHPMailer/src/Exception.php';
+require 'Web/PHPMailer/src/PHPMailer.php';
+require 'Web/PHPMailer/src/SMTP.php';
 
 class ContactController extends Controller {
 
@@ -101,7 +101,7 @@ class ContactController extends Controller {
             $mail->Body=$data['message'];
             $mail->send();
 
-          $this->generateView(array(),'index');
+            $this->generateView(array(),'index');
           } else {
             $data = [$data, $errors];
             $this->generateView($data,'index');
