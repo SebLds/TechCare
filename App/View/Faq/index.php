@@ -8,7 +8,7 @@
 
     <div class="top">
       <form class="search-bar" method="post">
-          <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
+          <button class="sub-none" type="submit"><i class="far fa-search fa-xl icon"></i></button>
           <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses...">
           <?php if($_SESSION['sessionStatus']==3): ?>
           <a href="/admin/edit-faq"><button type="button" class="btn edit"><i class="far fa-edit"></i>Modifier</button></a>

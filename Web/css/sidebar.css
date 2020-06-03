@@ -21,11 +21,10 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  opacity: 1;
+  z-index: 3 !important;
 }
 
 #header {
-  opacity: 1;
   position: fixed;
   background: #22242A;
   width: 100%;
@@ -35,7 +34,7 @@ header {
   justify-content: space-between;
   flex-direction: row;
   padding: 0 1em;
-  z-index: 5;
+  z-index: 3 !important;
 }
 
 #header h3 {
@@ -188,20 +187,20 @@ header {
 }
 
 @media screen and (width: 1680px) {
-  #header {
-    font-size: 12pt;
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  #header {
+  header {
     font-size: 11pt;
   }
 }
 
-@media only screen and (max-width: 936px)  {
-  #header{
+@media screen and (max-width: 1280px) {
+  header {
     font-size: 10pt;
+  }
+}
+
+@media only screen and (max-width: 936px)  {
+  header{
+    font-size: 8pt;
   }
   #body {
     margin-left: 4em;
@@ -243,8 +242,8 @@ header {
 }
 
 @media screen and (max-width: 736px) {
-  #header {
-    font-size: 9pt;
+  header {
+    font-size: 7pt;
     letter-spacing: 0.0375em;
   }
 
@@ -254,14 +253,14 @@ header {
 }
 
 @media screen and (max-width: 600px) {
-  #header {
-    font-size: 8pt;
+  header {
+    font-size: 7pt;
     letter-spacing: 0;
   }
 }
 
 @media screen and (max-width: 480px) {
-  #header {
+  header {
     font-size: 7pt;
   }
 }

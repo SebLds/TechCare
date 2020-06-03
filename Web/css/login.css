@@ -1,8 +1,16 @@
-#eye {
-  position: absolute;
-  margin-left: 21em;
-  margin-top: 11.2em;
+.fa-eye-slash, .fa-eye {
   cursor: pointer;
+  position: relative;
+  left: 23.5em;
+  bottom: 1.7em;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+}
+.sub-none{
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 #password {
@@ -10,11 +18,11 @@
 }
 
 @media only screen and (max-width: 850px)  {
-
-  #eye {
-    position: absolute;
-    margin-left: 13em;
-    margin-top: 11.2em;
+  .fa-eye-slash, .fa-eye {
+    left: 10em;
+    bottom: 1.8em;
   }
-
+  input[type="submit"] {
+    width: 70% !important;
+  }
 }
