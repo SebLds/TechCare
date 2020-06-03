@@ -3,8 +3,6 @@
   top: 0;
   padding: 0;
   margin-top: 0;
-  top: 0;
-  position: relative;
 }
 
 canvas {
@@ -16,6 +14,13 @@ canvas {
 .informations {
   display: flex;
   flex-direction: column;
+}
+
+.informations .title1{
+  width: 100%;
+  padding: 1em;
+  margin: 1em;
+  border-bottom: 0.1em solid lightgray;
 }
 
 .top, .bottom {
@@ -34,39 +39,57 @@ canvas {
 }
 
 .container {
-  border: 0.001em solid black;
-  width: 400px;
-  margin: 10px 20px 10px 20px;
-  font-size: 0.8em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row !important;
+  align-items: center;
+  border: 0.1em solid lightgray;
+  box-shadow: 0 0 5px 0 rgba(168,158,168,1);
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em;
+  font-size: 1em;
+  width: 50em;
+}
+
+.container .icon{
 }
 
 .text, .score {
   width: 100%;
   display: flex;
-  align-items: center;
-  border: 0.1em solid black;
-  justify-content: center;
-}
-
-.text {
   flex-direction: column;
+  margin-left: 3em;
 }
 
-.container i {
-  padding-right: 5px;
+.top-text {
+  padding-bottom: 0.5em;
+}
+
+.top-text span{
+  color: black;
+  font-size: 1.85em;
+}
+
+.fas, .fal {
+  align-items: center;
   font-size: 3em;
+  color: #A8CAE9;
 }
 
-.container span {
-  font-size: 1.5em;
+#changeCircleSize{
+  background-color: #A8CAE9;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#changeCircleSize:hover {
+  background: rgba(168, 202, 233, 0.8);
 }
 
-.fa-heartbeat {
-  color: red;
+#changeMonth{
+  display: none;
 }
 
-.fa-eye {
-  color: blue;
-}

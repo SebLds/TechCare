@@ -2,6 +2,15 @@
   justify-content: center;
   flex-direction: column;
 }
+#body form .btn{
+    font-size: 1.5em;
+}
+.title{
+    width: 100%;
+    padding: 1em;
+    margin: 1em;
+    border-bottom: 0.1em solid lightgray;
+}
 
 .search-bar {
     display: flex;
@@ -17,7 +26,7 @@
     border: none;
     outline: none;
     color: white;
-    font-size: 1.2em;
+    font-size: 1.4em;
     border-radius: 4px;
     box-shadow: 0 2px 2px 0 rgba(168, 202, 233, 1);
     transition: background .4s, box-shadow .2s;
@@ -26,11 +35,11 @@
 .icon {
     cursor: pointer;
     position: relative;
-    left: 2em;
+    left: 1.8em;
     border: none;
     outline: none;
     color: white;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .sub-none{
@@ -54,13 +63,18 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 2em 0em 2em 2em;
+  padding: 2em;
 }
+
 
 .users {
   width: 100%;
 }
-
-.users h1 {
-  border-bottom: 1px solid black;
+/*
+.font{
+    position: relative;
+    left: 1.8em;
+    color: black;
+    font-size: 1.5em;
 }
+ */
