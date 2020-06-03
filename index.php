@@ -22,7 +22,6 @@ Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
 
 Session::getInstance();
-
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -50,7 +49,7 @@ $router->get('/set-new-password',"ForgetPassword#index");
 
 /**Dashboard**/
 $router->get('/dashboard',"Dashboard#index");
-$router->post('/dashboard',"Dashboard#searchPatient");
+$router->post('/dashboard/result',"Dashboard#searchPatient");
 
 /**Profil**/
 $router->get('/profil',"Profil#index");
@@ -89,6 +88,9 @@ $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 
 /**Admin**/
 $router->get('/admin/dashboard',"Admin#index");
+$router->post('/admin/dashboard/result',"Admin#searchUser");
+$router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
+
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
 $router->get('/admin/edit-faq',"Admin#editFAQIndex");

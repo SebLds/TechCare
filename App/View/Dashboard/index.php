@@ -13,7 +13,7 @@
     <?php endif; ?>
 
     <?php if($_SESSION['sessionStatus']==2) : ?>
-        <form method="post" class="search-bar">
+        <form method="post" class="search-bar" action="/dashboard/result">
             <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
             <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." name="search">
         </form>
