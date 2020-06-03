@@ -13,11 +13,11 @@
     </form>
 
     <?php if ($_SESSION['sessionStatus']==3): ?>
-    <a href="/forum-add-thread"><button type="button" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter</button></a>
+    <a href="/forum/add-thread"><button type="button" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter</button></a>
     <?php endif; ?>
 
 <?php for ($i=0;$i<count($data['listThreads']);$i++):?>
-    <form action="post">
+    <form method="post">
       <div class="tag">
             <div class="tag-name">
               <a href=""><h1 class="titleTag"><?php echo $data['listThreads'][$i]; ?></h1></a>

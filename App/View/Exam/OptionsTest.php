@@ -12,17 +12,6 @@
 
     <form action="/test-confirm" method="post">
 
-      <label><i class="far fa-id-badge"></i>Profil du patient</label>
-      <div class="selectbox">
-        <select name="test-profil">
-          <option value="">Choisir un profil</option>
-          <option value="Sportsman">Sportif</option>
-          <option value="Sedentary">Sédentaire</option>
-          <option value="Active">Actif</option>
-        </select>
-      </div>
-        <p class="error-msg"><?php if(isset($error_selectProfil)) { echo $error_selectProfil; } ?></p>
-
       <?php if ($data['select-category'] == 'sight'): ?>
       <label>Acuité visuelle</label>
       <meter value="sight-value" min="0" max="100"></meter>
@@ -30,6 +19,7 @@
 
       <?php if ($data['select-category'] == 'stress'):  ?>
       <label>Gestion du stress</label>
+      <progress value="0" max="100">0%</progress>
       <meter value="sight-value" min="0" max="100"></meter>
       <?php endif;  ?>
 

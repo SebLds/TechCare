@@ -13,7 +13,7 @@
       </form>
 
       <?php if ($_SESSION['sessionStatus']==3): ?>
-      <a href="/forum-add-tag"><button type="button" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter</button></a>
+      <a href="/forum/add-tag"><button type="button" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter</button></a>
       <?php endif; ?>
 
       <form action="/forum" method="post">

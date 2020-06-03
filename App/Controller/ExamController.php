@@ -45,10 +45,12 @@ class ExamController extends Controller {
         $data = [
           'healthNumber' => htmlspecialchars(trim($healthNumber)),
           'select-category' => $_POST['test-category'],
+          'select-profil' => $_POST['test-profil'],
         ];
 
         Session::getInstance()->setAttribute('Patient_HealthNumber', $data['healthNumber']);
         Session::getInstance()->setAttribute('Select-Category', $data['select-category']);
+        Session::getInstance()->setAttribute('Select-Profil', $data['select-profil']);
 
         $errors = [];
 
@@ -64,6 +66,11 @@ class ExamController extends Controller {
         if (!empty($data['select-category'])) {
         } else {
           $errors['error_select'] = "Veuillez choisir un type de test";
+        }
+
+        if (!empty($data['select-profil'])) {
+        } else {
+          $errors['error_selectProfil'] = "Veuillez choisir un profil";
         }
 
         if(empty($errors)) {
@@ -84,23 +91,12 @@ class ExamController extends Controller {
       header("Location: /dashboard");
     }
 
-      $data = [
-        'select-profil' => $_POST['test-profil'],
-      ];
-
-      Session::getInstance()->setAttribute('Select-Profil', $data['select-profil']);
-
       $errors = [];
 
       if (!empty($_POST)) {
         extract($_POST);
 
         if (isset($_POST['submit-2'])) {
-
-          if (!empty($data['select-profil'])) {
-          } else {
-            $errors['error_selectProfil'] = "Veuillez choisir un profil";
-          }
 
           if(empty($errors)) {
             $passDate = Model::getDate();

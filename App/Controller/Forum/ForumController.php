@@ -127,7 +127,12 @@ class ForumController extends Controller
 
         if (isset($_POST['delete-thread'])) {
           $this->thread->deleteThread($threadName);
-          header("Location: /dashboard");
+          $tags = $this->tag->getTags();
+              for ($i=1;$i<=count($tags);$i++){
+                  $nbThreads[]= $this->tag->getNbThreadsTagById($i);
+                  $nbReplies[]= $this->tag->getNbRepliesTagById($i);
+              }
+              $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
         }
       }
     }
