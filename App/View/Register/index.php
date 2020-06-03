@@ -49,8 +49,8 @@
           <p class="error-msg"><?php if(isset($data[1]['error_doctor'])) { echo $data[1]['error_doctor']; }?></p>
 
           <label><i class="far fa-lock"></i><span data-i18n="REGISTER-password"></span></label>
-          <input id="password" type="password" name="password" placeholder="●●●●●●●●" value="">
-          <i id="eye" class="far fa-eye-slash"></i>
+            <input id="password" type="password" name="password" placeholder="●●●●●●●●" value="">
+            <span><i id="eye" class="far fa-eye"></i></span>
           <p class="error-msg"><?php if(isset($data[1]['error_password'])) { echo $data[1]['error_password']; }?></p>
 
           <label><i class="far fa-unlock"></i><span data-i18n="REGISTER-confirmpassword"></span></label>

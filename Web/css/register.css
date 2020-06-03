@@ -7,21 +7,23 @@
 .left {
   display: flex;
   flex-direction: column;
-  padding-right: 20px;
+  padding-right: 2em;
 }
 
 .right {
   display: flex;
   flex-direction: column;
-  padding-left: 20px;
+  padding-left: 2em;
 }
 
 .fa-eye-slash, .fa-eye {
-  position: absolute;
-  margin-left: 260px;
-  margin-top: 304px;
-  font-size: 1.4em;
   cursor: pointer;
+  position: relative;
+  left: 13em;
+  bottom: 1.7em;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
 }
 
 .bottom {
@@ -41,10 +43,8 @@
 .CGU {
   display: flex;
   flex-direction: row;
-  margin-top: 4px;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
   color: red;
 }
 
@@ -74,23 +74,25 @@ input[type="submit"] {
   width: 40%;
 }
 
-#eye {
-  position: absolute;
-  margin-left: 12.5em;
-  margin-top: 19.2em;
-  cursor: pointer;
-  font-size: 1em;
+.sub-none{
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 
 @media only screen and (max-width: 850px)  {
-
   .fields {
-    flex-direction: column;
+    flex-direction: column !important;
   }
-
-  #eye {
-    margin-left: 28em;
+  .right {
+    padding-left: 0 !important;
   }
-
+  .left{
+    padding-right: 0 !important;
   }
+  .fa-eye-slash, .fa-eye {
+    left: 24em;
+    bottom: 2em;
+  }
+}
