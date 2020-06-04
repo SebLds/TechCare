@@ -17,11 +17,11 @@ class LoginController extends Controller {
     /**
      * @var NbConnexions
      */
-    private NbConnexions $nbConnexions;
+//    private NbConnexions $nbConnexions;
 
     public function __construct() {
         $this->user = new User();
-        $this->nbConnexions = new NbConnexions();
+//        $this->nbConnexions = new NbConnexions();
   }
 
   public function index() {
@@ -73,7 +73,7 @@ class LoginController extends Controller {
         if(empty($errors)) {
           $log = $this->user->checkLogin($data['mail'], $data['password']);
           if ($log) {
-            $this->nbConnexions->addConnexion(Model::getDate());
+//            $this->nbConnexions->addConnexion(Model::getDate());
             $ID = $this->user->getID($data['mail']);
             $Status = $this->user->getStatus($ID);
             Session::getInstance()->setAttribute('ID_User', $ID);
