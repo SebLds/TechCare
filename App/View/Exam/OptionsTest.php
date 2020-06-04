@@ -1,4 +1,4 @@
-<?php $this->title='Options Test'; ?>
+<?php $this->title='Options du test'; ?>
 
 <link rel="stylesheet" href="/Web/css/form.css">
 

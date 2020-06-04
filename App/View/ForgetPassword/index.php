@@ -1,4 +1,4 @@
-<?php $this->title = "Set new password" ?>
+<?php $this->title = "Nouveau mot de passe" ?>
     <link rel="stylesheet" href="/Web/css/login.css">
     <link rel="stylesheet" href="/Web/css/form.css">
 

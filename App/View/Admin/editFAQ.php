@@ -1,4 +1,4 @@
-<?php $this->title = "Edit FAQ"; ?>
+<?php $this->title = "Modifier FAQ"; ?>
 <link href="/Web/css/form.css" rel="stylesheet">
 <link href="/Web/css/button.css" rel="stylesheet">
 

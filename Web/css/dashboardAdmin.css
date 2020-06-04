@@ -79,3 +79,42 @@
     font-size: 1.5em;
 }
  */
+
+@media screen and (width: 1680px) {
+    #body {
+        font-size: 10.5pt !important;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    #body {
+        font-size: 10pt !important;
+    }
+}
+
+@media only screen and (max-width: 936px)  {
+    #body{
+        font-size: 9pt !important;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #body {
+        font-size: 8pt !important;
+        letter-spacing: 0.0375em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #body {
+        font-size: 7pt !important;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #body {
+        font-size: 7pt !important;
+    }
+}
+

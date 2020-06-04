@@ -1,4 +1,4 @@
-<?php $this->title = "Register" ?>
+<?php $this->title = "S'inscrire" ?>
 
     <link href="/Web/css/register.css" rel="stylesheet">
     <link href="/Web/css/form.css" rel="stylesheet">
@@ -71,16 +71,14 @@
           <input id="box1" type="checkbox" name="check"/>
           <label for="box1" id="text-CGU"><test data-i18n="REGISTER-cgu1"></test><span><a id="link-cgu" href="/cgu"><test data-i18n="REGISTER-cgu2"></test></a></span></label>
       </div>
-      <p class="CGU" ><?php if(isset($data[1]['error_cgu'])) { echo $data[1]['error_cgu']; }?></p>
+      <p class="CGU"><?php if(isset($data[1]['error_cgu'])) { echo $data[1]['error_cgu']; }?></p>
 
       <div class="submit">
         <input type="submit" value="S'inscrire"  name="register">
       </div>
 
     </form>
-
   </div>
-
 </div>
 
 <script type="text/javascript" src="/Web/js/password.js"></script>

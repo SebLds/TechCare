@@ -61,7 +61,7 @@
             <div class="content">
                 <h2>Les résultats seront<br />
                     complets et certifiés par l'état</h2>
-                <p>Vous pourrez consultés en ligne vos résultats immédiatement après le test. Votre médecin référent pourra les transférer à l'institut compétente pour valider votre test.</p>
+                <p>Vous pourrez consulter en ligne vos résultats immédiatement après le test. Votre médecin référent pourra les transférer à l'institut compétente pour valider votre test.</p>
             </div>
         </section>
     </section>
@@ -112,7 +112,7 @@
             </div>
             <ul class="actions stacked">
                 <li><a href="/register" class="btn fit primary"><span data-i18n="HOME-register"></span></a></li>
-                <li><a href="/contact" class="btn fit">Contact</a></li>
+                <li><a href="/contact" class="btn fit">Nous contacter</a></li>
             </ul>
         </div>
     </section>

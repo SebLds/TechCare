@@ -10,7 +10,6 @@ $this->title = "Statistiques";?>
 <?php $this->head_tags = ob_get_clean();?>
 
 <?php if (isset($data)):?>
-
   <div id="body">
     <div class="informations">
         <div class="title1">
@@ -60,7 +59,7 @@ $this->title = "Statistiques";?>
 
       <div class="bottom">
           <div class="container">
-              <span class="icon"><i class="fas fa-heartbeat"></i></span>
+              <span class="icon"><i class="fal fa-waveform"></i></span>
               <div class="text">
                   <div class="top-text">
                       <span>Acuité sonore</span>
@@ -95,7 +94,9 @@ $this->title = "Statistiques";?>
         </div>
       </div>
 
-    </div>
+      <div class="title1">
+          <h1>Graphiques</h1>
+      </div>
 
     <div class="charts">
       <div class="title1">

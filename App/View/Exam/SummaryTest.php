@@ -1,4 +1,4 @@
-<?php $this->title='Summary Test'; ?>
+<?php $this->title='Résumé du test'; ?>
 
 <link rel="stylesheet" href="/Web/css/form.css">
 <link rel="stylesheet" href="/Web/css/summaryTest.css">

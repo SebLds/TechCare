@@ -55,6 +55,5 @@
             <a href="https://www.linkedin.com/in/infinite-measures-8454771a5/"><i class="fab fa-linkedin-in fa-2x"></i></a>
             <a href="https://github.com/SebLds/TechCare"><i class="fab fa-github fa-2x"></i></a>
         </div>
-
     </div>
 </footer>

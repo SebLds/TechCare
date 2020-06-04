@@ -1,4 +1,4 @@
-<?php $this->title='Confirm Test'; ?>
+<?php $this->title='Confirmer un test'; ?>
 
 <link rel="stylesheet" href="/Web/css/form.css">
 <link rel="stylesheet" href="/Web/css/summaryTest.css">
