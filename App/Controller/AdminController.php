@@ -12,20 +12,23 @@ use src\Session;
 use App\Model\User;
 use App\Model\Test;
 use App\Model\FAQ;
-use App\Model\Profil;
+use App\Model\TypeTest;
+use App\Model\Module;
 
 class AdminController extends Controller {
 
     private User $user;
     private Test $test;
     private FAQ $faq;
-    private Profil $profil;
+    private TypeTest $typetest;
+    private Module $module;
 
     public function __construct() {
         $this->user = new User();
         $this->test = new Test();
         $this->faq = new Faq();
-        $this->profil = new Profil();
+        $this->typetest = new TypeTest();
+        $this->module = new Module();
     }
 
 
@@ -197,6 +200,7 @@ class AdminController extends Controller {
 
         }
       }
+      
   }
 
   public function stats() {
@@ -394,8 +398,195 @@ class AdminController extends Controller {
         }
       }
 
+      public function formAddTest() {
+        $module = $this->module->getModule();
+        $this->generateView(array('module'=>$module), 'addTest');
+      }
+
+      public function formAddModule() {
+        $typetest = $this->typetest->getTypeTest();
+        $this->generateView(array('typetest'=>$typetest), 'addModule');
+      }
+
+      public function formDeleteTest() {
+        $typetest = $this->typetest->getTypeTest();
+        $this->generateView(array('typetest'=>$typetest), 'deleteTest');
+      }
+
+      public function formDeleteModule() {
+        $module = $this->module->getModule();
+        $this->generateView(array('module'=>$module), 'deleteModule');
+      }
+
+      public function formAssociate() {
+        $module = $this->module->getModule();
+        $typetest = $this->typetest->getTypeTest();
+        $this->generateView(array('module'=>$module, 'typetest'=>$typetest), 'associate');
+      }
+
       public function addTest() {
 
+        if (!empty($_POST)) {
+          extract($_POST);
+
+          if(isset($_POST['add-test'])) {
+
+            $data = [
+              'newTest' => htmlspecialchars(trim($newTest)),
+            ];
+
+            $errors = [];
+
+            if (!empty($data['newTest'])) {
+              if (!ctype_alpha($data['newTest'])) {
+                $errors['error_test'] = "Caractères invalides";
+              }
+            } else {
+              $errors['error_test'] = "Veuillez renseigner le nom du test";
+            }
+
+            if(empty($errors)) {
+              $this->typetest->addTypeTest($data['newTest']);
+              $this->generateView(array('msg' => 'Test Ajouté'),'index');
+            } else {
+              $this->generateView($errors,'AddTest');
+            }
+
+            }
+          }
+      }
+
+      public function addModule() {
+
+        if (!empty($_POST)) {
+          extract($_POST);
+
+          if(isset($_POST['add-module'])) {
+
+            $data = [
+              'newModule' => htmlspecialchars(trim($newModule)),
+              'settingssportsman' => htmlspecialchars(trim($settingssportsman)),
+              'settingssedentary' => htmlspecialchars(trim($settingssedentary)),
+              'settingsactif' => htmlspecialchars(trim($settingsactif)),
+              'select-test' => $_POST['select-test'],
+            ];
+
+            $errors = [];
+
+            if (!empty($data['newModule'])) {
+              if (!ctype_alpha($data['newModule'])) {
+                $errors['error_module'] = "Caractères invalides";
+              }
+            } else {
+              $errors['error_module'] = "Veuillez renseigner le nom du module";
+            }
+
+            if (empty($data['settingssportsman']) && empty($data['settingssedentary']) && empty($data['settingsactif'])) {
+              $errors['error_settings'] = "Veuillez renseigner les paramètres du module";
+            }
+
+            if (isset($data['select-test'])) {
+
+            }
+
+            if(empty($errors)) {
+              $this->module->addModule($data['newModule'], $data['select-test'], $data['settingssportsman'], $data['settingssedentary'], $data['settingsactif']);
+              $this->generateView(array('msg' => 'Module Ajouté'),'index');
+            } else {
+              $this->generateView($errors,'AddModule');
+            }
+
+            }
+          }
+      }
+
+      public function deleteTest() {
+
+        if (!empty($_POST)) {
+          extract($_POST);
+
+          if(isset($_POST['delete-test'])) {
+
+            $data = [
+              'select-test' => htmlspecialchars($_POST['select-test']),
+            ];
+
+            $errors = [];
+
+            if (empty($data['select-test'])) {
+              $errors['error_select'] = 'Veuillez choisir un test';
+            }
+
+            if(empty($errors)) {
+              $this->typetest->deleteTypeTest($data['select-test']);
+              $this->generateView(array('msg' => 'Test supprimé'),'index');
+            } else {
+              $this->generateView($errors,'DeleteTest');
+            }
+
+            }
+          }
+      }
+
+      public function deleteModule() {
+
+        if (!empty($_POST)) {
+          extract($_POST);
+
+          if(isset($_POST['delete-module'])) {
+
+            $data = [
+              'select-module' => htmlspecialchars($_POST['select-module']),
+            ];
+
+            $errors = [];
+
+            if (empty($data['select-module'])) {
+              $errors['error_select'] = 'Veuillez choisir un module';
+            }
+
+            if(empty($errors)) {
+              $this->module->deleteModule($data['select-module']);
+              $this->generateView(array('msg' => 'Module supprimé'),'index');
+            } else {
+              $this->generateView($errors,'DeleteModule');
+            }
+
+            }
+          }
+      }
+
+      public function associate() {
+
+        if (!empty($_POST)) {
+          extract($_POST);
+
+          if(isset($_POST['associate'])) {
+
+            $data = [
+              'select-module' => htmlspecialchars($_POST['select-module']),
+              'select-test' => htmlspecialchars($_POST['select-test']),
+            ];
+
+            $errors = [];
+
+            if (empty($data['select-module'])) {
+              $errors['error_selectmodule'] = 'Veuillez choisir un module';
+            }
+
+            if (empty($data['select-test'])) {
+              $errors['error_selecttest'] = 'Veuillez choisir un test';
+            }
+
+            if(empty($errors)) {
+              $this->module->associate($data['select-module'], $data['select-test']);
+              $this->generateView(array('msg' => 'Test et module associé'),'index');
+            } else {
+              $this->generateView($errors,'associate');
+            }
+
+            }
+          }
       }
 
     }

@@ -91,7 +91,16 @@ $router->get('/admin/dashboard',"Admin#index");
 $router->post('/admin/dashboard/result',"Admin#searchUser");
 $router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
 $router->post('/admin/dashboard/profil-:id',"Admin#editUserProfil");
-$router->post('/admin/add-test',"Admin#editUserProfil");
+$router->post('/admin/add-test-form',"Admin#formAddTest");
+$router->post('/admin/add-test',"Admin#addTest");
+$router->post('/admin/add-module-form',"Admin#formAddModule");
+$router->post('/admin/add-module',"Admin#addModule");
+$router->post('/admin/delete-test-form',"Admin#formDeleteTest");
+$router->post('/admin/delete-test',"Admin#deleteTest");
+$router->post('/admin/delete-module-form',"Admin#formDeleteModule");
+$router->post('/admin/delete-module',"Admin#deleteModule");
+$router->post('/admin/associate-form',"Admin#formAssociate");
+$router->post('/admin/associate',"Admin#associate");
 
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");

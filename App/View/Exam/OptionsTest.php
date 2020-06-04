@@ -6,27 +6,34 @@
 
   <div class="form-options-test box">
 
-    <h1>Configurer le test</h1>
-    <p class="top-text">Veuillez saisir les informations nécessaires pour lancer un test.</p>
+    <h1>Configurer les capteurs</h1>
+    <p class="top-text">Paramétrer les capteurs avant de lancer le test.</p>
 
 
     <form action="/test-confirm" method="post">
 
-      <?php if ($data['select-category'] == 'sight'): ?>
-      <label>Acuité visuelle</label>
-      <meter value="sight-value" min="0" max="100"></meter>
-      <?php endif;  ?>
+      <?php for ($i=0;$i<count($data['module']);$i++):?>
+      <?php $module = $data['module'][$i]->name;?>
+      <label><?php echo $module ?></label>
 
-      <?php if ($data['select-category'] == 'stress'):  ?>
-      <label>Gestion du stress</label>
-      <progress value="0" max="100">0%</progress>
-      <meter value="sight-value" min="0" max="100"></meter>
-      <?php endif;  ?>
+      <?php $sportsman = $data['module'][$i]->sportsman;?>
+      <?php $actif = $data['module'][$i]->actif;?>
+      <?php $sedentary = $data['module'][$i]->sedentary;?>
 
-      <?php if ($data['select-category'] == 'sound'):  ?>
-      <label>Acuité sonore</label>
+      <?php if ($_SESSION['Select-Profil'] == 'Sportsman'): ?>
+      <?php echo $sportsman ?>
+      <?php endif; ?>
+
+      <?php if ($_SESSION['Select-Profil'] == 'Sedentary'): ?>
+      <?php echo $sedentary ?>
+      <?php endif; ?>
+
+      <?php if ($_SESSION['Select-Profil'] == 'Active'): ?>
+      <?php echo $actif ?>
+      <?php endif; ?>
+
       <meter value="sight-value" min="0" max="100"></meter>
-      <?php endif;  ?>
+      <?php endfor; ?>
 
       <input type="submit" value="Lancer" name="submit-2">
 
