@@ -5,7 +5,7 @@
 <div id="body">
     <div class="page">
       <div class="title">
-          <h1 data-i18n="testt"></h1>
+          <h1>CGU & Mentions légales</h1>
       </div>
 
       <div class="mentionslegales">
