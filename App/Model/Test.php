@@ -49,10 +49,10 @@ class Test extends Model {
       return $listScoreTest;
   }
 
-  public function addComment($comment, $healthNumber) {
-    $sqlStatement = 'UPDATE test SET comment = :comment WHERE healthNumber = :healthNumber';
+  public function addComment($comment, $idTest) {
+    $sqlStatement = 'UPDATE test SET comment = :comment WHERE ID_Test = :idTest';
     try {
-      return $this->executeRequest($sqlStatement, array('comment' => $comment, 'healthNumber' => $healthNumber));
+      return $this->executeRequest($sqlStatement, array('comment' => $comment, 'idTest' => $idTest));
     } catch (ConfigException $e) {
 
     }
@@ -77,6 +77,7 @@ class Test extends Model {
   $test = [
     'score' => $test->score,
     'type' =>$test->type,
+    'id'=> $test->ID_Test
   ];
 
   return $test;

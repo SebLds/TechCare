@@ -242,9 +242,9 @@ class AdminController extends Controller {
       $nbUsers=(int) $this->user->getNbUsers();
       $nbTests=(int) $this->test->getNbTests();
 
-      $averageScoreSound = round($this->averageScore('sound'));
-      $averageScoreStress = round($this->averageScore('stress'));
-      $averageScoreSight = round($this->averageScore('sight'));
+      $averageScoreSound = round($this->averageScore('Acuité sonore'));
+      $averageScoreStress = round($this->averageScore('Gestion du stress'));
+      $averageScoreSight = round($this->averageScore('Acuité visuelle'));
       $nbUsersByStatus=[$this->user->getNbUsersByStatus(1),$this->user->getNbUsersByStatus(2),$this->user->getNbUsersByStatus(3)];
       $listDate=[];
       $minus=7;

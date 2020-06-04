@@ -92,6 +92,7 @@ class ForumController extends Controller
     public function showTagById($id){
        $tag=$this->tag->getTagById($id);
        $listThreads= $this->thread->getThreadsTagById($id);
+
        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id, 'tag_infos'=>$tag),"listThreadsTag");
     }
 

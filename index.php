@@ -9,27 +9,26 @@ use src\Session;
  * /!\ POUR TOUS LES FICHIERS DEFINIR UN NAMESPACE CORRESPONDANT A SA PLACE DANS L'ARCHITECTURE /!\
  */
 require_once "src/Autoloader.php";
-
+Autoloader::addNamespace('App\Controller\Forum','App/Controller/Forum/');
 
 Autoloader::addNamespace('src\Router', 'src/Router/');
 Autoloader::addNamespace('src', 'src/');
 Autoloader::addNamespace('App\Controller','App/Controller/');
-Autoloader::addNamespace('App\Controller\Forum','App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','App/Model/Forum/');
 Autoloader::addNamespace('App\Model','App/Model/');
-
 Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
-
 Session::getInstance();
+
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
 
 $router= new Router($_GET['url']);
-
 /**Homepage**/
+
 $router->get('/homepage',"Home#index");
+
 $router->get('/homepage/:slug',"Home#index");
 
 $router->get('/faq',"Faq#index");
@@ -40,6 +39,7 @@ $router->get('/contact',"Contact#index");
 
 /**Register**/
 $router->get('/register',"Register#index");
+
 $router->post('/register',"Register#register");
 
 /**Login**/
