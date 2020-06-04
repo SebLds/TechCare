@@ -63,7 +63,7 @@
 
       <div class="bottom">
           <label><i class="far fa-file-medical-alt"></i><span data-i18n="REGISTER-healthnumber"></span></label>
-          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
+          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" maxlength="15" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
           <p class="error-msg"><?php if(isset($data[1]['error_healthNumber'])) { echo $data[1]['error_healthNumber']; }?></p>
       </div>
 
