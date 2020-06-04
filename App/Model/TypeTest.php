@@ -27,8 +27,10 @@ class TypeTest extends Model {
 
   public function deleteTypeTest($name) {
     $sqlStatement = 'DELETE FROM typetest WHERE name = :name';
+    $sql = 'UPDATE module SET typetest = :typetest WHERE typetest=:name';
     try {
-      return $this->executeRequest($sqlStatement, array('name' => $name));
+      $this->executeRequest($sqlStatement, array('name' => $name));
+      $this->executeRequest($sql, array('name' => $name,'typetest' => null));
     } catch (ConfigException $e) {
     }
   }

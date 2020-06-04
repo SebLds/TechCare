@@ -153,7 +153,8 @@ class ExamController extends Controller {
       $error = [];
 
       if (!empty($comment)) {
-        $this->test->addComment($comment, $_SESSION['Patient_HealthNumber']);
+
+        $this->test->addComment($comment,$this->test->getRecentTest($_SESSION['Patient_HealthNumber'])['id']);
         Session::getInstance()->deleteAttribute('Patient_HealthNumber');
         if ($_SESSION['sessionStatus'] == 3) {
           header('Location: /admin/dashboard');
