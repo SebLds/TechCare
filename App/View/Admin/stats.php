@@ -99,9 +99,6 @@ $this->title = "Statistiques";?>
       </div>
 
     <div class="charts">
-      <div class="title1">
-          <h1>Graphiques</h1>
-      </div>
       <div class="graph" id="canvas-holder">
           <canvas id="chart-area-doughnut"></canvas>
           <button id="changeCircleSize">Modifier l'aspect</button>
