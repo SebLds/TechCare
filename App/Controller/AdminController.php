@@ -216,7 +216,7 @@ class AdminController extends Controller {
 
         }
       }
-      
+
   }
 
   public function stats() {
@@ -457,11 +457,7 @@ class AdminController extends Controller {
 
             $errors = [];
 
-            if (!empty($data['newTest'])) {
-              if (!ctype_alpha($data['newTest'])) {
-                $errors['error_test'] = "Caractères invalides";
-              }
-            } else {
+            if (empty($data['newTest'])) {
               $errors['error_test'] = "Veuillez renseigner le nom du test";
             }
 
@@ -488,16 +484,11 @@ class AdminController extends Controller {
               'settingssportsman' => htmlspecialchars(trim($settingssportsman)),
               'settingssedentary' => htmlspecialchars(trim($settingssedentary)),
               'settingsactif' => htmlspecialchars(trim($settingsactif)),
-              'select-test' => $_POST['select-test'],
             ];
 
             $errors = [];
 
-            if (!empty($data['newModule'])) {
-              if (!ctype_alpha($data['newModule'])) {
-                $errors['error_module'] = "Caractères invalides";
-              }
-            } else {
+            if (empty($data['newModule'])) {
               $errors['error_module'] = "Veuillez renseigner le nom du module";
             }
 
@@ -510,7 +501,8 @@ class AdminController extends Controller {
             }
 
             if(empty($errors)) {
-              $this->module->addModule($data['newModule'], $data['select-test'], $data['settingssportsman'], $data['settingssedentary'], $data['settingsactif']);
+              $typetest=null;
+              $this->module->addModule($data['newModule'], $typetest, $data['settingssportsman'], $data['settingssedentary'], $data['settingsactif']);
               $this->generateView(array('msg' => 'Module Ajouté'),'index');
             } else {
               $this->generateView($errors,'AddModule');

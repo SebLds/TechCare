@@ -17,9 +17,9 @@ class Module extends Model {
     }
   }
 
-  public function addModule($name, $typetest=null, $sportsman, $sedentary, $actif) {
+  public function addModule($name, $typetest=null, $sportsman, $sedentary, $active) {
       $sqlStatement = 'INSERT INTO module (name, typetest, sportsman, sedentary, active) VALUES (:name, :typetest, :sportsman, :sedentary, :active)';
-      return $this->executeRequest($sqlStatement, array('name' => $name, 'typetest' => $typetest, 'sportsman' => $sportsman, 'sedentary' => $sedentary, 'actif' => $actif));
+      return $this->executeRequest($sqlStatement, array('name' => $name, 'typetest' => $typetest, 'sportsman' => $sportsman, 'sedentary' => $sedentary, 'active' => $active));
   }
 
   public function deleteModule($name) {
