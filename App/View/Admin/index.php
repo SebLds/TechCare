@@ -57,13 +57,13 @@
                 <a><button class="btn add" type="submit" name="button"><i class="fal fa-tachometer-alt-fastest"></i>Ajouter un module</button></a>
             </form>
             <form method="post" action="/admin/delete-test-form">
-                <a><button class="btn add" type="submit" name="button"><i class="fal fa-tags"></i>Supprimer un test</button></a>
+                <a><button class="btn delete" type="submit" name="button"><i class="far fa-trash"></i>Supprimer un test</button></a>
             </form>
 						<form method="post" action="/admin/delete-module-form">
-                <a><button class="btn add" type="submit" name="button"><i class="fal fa-tags"></i>Supprimer un module</button></a>
+                <a><button class="btn delete" type="submit" name="button"><i class="far fa-trash"></i>Supprimer un module</button></a>
             </form>
 						<form method="post" action="/admin/associate-form">
-                <a><button class="btn add" type="submit" name="button"><i class="far fa-link"></i>Associer un module à un test</button></a>
+                <a><button class="btn edit" type="submit" name="button"><i class="far fa-link"></i>Associer un module à un test</button></a>
             </form>
 		</div>
 	</div>

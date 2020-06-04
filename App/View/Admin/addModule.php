@@ -12,7 +12,7 @@
 
     <form action="/admin/add-module" method="post">
 
-      <label><i class="far fa-id-badge"></i>Module</label>
+      <label><i class="far fa-tools"></i>Module</label>
       <input type="text" name="newModule" placeholder="Fréquence cardiaque">
       <p class="error-msg"><?php if(isset($data['error_module'])) { echo $data['error_module']; } ?></p>
 
