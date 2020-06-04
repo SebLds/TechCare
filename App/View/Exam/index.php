@@ -1,4 +1,4 @@
-<?php $this->title='Launch Test'; ?>
+<?php $this->title='Lancer un test'; ?>
 
 <link rel="stylesheet" href="/Web/css/form.css">
 

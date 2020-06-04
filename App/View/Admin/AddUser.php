@@ -1,4 +1,4 @@
-<?php $this->title = "Add User"; ?>
+<?php $this->title = "Ajouter Utilisateur"; ?>
 
     <link href="/Web/css/register.css" rel="stylesheet">
     <link href="/Web/css/form.css" rel="stylesheet">

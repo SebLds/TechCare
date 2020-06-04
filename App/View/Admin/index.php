@@ -1,4 +1,4 @@
-<?php $this->title = "Dashboard"; ?>
+<?php $this->title = "Tableau de bord"; ?>
 
 <link href="/Web/css/dashboardAdmin.css" rel="stylesheet">
 <link href="/Web/css/button.css" rel="stylesheet">

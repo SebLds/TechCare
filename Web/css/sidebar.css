@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,7 +15,7 @@
 }
 
 header {
-  font-size: 13pt;
+  font-size: 11pt;
   position: fixed;
   width: 100%;
   top: 0;
@@ -42,6 +41,10 @@ header {
   letter-spacing: 0.2em;
   display: flex;
   align-items: center;
+}
+#header h1 {
+  letter-spacing: 0.1em;
+  font-weight: 400;
 }
 
 #header p {

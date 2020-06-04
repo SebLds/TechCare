@@ -1,4 +1,4 @@
-<?php $this->title='Dashboard'; ?>
+<?php $this->title='Tableau de bord'; ?>
 
 <link href="/Web/css/dashboard.css" rel="stylesheet" type="text/css">
 <!--<link href="/Web/css/searchBar.css" rel="stylesheet" type="text/css">-->
