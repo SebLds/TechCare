@@ -6,9 +6,7 @@
     <div class="page">
       <div class="title">
           <h1 data-i18n="testt"></h1>
-          <br><br><br>
       </div>
-
 
       <div class="mentionslegales">
           <h2>MENTIONS LÉGALES</h2><br><br>

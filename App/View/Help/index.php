@@ -1,4 +1,4 @@
-<?php $this->title='Help';?>
+<?php $this->title='Aide';?>
 
 <link rel="stylesheet" href="/Web/css/help.css"/>
 

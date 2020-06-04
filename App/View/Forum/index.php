@@ -8,7 +8,7 @@
 
   <div id="body">
       <form method="post" action="/forum/result-threads" class="search-bar">
-          <button class="sub-none" type="submit" name="search" class="sub-none"><i class="fas fa-search fa-2x icon"></i></button>
+          <button class="sub-none" type="submit" name="search" class="sub-none"><i class="fal fa-search fa-2x icon"></i></button>
           <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." name="research">
       </form>
 
@@ -20,6 +20,7 @@
 
 
         <div class="tag">
+            <?php if(!empty($data['tags_info'])): ?>
           <?php for ($i=0;$i<count($data['tags_info']);$i++):?>
             <form action="/forum" method="post">
             <?php $idTag=$data['tags_info'][$i]->ID_Tag?>
@@ -31,7 +32,7 @@
                   <p><?php echo $data['nbThreads'][$i]?> sujets</p>
                 <p><?php echo $data['nbReplies'][$i]?> réponses</p>
                 <?php if ($_SESSION['sessionStatus']==3): ?>
-                <button type="submit" class="btn delete" style="margin-left: 20px" name="delete"><i class="far fa-trash"></i>Supprimer</button>
+                <button type="submit" class="btn delete" style="margin-left: 20px" name="delete"><i class="fal fa-trash"></i>Supprimer</button>
                 <?php endif; ?>
               </div>
               <div class="desc">
@@ -39,6 +40,7 @@
               </div>
             </form>
           <?php endfor; ?>
+            <?php endif; ?>
         </div>
 
   </div>

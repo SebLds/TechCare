@@ -26,7 +26,7 @@
       <div class="tag">
             <div class="tag-name">
 
-              <a href="/forum/thread-<?php echo $data['listThreads'][$i]->ID_Thread; ?>"><h1 class="titleTag"><?php echo $data['listThreads'][$i]->Thread_Title; ?></h1></a>
+              <a href="/forum/tag-<?php echo $data['tag_infos']->ID_Tag;?>/thread-<?php echo $data['listThreads'][$i]->ID_Thread; ?>"><h1 class="titleTag"><?php echo $data['listThreads'][$i]->Thread_Title; ?></h1></a>
               <?php if ($_SESSION['sessionStatus']==3): ?>
                   <input type="hidden" name="threadName" value="<?php echo $data['listThreads'][$i]->Thread_Title; ?>">
                   <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="far fa-trash"></i>Supprimer</button>

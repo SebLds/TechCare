@@ -1,6 +1,6 @@
 <?php use src\Controller;
 
-$this->title = "Login" ?>
+$this->title = "Se connecter" ?>
 
 <link rel="stylesheet" href="/Web/css/form.css">
 <link rel="stylesheet" href="/Web/css/login.css">

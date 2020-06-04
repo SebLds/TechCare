@@ -1,4 +1,4 @@
-@import url("https://pro.fontawesome.com/releases/v5.13.0/css/all.css");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 #body {
   justify-content: center;
 }
@@ -145,36 +145,6 @@ input[type="submit"] {
   width: 85px;
 }
 
-/*input[type=checkbox] + .CGU p:before{
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  font-family: "Font Awesome Pro 5";
-  border-radius: 4px;
-  height: 15px;
-  width: 15px;
-  background: #fff;
-  border: 1px solid #ccc;
-  margin-bottom: 7px;
-  margin-right: 5px;
-  content: "\f14a";
-}
-
-input[type="checkbox"]:checked + .CGU p:before{
-  background: rgba(168, 202, 233,1);
-  font-family: FontAwesome;
-  content: "\f00c";
-  color: red;
-}
-
-#test {
-  width: 175px;
-  margin-left: 20px;
-}
-*/
-
-
-/*** custom checkboxes ***/
 input[type=checkbox] {
   display:none;
 }
@@ -185,16 +155,12 @@ input[type=checkbox] + label:before {
 
 input[type=checkbox] + label:before {
   content: "\f096";
-}
-
-input[type=checkbox] + label:before {
   letter-spacing: 10px;
 }
 
 input[type=checkbox]:checked + label:before {
   content: "\f046";
 }
-
 
 .top-text {
   padding: 40px 0 40px 0;
