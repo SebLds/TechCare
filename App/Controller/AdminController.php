@@ -105,6 +105,7 @@ class AdminController extends Controller {
           'company' => (string) htmlspecialchars(trim($company)),
           'healthNumber' => htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
+          'confirmChanges' => htmlspecialchars(trim($confirmChanges)),
         ];
 
         $errors = [];
@@ -165,16 +166,21 @@ class AdminController extends Controller {
           $errors['error_birthdate'] = "Veuillez renseigner une date de naissance";
         }
 
-        // Vérification
+        // Vérification du mot de passe
         if (!empty($data['password'])) {
-          if ($data['password'] != $data['passwordConfirm']) {
-            $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+          if (strlen($data['password']) > 6) {
+            if ($data['password'] != $data['passwordConfirm']) {
+              $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+            }
+          } else {
+            $errors['error_password'] = "Minimum 6 caractères et 1 chiffre";
           }
         } else {
           $errors['error_password'] = "Veuillez renseigner un mot de passe";
         }
 
         // Vérification du nom du médecin
+        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['doctor'])) {
             if (!ctype_alpha($data['doctor'])) {
               $errors['error_doctor'] = "Caractères invalides";
@@ -182,8 +188,10 @@ class AdminController extends Controller {
           } else {
             $errors['error_doctor'] = "Veuillez renseigner le nom de votre médecin";
           }
+        }
 
-        // Vérification du nom du médecin
+        // Vérification du nom de société
+        if ($data['select-user-type'] == 'manager' || $data['select-user-type'] == 'admin') {
           if (!empty($data['company'])) {
             if (!ctype_alpha($data['company'])) {
               $errors['error_company'] = "Caractères invalides";
@@ -191,17 +199,23 @@ class AdminController extends Controller {
           } else {
             $errors['error_company'] = "Veuillez renseigner un nom d'entreprise";
           }
-
+        }
 
         // Vérification du numéro de sécurité sociale
+        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['healthNumber'])) {
-            $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
-            if ($checkHealthNumber) {
-              $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+            if ($data['healthNumber'] == 15) {
+              $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
+              if ($checkHealthNumber) {
+                $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+              }
+            } else {
+              $errors['error_healthNumber'] = "Un numéro de sécurité sociale possède 15 chiffres";
             }
           } else {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
+        }
 
         if(empty($errors)) {
           $registrationdate = Model::getDate();
