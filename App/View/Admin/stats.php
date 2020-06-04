@@ -166,7 +166,6 @@ $this->title = "Statistiques";?>
             window.myDoughnut.update();
         });
 
-        let MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         let color = Chart.helpers.color;
         let configBar = {
             type: 'bar',
@@ -184,13 +183,20 @@ $this->title = "Statistiques";?>
                     borderColor: window.chartColors.red,
                     borderWidth: 1,
                     data: [
-                        <?php echo $data['bar']['nbTestsWeek'][6]?>,
-                        <?php echo $data['bar']['nbTestsWeek'][5]?>,
-                        <?php echo $data['bar']['nbTestsWeek'][4]?>,
-                        <?php echo $data['bar']['nbTestsWeek'][3]?>,
-                        <?php echo $data['bar']['nbTestsWeek'][2]?>,
-                        <?php echo $data['bar']['nbTestsWeek'][1]?>,
-                        <?php echo $data['bar']['nbTestsWeek'][0]?>,
+//                        <?php //echo $data['bar']['nbTestsWeek'][6]?>//,
+//                        <?php //echo $data['bar']['nbTestsWeek'][5]?>//,
+//                        <?php //echo $data['bar']['nbTestsWeek'][4]?>//,
+//                        <?php //echo $data['bar']['nbTestsWeek'][3]?>//,
+//                        <?php //echo $data['bar']['nbTestsWeek'][2]?>//,
+//                        <?php //echo $data['bar']['nbTestsWeek'][1]?>//,
+//                        <?php //echo $data['bar']['nbTestsWeek'][0]?>//,
+                            12,
+                            4,
+                            13,
+                            2,
+                            8,
+                            6,
+                            16
                     ]
                 }, {
                     label: 'Nombre de connexions',
@@ -198,13 +204,20 @@ $this->title = "Statistiques";?>
                     borderColor: window.chartColors.blue,
                     borderWidth: 1,
                     data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][6]?>//,
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][5]?>//,
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][4]?>//,
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][3]?>//,
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][2]?>//,
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][1]?>//,
+//                        <?php //echo $data['bar']['nbConnexionsWeek'][0]?>//,
+                        42,
+                        76,
+                        14,
+                        9,
+                        53,
+                        18,
+                        56
                     ]
                 }]
 
