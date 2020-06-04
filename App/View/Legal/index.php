@@ -4,10 +4,6 @@
 
 <div id="body">
     <div class="page">
-      <div class="title">
-          <h1>CGU & Mentions légales</h1>
-      </div>
-
       <div class="mentionslegales">
           <h2>MENTIONS LÉGALES</h2><br><br>
 
