@@ -30,9 +30,14 @@ class DashboardController extends Controller {
       $test = $this->test->getUserTests($healthNumber);
       $this->generateView(array('User_test' => $test),'index');
     }elseif ($_SESSION['sessionStatus'] == 2) {
-      $doctor = $this->user->getDoctor($_SESSION['ID_User'])->lastName;
+      $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+      $doctor = $doctor->lastName . ' ' . $doctor->firstName;
       $test = $this->test->getDoctorTests($doctor);
-      $this->generateView(array('User_test' => $test),"index");
+      $listProfil = [];
+      for ($i=0; $i<count($test); $i++) {
+        $listProfil[] = $this->user->getProfilByHealthNumber($test[$i]->healthNumber);
+      }
+      $this->generateView(array('User_test' => $test, 'profil'=>$listProfil),"index");
     }
 
 
@@ -60,6 +65,7 @@ class DashboardController extends Controller {
       if ($_SESSION['sessionStatus'] == 2) {
         if (isset($_POST['search'])) {
           $doctor = $this->user->getDoctor($_SESSION['ID_User']);
+          $doctor = $doctor->lastName . ' ' . $doctor->firstName;
           $result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
           $this->generateView(array('searchResult'=> $result), 'searchResult');
         } else {

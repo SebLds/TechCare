@@ -172,6 +172,29 @@ class User extends Model {
         return $data;
     }
 
+    public function getProfilByHealthNumber($healthNumber) {
+        $sqlStatement = 'SELECT * FROM users WHERE healthNumber = :healthNumber';
+        try {
+            $user = $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetch(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) {
+        }
+
+        $data = [
+            'firstName' => $user->firstName,
+            'lastName' => $user->lastName,
+            'birthdate' => $user->birthdate,
+            'mail' => $user->mail,
+            'healthNumber' => $user->healthNumber,
+            'doctor' => $user->doctor,
+            'company' => $user->company,
+            'status' => $user->status,
+            'password' => $user->password,
+            'registrationdate' => $user->registrationdate,
+        ];
+
+        return $data;
+    }
+
     public function modifyProfil($status, $firstName, $lastName, $mail,$doctor,$healthNumber,$company,$birthdate, $ID_Users) {
         if($status==1) {
             $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, doctor = :doctor, healthNumber = :healthNumber, birthdate= :birthdate WHERE ID_Users = :ID_Users';

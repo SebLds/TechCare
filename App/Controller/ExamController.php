@@ -110,7 +110,7 @@ class ExamController extends Controller {
             $passDate = Model::getDate();
             $score = rand(0, 100);
             $doctor = $this->user->getDoctor($_SESSION['ID_User']);
-            $doctor = $doctor->lastName . $doctor->firstName;
+            $doctor = $doctor->lastName . ' ' . $doctor->firstName;
             $this->test->newTest($_SESSION['Patient_HealthNumber'], $doctor, $_SESSION['Select-test'], $_SESSION['Select-Profil'], $score, $passDate);
             Session::getInstance()->deleteAttribute('Select-Profil');
             Session::getInstance()->deleteAttribute('Select-test');
