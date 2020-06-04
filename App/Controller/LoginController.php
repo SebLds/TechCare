@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Controller;
+use App\Model\NbConnexions;
 use src\Controller;
+use src\Model;
 use src\Session;
 use App\Model\User;
 
@@ -12,9 +14,14 @@ class LoginController extends Controller {
      * @var User
      */
     private User $user;
+    /**
+     * @var NbConnexions
+     */
+    private NbConnexions $nbConnexions;
 
     public function __construct() {
         $this->user = new User();
+        $this->nbConnexions = new NbConnexions();
   }
 
   public function index() {
@@ -39,6 +46,8 @@ class LoginController extends Controller {
 
     // Vérification que la variable $_POST contienne des informations
     if (!empty($_POST)) {
+        $mail='';
+        $password='';
       extract($_POST);
 
       // On se place dans le formumaire de connexion
@@ -64,6 +73,7 @@ class LoginController extends Controller {
         if(empty($errors)) {
           $log = $this->user->checkLogin($data['mail'], $data['password']);
           if ($log) {
+            $this->nbConnexions->addConnexion(Model::getDate());
             $ID = $this->user->getID($data['mail']);
             $Status = $this->user->getStatus($ID);
             Session::getInstance()->setAttribute('ID_User', $ID);
