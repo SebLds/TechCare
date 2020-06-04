@@ -11,7 +11,13 @@ class Tag extends Model
 {
 
 
-
+    public function getTagById($id){
+        $sqlStatement = 'SELECT * FROM Tag WHERE ID_Tag=:id';
+        try {
+            return $this->executeRequest($sqlStatement,array('id'=>$id))->fetch(PDO::FETCH_OBJ);
+        } catch (ConfigException $e) {
+        }
+    }
 
     public function getTags()
     {
@@ -29,21 +35,7 @@ class Tag extends Model
         } catch (ConfigException $e) {
         }
     }
-    public function getThreadsTagById($idTag){
-        $sqlStatement = 'SELECT ID_Thread FROM post WHERE ID_Tag = :idTag';
-        $threadList=[];
-        $thread = new Thread();
-        try {
-            for ($i=0;$i<count($this->executeRequest($sqlStatement, array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ));$i++){
-                $idThread = (int) $this->executeRequest($sqlStatement, array('idTag' => $idTag))->fetchAll(PDO::FETCH_OBJ)[$i]->ID_Thread;
-                $threadTitle=$thread->getThread($idThread)->Thread_Title;
-                $threadList[]=$threadTitle;
-            }
-        } catch (ConfigException $e) {
-        }
-        return $threadList;
 
-    }
 
 
     public function getNbRepliesTagById($idTag){
@@ -65,43 +57,39 @@ class Tag extends Model
     }
 
 
-
-
-    public function getTag($idTag)
-    {
-        $sqlStatement = 'SELECT * FROM users WHERE id = :id';
-
-        try {
-            $tag = $this->executeRequest($sqlStatement, array($idTag));
-        } catch (ConfigException $e) {
-            // mettre page d'erreur
-        }
-        if ($tag->rowCount() > 0)
-            return $tag->fetch();  // Accès à la première ligne de résultat
-        else
-            throw new Exception("Aucune catégorie ne correspond à l'identifiant '$idTag'");
-    }
-
-    public function getCountTags()
-    {
-        $sqlStatement = 'select'. 'count(*) as nbBillets from Tag';
-        $result = $this->executeRequest($sqlStatement);
-        $ligne = $result->fetch();  // Le résultat comporte toujours 1 ligne
-        return $ligne['nbBillets'];
-    }
-
-    public function addTag($Tag_Title, $Tag_description, $Creation_Date, $Edit_Date=null) {
+    public function addTag($Tag_Title, $Tag_description, $Creation_Date) {
         $sqlStatement = 'INSERT INTO tag (Tag_Title, Tag_description, Creation_Date, Edit_Date) VALUES (:Tag_Title, :Tag_description, :Creation_Date, :Edit_Date)';
         try {
-            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description, 'Creation_Date' => $Creation_Date, 'Edit_Date' => $Edit_Date));
+            $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title, 'Tag_description' => $Tag_description, 'Creation_Date' => $Creation_Date, 'Edit_Date' => $Creation_Date));
+        } catch (ConfigException $e) {
+        }
+    }
+    public function getTagByTitle($title){
+        $sqlStatement = 'SELECT * FROM tag WHERE Tag_Title=:Tag_Title';
+        try {
+            return $this->executeRequest($sqlStatement,array('Tag_Title'=>$title))->fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) {
         }
     }
 
     public function deleteTag($Tag_Title) {
         $sqlStatement = 'DELETE FROM tag WHERE Tag_Title = :Tag_Title';
+        $query ='DELETE FROM post WHERE ID_Tag = :ID_Tag';
+        $sql='SELECT * FROM thread t INNER JOIN post p ON p.ID_Thread = t.ID_Thread WHERE ID_Tag= :ID_Tag';
+        $sqlDel= 'DELETE FROM thread WHERE ID_Thread = :ID_Thread';
+        $idTag=$this->getTagByTitle($Tag_Title)->ID_Tag;
+        $listThread=$this->executeRequest($sql,array('ID_Tag'=>$idTag))->fetchAll(PDO::FETCH_OBJ);
+        $size=count($listThread);
+        $listThreadToDel=[];
         try {
-            return $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title));
+            for($i=0;$i<$size;$i++){
+                $listThreadToDel[]=$listThread[$i]->ID_Thread;
+            }
+            for($i=0;$i<count($listThreadToDel);$i++){
+                $this->executeRequest($sqlDel,array('ID_Thread'=>$listThreadToDel[$i]));
+            }
+            $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title));
+            $this->executeRequest($query,array('ID_Tag'=>$idTag));
         } catch (ConfigException $e) {
         }
     }
@@ -113,5 +101,7 @@ class Tag extends Model
         } catch (ConfigException $e) {
         }
     }
+
+
 
 }

@@ -10,6 +10,10 @@
             <h1>Utilisateurs</h1>
         </div>
 		<div class="action">
+
+                <form method="post" action="/admin/add-user-form">
+                    <button type="submit" class="btn add" name="button"><i class="far fa-user-plus"></i>Ajouter</button>
+                </form>
 			<form class="search-bar" method="post" action="/admin/dashboard/result">
                 <a href="/admin/add-user"><button class="btn add" type="submit" name="button"><i class="fal fa-user-plus"></i>Ajouter</button></a>
                 <button class="sub-none" type="submit"><i class="fal fa-search fa-2x icon"></i></button>

@@ -32,9 +32,9 @@ class ForumController extends Controller
       header("Location: /homepage");
     }
     $tags = $this->tag->getTags();
-        for ($i=1;$i<=count($tags);$i++){
-            $nbThreads[]= $this->tag->getNbThreadsTagById($i);
-            $nbReplies[]= $this->tag->getNbRepliesTagById($i);
+        for ($i=0;$i<count($tags);$i++){
+            $nbThreads[]= $this->tag->getNbThreadsTagById($tags[$i]->ID_Tag);
+            $nbReplies[]= $this->tag->getNbRepliesTagById($tags[$i]->ID_Tag);
         }
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
     }
@@ -57,64 +57,86 @@ class ForumController extends Controller
                 $searchResult[] = $this->thread->research('thread', 'Thread_Title', htmlspecialchars($_POST['research']),true,$id)[$i];
             }
         }
-        $this->generateView(array('searchResult' => $searchResult), "searchResult");
+        $this->generateView(array('searchResult' => $searchResult,'id'=>$id), "searchResult");
 
     }
 
     public function showThreadById($id){
         $thread=$this->thread->getThread($id);
-        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"thread");
+        $replies=$this->reply->getReply($id);
+        $this->generateView(array('thread_infos'=>$thread,'replies'=>$replies),"thread");
     }
 
-    public function showReplyById($id){
-        $reply=$this->reply->getReply($id);
-        $this->generateView(array('listReplies'=>$listReplies,'id'=>$id),"reply");
-    }
+//    public function showReplyById($id){
+//        $reply=$this->reply->getReply($id);
+//        $this->generateView(array('listReplies'=>$listReplies,'id'=>$id),"reply");
+//    }
 
     /**
      * Show the list of threads of the tag.
      * @param $id Tag's id
      */
     public function showTagById($id){
-       $listThreads= $this->tag->getThreadsTagById($id);
+       $listThreads= $this->thread->getThreadsTagById($id);
        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"listThreadsTag");
     }
 
-    public function test(){
-        $this->generateView(array(),'test');
-
+    public function formAddTag(){
+        $this->generateView(array(),'addTag');
     }
-
-    public function addTagIndex() {
-      if ($_SESSION['sessionStatus'] == 3) {
-      $this->generateView(array(), 'addTag');
-    } elseif ($_SESSION['sessionStatus'] == 0) {
-      header("Location: /homepage");
-    } else {
-      header("Location: /dashboard");
+    public function formAddThread(){
+        if(isset($_POST['tagId'])){
+            $tagTitle= $this->tag->getTagById($_POST['tagId'])->Tag_Title;
+        }
+        $this->generateView(array('tagTitle'=> $tagTitle),'addThread');
     }
-  }
-
+    public function addThread(){
+        if (!empty($_POST)) {
+            $newThread='';
+            $reply='';
+            extract($_POST);
+            if (isset($_POST['add'])) {
+                $data = [
+                    'newThread' => (string) htmlspecialchars($newThread),
+                    'reply' => (string) htmlspecialchars($reply),
+                ];
+                if (!empty($data['newThread']) && !empty($data['reply'])) {
+                    $creationDate = Model::getDate();
+                    $idTag=$this->tag->getTagByTitle($_POST['tagTitle'])->ID_Tag;
+                    $this->thread->addThread($data['newThread'], $creationDate);
+                    $idThread=$this->thread->getThreadByTitle($data['newThread'])->ID_Thread;
+                    $this->thread->addThreadIntoPost($idThread,$idTag);
+                    $this->reply->addReply($_SESSION['ID_User'],$creationDate,$data['reply'],$idThread);
+                    header("Location: /forum");
+                } else {
+                    if(isset($_POST['tagTitle'])){
+                        $tagTitle= $_POST['tagTitle'];
+                    }
+                    $this->generateView(array('error' => "Veuillez ajouter un sujet avec le premier message",'tagTitle'=>$tagTitle),'addThread');
+                }
+            }
+        }
+    }
     public function addTag() {
 
         if (!empty($_POST)) {
+            $newTag='';
+            $description='';
         extract($_POST);
 
           if (isset($_POST['add'])) {
 
           $data = [
             'newTag' => (string) htmlspecialchars($newTag),
-            'description' => htmlspecialchars($description),
+            'description' => (string) htmlspecialchars($description),
           ];
-
-          $error = [];
 
           if (!empty($data['newTag']) && !empty($data['description'])) {
             $creationDate = Model::getDate();
             $this->tag->addTag($data['newTag'], $data['description'], $creationDate);
             header("Location: /forum");
           } else {
-            $this->generateView(array('faq' => $FAQ, 'error' => "Veuillez ajouter une catégorie avec sa description"),'addTag');
+            $this->generateView(array('error' => "Veuillez ajouter une catégorie avec sa description"),'addTag');
           }
         }
       }
@@ -123,32 +145,25 @@ class ForumController extends Controller
     public function deleteThread() {
 
       if (!empty($_POST)) {
+          $threadName='';
         extract($_POST);
 
         if (isset($_POST['delete-thread'])) {
           $this->thread->deleteThread($threadName);
-          $tags = $this->tag->getTags();
-              for ($i=1;$i<=count($tags);$i++){
-                  $nbThreads[]= $this->tag->getNbThreadsTagById($i);
-                  $nbReplies[]= $this->tag->getNbRepliesTagById($i);
-              }
-              $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
+          $this->executeAction('index');
         }
       }
     }
 
     public function deleteTag() {
       if (!empty($_POST)) {
+          $tagName='';
         extract($_POST);
 
         if (isset($_POST['delete'])) {
+
           $this->tag->deleteTag($tagName);
-          $tags = $this->tag->getTags();
-              for ($i=1;$i<=count($tags);$i++){
-                  $nbThreads[]= $this->tag->getNbThreadsTagById($i);
-                  $nbReplies[]= $this->tag->getNbRepliesTagById($i);
-              }
-          $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
+          $this->executeAction('index');
         }
       }
     }
