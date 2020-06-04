@@ -3,16 +3,29 @@
     margin: 1em 0;
     min-width: 300px;
     zoom: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 0.4em;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
 }
 .rwd-table tr {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    color: #808080;
+    line-height: 1.2em;
+    height: 4em;
 }
 .rwd-table th {
     display: none;
+
 }
 .rwd-table td {
     display: block;
+    font-size: 1.3em;
+    text-align: center;
 }
 .rwd-table tbody tr:nth-child(even) {
     background-color: #f5f5f5 !important;
@@ -57,18 +70,21 @@
 }
 
 .rwd-table {
-    background: black;
-    color: #fff;
+    background: white;
     border-radius: 0.4em;
-    overflow: hidden;
 }
-.rwd-table th, span {
+.rwd-table th span {
     color: white;
+    font-size: 1.5em;
 }
 
 .rwd-table th,
 .rwd-table td {
     margin: 0.5em 1em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
 }
 @media (min-width: 480px) {
     .rwd-table th,
@@ -76,9 +92,20 @@
         padding: 1em !important;
     }
 }
+
 .rwd-table th,
 .rwd-table td:before {
     color: #808080;
+}
+
+.rwd-table thead i {
+    color: white;
+    font-size: 2em;
+}
+
+.rwd-table thead tr {
+    height: 4em;
+    background: #2f323a;
 }
 
 .fa-heart-rate {
