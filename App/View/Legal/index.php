@@ -1,7 +1,6 @@
 <?php $this->title = "CGU & Mentions légales" ?>
 
 <link rel="stylesheet" href="/Web/css/cgu.css"/>
-<?php echo 'tamre'; ?>
 
 <div id="body">
     <div class="page">
