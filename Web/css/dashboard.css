@@ -140,7 +140,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  color: #555555;
+  color: grey;
   background-color: #f5f5f5;
   cursor: pointer;
 }
