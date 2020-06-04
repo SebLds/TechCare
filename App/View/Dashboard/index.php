@@ -52,8 +52,6 @@
     </table>
 </div>
 
-
-
 <?php else : ?>
   <h1>Vous n'avez effectué aucun test</h1>
 <?php endif; ?>
