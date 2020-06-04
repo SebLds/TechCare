@@ -3,7 +3,7 @@
   justify-content: center;
 }
 
-#body h1 {
+.box h1 {
   color: grey;
   display: flex;
   justify-content: center;

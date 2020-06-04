@@ -97,6 +97,51 @@
     font-weight: 300;
 }
 
+.tag-title {
+  width: 100%;
+  padding: 1em;
+  margin: 1em;
+  border-bottom: 0.1em solid lightgray;
+}
+
+.answer-box {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  border: 0.1em solid lightgray;
+  box-shadow: 0 0 5px 0 rgba(168,158,168,1);
+  border-radius: 5px;
+  padding: 1em;
+  margin: 1em;
+  font-size: 1em;
+  width: 50em;
+}
+
+.profil h3 {
+  font-size: 1em;
+  padding: 0.1em 0 0.1em 0;
+  display: flex;
+  justify-content: center;
+}
+
+.profil {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid black;
+  padding-right: 1em;
+  width: 10em;
+}
+
+.answer {
+  padding-left: 1em;
+}
+
+.reply {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (width: 1680px) {
     #body {
         font-size: 13pt;

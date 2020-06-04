@@ -81,6 +81,7 @@ $router->post('/forum/add-tag',"Forum\Forum#addTag");
 $router->post('/forum/add-thread-form',"Forum\Forum#formAddThread");
 $router->post('/forum/add-thread',"Forum\Forum#addThread");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
+$router->post('/forum/thread',"Forum\Forum#answer");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
@@ -90,10 +91,22 @@ $router->post('/forum/delete-thread',"Forum\Forum#deleteThread");
 
 
 /**Admin**/
-    $router->get('/admin/dashboard',"Admin#index");
+$router->get('/admin/dashboard',"Admin#index");
 $router->post('/admin/dashboard/result',"Admin#searchUser");
 $router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
 $router->post('/admin/dashboard/profil-:id',"Admin#editUserProfil");
+$router->post('/admin/add-test-form',"Admin#formAddTest");
+$router->post('/admin/add-test',"Admin#addTest");
+$router->post('/admin/add-module-form',"Admin#formAddModule");
+$router->post('/admin/add-module',"Admin#addModule");
+$router->post('/admin/delete-test-form',"Admin#formDeleteTest");
+$router->post('/admin/delete-test',"Admin#deleteTest");
+$router->post('/admin/delete-module-form',"Admin#formDeleteModule");
+$router->post('/admin/delete-module',"Admin#deleteModule");
+$router->post('/admin/associate-form',"Admin#formAssociate");
+$router->post('/admin/associate',"Admin#associate");
+
+$router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
 $router->post('/admin/add-user-form',"Admin#formAddUser");
 

@@ -16,13 +16,14 @@
       <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="">
       <p class="error-msg"><?php if(isset($error_healthNumber)) { echo $error_healthNumber; } ?></p>
 
-      <label><i class="far fa-ballot-check"></i>Choix du test</label>
+      <label><i class="far fa-ballot-check"></i>Test</label>
       <div class="selectbox">
-        <select name="test-category">
-          <option value="">Choisir une catégorie</option>
-          <option value="stress">Gestion du stress</option>
-          <option value="sight">Acuité visuelle</option>
-          <option value="sound">Acuité sonore</option>
+        <select name="select-test">
+          <option value="">Choisir un test</option>
+          <?php for ($i=0;$i<count($data['typetest']);$i++):?>
+          <?php $typetest = $data['typetest'][$i]->name;?>
+          <option value="<?php echo $typetest ?>"><?php echo $typetest;?></option>
+          <?php endfor; ?>
         </select>
       </div>
       <p class="error-msg"><?php if(isset($error_select)) { echo $error_select; } ?></p>

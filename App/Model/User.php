@@ -113,6 +113,17 @@ class User extends Model {
         }
     }
 
+    public function isMailBan($mail) {
+        $sqlStatement = 'SELECT * FROM users_ban WHERE mail = :mail';
+        try {
+            $isMailExist = $this->executeRequest($sqlStatement, array('mail' => $mail));
+        }  catch (ConfigException $e) {
+        }
+        if ($isMailExist->rowCount()>0) {
+            return true;
+        }
+    }
+
     public function checkHealthNumber($healthNumber) {
         $sqlStatement = 'SELECT * FROM users WHERE healthNumber = :healthNumber';
         try {

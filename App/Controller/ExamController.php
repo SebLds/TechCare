@@ -6,6 +6,8 @@ use src\Model;
 use src\Session;
 use App\Model\User;
 use App\Model\Test;
+use App\Model\TypeTest;
+use App\Model\Module;
 
 class ExamController extends Controller {
 
@@ -14,10 +16,14 @@ class ExamController extends Controller {
   private $selectProfil;
   private User $user;
   private Test $test;
+  private TypeTest $typetest;
+  private Module $module;
 
   public function __construct() {
         $this->user = new User();
         $this->test = new Test();
+        $this->typetest = new TypeTest();
+        $this->module = new Module();
   }
 
   public function index() {
@@ -27,7 +33,8 @@ class ExamController extends Controller {
     if ($_SESSION['sessionStatus'] ==1) {
       header("Location: /dashboard");
     }
-    $this->generateView(array(),'index');
+    $typetest = $this->typetest->getTypeTest();
+    $this->generateView(array('typetest'=>$typetest), 'index');
   }
 
   public function setUpTest() {
@@ -44,12 +51,12 @@ class ExamController extends Controller {
 
         $data = [
           'healthNumber' => htmlspecialchars(trim($healthNumber)),
-          'select-category' => $_POST['test-category'],
+          'select-test' => $_POST['select-test'],
           'select-profil' => $_POST['test-profil'],
         ];
 
         Session::getInstance()->setAttribute('Patient_HealthNumber', $data['healthNumber']);
-        Session::getInstance()->setAttribute('Select-Category', $data['select-category']);
+        Session::getInstance()->setAttribute('Select-test', $data['select-test']);
         Session::getInstance()->setAttribute('Select-Profil', $data['select-profil']);
 
         $errors = [];
@@ -63,7 +70,7 @@ class ExamController extends Controller {
           $errors['error_healthNumber'] = "Veuillez renseigner le numéro de sécurité sociale du patient";
         }
 
-        if (!empty($data['select-category'])) {
+        if (!empty($data['select-test'])) {
         } else {
           $errors['error_select'] = "Veuillez choisir un type de test";
         }
@@ -74,7 +81,8 @@ class ExamController extends Controller {
         }
 
         if(empty($errors)) {
-          $this->generateView($data,'OptionsTest');
+          $module = $this->module->getModuleForTest($data['select-test']);
+          $this->generateView(array('module' => $module),'OptionsTest');
         } else {
           $this->generateView($errors,'index');
         }
@@ -102,9 +110,10 @@ class ExamController extends Controller {
             $passDate = Model::getDate();
             $score = rand(0, 100);
             $doctor = $this->user->getDoctor($_SESSION['ID_User']);
-            $this->test->newTest($_SESSION['Patient_HealthNumber'], $doctor, $_SESSION['Select-Category'], $_SESSION['Select-Profil'], $score, $passDate);
+            $doctor = $doctor->lastName . $doctor->firstName;
+            $this->test->newTest($_SESSION['Patient_HealthNumber'], $doctor, $_SESSION['Select-test'], $_SESSION['Select-Profil'], $score, $passDate);
             Session::getInstance()->deleteAttribute('Select-Profil');
-            Session::getInstance()->deleteAttribute('Select-Category');
+            Session::getInstance()->deleteAttribute('Select-test');
             $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
             $this->generateView($user,'ConfirmTest');
           } else {

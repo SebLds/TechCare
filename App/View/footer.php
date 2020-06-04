@@ -6,8 +6,6 @@
         <p class="footer-links">
             <a href="/homepage#banner"><span data-i18n="FOOTER-home"></span></a>
             ·
-            <a href="#"><span data-i18n="FOOTER-about"></span></a>
-            ·
             <a href="/homepage#three"><span data-i18n="FOOTER-test"></span></a>
             ·
             <a href="/contact"><span data-i18n="FOOTER-contact"></span></a>

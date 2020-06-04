@@ -3,6 +3,7 @@
 namespace App\Controller\Forum;
 use App\Model\Forum\Reply;
 use App\Model\Forum\Thread;
+use App\Model\User;
 use src\Controller;
 use src\Model;
 use App\Model\Forum\Tag;
@@ -13,6 +14,7 @@ class ForumController extends Controller
     private Tag $tag;
     private Reply $reply;
     private Thread $thread;
+    private User $user;
 
 
     /**
@@ -22,6 +24,7 @@ class ForumController extends Controller
         $this->tag = new Tag();
         $this->thread = new Thread();
         $this->reply = new Reply();
+        $this->user = new User();
     }
 
     /**
@@ -62,9 +65,14 @@ class ForumController extends Controller
     }
 
     public function showThreadById($id){
+        $tag=$this->tag->getTagById($id);
         $thread=$this->thread->getThread($id);
         $replies=$this->reply->getReply($id);
-        $this->generateView(array('thread_infos'=>$thread,'replies'=>$replies),"thread");
+        $listprofil = [];
+        for ($i=0; $i<count($replies); $i++) {
+          $listprofil[] = $this->user->getProfil($replies[$i]->ID_User);
+        }
+        $this->generateView(array('tag_infos'=>$tag, 'thread_infos'=>$thread,'replies'=>$replies, 'profil'=>$listprofil),"thread");
     }
 
 //    public function showReplyById($id){
@@ -77,8 +85,9 @@ class ForumController extends Controller
      * @param $id Tag's id
      */
     public function showTagById($id){
+       $tag=$this->tag->getTagById($id);
        $listThreads= $this->thread->getThreadsTagById($id);
-       $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"listThreadsTag");
+       $this->generateView(array('listThreads'=>$listThreads,'id'=>$id, 'tag_infos'=>$tag),"listThreadsTag");
     }
 
     public function formAddTag(){
@@ -161,9 +170,24 @@ class ForumController extends Controller
         extract($_POST);
 
         if (isset($_POST['delete'])) {
-
           $this->tag->deleteTag($tagName);
           $this->executeAction('index');
+        }
+      }
+    }
+
+    public function answer() {
+      if (!empty($_POST)) {
+          $answer='';
+        extract($_POST);
+        if (isset($_POST['answer'])) {
+          $reply = htmlspecialchars($reply);
+          $errors = [];
+          if (!empty($answer)) {
+            $creationDate = Model::getDate();
+            $this->reply->addReply($_SESSION['sessionStatus'], $creationDate, $reply, $id);
+            $this->executeAction('index');
+          }
         }
       }
     }

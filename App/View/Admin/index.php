@@ -54,11 +54,20 @@
             <h1>Test</h1>
         </div>
 		<div class="action">
-            <form>
-                <a href="/admin/edit-faq"><button class="btn add" type="submit" name="button"><i class="fal fa-tachometer-alt-fastest"></i>Ajouter une type de test</button></a>
+            <form method="post" action="/admin/add-test-form">
+                <a><button class="btn add" type="submit" name="button"><i class="fal fa-tachometer-alt-fastest"></i>Ajouter un type de test</button></a>
             </form>
-            <form>
-                <a href="/admin/edit-faq"><button class="btn add" type="submit" name="button"><i class="fal fa-tags"></i>Ajouter un sujet</button></a>
+						<form method="post" action="/admin/add-module-form">
+                <a><button class="btn add" type="submit" name="button"><i class="fal fa-tachometer-alt-fastest"></i>Ajouter un module</button></a>
+            </form>
+            <form method="post" action="/admin/delete-test-form">
+                <a><button class="btn delete" type="submit" name="button"><i class="far fa-trash"></i>Supprimer un test</button></a>
+            </form>
+						<form method="post" action="/admin/delete-module-form">
+                <a><button class="btn delete" type="submit" name="button"><i class="far fa-trash"></i>Supprimer un module</button></a>
+            </form>
+						<form method="post" action="/admin/associate-form">
+                <a><button class="btn edit" type="submit" name="button"><i class="far fa-link"></i>Associer un module à un test</button></a>
             </form>
 		</div>
 	</div>

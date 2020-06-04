@@ -55,7 +55,7 @@ $this->title = "Statistiques";?>
       </div>
 
         <div class="title1">
-            <h1>Scores moyen</h1>
+            <h1>Scores moyens</h1>
         </div>
 
       <div class="bottom">
@@ -63,7 +63,7 @@ $this->title = "Statistiques";?>
               <span class="icon"><i class="fas fa-heartbeat"></i></span>
               <div class="text">
                   <div class="top-text">
-                      <span>Test sonore</span>
+                      <span>Acuité sonore</span>
                   </div>
                   <div class="bottom-text">
                       <span><?php echo $data['avg'][2]?>/100</span>
@@ -74,7 +74,7 @@ $this->title = "Statistiques";?>
             <span class="icon"><i class="fal fa-heart-rate"></i></span>
             <div class="text">
                 <div class="top-text">
-                    <span>Test de stress</span>
+                    <span>Gestion du stress</span>
                 </div>
                 <div class="bottom-text">
                     <span><?php echo $data['avg'][2]?>/100</span>
@@ -86,7 +86,7 @@ $this->title = "Statistiques";?>
             <span class="icon"><i class="fal fa-low-vision"></i></span>
           <div class="text">
             <div class="top-text">
-              <span>Test visuel</span>
+              <span>Acuité visuelle</span>
             </div>
             <div class="bottom-text">
               <span><?php echo $data['avg'][3]?>/100</span>
@@ -98,9 +98,12 @@ $this->title = "Statistiques";?>
     </div>
 
     <div class="charts">
+      <div class="title1">
+          <h1>Graphiques</h1>
+      </div>
       <div class="graph" id="canvas-holder">
           <canvas id="chart-area-doughnut"></canvas>
-          <button id="changeCircleSize">Complet/demi cercle</button>
+          <button id="changeCircleSize">Modifier l'aspect</button>
       </div>
           <br>
           <br>
