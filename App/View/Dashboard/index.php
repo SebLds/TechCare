@@ -28,6 +28,9 @@
             <?php for ($i=0;$i<count($data['User_test']);$i++):?>
                    <div class="result">
                      <tr>
+<<<<<<< HEAD
+                         <td><?php $type = $data['User_test'][$i]->type; echo $type;?></td>
+=======
                          <td>
                            <?php $type = $data['User_test'][$i]->type; ?>
                            <?php if ($type == 'stress'): ?>
@@ -40,6 +43,7 @@
                            <i class="fal fa-waveform"></i>&ensp;&ensp;Acuité sonore
                            <?php endif; ?>
                          </td>
+>>>>>>> master
                          <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
                          <td><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
                          <td><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10);?></td>
@@ -48,13 +52,21 @@
                          <td class="content"><?php $comment = $data['User_test'][$i]->comment; echo $comment;?></td>
                      </tr>
                    </div>
+
+         </table>
+=======
                  <?php endfor; ?>
           </table>
+>>>>>>> master
         </div>
     -->
 
     <table class="rwd-table">
         <tr>
+          <?php if($_SESSION['sessionStatus']==2): ?>
+            <th><i class="fal fa-notes-medical"></i><span>&ensp;&ensp;Prénom</span></th>
+            <th><i class="fal fa-notes-medical"></i><span>&ensp;&ensp;Nom</span></th>
+          <?php endif; ?>
             <th><i class="fal fa-notes-medical"></i><span>&ensp;&ensp;Type de test</span></th>
             <th><i class="fal fa-calendar-alt"></i><span>&ensp;&ensp;Actvité physique</span></th>
             <th><i class="fal fa-signal"></i><span>&ensp;&ensp;Score</span></th>
@@ -63,18 +75,11 @@
         </tr>
         <?php for ($i=0;$i<count($data['User_test']);$i++):?>
         <tr>
-            <td data-th="Type de test">
-                <?php $type = $data['User_test'][$i]->type; ?>
-                <?php if ($type == 'stress'): ?>
-                <i class="fal fa-heart-rate"></i>Gestion du stress</td>
-                <?php endif; ?>
-                <?php if ($type == 'sight'): ?>
-                <i class="fal fa-low-vision"></i>Acuité visuelle
-                <?php endif; ?>
-                <?php if ($type == 'sound'): ?>
-                <i class="fal fa-waveform"></i>Acuité sonore
-                <?php endif; ?></td>
-            </td>
+          <?php if($_SESSION['sessionStatus']==2): ?>
+            <td data-th="firstname"><?php echo $data['profil'][$i]['firstName']; ?></td>
+            <td data-th="lastname"><?php echo $data['profil'][$i]['lastName']; ?></td>
+          <?php endif; ?>
+            <td data-th="Type de test"><?php $type = $data['User_test'][$i]->type; echo $type;?></td>
             <td data-th="Actvité physique"><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
             <td data-th="Score"><?php $score = $data['User_test'][$i]->score; echo $score;?>/100</td>
             <td data-th="Date"><?php $passDate = $data['User_test'][$i]->passDate; echo substr($passDate, 0, 10);?></td>
