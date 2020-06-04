@@ -9,21 +9,23 @@
 <div id="body">
     <form method="post" action="/forum/result-threads-tag-<?php echo $data['id']?>" class="search-bar">
         <button class="sub-none" type="submit" name="search" class="sub-none"><i class="fas fa-search fa-2x icon"></i></button>
-        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des réponses..." name="research">
+        <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des sujets..." name="research">
     </form>
 
-    <?php if ($_SESSION['sessionStatus']==3): ?>
-    <a href="/forum/add-thread"><button type="button" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter</button></a>
-    <?php endif; ?>
+    <form method="post" action="/forum/add-thread-form">
+        <input type="hidden" name="tagId" value="<?php echo $data['id']; ?>">
+        <button type="submit" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter un sujet</button>
+    </form>
 
 <?php for ($i=0;$i<count($data['listThreads']);$i++):?>
-    <form method="post">
+    <form method="post" action="/forum/delete-thread">
       <div class="tag">
             <div class="tag-name">
-              <a href=""><h1 class="titleTag"><?php echo $data['listThreads'][$i]; ?></h1></a>
-              <input type="text" name="threadName" value="<?php echo $data['listThreads'][$i]; ?>">
+
+              <a href="/forum/thread-<?php echo $data['listThreads'][$i]->ID_Thread; ?>"><h1 class="titleTag"><?php echo $data['listThreads'][$i]->Thread_Title; ?></h1></a>
               <?php if ($_SESSION['sessionStatus']==3): ?>
-              <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="far fa-trash"></i>Supprimer</button>
+                  <input type="hidden" name="threadName" value="<?php echo $data['listThreads'][$i]->Thread_Title; ?>">
+                  <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="far fa-trash"></i>Supprimer</button>
               <?php endif; ?>
             </div>
       </div>
