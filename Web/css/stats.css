@@ -51,9 +51,6 @@ canvas {
   width: 50em;
 }
 
-.container .icon{
-}
-
 .text, .score {
   width: 100%;
   display: flex;
@@ -76,10 +73,6 @@ canvas {
   color: #A8CAE9;
 }
 
-.tag-title {
-  
-}
-
 #changeCircleSize{
   background-color: #A8CAE9;
   color: white;
@@ -95,4 +88,15 @@ canvas {
 
 #changeMonth{
   display: none;
+}
+
+@media only screen and (max-width: 600px)  {
+  .top, .bottom {
+    display: flex;
+    flex-direction: column;
+  }
+  .charts {
+    display: flex;
+    flex-direction: column;
+  }
 }

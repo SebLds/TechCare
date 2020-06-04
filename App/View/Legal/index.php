@@ -1,11 +1,12 @@
 <?php $this->title = "CGU & Mentions légales" ?>
 
-<link rel="stylesheet" type="text/css" href="/Web/css/cgu.css">
+<link rel="stylesheet" href="/Web/css/cgu.css"/>
+<?php echo 'tamre'; ?>
 
 <div id="body">
     <div class="page">
       <div class="title">
-          <h1 data-i18n="testt"></h1>
+          <h1>CGU & Mentions légales</h1>
       </div>
 
       <div class="mentionslegales">

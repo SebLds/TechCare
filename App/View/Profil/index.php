@@ -56,11 +56,16 @@
           <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
           <?php endif; ?>
 
-          <label><i class="far fa-unlock"></i>Confirmation mot de passe</label>
-          <input type="newPasswordConfirm" name="password" placeholder="●●●●●●●●" value="">
+          <label><i class="fal fa-unlock"></i>Confirmation mot de passe</label>
+          <input id="myInput" type="newPasswordConfirm" name="password" placeholder="●●●●●●●●" value="">
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
+          <?php if($_SESSION['sessionStatus']==2): ?>
+              <label><i class="fal fa-user-md"></i>Institution référente</label>
+              <input type="text" name="newCompany" placeholder="Hôpital Necker" value="<?php echo $data['company']; ?>">
+              <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
+          <?php endif; ?>
 
       </div>
 
