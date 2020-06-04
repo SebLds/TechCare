@@ -85,6 +85,9 @@ $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
+$router->post('/forum/delete-thread',"Forum\Forum#deleteThread");
+
+
 
 /**Admin**/
     $router->get('/admin/dashboard',"Admin#index");

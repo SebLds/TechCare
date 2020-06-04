@@ -18,14 +18,14 @@
     </form>
 
 <?php for ($i=0;$i<count($data['listThreads']);$i++):?>
-    <form method="post">
+    <form method="post" action="/forum/delete-thread">
       <div class="tag">
             <div class="tag-name">
 
-              <a href="/dashboard"><h1 class="titleTag"><?php echo $data['listThreads'][$i]->Thread_Title; ?></h1></a>
-              <input type="hidden" name="threadName" value="<?php echo $data['listThreads'][$i]->Thread_Title; ?>">
+              <a href="/forum/thread-<?php echo $data['listThreads'][$i]->ID_Thread; ?>"><h1 class="titleTag"><?php echo $data['listThreads'][$i]->Thread_Title; ?></h1></a>
               <?php if ($_SESSION['sessionStatus']==3): ?>
-              <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="far fa-trash"></i>Supprimer</button>
+                  <input type="hidden" name="threadName" value="<?php echo $data['listThreads'][$i]->Thread_Title; ?>">
+                  <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="far fa-trash"></i>Supprimer</button>
               <?php endif; ?>
             </div>
       </div>

@@ -44,7 +44,7 @@ class Thread extends Model
         }
     }
     public function getThreadByTitle($threadTitle){
-        $sqlStatement = 'SELECT * FROM Thread WHERE Thread_Title= :threadTitle';
+        $sqlStatement = 'SELECT * FROM thread WHERE Thread_Title= :threadTitle';
         try {
             return $this->executeRequest($sqlStatement,array('threadTitle' => $threadTitle))->fetch(PDO::FETCH_OBJ);
         } catch (ConfigException $e) {
@@ -69,9 +69,15 @@ class Thread extends Model
 
 
     public function deleteThread($Thread_Title) {
+
         $sqlStatement = 'DELETE FROM thread WHERE Thread_Title = :Thread_Title';
+        $query ='DELETE FROM post WHERE ID_Thread = :ID_Thread';
+        $sql= 'DELETE FROM reply WHERE ID_Thread = :ID_Thread';
+        $idThread=$this->getThreadByTitle($Thread_Title)->ID_Thread;
         try {
-            return $this->executeRequest($sqlStatement, array('Thread_Title' => $Thread_Title));
+            $this->executeRequest($sqlStatement, array('Thread_Title' => $Thread_Title));
+            $this->executeRequest($query, array('ID_Thread' => $idThread));
+            $this->executeRequest($sql, array('ID_Thread' => $idThread));
         } catch (ConfigException $e) {
         }
     }

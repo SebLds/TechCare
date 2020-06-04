@@ -21,7 +21,7 @@ class Reply extends Model
   public function getReply($idThread){
       $sqlStatement = 'SELECT * FROM reply WHERE ID_Thread = :idThread';
       try {
-          return $this->executeRequest($sqlStatement,array('idThread' => $idThread))->fetch(PDO::FETCH_OBJ);
+          return $this->executeRequest($sqlStatement,array('idThread' => $idThread))->fetchAll(PDO::FETCH_OBJ);
       } catch (ConfigException $e) {
       }
   }

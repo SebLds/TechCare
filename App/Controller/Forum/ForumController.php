@@ -63,13 +63,14 @@ class ForumController extends Controller
 
     public function showThreadById($id){
         $thread=$this->thread->getThread($id);
-        $this->generateView(array('listThreads'=>$listThreads,'id'=>$id),"thread");
+        $replies=$this->reply->getReply($id);
+        $this->generateView(array('thread_infos'=>$thread,'replies'=>$replies),"thread");
     }
 
-    public function showReplyById($id){
-        $reply=$this->reply->getReply($id);
-        $this->generateView(array('listReplies'=>$listReplies,'id'=>$id),"reply");
-    }
+//    public function showReplyById($id){
+//        $reply=$this->reply->getReply($id);
+//        $this->generateView(array('listReplies'=>$listReplies,'id'=>$id),"reply");
+//    }
 
     /**
      * Show the list of threads of the tag.
@@ -149,12 +150,7 @@ class ForumController extends Controller
 
         if (isset($_POST['delete-thread'])) {
           $this->thread->deleteThread($threadName);
-          $tags = $this->tag->getTags();
-              for ($i=1;$i<=count($tags);$i++){
-                  $nbThreads[]= $this->tag->getNbThreadsTagById($i);
-                  $nbReplies[]= $this->tag->getNbRepliesTagById($i);
-              }
-              $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
+          $this->executeAction('index');
         }
       }
     }
