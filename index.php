@@ -33,7 +33,8 @@ $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 
 $router->get('/faq',"Faq#index");
-$router->get('/cgu',"CGU#index");
+
+
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/contact',"Contact#index");
 
@@ -81,8 +82,8 @@ $router->post('/forum/add-tag',"Forum\Forum#addTag");
 $router->post('/forum/add-thread-form',"Forum\Forum#formAddThread");
 $router->post('/forum/add-thread',"Forum\Forum#addThread");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
-$router->post('/forum/thread',"Forum\Forum#answer");
-$router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
+$router->post('/forum/add-reply',"Forum\Forum#addReply");
+$router->get('/forum/tag-:id/thread-:id',"Forum\Forum#showThreadById#id#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
@@ -117,6 +118,9 @@ $router->get('/statistics','Admin#stats');
 /**Error**/
 $router->get('/error','Error#index');
 // $router->get('/forbidden-access','Error#forbiddenAccess');
+
+/**CGU**/
+$router->get('/cgu',"Legal#index");
 
 
 

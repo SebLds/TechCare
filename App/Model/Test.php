@@ -59,7 +59,7 @@ class Test extends Model {
   }
 
   public function getUserTests($healthNumber) {
-    $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber ORDER BY passDate DESC';
+    $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber ORDER BY ID_Test DESC LIMIT 10';
   try {
     return $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetchAll(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {
@@ -84,7 +84,7 @@ class Test extends Model {
   }
 
   public function getDoctorTests($doctor) {
-    $sqlStatement = 'SELECT * FROM test WHERE doctor = :doctor ORDER BY passDate DESC';
+    $sqlStatement = 'SELECT * FROM test WHERE doctor = :doctor ORDER BY passDate DESC LIMIT 10';
   try {
     return $this->executeRequest($sqlStatement, array('doctor' => $doctor))->fetchAll(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {

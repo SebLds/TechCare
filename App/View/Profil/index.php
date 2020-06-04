@@ -69,6 +69,12 @@
 
       </div>
 
+      <?php if($_SESSION['sessionStatus']==2): ?>
+          <label><i class="far fa-building"></i>Institution référente</label>
+          <input type="text" name="newCompany" placeholder="Hôpital Necker" value="<?php echo $data['company']; ?>">
+          <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
+      <?php endif; ?>
+
       <div class="submit">
         <input type="submit" value="Modifier"  name="change">
       </div>

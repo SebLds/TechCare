@@ -6,12 +6,6 @@
 <!--<link href="/Web/css/searchBar.css" rel="stylesheet" type="text/css">-->
 
 <div id="body">
-    <?php if($_SESSION['sessionStatus']==1) : ?>
-        <form method="post" class="search-bar">
-            <button class="sub-none" type="submit"><i class="fal fa-search fa-2x icon"></i></button>
-            <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un test..." name="search">
-        </form>
-    <?php endif; ?>
 
     <?php if($_SESSION['sessionStatus']==2) : ?>
         <form method="post" class="search-bar" action="/dashboard/result">

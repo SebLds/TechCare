@@ -19,7 +19,7 @@ class Reply extends Model
   }
 
   public function getReply($idThread){
-      $sqlStatement = 'SELECT * FROM reply WHERE ID_Thread = :idThread';
+      $sqlStatement = 'SELECT * FROM reply WHERE ID_Thread = :idThread ORDER BY Creation_Date DESC';
       try {
           return $this->executeRequest($sqlStatement,array('idThread' => $idThread))->fetchAll(PDO::FETCH_OBJ);
       } catch (ConfigException $e) {
