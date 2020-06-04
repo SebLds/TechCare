@@ -11,7 +11,7 @@
 
     <form action="/admin/delete-test" method="post">
 
-      <label><i class="far fa-ballot-check"></i>Test</label>
+      <label><i class="fal fa-ballot-check"></i>Test</label>
       <div class="selectbox">
         <select name="select-test">
           <option value="">Choisir un test</option>

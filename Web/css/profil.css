@@ -14,17 +14,6 @@
   flex-direction: column;
   padding-left: 2em;
 }
-/*
-.fa-eye-slash, .fa-eye {
-  cursor: pointer;
-  position: relative;
-  left: 13em;
-  bottom: 1.7em;
-  border: none;
-  outline: none;
-  font-size: 1.2em;
-}
-*/
 
 @media only screen and (max-width: 850px)  {
   .fields {
@@ -46,6 +35,11 @@
 
 .bottom {
   display: flex;
+}
+
+.bottom-edit {
+  display: flex;
+  flex-direction: column;
 }
 
 .submit {

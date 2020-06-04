@@ -12,11 +12,11 @@
 
     <form action="/admin/add-module" method="post">
 
-      <label><i class="far fa-tools"></i>Module</label>
+      <label><i class="fal fa-tools"></i>Module</label>
       <input type="text" name="newModule" placeholder="Fréquence cardiaque">
       <p class="error-msg"><?php if(isset($data['error_module'])) { echo $data['error_module']; } ?></p>
 
-      <label><i class="far fa-cogs"></i>Paramètres</label>
+      <label><i class="fal fa-cogs"></i>Paramètres</label>
       <input type="text" name="settingssportsman" placeholder="Profil sportif">
       <input type="text" name="settingssedentary" placeholder="Profil sédentaire">
       <input type="text" name="settingsactif" placeholder="Profil actif">

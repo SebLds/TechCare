@@ -197,7 +197,7 @@ div.major h2::after {
 
 .features li::before {
     display: block;
-    color: black;
+    color: #A8CAE9;
     position: absolute;
     left: 1.75em;
     top: 2.7em;
