@@ -76,6 +76,7 @@ class Tag extends Model
         $sqlStatement = 'DELETE FROM tag WHERE Tag_Title = :Tag_Title';
         $query ='DELETE FROM post WHERE ID_Tag = :ID_Tag';
         $sql='SELECT * FROM thread t INNER JOIN post p ON p.ID_Thread = t.ID_Thread WHERE ID_Tag= :ID_Tag';
+        $sqlDelete='DELETE FROM reply WHERE ID_Thread = :ID_Thread';
         $sqlDel= 'DELETE FROM thread WHERE ID_Thread = :ID_Thread';
         $idTag=$this->getTagByTitle($Tag_Title)->ID_Tag;
         $listThread=$this->executeRequest($sql,array('ID_Tag'=>$idTag))->fetchAll(PDO::FETCH_OBJ);
@@ -87,6 +88,7 @@ class Tag extends Model
             }
             for($i=0;$i<count($listThreadToDel);$i++){
                 $this->executeRequest($sqlDel,array('ID_Thread'=>$listThreadToDel[$i]));
+                $this->executeRequest($sqlDelete,array('ID_Thread'=>$listThreadToDel[$i]));
             }
             $this->executeRequest($sqlStatement, array('Tag_Title' => $Tag_Title));
             $this->executeRequest($query,array('ID_Tag'=>$idTag));

@@ -8,13 +8,14 @@
 <div id="body">
 
   <div class="tag-title">
-    <h1><?php echo $data['tag_infos']->Tag_Title; ?>  > <?php echo $data['thread_infos']->Thread_Title; ?></h1>
+    <h1><?php echo $data['tag_infos']->Tag_Title; ?> > <?php echo $data['thread_infos']->Thread_Title; ?></h1>
   </div>
 
-  <form action="/forum/thread" method="post">
+  <form action="/forum/add-reply" method="post">
+      <input type="hidden" name="idThread" value="<?php echo $data['thread_infos']->ID_Thread; ?>">
+      <input type="hidden" name="idTag" value="<?php echo $data['tag_infos']->ID_Tag; ?>">
 
-  <?php for ($i=0;$i<count($data['replies']);$i++):?>
-    <input type="text" name="id" value="<?php echo $data['replies'][$i]->ID_Thread; ?>">
+      <?php for ($i=count($data['replies'])-1;$i>=0;$i--):?>
   <div class="answer-box">
     <div class="profil">
       <h3><?php echo $data['profil'][$i]['firstName']; ?></h3>
