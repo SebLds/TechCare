@@ -18,7 +18,7 @@ class Module extends Model {
   }
 
   public function addModule($name, $typetest=null, $sportsman, $sedentary, $actif) {
-      $sqlStatement = 'INSERT INTO module (name, typetest, sportsman, sedentary, actif) VALUES (:name, :typetest, :sportsman, :sedentary, :actif)';
+      $sqlStatement = 'INSERT INTO module (name, typetest, sportsman, sedentary, active) VALUES (:name, :typetest, :sportsman, :sedentary, :active)';
       return $this->executeRequest($sqlStatement, array('name' => $name, 'typetest' => $typetest, 'sportsman' => $sportsman, 'sedentary' => $sedentary, 'actif' => $actif));
   }
 
