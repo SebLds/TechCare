@@ -120,7 +120,7 @@ $router->get('/error','Error#index');
 // $router->get('/forbidden-access','Error#forbiddenAccess');
 
 /**CGU**/
-$router->get('/cgu',"Cgu#index");
+$router->get('/cgu',"Legal#index");
 
 
 
