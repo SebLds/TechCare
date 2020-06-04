@@ -10,11 +10,11 @@
 			<h1>Ajouter une catégorie</h1>
 			<p class="top-text">Ajouter une nouvelle catégorie au forum</p>
 
-			<label><i class="far fa-tags"></i>Catégorie</label>
+			<label><i class="fal fa-tags"></i>Catégorie</label>
 			<input type="text" name="newTag">
 			<p class="error-msg"></p>
 
-			<label><i class="far fa-comment-dots"></i>Description</label>
+			<label><i class="fal fa-comment-dots"></i>Description</label>
 			<input type="text" name="description">
 			<p class="error-msg"></p>
 

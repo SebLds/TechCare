@@ -9,25 +9,19 @@
             <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>
             <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." name="search">
         </form>
-        <div class="table">
-            <table>
-                <thead>
-                <th><i class="fal fa-notes-medical"></i></th>
-                <th><i class="fal fa-calendar-alt"></i></th>
-                <th><i class="fal fa-signal"></i></th>
-                </thead>
-
-                <?php for ($i=0;$i<count($data['searchResult']);$i++):?>
-                <div class="result">
-                    <tr>
-                        <td class="content"><?php $firstName = $data['searchResult'][$i]->firstName; echo $firstName;?></td>
-                        <td class="content"><?php $lastName = $data['searchResult'][$i]->lastName; echo $lastName;?></td>
-                        <td class="content"><?php $mail = $data['searchResult'][$i]->mail; echo $mail;?></td>
-                    </tr>
-                </div>
+        <table class="rwd-table">
+            <thead>
+            <th><i class="fal fa-notes-medical"></i></th>
+            <th><i class="fal fa-calendar-alt"></i></th>
+            <th><i class="fal fa-signal"></i></th>
+            </thead>
+            <?php for ($i=0;$i<count($data['searchResult']);$i++):?>
+            <tr>
+                <td class="content"><?php $firstName = $data['searchResult'][$i]->firstName; echo $firstName;?></td>
+                <td class="content"><?php $lastName = $data['searchResult'][$i]->lastName; echo $lastName;?></td>
+                <td class="content"><?php $mail = $data['searchResult'][$i]->mail; echo $mail;?></td>
                 <?php endfor; ?>
-            </table>
-        </div>
+            </tr>
+        </table>
     <?php endif; ?>
-
 </div>

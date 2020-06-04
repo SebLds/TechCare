@@ -10,11 +10,11 @@
             <h1>Ajouter un sujet</h1>
             <p class="top-text">Ajouter un nouveau sujet à la catégorie : <?php if(isset($data)){echo $data['tagTitle'];}?></p>
             <input type="hidden" name="tagTitle" value="<?php echo $data['tagTitle']; ?>">
-            <label><i class="far fa-tags"></i>Sujet</label>
+            <label><i class="fal fa-tags"></i>Sujet</label>
             <input type="text" name="newThread">
             <p class="error-msg"></p>
 
-            <label><i class="far fa-comment-dots"></i>Premier message du sujet</label>
+            <label><i class="fal fa-comment-dots"></i>Premier message du sujet</label>
             <textarea name="reply" placeholder="Écrivez votre message ici"></textarea>
             <p class="error-msg"></p>
 

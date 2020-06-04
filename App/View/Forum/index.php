@@ -14,7 +14,7 @@
 
       <?php if ($_SESSION['sessionStatus']==3): ?>
           <form method="post" action="/forum/add-tag-form">
-              <button type="submit" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter une catégorie</button>
+              <button type="submit" class="btn add" style="margin-left: 20px"><i class="fal fa-plus-square"></i>Ajouter une catégorie</button>
           </form>
       <?php endif; ?>
 

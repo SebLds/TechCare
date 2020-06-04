@@ -39,7 +39,7 @@
 
 
     <div class="reply">
-      <label><i class="far fa-info-circle"></i>Répondre</label>
+      <label><i class="fal fa-info-circle"></i>Répondre</label>
       <textarea name="reply" rows="4" cols="75" placeholder="Ecrivez votre réponse ici."></textarea>
       <input type="submit" name="answer" value="Répondre">
     </div>

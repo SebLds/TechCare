@@ -8,13 +8,13 @@
 
 <div id="body">
     <form method="post" action="/forum/result-threads-tag-<?php echo $data['id']?>" class="search-bar">
-        <button class="sub-none" type="submit" name="search" class="sub-none"><i class="fas fa-search fa-2x icon"></i></button>
+        <button class="sub-none" type="submit" name="search" class="sub-none"><i class="fal fa-search fa-2x icon"></i></button>
         <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des sujets..." name="research">
     </form>
 
     <form method="post" action="/forum/add-thread-form">
         <input type="hidden" name="tagId" value="<?php echo $data['id']; ?>">
-        <button type="submit" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter un sujet</button>
+        <button type="submit" class="btn add" style="margin-left: 20px"><i class="fal fa-plus-square"></i>Ajouter un sujet</button>
     </form>
 
     <div class="tag-title">
@@ -29,7 +29,7 @@
               <a href="/forum/tag-<?php echo $data['tag_infos']->ID_Tag;?>/thread-<?php echo $data['listThreads'][$i]->ID_Thread; ?>"><h1 class="titleTag"><?php echo $data['listThreads'][$i]->Thread_Title; ?></h1></a>
               <?php if ($_SESSION['sessionStatus']==3): ?>
                   <input type="hidden" name="threadName" value="<?php echo $data['listThreads'][$i]->Thread_Title; ?>">
-                  <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="far fa-trash"></i>Supprimer</button>
+                  <button type="submit" class="btn delete" style="margin-left: 20px" name="delete-thread"><i class="fal fa-trash"></i>Supprimer</button>
               <?php endif; ?>
             </div>
       </div>

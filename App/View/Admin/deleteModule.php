@@ -11,7 +11,7 @@
 
     <form action="/admin/delete-module" method="post">
 
-      <label><i class="far fa-tools"></i>Module</label>
+      <label><i class="fal fa-tools"></i>Module</label>
       <div class="selectbox">
         <select name="select-module">
           <option value="">Choisir un module</option>

@@ -9,10 +9,9 @@
     <h1>Ajouter un profil</h1>
     <p class="top-text">Ajouter un nouveau profil pour personnaliser vos tests psychotechniques.</p>
 
-
     <form method="post">
 
-      <label><i class="far fa-id-badge"></i>Profil</label>
+      <label><i class="fal fa-id-badge"></i>Profil</label>
       <input type="text" name="newProfil" placeholder="Sportif">
       <p class="error-msg"><?php if(isset($error_newProfil)) { echo $error_newProfil; } ?></p>
 
