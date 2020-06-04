@@ -7,7 +7,7 @@
   <div class="form-add-module box">
 
     <h1>Associer</h1>
-    <p class="top-text">Associer un module à un test.</p>
+    <p class="top-text">Associer un module à un test pour créer de nouveaux tests !</p>
 
 
     <form action="/admin/associate" method="post">
