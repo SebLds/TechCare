@@ -21,3 +21,21 @@
   margin-top: 440px;
   cursor: pointer;
 }
+
+.bottom {
+  display: flex;
+}
+
+.submit {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  margin-top: 0;
+}

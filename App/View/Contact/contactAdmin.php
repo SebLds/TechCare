@@ -10,9 +10,17 @@
           <p class="top-text">N’hésitez pas à nous <span>solliciter</span> au travers du questionnaire suivant pour toute question ou demande d’information.<br>
           Nous nous engageons à traiter votre demande <span>dans les meilleurs délais.</span></p>
 
+
+        <?php if (isset($data['msg-validate'])): ?>
+          <div class="msg">
+              <p class="send-msg"><i class="far fa-paper-plane"></i>Votre message a bien été envoyé ! Merci de nous avoir contacté</p>
+          </div>
+        <?php endif; ?>
+
+
           <form method="post">
 
-                <label>Sujet</label>
+                <label><i class="far fa-question-circle"></i>Sujet</label>
                 <div class="selectbox">
                   <select name="subject">
                     <option value="">Choisir un sujet</option>
@@ -26,7 +34,7 @@
 
             <div class="message">
 
-              <label>Message</label>
+              <label><i class="far fa-comment-alt"></i>Message</label>
               <textarea name="message" rows="3" placeholder="Ecrivez votre message ici"></textarea>
               <p class="error-msg"><?php if(isset($data[1]['error_message'])) { echo $data[1]['error_message']; } ?></p>
 

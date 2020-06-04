@@ -33,7 +33,7 @@ $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
 
 $router->get('/faq',"Faq#index");
-$router->get('/cgu',"Cgu#index");
+$router->get('/cgu',"CGU#index");
 $router->get('/error-:id',"Error#generateError#id");
 $router->get('/contact',"Contact#index");
 
@@ -71,7 +71,7 @@ $router->post('/test-summary',"Exam#submitComment");
 $router->get('/contact',"Contact#index");
 $router->post('/contact',"Contact#sendMail");
 $router->get('/contact-admin',"Contact#contactAdminIndex");
-$router->get('/contact-admin',"Contact#contactAdmin");
+$router->post('/contact-admin',"Contact#contactAdmin");
 
 /** Forum **/
 $router->get('/forum',"Forum\Forum#index");
@@ -93,6 +93,7 @@ $router->post('/forum/delete-thread',"Forum\Forum#deleteThread");
     $router->get('/admin/dashboard',"Admin#index");
 $router->post('/admin/dashboard/result',"Admin#searchUser");
 $router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
+$router->post('/admin/dashboard/profil-:id',"Admin#editUserProfil");
 $router->post('/admin/add-user',"Admin#addUser");
 $router->post('/admin/add-user-form',"Admin#formAddUser");
 

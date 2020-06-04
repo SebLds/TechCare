@@ -153,20 +153,22 @@ class User extends Model {
             'healthNumber' => $user->healthNumber,
             'doctor' => $user->doctor,
             'company' => $user->company,
-            'status' => $user->status
+            'status' => $user->status,
+            'password' => $user->password,
+            'registrationdate' => $user->registrationdate,
         ];
 
         return $data;
     }
 
-    public function modifyProfil($firstName, $lastName, $mail,$doctor,$healthNumber,$company,$birthdate, $ID_Users) {
-        if($_SESSION["sessionStatus"]==1) {
+    public function modifyProfil($status, $firstName, $lastName, $mail,$doctor,$healthNumber,$company,$birthdate, $ID_Users) {
+        if($status==1) {
             $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, doctor = :doctor, healthNumber = :healthNumber, birthdate= :birthdate WHERE ID_Users = :ID_Users';
             $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail,'doctor' => $doctor,'healthNumber' => $healthNumber, 'birthdate' => $birthdate, 'ID_Users' => $ID_Users));
-        }elseif($_SESSION["sessionStatus"]==2){
+        }elseif($status==2){
             $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, birthdate= :birthdate, company=:company WHERE ID_Users = :ID_Users';
             $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail,'birthdate' => $birthdate,'company' => $company, 'ID_Users' => $ID_Users));
-        }elseif($_SESSION["sessionStatus"]==3){
+        }elseif($status==3){
             $sqlStatement = 'UPDATE users SET firstName = :firstName,lastName = :lastName,mail = :mail, birthdate= :birthdate WHERE ID_Users = :ID_Users';
             $this->executeRequest($sqlStatement, array('firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail,'birthdate' => $birthdate, 'ID_Users' => $ID_Users));
         }
@@ -198,6 +200,16 @@ class User extends Model {
             $sqlStatement = "SELECT * FROM users WHERE lastName LIKE '%$key%' AND doctor= :doctorName";
             return $this->executeRequest($sqlStatement, array('doctorName' => $doctorName))->fetchAll(PDO::FETCH_OBJ);
         }
+    }
+
+    public function deleteUser($ID_Users) {
+      $sqlStatement = 'DELETE FROM users WHERE ID_Users = :ID_Users';
+      return $this->executeRequest($sqlStatement, array('ID_Users' => $ID_Users));
+    }
+
+    public function banUser($status, $firstName, $lastName, $mail, $password, $birthdate, $doctor=null, $company=null, $healthNumber=null, $registrationdate, $banDate) {
+        $sqlStatement = 'INSERT INTO users_ban (status, firstName, lastName, mail, password, birthdate, doctor, company, healthNumber, registrationdate, banDate) VALUES (:status, :firstName, :lastName, :mail, :password, :birthdate, :doctor, :company, :healthNumber, :registrationdate, :banDate)';
+            return $this->executeRequest($sqlStatement, array('status' => $status, 'firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'password' => $password, 'birthdate' => $birthdate, 'doctor' => $doctor, 'company' => $company, 'healthNumber' => $healthNumber, 'registrationdate' => $registrationdate, 'banDate' => $banDate));
     }
 
 

@@ -4,7 +4,6 @@
 <!--<link href="/Web/css/searchBar.css" rel="stylesheet" type="text/css">-->
 
 <div id="body">
-
     <?php if($_SESSION['sessionStatus']==1) : ?>
         <form method="post" class="search-bar">
             <button class="sub-none" type="submit"><i class="fas fa-search fa-2x icon"></i></button>

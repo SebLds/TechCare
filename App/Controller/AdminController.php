@@ -45,6 +45,7 @@ class AdminController extends Controller {
           }
       }
   }
+
   public function showProfil($id){
         $profil=$this->user->getProfil($id);
         $this->generateView(array('profil'=> $profil), 'profilUser');
@@ -168,30 +169,25 @@ class AdminController extends Controller {
         }
 
         // Vérification du nom du médecin
-        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['doctor'])) {
             if (!ctype_alpha($data['doctor'])) {
-              $errors['error_doctor'] = ("Caractères invalides");
+              $errors['error_doctor'] = "Caractères invalides";
             }
           } else {
-            $errors['error_doctor'] = ("Veuillez renseigner le nom de votre médecin");
+            $errors['error_doctor'] = "Veuillez renseigner le nom de votre médecin";
           }
-        }
 
         // Vérification du nom du médecin
-        if ($data['select-user-type'] == 'manager') {
           if (!empty($data['company'])) {
             if (!ctype_alpha($data['company'])) {
-              $errors['error_company'] = ("Caractères invalides");
+              $errors['error_company'] = "Caractères invalides";
             }
           } else {
-            $errors['error_company'] = ("Veuillez renseigner un nom d'entreprise");
+            $errors['error_company'] = "Veuillez renseigner un nom d'entreprise";
           }
-        }
 
 
         // Vérification du numéro de sécurité sociale
-        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['healthNumber'])) {
             $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
             if ($checkHealthNumber) {
@@ -200,7 +196,6 @@ class AdminController extends Controller {
           } else {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
-        }
 
         if(empty($errors)) {
           $registrationdate = Model::getDate();
@@ -337,6 +332,81 @@ class AdminController extends Controller {
             $this->generateView(array('faq' => $FAQ),'editFAQ');
            }
          }
+
+        }
+      }
+
+      public function editUserProfil() {
+
+        if (!empty($_POST)) {
+          $newFirstName='';
+          $newLastName='';
+          $newMail='';
+          $day=0;
+          $month=0;
+          $year=0;
+          $newDoctor='';
+          $newHealthNumber='';
+          $newCompany='';
+          extract($_POST);
+
+          if (isset($_POST['change'])) {
+
+            $data = [
+              'newFirstName' => (string) htmlspecialchars(ucfirst(trim($newFirstName))),
+              'newLastName' => (string) htmlspecialchars(strtoupper(trim($newLastName))),
+              'newMail' => (string) htmlspecialchars(strtolower(trim($newMail))),
+              //'newPassword' => (string) htmlspecialchars(trim($newPassword)),
+              //'newPasswordConfirm' => (string) htmlspecialchars(trim($newPasswordConfirm)),
+              'day' => (int) htmlspecialchars(trim($day)),
+              'month' => (int) htmlspecialchars(trim($month)),
+              'year' => (int) htmlspecialchars(trim($year)),
+              'newDoctor' => htmlspecialchars(trim($newDoctor)),
+              'newHealthNumber' => htmlspecialchars(trim($newHealthNumber)),
+              'birthdate' => $day .'/'. $month .'/'. $year,
+            ];
+
+            $errors = [];
+
+            if (isset($data['newFirstName'])) {
+              if (!ctype_alpha($data['newFirstName'])) {
+                $errors['error_firstName'] = "Caractères invalides";
+              }
+            }
+
+            if (isset($data['newLastName'])) {
+              if (!ctype_alpha($data['newLastName'])) {
+                $errors['error_firstName'] = "Caractères invalides";
+              }
+            }
+
+            if(empty($errors)) {
+              $ID = $this->user->getID($newMail);
+              $status = $this->user->getStatus($ID);
+              $this->user->modifyProfil($status, $data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $data['newCompany'],$data["birthdate"], $ID);
+              $data = $this->user->getProfil($_SESSION['ID_User']);
+              header("Location: /admin/dashboard");
+            } else {
+              $data = [$data, $errors];
+              $this->generateView($data,'index');
+            }
+
+          }
+
+          if (isset($_POST['delete'])) {
+            $ID = $this->user->getID($newMail);
+            $this->user->deleteUser($ID);
+            header("Location: /admin/dashboard");
+          }
+
+          if (isset($_POST['ban'])) {
+            $ID = $this->user->getID($newMail);
+            $profil = $this->user->getProfil($ID);
+            $banDate = Model::getDate();
+            $this->user->banUser($profil['status'], $profil['firstName'],$profil['lastName'], $profil['mail'], $profil['password'], $profil['birthdate'],$profil['doctor'], $profil['company'], $profil['healthNumber'], $profil['registrationdate'], $banDate);
+            $this->user->deleteUser($ID);
+            header("Location: /admin/dashboard");
+          }
 
         }
       }
