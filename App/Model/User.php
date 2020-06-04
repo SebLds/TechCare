@@ -246,5 +246,19 @@ class User extends Model {
             return $this->executeRequest($sqlStatement, array('status' => $status, 'firstName' => $firstName, 'lastName' => $lastName, 'mail' => $mail, 'password' => $password, 'birthdate' => $birthdate, 'doctor' => $doctor, 'company' => $company, 'healthNumber' => $healthNumber, 'registrationdate' => $registrationdate, 'banDate' => $banDate));
     }
 
+    public function checkUserPassword($ID) {
+      $sqlStatement = 'SELECT * FROM users WHERE ID_Users = :ID_Users';
+      try {
+          $user = $this->executeRequest($sqlStatement, array('ID_Users' => $ID))->fetch(PDO::FETCH_OBJ);
+      } catch (ConfigException $e) {
+      }
+      if (isset($user->password)){
+          $password_hash = $user->password;
+      }
+      if (isset($password_hash) AND password_verify($password, $password_hash)) {
+          return true;
+      }
+    }
+
 
 }

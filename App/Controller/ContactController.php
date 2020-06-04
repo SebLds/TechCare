@@ -6,9 +6,9 @@ use App\Model\User;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-require 'Web/PHPMailer/src/Exception.php';
-require 'Web/PHPMailer/src/PHPMailer.php';
-require 'Web/PHPMailer/src/SMTP.php';
+require 'src/PHPMailer/src/Exception.php';
+require 'src/PHPMailer/src/PHPMailer.php';
+require 'src/PHPMailer/src/SMTP.php';
 
 class ContactController extends Controller {
 

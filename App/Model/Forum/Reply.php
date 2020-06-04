@@ -35,4 +35,13 @@ class Reply extends Model
         }
     }
 
+    public function getNbRepliesThreadById($idthread) {
+      $sqlStatement = 'SELECT COUNT(*) as count FROM reply WHERE ID_Thread = :ID_Thread';
+      try {
+          return $this->executeRequest($sqlStatement, array('ID_Thread'=>$idthread))->fetch(PDO::FETCH_OBJ)->count;
+      } catch (ConfigException $e) {
+      }
+
+    }
+
 }

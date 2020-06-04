@@ -91,8 +91,12 @@ class ForumController extends Controller
      */
     public function showTagById($id){
        $tag=$this->tag->getTagById($id);
-       $listThreads= $this->thread->getThreadsTagById($id);
-       $this->generateView(array('listThreads'=>$listThreads,'id'=>$id, 'tag_infos'=>$tag),"listThreadsTag");
+       $countrepliesthread = [];
+      $listThreads= $this->thread->getThreadsTagById($id);
+       for ($i=0; $i<count($listThreads); $i++) {
+         $countrepliesthread[] = $this->reply->getNbRepliesThreadById($listThreads[$i]->ID_Thread);
+       }
+       $this->generateView(array('nbreplies'=>$countrepliesthread, 'listThreads'=>$listThreads,'id'=>$id, 'tag_infos'=>$tag),"listThreadsTag");
     }
 
     public function formAddTag(){
