@@ -10,12 +10,12 @@
   padding: 4em;
   display: flex;
   justify-content: center;
-  margin-left: 14em;
+  margin-left: 16em;
   margin-top: 4em;
 }
 
 header {
-  font-size: 11pt;
+  font-size: 10pt;
   position: fixed;
   width: 100%;
   top: 0;
@@ -190,18 +190,27 @@ header {
 
 @media screen and (width: 1680px) {
   header {
-    font-size: 11pt;
+    font-size: 9pt;
+  }
+  .sidebar{
+    font-size: 9pt;
   }
 }
 
 @media screen and (max-width: 1280px) {
   header {
-    font-size: 10pt;
+    font-size: 8pt;
+  }
+  .sidebar{
+    font-size: 8pt;
   }
 }
 
 @media only screen and (max-width: 936px)  {
   header{
+    font-size: 8pt;
+  }
+  .sidebar{
     font-size: 8pt;
   }
   #body {
@@ -249,6 +258,13 @@ header {
     letter-spacing: 0.0375em;
   }
 
+  .sidebar {
+    font-size: 7pt;
+  }
+  #body {
+    margin-left: 3em !important;
+  }
+
   #page-title {
     display: none;
   }
@@ -264,5 +280,8 @@ header {
 @media screen and (max-width: 480px) {
   header {
     font-size: 7pt;
+  }
+  #body {
+    margin-left: 2em !important;
   }
 }

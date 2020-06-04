@@ -16,21 +16,21 @@
 
         <div class="left">
 
-          <label><i class="far fa-user"></i>Prénom</label>
+          <label><i class="fal fa-user"></i>Prénom</label>
           <input type="text" name="newFirstName" placeholder="Romuald" value="<?php echo $data['firstName']; ?>">
           <p class="error-msg"><?php if(isset($error_firstName)) { echo $error_firstName; }?></p>
 
-          <label><i class="far fa-envelope"></i>Adresse email</label>
+          <label><i class="fal fa-envelope"></i>Adresse email</label>
           <input type="text" name="newMail" placeholder="infinite@measures.com" value="<?php echo $data['mail']; ?>">
           <p class="error-msg"><?php if(isset($error_mail)) { echo $error_mail; }?></p>
 
           <?php if($_SESSION['sessionStatus']==1): ?>
-          <label><i class="far fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
+          <label><i class="fal fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
           <input type="text" name="newHealthNumber" placeholder="<?php echo $data['healthNumber']; ?>" value="<?php echo $data['healthNumber']; ?>">
           <p class="error-msg"><?php if(isset($error_healthNumber)) { echo $error_healthNumber; }?></p>
           <?php endif; ?>
 
-          <label><i class="far fa-lock"></i>Nouveau mot de passe</label>
+          <label><i class="fal fa-lock"></i>Nouveau mot de passe</label>
           <input id="myInput" type="newPassword" name="password" placeholder="●●●●●●●●" value="<?php if(isset($password)) { echo $password; }?>">
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
@@ -38,11 +38,11 @@
 
         <div class="right">
 
-          <label><i class="far fa-user-tag"></i>Nom</label>
+          <label><i class="fal fa-user-tag"></i>Nom</label>
           <input type="text" name="newLastName" placeholder="Monteiro" value="<?php echo $data['lastName']; ?>">
           <p class="error-msg"><?php if(isset($error_healthNumber)) { echo $error_healthNumber; }?></p>
 
-          <label><i class="far fa-calendar-alt"></i>Date de naissance</label>
+          <label><i class="fal fa-calendar-alt"></i>Date de naissance</label>
           <div class="birthdate">
             <input class="date" id="day" maxlength="2" type="text" name="day" placeholder="JJ" value="<?php echo substr($data['birthdate'], 0, 2); ?>">
             <input class="date" id="month" maxlength="2" type="text" name="month" placeholder="MM" value="<?php echo substr($data['birthdate'], 3, 2); ?>">
@@ -51,17 +51,16 @@
           <p class="error-msg"><?php if(isset($error_birthdate)) { echo $error_birthdate; }?></p>
 
           <?php if($_SESSION['sessionStatus']==1): ?>
-          <label><i class="far fa-user-md"></i>Médecin référent</label>
+          <label><i class="fal fa-user-md"></i>Médecin référent</label>
           <input type="text" name="newDoctor" placeholder="Dupont" value="<?php echo $data['doctor']; ?>">
           <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
           <?php endif; ?>
 
-          <label><i class="far fa-unlock"></i>Confirmation mot de passe</label>
+          <label><i class="fal fa-unlock"></i>Confirmation mot de passe</label>
           <input id="myInput" type="newPasswordConfirm" name="password" placeholder="●●●●●●●●" value="<?php if(isset($password)) { echo $password; }?>">
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
-
       </div>
 
       <div class="submit">

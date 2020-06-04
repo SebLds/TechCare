@@ -44,7 +44,7 @@
 .icon {
     cursor: pointer;
     position: relative;
-    left: 4em;
+    left: 3em;
     border: none;
     outline: none;
     color: white;
@@ -151,5 +151,9 @@
 @media screen and (max-width: 480px) {
     #body {
         font-size: 9pt;
+    }
+    .search-input {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
     }
 }

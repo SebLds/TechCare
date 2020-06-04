@@ -19,16 +19,16 @@
             <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher un patient..." name="search">
         </form>
     <?php endif; ?>
-
+<!--
     <?php if (isset($data)):?>
         <div class="table">
           <table>
             <thead>
-              <th><i class="fal fa-notes-medical"></i></th>
-              <th><i class="fal fa-calendar-alt"></i></th>
-              <th><i class="fal fa-signal"></i></th>
-              <th><i class="fal fa-id-card"></i></th>
-              <th><i class="far fa-comment-dots"></i></th>
+            <th><i class="fal fa-notes-medical"></i><span>&ensp;&ensp;Type de test</span></th>
+              <th><i class="fal fa-calendar-alt"></i><span>&ensp;&ensp;Actvité physique</span></th>
+              <th><i class="fal fa-signal"></i><span>&ensp;&ensp;Score</span></th>
+              <th><i class="fal fa-id-card"></i><span>&ensp;&ensp;Date</span></th>
+              <th><i class="far fa-comment-dots"></i><span>&ensp;&ensp;Commentaire</span></th>
             </thead>
 
                  <?php for ($i=0;$i<count($data['User_test']);$i++):?>
@@ -37,13 +37,13 @@
                          <td>
                            <?php $type = $data['User_test'][$i]->type; ?>
                            <?php if ($type == 'stress'): ?>
-                           <i class="fal fa-heartbeat"></i>Gestion du stress</td>
+                           <i class="fal fa-heart-rate"></i>&ensp;&ensp;Gestion du stress</td>
                            <?php endif; ?>
                            <?php if ($type == 'sight'): ?>
-                           <i class="fal fa-eye"></i>Acuité visuelle
+                           <i class="fal fa-low-vision"></i>&ensp;&ensp;Acuité visuelle
                            <?php endif; ?>
                            <?php if ($type == 'sound'): ?>
-                           <i class="fal fa-volume"></i>Acuité sonore
+                           <i class="fal fa-waveform"></i>&ensp;&ensp;Acuité sonore
                            <?php endif; ?>
                          </td>
                          <td><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
@@ -55,27 +55,28 @@
                  <?php endfor; ?>
           </table>
         </div>
+    -->
 
     <table class="rwd-table">
         <tr>
-            <th>Type de test</th>
-            <th>Actvité physique</th>
-            <th>Score</th>
-            <th>Date</th>
-            <th>Commentaire</th>
+            <th><i class="fal fa-notes-medical"></i><span>&ensp;&ensp;Type de test</span></th>
+            <th><i class="fal fa-calendar-alt"></i><span>&ensp;&ensp;Actvité physique</span></th>
+            <th><i class="fal fa-signal"></i><span>&ensp;&ensp;Score</span></th>
+            <th><i class="fal fa-id-card"></i><span>&ensp;&ensp;Date</span></th>
+            <th><i class="far fa-comment-dots"></i><span>&ensp;&ensp;Commentaire</span></th>
         </tr>
         <?php for ($i=0;$i<count($data['User_test']);$i++):?>
         <tr>
             <td data-th="Type de test">
                 <?php $type = $data['User_test'][$i]->type; ?>
                 <?php if ($type == 'stress'): ?>
-                <i class="fal fa-heartbeat"></i>Gestion du stress</td>
+                <i class="fal fa-heart-rate"></i>Gestion du stress</td>
                 <?php endif; ?>
                 <?php if ($type == 'sight'): ?>
-                <i class="fal fa-eye"></i>Acuité visuelle
+                <i class="fal fa-low-vision"></i>Acuité visuelle
                 <?php endif; ?>
                 <?php if ($type == 'sound'): ?>
-                <i class="fal fa-volume"></i>Acuité sonore
+                <i class="fal fa-waveform"></i>Acuité sonore
                 <?php endif; ?></td>
             </td>
             <td data-th="Actvité physique"><?php $profil = $data['User_test'][$i]->profil; echo $profil;?></td>
