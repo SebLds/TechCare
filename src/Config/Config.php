@@ -46,9 +46,7 @@ class Config
             $filePath = "src/Config/prod.ini";
             // Dev version
             //$filePath = "src/Config/dev.ini";
-            if (!file_exists($filePath)) {
-               $filePath = "prod.ini";
-            }
+
             if (!file_exists($filePath)) {
                 throw new ConfigException("Aucun fichier de configuration trouvé");
             }
