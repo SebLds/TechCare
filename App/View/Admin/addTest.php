@@ -9,10 +9,9 @@
     <h1>Ajouter un test</h1>
     <p class="top-text">Ajouter un nouveau test pour vos patients.</p>
 
-
     <form action="/admin/add-test" method="post">
 
-      <label><i class="far fa-ballot-check"></i>Test</label>
+      <label><i class="fal fa-ballot-check"></i>Test</label>
       <input type="text" name="newTest" placeholder="Gestion de stress">
       <p class="error-msg"><?php if(isset($data['error_test'])) { echo $data['error_test']; } ?></p>
 

@@ -49,8 +49,6 @@ class Config
             if (!file_exists($filePath)) {
                $filePath = "prod.ini";
             }
-
-
             if (!file_exists($filePath)) {
                 throw new ConfigException("Aucun fichier de configuration trouvé");
             }

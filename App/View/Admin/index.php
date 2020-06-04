@@ -10,12 +10,11 @@
             <h1>Utilisateurs</h1>
         </div>
 		<div class="action">
+            <form class="search-bar" method="post" action="/admin/add-user-form">
+                <button type="submit" class="btn add" name="button"><i class="fal fa-user-plus"></i>Ajouter</button>
+            </form>
 
-                <form method="post" action="/admin/add-user-form">
-                    <button type="submit" class="btn add" name="button"><i class="far fa-user-plus"></i>Ajouter</button>
-                </form>
 			<form class="search-bar" method="post" action="/admin/dashboard/result">
-                <a href="/admin/add-user"><button class="btn add" type="submit" name="button"><i class="fal fa-user-plus"></i>Ajouter</button></a>
                 <button class="sub-none" type="submit"><i class="fal fa-search fa-2x icon"></i></button>
                 <input type="text" autocomplete="off" class="search-input" name='search' placeholder="Rechercher des utilisateurs...">
             </form>
@@ -29,8 +28,6 @@
 		<div class="action">
 			<form class="search-bar" method="post">
                 <a href="/admin/edit-faq"><button class="btn edit" type="submit" name="button"><i class="fal fa-edit"></i>Modifier</button></a>
-                <button class="sub-none" type="submit"><i class="fal fa-search fa-2x icon"></i></button>
-                <input type="text" autocomplete="off" class="search-input" placeholder="Rechercher des utilisateurs...">
             </form>
 		</div>
 	</div>

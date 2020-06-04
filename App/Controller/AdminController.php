@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Model\Forum\Reply;
 use App\Model\Forum\Tag;
 use App\Model\Forum\Thread;
+use App\Model\NbConnexions;
 use DateInterval;
 use DateTime;
 use src\Controller;
@@ -22,6 +23,7 @@ class AdminController extends Controller {
     private FAQ $faq;
     private TypeTest $typetest;
     private Module $module;
+    private NbConnexions $nbConnexions;
 
     public function __construct() {
         $this->user = new User();
@@ -29,6 +31,7 @@ class AdminController extends Controller {
         $this->faq = new Faq();
         $this->typetest = new TypeTest();
         $this->module = new Module();
+        $this->nbConnexions = new NbConnexions();
     }
 
 
@@ -246,7 +249,9 @@ class AdminController extends Controller {
       for($i=0;$i<$size;$i++){
           $averageAgePatient+=(int)$ageListPatient[$i];
         }
-      $averageAgePatient=floor($averageAgePatient/$size);
+      if($size>0){
+          $averageAgePatient=floor($averageAgePatient/$size);
+      }
 
       $nbUsers=(int) $this->user->getNbUsers();
       $nbTests=(int) $this->test->getNbTests();
@@ -256,7 +261,7 @@ class AdminController extends Controller {
       $averageScoreSight = round($this->averageScore('sight'));
       $nbUsersByStatus=[$this->user->getNbUsersByStatus(1),$this->user->getNbUsersByStatus(2),$this->user->getNbUsersByStatus(3)];
       $listDate=[];
-      $minus=6;
+      $minus=7;
       for ($i=0;$i<7;$i++){
           $currentDate = new DateTime(str_replace("/","-",Model::getDate()));
           $currentDate->sub(new DateInterval('P'.$minus.'D'));
@@ -264,17 +269,23 @@ class AdminController extends Controller {
           $listDate[]=$tmpDate;
           $minus--;
       }
-      $nbTestsWeek=[];
-      for ($i=0;$i<7;$i++){
-          if($i==0){
-              $nbTestsWeek[]=(int)$this->test->getNbTestsByTime('P'.$i.'D');
-          }else{
-              $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
-          }
-      }
+//      $nbTestsWeek=[];
+//      for ($i=1;$i<8;$i++){
+//          $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
+//      }
+//      $nbConnexionsWeek=[];
+//      for ($i=1;$i<8;$i++){
+//          var_dump($this->nbConnexions->getNbConnexionsByTime('P0D'));
+//          var_dump($this->nbConnexions->getNbConnexionsByTime('P'.($i-1).'D'));
+//          var_dump('une itération');
+//          $nbConnexionsWeek[]=$this->nbConnexions->getNbConnexionsByTime('P'.$i.'D')-$this->nbConnexions->getNbConnexionsByTime('P'.($i-1).'D');
+//      }
+//      var_dump($nbConnexionsWeek);
+//      ,
+//      'nbTestsWeek'=>$nbTestsWeek,
+//                      'nbConnexionsWeek'=>$nbConnexionsWeek
       $data=['doughnut'=> $nbUsersByStatus,
-             'bar'=> ['date'=>$listDate,
-                      'nbTestsWeek'=>$nbTestsWeek],
+             'bar'=> ['date'=>$listDate],
              'avg'=>[$averageAgePatient,$averageScoreSound,$averageScoreStress,$averageScoreSight],
              'nb'=>[$nbUsers,$nbTests]];
 
@@ -288,7 +299,9 @@ class AdminController extends Controller {
         for ($i=0;$i<$size;$i++){
             $averageScore+=$listScore[$i];
         }
-        $averageScore=$averageScore/$size;
+        if($size>0){
+            $averageScore=$averageScore/$size;
+        }
         return $averageScore;
     }
 
