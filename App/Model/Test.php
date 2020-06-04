@@ -91,5 +91,12 @@ class Test extends Model {
   } catch (ConfigException $e) {
   }
   }
+  public function getTestByDate($date){
+      $sqlStatement = 'SELECT * FROM test WHERE passDate=:passDate';
+      try {
+          return $this->executeRequest($sqlStatement, array('passDate' => $date))->fetch(PDO::FETCH_OBJ);
+      } catch (ConfigException $e) {
+      }
+  }
 
 }
