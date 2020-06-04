@@ -68,7 +68,7 @@ class Test extends Model {
   }
 
   public function getRecentTest($healthNumber) {
-    $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber ORDER BY passDate DESC';
+    $sqlStatement = 'SELECT * FROM test WHERE healthNumber = :healthNumber ORDER BY passDate ASC';
   try {
     $test = $this->executeRequest($sqlStatement, array('healthNumber' => $healthNumber))->fetch(PDO::FETCH_OBJ);
   } catch (ConfigException $e) {

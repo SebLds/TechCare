@@ -24,7 +24,7 @@
             <th><i class="fal fa-user"></i><span>&ensp;&ensp;Nom</span></th>
           <?php endif; ?>
             <th><i class="fal fa-notes-medical"></i><span>&ensp;&ensp;Type de test</span></th>
-            <th><i class="fal fa-calendar-alt"></i><span>&ensp;&ensp;Actvité physique</span></th>
+            <th><i class="fal fa-calendar-alt"></i><span>&ensp;&ensp;Activité physique</span></th>
             <th><i class="fal fa-signal"></i><span>&ensp;&ensp;Score</span></th>
             <th><i class="fal fa-id-card"></i><span>&ensp;&ensp;Date</span></th>
             <th><i class="far fa-comment-dots"></i><span>&ensp;&ensp;Commentaire</span></th>
