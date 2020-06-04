@@ -32,6 +32,7 @@
 
           <label><i class="fal fa-lock"></i>Nouveau mot de passe</label>
           <input id="myInput" type="newPassword" name="password" placeholder="●●●●●●●●" value="">
+          <span><i id="eye" class="far fa-eye-slash"></i></span>
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
@@ -61,11 +62,6 @@
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
-          <?php if($_SESSION['sessionStatus']==2): ?>
-              <label><i class="fal fa-user-md"></i>Institution référente</label>
-              <input type="text" name="newCompany" placeholder="Hôpital Necker" value="<?php echo $data['company']; ?>">
-              <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
-          <?php endif; ?>
 
       </div>
 
