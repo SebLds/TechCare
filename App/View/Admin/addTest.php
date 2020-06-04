@@ -7,7 +7,7 @@
   <div class="form-add-test box">
 
     <h1>Ajouter un test</h1>
-    <p class="top-text">Ajouter un nouveau test en indiquant ses modules.</p>
+    <p class="top-text">Ajouter un nouveau test pour vos patients.</p>
 
 
     <form action="/admin/add-test" method="post">

@@ -81,6 +81,7 @@ $router->post('/forum/add-tag',"Forum\Forum#addTag");
 $router->post('/forum/add-thread-form',"Forum\Forum#formAddThread");
 $router->post('/forum/add-thread',"Forum\Forum#addThread");
 $router->post('/forum/result-threads',"Forum\Forum#searchResult");
+$router->post('/forum/thread',"Forum\Forum#answer");
 $router->get('/forum/thread-:id',"Forum\Forum#showThreadById#id");
 $router->get('/forum/tag-:id',"Forum\Forum#showTagById#id");
 $router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
@@ -90,7 +91,7 @@ $router->post('/forum/delete-thread',"Forum\Forum#deleteThread");
 
 
 /**Admin**/
-    $router->get('/admin/dashboard',"Admin#index");
+$router->get('/admin/dashboard',"Admin#index");
 $router->post('/admin/dashboard/result',"Admin#searchUser");
 $router->get('/admin/dashboard/profil-:id',"Admin#showProfil#id");
 $router->post('/admin/dashboard/profil-:id',"Admin#editUserProfil");

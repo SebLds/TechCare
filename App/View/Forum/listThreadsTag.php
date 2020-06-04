@@ -17,6 +17,10 @@
         <button type="submit" class="btn add" style="margin-left: 20px"><i class="far fa-plus-square"></i>Ajouter un sujet</button>
     </form>
 
+    <div class="tag-title">
+      <h1><?php echo $data['tag_infos']->Tag_Title; ?></h1>
+    </div>
+
 <?php for ($i=0;$i<count($data['listThreads']);$i++):?>
     <form method="post" action="/forum/delete-thread">
       <div class="tag">
