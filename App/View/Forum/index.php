@@ -20,6 +20,7 @@
 
 
         <div class="tag">
+            <?php if(!empty($data['tags_info'])): ?>
           <?php for ($i=0;$i<count($data['tags_info']);$i++):?>
             <form action="/forum" method="post">
             <?php $idTag=$data['tags_info'][$i]->ID_Tag?>
@@ -39,6 +40,7 @@
               </div>
             </form>
           <?php endfor; ?>
+            <?php endif; ?>
         </div>
 
   </div>

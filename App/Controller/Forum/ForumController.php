@@ -35,10 +35,15 @@ class ForumController extends Controller
       header("Location: /homepage");
     }
     $tags = $this->tag->getTags();
-        for ($i=0;$i<count($tags);$i++){
-            $nbThreads[]= $this->tag->getNbThreadsTagById($tags[$i]->ID_Tag);
-            $nbReplies[]= $this->tag->getNbRepliesTagById($tags[$i]->ID_Tag);
+        $nbThreads=[];
+        $nbReplies=[];
+        if(!empty($tags)){
+            for ($i=0;$i<count($tags);$i++){
+                $nbThreads[]= $this->tag->getNbThreadsTagById($tags[$i]->ID_Tag);
+                $nbReplies[]= $this->tag->getNbRepliesTagById($tags[$i]->ID_Tag);
+            }
         }
+
         $this->generateView(array('tags_info'=>$tags,'nbThreads'=>$nbThreads,'nbReplies'=>$nbReplies),"index");
     }
 
@@ -64,10 +69,10 @@ class ForumController extends Controller
 
     }
 
-    public function showThreadById($id){
-        $tag=$this->tag->getTagById($id);
-        $thread=$this->thread->getThread($id);
-        $replies=$this->reply->getReply($id);
+    public function showThreadById($idTag,$idThread){
+        $tag=$this->tag->getTagById($idTag);
+        $thread=$this->thread->getThread($idThread);
+        $replies=$this->reply->getReply($idThread);
         $listprofil = [];
         for ($i=0; $i<count($replies); $i++) {
           $listprofil[] = $this->user->getProfil($replies[$i]->ID_User);
@@ -176,17 +181,20 @@ class ForumController extends Controller
       }
     }
 
-    public function answer() {
+    public function addReply() {
       if (!empty($_POST)) {
           $answer='';
+          $reply='';
+          $idTag='';
+          $idThread='';
         extract($_POST);
-        if (isset($_POST['answer'])) {
+        if (isset($answer)) {
           $reply = htmlspecialchars($reply);
           $errors = [];
           if (!empty($answer)) {
             $creationDate = Model::getDate();
-            $this->reply->addReply($_SESSION['sessionStatus'], $creationDate, $reply, $id);
-            $this->executeAction('index');
+            $this->reply->addReply($_SESSION['ID_User'], $creationDate, $reply,$idThread);
+            header("Location: /forum/tag-$idTag/thread-$idThread");
           }
         }
       }
