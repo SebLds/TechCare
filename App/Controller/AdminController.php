@@ -106,9 +106,8 @@ class AdminController extends Controller {
           'year' => (int) htmlspecialchars(trim($year)),
           'doctor' => (string) htmlspecialchars(trim($doctor)),
           'company' => (string) htmlspecialchars(trim($company)),
-          'healthNumber' => htmlspecialchars(trim($healthNumber)),
+          'healthNumber' => (int) htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
-          'confirmChanges' => htmlspecialchars(trim($confirmChanges)),
         ];
 
         $errors = [];
@@ -195,11 +194,7 @@ class AdminController extends Controller {
 
         // Vérification du nom de société
         if ($data['select-user-type'] == 'manager' || $data['select-user-type'] == 'admin') {
-          if (!empty($data['company'])) {
-            if (!ctype_alpha($data['company'])) {
-              $errors['error_company'] = "Caractères invalides";
-            }
-          } else {
+          if (empty($data['company'])) {
             $errors['error_company'] = "Veuillez renseigner un nom d'entreprise";
           }
         }
@@ -224,7 +219,6 @@ class AdminController extends Controller {
           $registrationdate = Model::getDate();
           $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
           $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['company'], $data['healthNumber'], $registrationdate);
-          $data= ['confirm' => "Utilisateur ajouté"];
           $this->generateView($data,'index');
         } else {
           $data = [$data, $errors];

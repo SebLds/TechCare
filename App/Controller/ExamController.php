@@ -82,7 +82,7 @@ class ExamController extends Controller {
 
         if(empty($errors)) {
           $module = $this->module->getModuleForTest($data['select-test']);
-          $this->generateView(array('module' => $module),'OptionsTest');
+          $this->generateView(array('module' => $module, 'typetest'=>$data['select-test']),'OptionsTest');
         } else {
           $this->generateView($errors,'index');
         }

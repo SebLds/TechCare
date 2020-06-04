@@ -77,10 +77,7 @@ class ProfilController extends Controller {
           $data = $this->user->getProfil($_SESSION['ID_User']);
           $this->generateView($data,'index');
         } else {
-          $this->user->modifyProfil($_SESSION['sessionStatus'], $data['newFirstName'], $data['newLastName'], $data['newMail'], $data['newDoctor'], $data['newHealthNumber'], $data['newCompany'],$data["birthdate"], $_SESSION['ID_User']);
-          $data = $this->user->getProfil($_SESSION['ID_User']);
-          $data = [$data, $errors];
-          $this->generateView($data,'index');
+          $this->generateView(array(''),'index');
         }
 
       }
