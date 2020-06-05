@@ -65,7 +65,7 @@ class DashboardController extends Controller {
       if ($_SESSION['sessionStatus'] == 2) {
         if (isset($_POST['search'])) {
           $doctor = $this->user->getDoctor($_SESSION['ID_User']);
-          $doctor = $doctor->lastName . ' ' . $doctor->firstName;
+          $doctor = $doctor->lastName;
           $result = $this->user->findUserByLastName($doctor, htmlspecialchars($_POST['search']));
           $this->generateView(array('searchResult'=> $result), 'searchResult');
         } else {

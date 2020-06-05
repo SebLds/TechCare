@@ -26,3 +26,21 @@
 .far, .fal, .far {
   padding-right: 10px;
 }
+
+#back-btn {
+  cursor: pointer;
+  align-self: center;
+  border-radius: 4px;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  font-size: 0.6em;
+  outline: none;
+  background-color: #c2a0a0;
+  margin-bottom: 2em;
+  text-decoration: none;
+}
+
+#underline {
+  text-decoration: none;
+}

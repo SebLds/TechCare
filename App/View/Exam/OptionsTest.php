@@ -2,16 +2,18 @@
 
 <link rel="stylesheet" href="/Web/css/form.css">
 <link rel="stylesheet" href="/Web/css/slider.css">
+<link rel="stylesheet" href="/Web/css/button.css">
 
 <div id="body">
 
   <div class="form-options-test box">
 
+    <h1><a href="/test"><button type="button" id="back-btn"><i class="far fa-arrow-alt-circle-left"></i>Revenir en arrière</button></a></h1>
+
     <h1>Configuration des capteurs</h1>
     <p class="top-text">Voici les paramètres pour le test qui va se dérouler.</p>
 
-    <h1 style="margin-bottom: 2em;"> <?php echo $data['typetest'] ?> </h1>
-
+    <h1 style="margin-bottom: 2em;"><?php echo $data['typetest'] ?></h1>
 
     <form action="/test-confirm" method="post">
 

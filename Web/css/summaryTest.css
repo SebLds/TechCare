@@ -32,7 +32,7 @@
 }
 
 .infos {
-  padding: 0.3em 0 2em 0;
+  padding: 0.5em 2em 3em 0;
   color: grey;
   font-size: 1.2em;
 }
@@ -53,4 +53,22 @@ button {
   font-size: 1.2em;
   border-radius: 5px;
   background-color: rgba(168, 202, 233, 1);
+}
+
+@media only screen and (max-width: 850px)  {
+  body {
+    overflow-x: hidden;
+  }
+  .personnal-info {
+    flex-direction: column !important;
+  }
+  .right {
+    padding-left: 0 !important;
+  }
+  .left{
+    padding-right: 0 !important;
+  }
+  .center{
+    padding-right: 0 !important;
+  }
 }
