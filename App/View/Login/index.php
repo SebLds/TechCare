@@ -26,7 +26,7 @@ $this->title = "Se connecter" ?>
 
         <label><i class="far fa-lock"></i><span data-i18n="LOGIN-password"></span></label>
         <input id="password" type="password" name="password" placeholder="●●●●●●●●">
-          <span></span><i id="eye" class="far fa-eye-slash"></i></input></span>
+          <span id="eye-pass"><i id="eye" class="far fa-eye-slash"></i></span></input>
 
         <a href="/set-new-password"><h3 data-i18n="LOGIN-fortgetpassword">Mot de passe oublié</h3></a>
         <p class="error"><?php if(isset($error_password)) { echo $error_password; }?></p>
