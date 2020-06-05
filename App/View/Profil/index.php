@@ -31,8 +31,8 @@
           <?php endif; ?>
 
           <label><i class="fal fa-lock"></i>Nouveau mot de passe</label>
-          <input id="myInput" type="newPassword" name="password" placeholder="●●●●●●●●" value="">
-          <span><i id="eye" class="far fa-eye-slash"></i></span>
+          <input id="password" type="newPassword" name="password" placeholder="●●●●●●●●" value="">
+          <span><i id="eye" class="fal fa-eye-slash"></i></span>
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
@@ -62,7 +62,6 @@
           <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
 
         </div>
-
       </div>
 
       <?php if($_SESSION['sessionStatus']==2): ?>
@@ -82,5 +81,6 @@
     </form>
 
   </div>
-
 </div>
+
+<script type="text/javascript" src="/Web/js/password.js"></script>

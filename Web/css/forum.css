@@ -72,12 +72,15 @@
   flex-direction: row;
 }
 
+.tag-name a {
+    font-size: 1.3em;
+}
+
 .tag-name p, .tag-name button {
   display: flex;
 }
 
 .tag a {
-    font-size: 1.4em;
     position: relative;
     display: flex;
     flex-direction: column;

@@ -17,6 +17,10 @@
   margin-bottom: 0;
 }
 
+#eye-pass {
+  outline: none;
+}
+
 .msg {
   background-color: red;
   margin-bottom: 1.5em;

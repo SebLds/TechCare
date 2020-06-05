@@ -1,4 +1,3 @@
-
 <?php $this->title = "Forum";?>
 <?php ob_start(); ?>
 <link href="/Web/css/forum.css" rel="stylesheet">
