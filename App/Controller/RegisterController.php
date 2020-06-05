@@ -96,7 +96,7 @@ class RegisterController extends Controller {
             $errors['error_birthdate'] = "Veuillez renseigner votre date de naissance";
           }
 
-          // Vérification
+          // Vérification des mots de passe
           if (!empty($data['password'])) {
             if (strlen($data['password']) > 6) {
               if ($data['password'] != $data['passwordConfirm']) {
@@ -120,9 +120,13 @@ class RegisterController extends Controller {
 
           // Vérification du numéro de sécurité sociale
           if (!empty($data['healthNumber'])) {
-            $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
-            if ($checkHealthNumber) {
-              $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+            if (strlen($data['healthNumber']) == 15) {
+              $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
+              if ($checkHealthNumber) {
+                $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+              }
+            } else {
+              $errors['error_healthNumber'] = "Un numéro de sécurité sociale possède 15 chiffres";
             }
           } else {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";

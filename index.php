@@ -9,19 +9,17 @@ use src\Session;
  * /!\ POUR TOUS LES FICHIERS DEFINIR UN NAMESPACE CORRESPONDANT A SA PLACE DANS L'ARCHITECTURE /!\
  */
 require_once "src/Autoloader.php";
-
+Autoloader::addNamespace('App\Controller\Forum','App/Controller/Forum/');
 
 Autoloader::addNamespace('src\Router', 'src/Router/');
 Autoloader::addNamespace('src', 'src/');
 Autoloader::addNamespace('App\Controller','App/Controller/');
-Autoloader::addNamespace('App\Controller\Forum','App/Controller/Forum/');
 Autoloader::addNamespace('App\Model\Forum','App/Model/Forum/');
 Autoloader::addNamespace('App\Model','App/Model/');
-
 Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
-
 Session::getInstance();
+
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
@@ -31,12 +29,6 @@ $router= new Router($_GET['url']);
 /**Homepage**/
 $router->get('/homepage',"Home#index");
 $router->get('/homepage/:slug',"Home#index");
-
-$router->get('/faq',"Faq#index");
-
-
-$router->get('/error-:id',"Error#generateError#id");
-$router->get('/contact',"Contact#index");
 
 /**Register**/
 $router->get('/register',"Register#index");
@@ -58,6 +50,12 @@ $router->post('/profil',"Profil#change");
 
 /**Help**/
 $router->get('/help', "Help#index");
+
+/**CGU**/
+$router->get('/cgu',"Legal#index");
+
+/**FAQ**/
+$router->get('/faq',"Faq#index");
 
 /**Test**/
 $router->get('/test',"Exam#index");
@@ -89,8 +87,6 @@ $router->post('/forum/tag-:id',"Forum\Forum#deleteThread");
 $router->post('/forum/result-threads-tag-:id',"Forum\Forum#searchResult#id");
 $router->post('/forum/delete-thread',"Forum\Forum#deleteThread");
 
-
-
 /**Admin**/
 $router->get('/admin/dashboard',"Admin#index");
 $router->post('/admin/dashboard/result',"Admin#searchUser");
@@ -106,11 +102,9 @@ $router->post('/admin/delete-module-form',"Admin#formDeleteModule");
 $router->post('/admin/delete-module',"Admin#deleteModule");
 $router->post('/admin/associate-form',"Admin#formAssociate");
 $router->post('/admin/associate',"Admin#associate");
-
 $router->get('/admin/add-user',"Admin#addUserIndex");
 $router->post('/admin/add-user',"Admin#addUser");
 $router->post('/admin/add-user-form',"Admin#formAddUser");
-
 $router->get('/admin/edit-faq',"Admin#editFAQIndex");
 $router->post('/admin/edit-faq',"Admin#editFAQ");
 $router->get('/statistics','Admin#stats');
@@ -118,11 +112,6 @@ $router->get('/statistics','Admin#stats');
 /**Error**/
 $router->get('/error','Error#index');
 // $router->get('/forbidden-access','Error#forbiddenAccess');
-
-/**CGU**/
-$router->get('/cgu',"Legal#index");
-
-
 
 
 $router->run();

@@ -4,6 +4,7 @@ namespace App\Controller;
 use App\Model\Forum\Reply;
 use App\Model\Forum\Tag;
 use App\Model\Forum\Thread;
+use App\Model\NbConnexions;
 use DateInterval;
 use DateTime;
 use src\Controller;
@@ -22,6 +23,7 @@ class AdminController extends Controller {
     private FAQ $faq;
     private TypeTest $typetest;
     private Module $module;
+    private NbConnexions $nbConnexions;
 
     public function __construct() {
         $this->user = new User();
@@ -29,6 +31,7 @@ class AdminController extends Controller {
         $this->faq = new Faq();
         $this->typetest = new TypeTest();
         $this->module = new Module();
+        $this->nbConnexions = new NbConnexions();
     }
 
 
@@ -103,7 +106,7 @@ class AdminController extends Controller {
           'year' => (int) htmlspecialchars(trim($year)),
           'doctor' => (string) htmlspecialchars(trim($doctor)),
           'company' => (string) htmlspecialchars(trim($company)),
-          'healthNumber' => htmlspecialchars(trim($healthNumber)),
+          'healthNumber' => (int) htmlspecialchars(trim($healthNumber)),
           'birthdate' => $day .'/'. $month .'/'. $year,
         ];
 
@@ -165,16 +168,21 @@ class AdminController extends Controller {
           $errors['error_birthdate'] = "Veuillez renseigner une date de naissance";
         }
 
-        // Vérification
+        // Vérification du mot de passe
         if (!empty($data['password'])) {
-          if ($data['password'] != $data['passwordConfirm']) {
-            $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+          if (strlen($data['password']) > 6) {
+            if ($data['password'] != $data['passwordConfirm']) {
+              $errors['error_passwordConfirm'] = "Les mots de passe ne correspondent pas";
+            }
+          } else {
+            $errors['error_password'] = "Minimum 6 caractères et 1 chiffre";
           }
         } else {
           $errors['error_password'] = "Veuillez renseigner un mot de passe";
         }
 
         // Vérification du nom du médecin
+        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['doctor'])) {
             if (!ctype_alpha($data['doctor'])) {
               $errors['error_doctor'] = "Caractères invalides";
@@ -182,32 +190,35 @@ class AdminController extends Controller {
           } else {
             $errors['error_doctor'] = "Veuillez renseigner le nom de votre médecin";
           }
+        }
 
-        // Vérification du nom du médecin
-          if (!empty($data['company'])) {
-            if (!ctype_alpha($data['company'])) {
-              $errors['error_company'] = "Caractères invalides";
-            }
-          } else {
+        // Vérification du nom de société
+        if ($data['select-user-type'] == 'manager' || $data['select-user-type'] == 'admin') {
+          if (empty($data['company'])) {
             $errors['error_company'] = "Veuillez renseigner un nom d'entreprise";
           }
-
+        }
 
         // Vérification du numéro de sécurité sociale
+        if ($data['select-user-type'] == 'patient') {
           if (!empty($data['healthNumber'])) {
-            $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
-            if ($checkHealthNumber) {
-              $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+            if ($data['healthNumber'] == 15) {
+              $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
+              if ($checkHealthNumber) {
+                $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
+              }
+            } else {
+              $errors['error_healthNumber'] = "Un numéro de sécurité sociale possède 15 chiffres";
             }
           } else {
             $errors['error_healthNumber'] = "Veuillez renseigner votre numéro de sécurité sociale";
           }
+        }
 
         if(empty($errors)) {
           $registrationdate = Model::getDate();
           $password_hash = password_hash($data['password'], PASSWORD_BCRYPT);
           $this->user->addNewUser($status, $data['firstName'], $data['lastName'], $data['mail'], $password_hash, $data['birthdate'], $data['doctor'], $data['company'], $data['healthNumber'], $registrationdate);
-          $data= ['confirm' => "Utilisateur ajouté"];
           $this->generateView($data,'index');
         } else {
           $data = [$data, $errors];
@@ -216,7 +227,7 @@ class AdminController extends Controller {
 
         }
       }
-      
+
   }
 
   public function stats() {
@@ -232,17 +243,19 @@ class AdminController extends Controller {
       for($i=0;$i<$size;$i++){
           $averageAgePatient+=(int)$ageListPatient[$i];
         }
-      $averageAgePatient=floor($averageAgePatient/$size);
+      if($size>0){
+          $averageAgePatient=floor($averageAgePatient/$size);
+      }
 
       $nbUsers=(int) $this->user->getNbUsers();
       $nbTests=(int) $this->test->getNbTests();
 
-      $averageScoreSound = round($this->averageScore('sound'));
-      $averageScoreStress = round($this->averageScore('stress'));
-      $averageScoreSight = round($this->averageScore('sight'));
+      $averageScoreSound = round($this->averageScore('Acuité sonore'));
+      $averageScoreStress = round($this->averageScore('Gestion du stress'));
+      $averageScoreSight = round($this->averageScore('Acuité visuelle'));
       $nbUsersByStatus=[$this->user->getNbUsersByStatus(1),$this->user->getNbUsersByStatus(2),$this->user->getNbUsersByStatus(3)];
       $listDate=[];
-      $minus=6;
+      $minus=7;
       for ($i=0;$i<7;$i++){
           $currentDate = new DateTime(str_replace("/","-",Model::getDate()));
           $currentDate->sub(new DateInterval('P'.$minus.'D'));
@@ -250,17 +263,23 @@ class AdminController extends Controller {
           $listDate[]=$tmpDate;
           $minus--;
       }
-      $nbTestsWeek=[];
-      for ($i=0;$i<7;$i++){
-          if($i==0){
-              $nbTestsWeek[]=(int)$this->test->getNbTestsByTime('P'.$i.'D');
-          }else{
-              $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
-          }
-      }
+//      $nbTestsWeek=[];
+//      for ($i=1;$i<8;$i++){
+//          $nbTestsWeek[]=$this->test->getNbTestsByTime('P'.$i.'D')-$this->test->getNbTestsByTime('P'.($i-1).'D');
+//      }
+//      $nbConnexionsWeek=[];
+//      for ($i=1;$i<8;$i++){
+//          var_dump($this->nbConnexions->getNbConnexionsByTime('P0D'));
+//          var_dump($this->nbConnexions->getNbConnexionsByTime('P'.($i-1).'D'));
+//          var_dump('une itération');
+//          $nbConnexionsWeek[]=$this->nbConnexions->getNbConnexionsByTime('P'.$i.'D')-$this->nbConnexions->getNbConnexionsByTime('P'.($i-1).'D');
+//      }
+//      var_dump($nbConnexionsWeek);
+//      ,
+//      'nbTestsWeek'=>$nbTestsWeek,
+//                      'nbConnexionsWeek'=>$nbConnexionsWeek
       $data=['doughnut'=> $nbUsersByStatus,
-             'bar'=> ['date'=>$listDate,
-                      'nbTestsWeek'=>$nbTestsWeek],
+             'bar'=> ['date'=>$listDate],
              'avg'=>[$averageAgePatient,$averageScoreSound,$averageScoreStress,$averageScoreSight],
              'nb'=>[$nbUsers,$nbTests]];
 
@@ -274,7 +293,9 @@ class AdminController extends Controller {
         for ($i=0;$i<$size;$i++){
             $averageScore+=$listScore[$i];
         }
-        $averageScore=$averageScore/$size;
+        if($size>0){
+            $averageScore=$averageScore/$size;
+        }
         return $averageScore;
     }
 
@@ -457,11 +478,7 @@ class AdminController extends Controller {
 
             $errors = [];
 
-            if (!empty($data['newTest'])) {
-              if (!ctype_alpha($data['newTest'])) {
-                $errors['error_test'] = "Caractères invalides";
-              }
-            } else {
+            if (empty($data['newTest'])) {
               $errors['error_test'] = "Veuillez renseigner le nom du test";
             }
 
@@ -488,16 +505,11 @@ class AdminController extends Controller {
               'settingssportsman' => htmlspecialchars(trim($settingssportsman)),
               'settingssedentary' => htmlspecialchars(trim($settingssedentary)),
               'settingsactif' => htmlspecialchars(trim($settingsactif)),
-              'select-test' => $_POST['select-test'],
             ];
 
             $errors = [];
 
-            if (!empty($data['newModule'])) {
-              if (!ctype_alpha($data['newModule'])) {
-                $errors['error_module'] = "Caractères invalides";
-              }
-            } else {
+            if (empty($data['newModule'])) {
               $errors['error_module'] = "Veuillez renseigner le nom du module";
             }
 
@@ -510,7 +522,8 @@ class AdminController extends Controller {
             }
 
             if(empty($errors)) {
-              $this->module->addModule($data['newModule'], $data['select-test'], $data['settingssportsman'], $data['settingssedentary'], $data['settingsactif']);
+              $typetest=null;
+              $this->module->addModule($data['newModule'], $typetest, $data['settingssportsman'], $data['settingssedentary'], $data['settingsactif']);
               $this->generateView(array('msg' => 'Module Ajouté'),'index');
             } else {
               $this->generateView($errors,'AddModule');

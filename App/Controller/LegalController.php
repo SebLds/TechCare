@@ -7,7 +7,8 @@ use src\Controller;
 
 class LegalController extends Controller {
 
-    public function index() {
-       $this->generateView(array(),'index');
+    public function index()
+    {
+        $this -> generateView(array(),'index');
     }
 }

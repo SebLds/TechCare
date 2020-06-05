@@ -82,7 +82,7 @@ class ExamController extends Controller {
 
         if(empty($errors)) {
           $module = $this->module->getModuleForTest($data['select-test']);
-          $this->generateView(array('module' => $module),'OptionsTest');
+          $this->generateView(array('module' => $module, 'typetest'=>$data['select-test']),'OptionsTest');
         } else {
           $this->generateView($errors,'index');
         }
@@ -112,6 +112,7 @@ class ExamController extends Controller {
             $doctor = $this->user->getDoctor($_SESSION['ID_User']);
             $doctor = $doctor->lastName . ' ' . $doctor->firstName;
             $this->test->newTest($_SESSION['Patient_HealthNumber'], $doctor, $_SESSION['Select-test'], $_SESSION['Select-Profil'], $score, $passDate);
+            Session::getInstance()->setAttribute('ID_Test',$this->test->getTestByDate($passDate)->ID_Test);
             Session::getInstance()->deleteAttribute('Select-Profil');
             Session::getInstance()->deleteAttribute('Select-test');
             $user = $this->user->getUserInfo($_SESSION['Patient_HealthNumber']);
@@ -153,7 +154,9 @@ class ExamController extends Controller {
       $error = [];
 
       if (!empty($comment)) {
-        $this->test->addComment($comment, $_SESSION['Patient_HealthNumber']);
+
+        $this->test->addComment($comment,Session::getInstance()->getAttribute('ID_Test'));
+        Session::getInstance()->deleteAttribute('ID_Test');
         Session::getInstance()->deleteAttribute('Patient_HealthNumber');
         if ($_SESSION['sessionStatus'] == 3) {
           header('Location: /admin/dashboard');

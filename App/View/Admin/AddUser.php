@@ -42,8 +42,8 @@
           </div>
           <p class="error-msg"><?php if(isset($data[1]['error_birthdate'])) { echo $data[1]['error_birthdate']; }?></p>
 
-          <label><i class="fal fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
-          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
+          <label><i class="far fa-file-medical-alt"></i>Numéro de sécurité sociale</label>
+          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" maxlength="15" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
           <p class="error-msg"><?php if(isset($data[1]['error_healthNumber'])) { echo $data[1]['error_healthNumber']; }?></p>
 
           <label><i class="fal fa-envelope"></i>Adresse email</label>

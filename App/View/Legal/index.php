@@ -1,14 +1,15 @@
 <?php $this->title = "CGU & Mentions légales" ?>
 
 <link rel="stylesheet" href="/Web/css/cgu.css"/>
-<?php echo 'tamre'; ?>
 
 <div id="body">
     <div class="page">
+
+      <?php if ($_SESSION['sessionStatus']==0): ?>
       <div class="title">
           <h1>CGU & Mentions légales</h1>
       </div>
-
+    <?php endif; ?>
       <div class="mentionslegales">
           <h2>MENTIONS LÉGALES</h2><br><br>
 

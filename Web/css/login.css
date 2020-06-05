@@ -33,6 +33,11 @@
 }
 
 @media only screen and (max-width: 850px)  {
+
+  body {
+    overflow-x: hidden;
+  }
+  
   .fa-eye-slash, .fa-eye {
     left: 10em;
     bottom: 1.8em;

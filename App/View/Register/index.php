@@ -50,7 +50,7 @@
 
           <label><i class="far fa-lock"></i><span data-i18n="REGISTER-password"></span></label>
             <input id="password" type="password" name="password" placeholder="●●●●●●●●" value="">
-            <span><i id="eye" class="far fa-eye"></i></span>
+            <span><i id="eye" class="far fa-eye-slash"></i></span>
           <p class="error-msg"><?php if(isset($data[1]['error_password'])) { echo $data[1]['error_password']; }?></p>
 
           <label><i class="far fa-unlock"></i><span data-i18n="REGISTER-confirmpassword"></span></label>
@@ -63,7 +63,7 @@
 
       <div class="bottom">
           <label><i class="far fa-file-medical-alt"></i><span data-i18n="REGISTER-healthnumber"></span></label>
-          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
+          <input type="text" name="healthNumber" placeholder="2 94 03 75 120 005 22" maxlength="15" value="<?php if(isset($data[0]['healthNumber'])) { echo $data[0]['healthNumber']; }?>">
           <p class="error-msg"><?php if(isset($data[1]['error_healthNumber'])) { echo $data[1]['error_healthNumber']; }?></p>
       </div>
 
