@@ -193,7 +193,7 @@ class AdminController extends Controller {
         }
 
         // Vérification du nom de société
-        if ($data['select-user-type'] == 'manager' || $data['select-user-type'] == 'admin') {
+        if ($data['select-user-type'] == 'manager') {
           if (empty($data['company'])) {
             $errors['error_company'] = "Veuillez renseigner un nom d'entreprise";
           }
