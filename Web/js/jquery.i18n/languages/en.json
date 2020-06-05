@@ -68,6 +68,31 @@
   "HOME-psychotechnicaltest2":"at the cutting edge of technology",
   "HOME-psychotechnicaltest3":"certified by government agencies.",
   "HOME-register":"Register",
-  "HOME-learnmore":"Learn more"
+  "HOME-learnmore":"Learn more",
+  "HOME-test-title":"Our tests",
+  "HOME-test-title2":"We have designed these tests to best measure your abilities",
+  "HOME-test-title3":"cognitive, auditory and visual.",
+  "HOME-heartbeat":"Heart rate",
+  "HOME-heartbeat-text":"Heart rate is an indicator of the stress experienced during the test. It will be taken continuously during the test to improve the accuracy of the test.",
+  "HOME-temperature":"Temperature",
+  "HOME-temperature-text":"The surface temperature of the skin will also be measured throughout the test and helps to prevent dangerous reagents (anxiety attacks, malaise, etc.).",
+  "HOME-sound":"Hearing level",
+  "HOME-sound2":"Sound reproduction",
+  "HOME-sound-text":"Hearing level is a threshold that allows us to prevent us from mishearing a sound that is too high or too low.",
+  "HOME-sound2-text":"The sound reproduction of a sound emitted at a defined frequency makes it possible to prevent any necessary hearing impairment for patients.",
+  "HOME-sound-stimulus":"Reaction time to a sound stimulus",
+  "HOME-sight-stimulus":"Reaction time to a visual stimulus",
+  "HOME-sound-stimulus-text":"Sound reaction time is a very good indicator for assessing the reaction to a hazardous situation.",
+  "HOME-sight-stimulus-text":"Visual reaction time is a very good indicator for assessing the reaction to a dangerous situation.",
+  "HOME-adptitude":"Test your psychomotor skills",
+  "HOME-adptitude-text":"We are licensed by the government to give you our test.",
+  "HOME-contact":"Contact us"
+
+
+
+
+
+
+
 
 }
