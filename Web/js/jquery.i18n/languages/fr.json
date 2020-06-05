@@ -66,6 +66,27 @@
   "HOME-psychotechnicaltest2":"à la pointe de la technologie",
   "HOME-psychotechnicaltest3":"certifié par les organismes gouvernementaux.",
   "HOME-register":"S'inscrire",
-  "HOME-learnmore":"En savoir plus"
+  "HOME-learnmore":"En savoir plus",
+  "HOME-test-title":"Nos tests",
+  "HOME-test-title2":"Nous avons conçu ces tests pour mesurer au mieux vos aptitudes",
+  "HOME-test-title3":"cognitives, auditives et visuelles.",
+  "HOME-heartbeat":"Fréquence cardiaque",
+  "HOME-heartbeat-text":"La fréquence cardiaque est un indicateur du stress éprouvé lors du test. Elle sera prise en continue durant le test pour améliorer la précision de ce test.",
+  "HOME-temperature":"Température",
+  "HOME-temperature-text":"La température superficielle de la peau sera également mesurer tout au long du test et permet de prévenir de réactifs dangereuses (crise d'angoisse, malaise, etc.).",
+  "HOME-sound":"Niveau d'audition",
+  "HOME-sound2":"Reproduction sonore",
+  "HOME-sound-text":"Le niveau d'audition est un seuil qui nous permet de prévenir de mal entendre un son trop aigu ou trop grave.",
+  "HOME-sound2-text":"La reproduction sonore d'un son émis à une fréquence défini permet de prévenir du toute faiblesses d'audition nécessaire pour les patients.",
+  "HOME-sound-stimulus":"Temps de réaction à un stimulus sonore",
+  "HOME-sight-stimulus":"Temps de réaction à un stimulus visuel",
+  "HOME-sound-stimulus-text":"Le temps de réaction sonore est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.",
+  "HOME-sight-stimulus-text":"Le temps de réaction visuel est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.",
+  "HOME-adptitude":"",
+  "HOME-adptitude-text":"",
+
+
+
+
 
 }

@@ -70,34 +70,35 @@
     <section id="three" class="wrapper style3 special">
         <div class="inner">
             <div class="major">
-                <h2>Nos tests</h2>
-                <p>Nous avons conçu ces tests pour mesurer au mieux vos aptitudes<br />
-                    cognitives, auditives et visuelles.</p>
+                <h2 data-i18n="HOME-test-title"></h2>
+
+                <p><span data-i18n="HOME-test-title2"></span><br />
+                    <span data-i18n="HOME-test-title3"></span></p>
             </div>
             <ul class="features">
                 <li class="icon heartbeat">
-                    <h3>Fréquence cardiaque</h3>
-                    <p>La fréquence cardiaque est un indicateur du stress éprouvé lors du test. Elle sera prise en continue durant le test pour améliorer la précision de ce test.</p>
+                    <h3 data-i18n="HOME-heartbeat"></h3>
+                    <p><span data-i18n="HOME-heartbeat-text"></span></p>
                 </li>
                 <li class="icon temperature">
-                    <h3>Température</h3>
-                    <p>La température superficielle de la peau sera également mesurer tout au long du test et permet de prévenir de réactifs dangereuses (crise d'angoisse, malaise, etc.).</p>
+                    <h3 data-i18n="HOME-temperature"></h3>
+                    <p><span data-i18n="HOME-temperature-text"></span></p>
                 </li>
                 <li class="icon listen">
-                    <h3>Niveau d'audition</h3>
-                    <p>Le niveau d'audition est un seuil qui nous permet de prévenir de mal entendre un son trop aigu ou trop grave.</p>
+                    <h3 data-i18n="HOME-sound"></h3>
+                    <p><span data-i18n="HOME-sound-text"></span></p>
                 </li>
                 <li class="icon sono">
-                    <h3>Reproduction sonore </h3>
-                    <p>La reproduction sonore d'un son émis à une fréquence défini permet de prévenir du toute faiblesses d'audition nécessaire pour les patients.</p>
+                    <h3 data-i18n="HOME-sound2"> </h3>
+                    <p><span data-i18n="HOME-sound2-text"></span></p>
                 </li>
                 <li class="icon watch">
-                    <h3>Temps de réaction à un stimulus sonore</h3>
-                    <p>Le temps de réaction sonore est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
+                    <h3 data-i18n="HOME-sound-stimulus"></h3>
+                    <p><span data-i18n="HOME-sound-stimulus-text"></span></p>
                 </li>
                 <li class="icon vision">
-                    <h3>Temps de réaction à un stimulus visuel</h3>
-                    <p>Le temps de réaction visuel est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.</p>
+                    <h3 data-i18n="HOME-sight-stimulus"></h3>
+                    <p><span data-i18n="HOME-sight-stimulus-text"></span></p>
                 </li>
             </ul>
         </div>
@@ -107,12 +108,12 @@
     <section id="cta" class="wrapper style4">
         <div class="inner">
             <div>
-                <h2>Tester vos aptitudes psychomotrices</h2>
-                <p>Nous sommes agrégés par le gouvernement pour vous faire passer notre test.</p>
+                <h2 data-i18n="HOME-adptitude"></h2>
+                <p data-i18n="HOME-adptitude-text"></p>
             </div>
             <ul class="actions stacked">
                 <li><a href="/register" class="btn fit primary"><span data-i18n="HOME-register"></span></a></li>
-                <li><a href="/contact" class="btn fit">Nous contacter</a></li>
+                <li><a href="/contact" class="btn fit"><span data-i18n="HOME-contact"></span></a></li>
             </ul>
         </div>
     </section>
