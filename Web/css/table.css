@@ -104,7 +104,7 @@ tbody tr:nth-child(even) {
 }
 
 .rwd-table thead tr {
-    max-height: 7em;
+    max-height: 3em;
     background: #2f323a;
 }
 
