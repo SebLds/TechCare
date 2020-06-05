@@ -14,10 +14,8 @@
             ·
             <a href="/cgu"><span data-i18n="FOOTER-cgu"></span></a>
             ·
-        <div id="flag">
             <img class="img-flag" data-locale="fr" src="../../Web/images/france.png" alt="flag">
             <img class="img-flag" data-locale="en" src="../../Web/images/uk.png" alt="flag">
-        </div>
         </p>
         <p class="footer-company-name">&copy; <span data-i18n="FOOTER-rights"></span></p>
     </div>
