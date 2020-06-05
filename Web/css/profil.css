@@ -25,6 +25,7 @@
   font-size: 1.2em;
 }
 
+
 @media only screen and (max-width: 850px)  {
   .fields {
     flex-direction: column !important;
