@@ -2,10 +2,13 @@
 
 <link rel="stylesheet" href="/Web/css/form.css">
 <link rel="stylesheet" href="/Web/css/summaryTest.css">
+<link rel="stylesheet" href="/Web/css/button.css">
 
 <div id="body">
 
   <div class="form-confirm-test box">
+
+    <h1><a href="/test" id="underline"><button type="button" id="back-btn"><i class="far fa-arrow-alt-circle-left"></i>Revenir en arrière</button></a></h1>
 
     <h1>Confirmation des informations du patient</h1>
     <p class="top-text">Veuillez vérifier les informations avant de lancer le test.</p>
