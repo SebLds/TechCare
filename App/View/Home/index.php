@@ -25,10 +25,10 @@
     <section id="one" class="wrapper style1 special">
         <div class="inner">
             <div class="major">
-                <h2>Êtes-vous destiné à passer ce test psychotechnique ?<br /></h2>
-                <p>Si vous êtes un conducteur ou un pilote, particulier ou bien professionel, vous avez de nombreuses vies entre vos mains !<br />
-                    Vous devez donc maintenir un niveau de concentration et de réactivité très élevé !<br />
-                    Nous souhaitons vous accompagner pour affronter sereinement votre environnement.</p>
+                <h2><span data-i18n="HOME-one-title"></span><br /></h2>
+                <p><span data-i18n="HOME-one-content1"></span><br />
+                    <span data-i18n="HOME-one-content2"></span><br />
+                    <span data-i18n="HOME-one-content3"></span></p>
             </div>
             <ul class="icons major">
                 <li><img src="/Web/images/driver.png" title="driver"/></li>
@@ -43,25 +43,25 @@
         <section class="spotlight">
             <div class="image"><img src="/Web/images/hopital.png" alt="" /></div>
             <div class="content">
-                <h2>Accueil dans nos locaux<br />
-                    médicalisés</h2>
-                <p>Vous serez pris en charge et accompagné par votre médecin référent tout au long de votre test d'aptitudes psychotechniques.</p>
+                <h2><span data-i18n="HOME-two1-title1"></span><br />
+                    <span data-i18n="HOME-two1-title2"></span></h2>
+                <p><span data-i18n="HOME-two1-content"></span></p>
             </div>
         </section>
         <section class="spotlight">
             <div class="image"><img src="/Web/images/support.png" alt="" /></div>
             <div class="content">
-                <h2>Une équipe compétente et<br />
-                    dévouée pour vous</h2>
-                <p>L'équipe d'Infinite Measures sera à votre écoute durant votre venu chez nous. Le personnel pourra répondre, avec la plus grande précision, à vos questions.</p>
+                <h2><span data-i18n="HOME-two2-title1"></span><br />
+                    <span data-i18n="HOME-two2-title2"></span></h2>
+                <p><span data-i18n="HOME-two2-content"></span></p>
             </div>
         </section>
         <section class="spotlight">
             <div class="image"><img src="/Web/images/results.jpg" alt="" /></div>
             <div class="content">
-                <h2>Les résultats seront<br />
-                    complets et certifiés par l'état</h2>
-                <p>Vous pourrez consulter en ligne vos résultats immédiatement après le test. Votre médecin référent pourra les transférer à l'institut compétente pour valider votre test.</p>
+                <h2><span data-i18n="HOME-two3-title1"></span><br />
+                    <span data-i18n="HOME-two3-title2"></span></h2>
+                <p><span data-i18n="HOME-two3-content"></span></p>
             </div>
         </section>
     </section>
@@ -88,7 +88,7 @@
                     <p>Le niveau d'audition est un seuil qui nous permet de prévenir de mal entendre un son trop aigu ou trop grave.</p>
                 </li>
                 <li class="icon sono">
-                    <h3>Reproduction sonore </h3>
+                    <h3>Reproduction sonore</h3>
                     <p>La reproduction sonore d'un son émis à une fréquence défini permet de prévenir du toute faiblesses d'audition nécessaire pour les patients.</p>
                 </li>
                 <li class="icon watch">
