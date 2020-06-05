@@ -67,6 +67,12 @@
   "HOME-psychotechnicaltest3":"certifié par les organismes gouvernementaux.",
   "HOME-register":"S'inscrire",
   "HOME-learnmore":"En savoir plus",
+
+  "HOME-one-title":"Êtes-vous destiné à passer ce test psychotechnique ?",
+  "HOME-one-content1":"Si vous êtes un conducteur ou un pilote, particulier ou bien professionel, vous avez de nombreuses vies entre vos mains !",
+  "HOME-one-content2":"Vous devez donc maintenir un niveau de concentration et de réactivité très élevé !",
+  "HOME-one-content3":"Nous souhaitons vous accompagner pour affronter sereinement votre environnement.",
+  "HOME-learnmore":"En savoir plus",
   "HOME-test-title":"Nos tests",
   "HOME-test-title2":"Nous avons conçu ces tests pour mesurer au mieux vos aptitudes",
   "HOME-test-title3":"cognitives, auditives et visuelles.",
@@ -84,10 +90,21 @@
   "HOME-sight-stimulus-text":"Le temps de réaction visuel est un très bon indicateur pour évaluer la réaction face à une situation dangereuse.",
   "HOME-adptitude":"Tester vos aptitudes psychomotrices",
   "HOME-adptitude-text":"Nous sommes agrégés par le gouvernement pour vous faire passer notre test.",
-  "HOME-contact":"Nous contacter"
+  "HOME-contact":"Nous contacter",
 
 
 
 
 
+  "HOME-two1-title1":"Accueil dans nos locaux",
+  "HOME-two1-title2":"médicalisés",
+  "HOME-two1-content":"Vous serez pris en charge et accompagné par votre médecin référent tout au long de votre test d'aptitudes psychotechniques.",
+
+  "HOME-two2-title1":"Une équipe compétente et",
+  "HOME-two2-title2":"dévouée pour vous",
+  "HOME-two2-content":"L'équipe d'Infinite Measures sera à votre écoute durant votre venu chez nous. Le personnel pourra répondre, avec la plus grande précision, à vos questions.",
+
+  "HOME-two3-title1":"Les résultats seront",
+  "HOME-two3-title2":"complets et certifiés par l'état",
+  "HOME-two3-content": "Vous pourrez consulter en ligne vos résultats immédiatement après le test. Votre médecin référent pourra les transférer à l'institut compétente pour valider votre test."
 }
