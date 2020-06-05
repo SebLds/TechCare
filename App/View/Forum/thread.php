@@ -18,6 +18,7 @@
       <?php for ($i=count($data['replies'])-1;$i>=0;$i--):?>
   <div class="answer-box">
     <div class="profil">
+        <h3><?php echo substr($data['replies'][$i]->Creation_Date, 0, 10) ; ?></h3>
       <h3><?php echo $data['profil'][$i]['firstName']; ?></h3>
       <h3><?php echo $data['profil'][$i]['lastName']; ?></h3>
       <?php if ($data['profil'][$i]['status']==1): ?>
@@ -29,7 +30,6 @@
       <?php if ($data['profil'][$i]['status']==3): ?>
         <h3>Administrateur</h3>
       <?php endif; ?>
-      <h3><?php echo substr($data['replies'][$i]->Creation_Date, 0, 10) ; ?></h3>
     </div>
     <div class="answer">
       <?php echo $data['replies'][$i]->Content; ?>
