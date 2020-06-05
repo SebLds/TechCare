@@ -61,9 +61,9 @@ abstract class Model
     {
         if (self::$bdd === null) {
             // Récupération des paramètres de configuration BD
-            $dsn = Config::get("dsn",);
-            $login = Config::get("login",);
-            $password = Config::get("mdp",);
+            $dsn = Config::get("dsn");
+            $login = Config::get("login");
+            $password = Config::get("mdp");
 
             // Création de la connexion
             self::$bdd = new PDO($dsn, $login, $password,
