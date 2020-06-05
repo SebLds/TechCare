@@ -70,10 +70,6 @@
           <p class="error-msg"><?php if(isset($error_doctor)) { echo $error_doctor; }?></p>
       <?php endif; ?>
 
-      <label><i class="fal fa-user-check"></i>Valider les modifications avec votre mot de passe</label>
-      <input type="password" name="confirmChanges" placeholder="●●●●●●●●">
-      <p class="error-msg"><?php if(isset($error_confirmChanges)) { echo $derror_confirmChanges; }?></p>
-
       <div class="submit">
         <input type="submit" value="Modifier"  name="change">
       </div>

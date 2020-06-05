@@ -99,12 +99,6 @@
 
         </div>
 
-        <div class="bottom-edit">
-          <label><i class="fal fa-unlock"></i>Confirmation mot de passe</label>
-          <input id="myInput" type="newPasswordConfirm" name="password" placeholder="●●●●●●●●" value="">
-          <p class="error-msg"><?php if(isset($error_password)) { echo $error_password; }?></p>
-        </div>
-
       </div>
 
       <div class="submit">
