@@ -15,6 +15,16 @@
   padding-left: 2em;
 }
 
+.fa-eye-slash, .fa-eye {
+  cursor: pointer;
+  position: relative;
+  left: 14em;
+  bottom: 1.6em;
+  border: none;
+  outline: none;
+  font-size: 1.2em;
+}
+
 @media only screen and (max-width: 850px)  {
   .fields {
     flex-direction: column !important;
@@ -25,12 +35,11 @@
   .left{
     padding-right: 0 !important;
   }
-  /*
+
   .fa-eye-slash, .fa-eye {
     left: 24em;
     bottom: 2em;
   }
-  */
 }
 
 .bottom {

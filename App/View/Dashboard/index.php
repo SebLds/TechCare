@@ -3,7 +3,6 @@
 
 <link rel="stylesheet" type="text/css" href="/Web/css/dashboard.css">
 <link rel="stylesheet" type="text/css" href="/Web/css/table.css">
-<!--<link href="/Web/css/searchBar.css" rel="stylesheet" type="text/css">-->
 
 <div id="body">
 
