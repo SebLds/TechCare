@@ -202,7 +202,7 @@ class AdminController extends Controller {
         // Vérification du numéro de sécurité sociale
         if ($data['select-user-type'] == 'patient') {
           if (!empty($data['healthNumber'])) {
-            if ($data['healthNumber'] == 15) {
+            if (strlen($data['healthNumber']) == 15) {
               $checkHealthNumber = $this->user->checkHealthNumber($data['healthNumber']);
               if ($checkHealthNumber) {
                 $errors['error_healthNumber'] = "Ce numéro de sécurité sociale est déjà associé à un compte";
