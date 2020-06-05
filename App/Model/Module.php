@@ -39,7 +39,7 @@ class Module extends Model {
   }
 
   public function getModuleForTest($typetest) {
-    $sqlStatement = 'SELECT name, sportsman, sedentary FROM module WHERE typetest = :typetest';
+    $sqlStatement = 'SELECT name, sportsman, sedentary, active FROM module WHERE typetest = :typetest';
     return $this->executeRequest($sqlStatement, array('typetest' => $typetest))->fetchAll(PDO::FETCH_OBJ);
   }
 

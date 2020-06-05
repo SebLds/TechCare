@@ -230,9 +230,8 @@ class User extends Model {
             $sqlStatement = "SELECT * FROM users WHERE lastName LIKE '%$key%'";
             return $this->executeRequest($sqlStatement)->fetchAll(PDO::FETCH_OBJ);
         }else{
-            $doctorName="$doctor->firstName $doctor->lastName";
             $sqlStatement = "SELECT * FROM users WHERE lastName LIKE '%$key%' AND doctor= :doctorName";
-            return $this->executeRequest($sqlStatement, array('doctorName' => $doctorName))->fetchAll(PDO::FETCH_OBJ);
+            return $this->executeRequest($sqlStatement, array('doctorName' => $doctor))->fetchAll(PDO::FETCH_OBJ);
         }
     }
 

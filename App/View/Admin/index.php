@@ -67,8 +67,8 @@
 					</div>
 			<div class="action">
 				<form class="search-bar" method="post">
-									<a href="/admin/edit-faq"><button class="btn edit" type="submit" name="button"><i class="fal fa-edit"></i>Modifier</button></a>
-							</form>
+									<a href="/admin/edit-faq"><button class="btn edit" type="button" name="button"><i class="fal fa-edit"></i>Modifier</button></a>
+				</form>
 			</div>
 		</div>
 
@@ -77,8 +77,8 @@
 							<h1>Forum</h1>
 					</div>
 			<div class="action">
-							<form>
-						<a href="/forum/add-tag"><button class="btn add" type="submit" name="button"><i class="fal fa-folder-plus"></i>Ajouter une catégorie</button></a>
+							<form method="post" action="/forum/add-tag-form">
+								<button type="submit" class="btn add"><i class="fal fa-plus-square"></i>Ajouter une catégorie</button>
 							</form>
 			</div>
 		</div>
