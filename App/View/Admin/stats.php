@@ -65,7 +65,7 @@ $this->title = "Statistiques";?>
                       <span>Acuité sonore</span>
                   </div>
                   <div class="bottom-text">
-                      <span><?php echo $data['avg'][2]?>/100</span>
+                      <span><?php echo $data['avg'][1]?>/100</span>
                   </div>
               </div>
           </div>

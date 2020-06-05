@@ -94,6 +94,9 @@ input[type="submit"] {
   .left{
     padding-right: 0 !important;
   }
+  .bottom{
+    padding-right: 0 !important;
+  }
   .fa-eye-slash, .fa-eye {
     left: 24em;
     bottom: 2em;
