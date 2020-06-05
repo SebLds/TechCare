@@ -20,6 +20,13 @@ Autoloader::addNamespace('src\Config', 'src/Config/');
 Autoloader::register();
 Session::getInstance();
 
+$dsn = Config::get("dsn",);
+$login = Config::get("login",);
+$password = Config::get("mdp",);
+var_dump($dsn);
+var_dump($login);
+var_dump($password);
+
 if (!isset($_GET['url'])){
     $_GET['url']='homepage';
 }
