@@ -63,7 +63,7 @@ abstract class Model
             // Récupération des paramètres de configuration BD
             $dsn = Config::get("dsn");
             $login = Config::get("login");
-            $password = Config::get("mdp");
+            $password = Config::get("password");
 
             // Création de la connexion
             self::$bdd = new PDO($dsn, $login, $password,
